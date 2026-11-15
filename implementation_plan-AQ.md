@@ -1,7 +1,7 @@
 # AI Legal Helper for Pakistan — Implementation Plan (Abdul Qudoos)
 
-**Author:** Abdul Qudoos (Team Lead, Reg No: 023-24-0233)  
-**Collaborator:** Sadia Fatima (Reg No: 023-24-0213)  
+**Author:** Abdul Qudoos  
+**Collaborator:** Sadia Fatima  
 **Course:** Machine Learning (5th Semester BS Computer Science)  
 **Document Purpose:** Master execution roadmap for Abdul Qudoos's responsibilities, with detailed, step-by-step implementation instructions starting with **Task 1 (J1: Project Setup and Label Space)**.
 
@@ -10,7 +10,7 @@
 ## 1. Executive Summary & Team Responsibilities
 
 ### 1.1 Abdul Qudoos's Role Profile
-As **Team Lead** and **ML Architecture Lead**, Abdul Qudoos is responsible for:
+Abdul Qudoos is responsible for:
 1. **Core Data Engineering:** Parsing Indian LeSICiN/ILSI datasets (A1), validating legal parity via IPC-to-PPC cross-mapping (A2), and co-curating synthetic & real test datasets (J1, J2, J4).
 2. **Model Training & Classical Baselines:** Preprocessing pipeline with Roman Urdu normalisation, TF-IDF n-grams, class-balanced Logistic Regression, Linear SVM, and Naive Bayes baselines, including ablation studies (A3).
 3. **Deep Learning:** Multi-label transformer fine-tuning (DistilBERT / Legal-BERT) with sigmoid heads on Google Colab (A4).
@@ -24,7 +24,7 @@ As **Team Lead** and **ML Architecture Lead**, Abdul Qudoos is responsible for:
 
 | Task ID | Phase / Week | Task Name | Type | Est. Hours | Primary Deliverables | Dependencies |
 | :--- | :---: | :--- | :--- | :---: | :--- | :--- |
-| **J1** | **Week 1** | **Project Setup, Git Governance & Label Space (Lead)** | **Setup + Legal** | **6h** | Repo skeleton, `requirements.txt`, `src/labels.json`, data standard doc | None |
+| **J1** | **Week 1** | **Project Setup, Git Governance & Label Space** | **Setup + Legal** | **6h** | Repo skeleton, `requirements.txt`, `src/labels.json`, data standard doc | None |
 | **A1** | Week 2 | LeSICiN (ILSI) Parsing & Filtering | ML (Data) | 12h | `data/processed/ilsi_clean.csv`, summary statistics | J1, A2 |
 | **A2** | Week 3 | IPC-to-PPC Mapping Table | Manual / Legal | 8h | `data/mapping/ipc_ppc_map.csv` | J1 |
 | **J2** | Week 4 | Synthetic Incident Stories & Verification (50% share) | Manual + ML | 10h | Half of `data/processed/synthetic.csv` | J1 |
@@ -45,7 +45,7 @@ As **Team Lead** and **ML Architecture Lead**, Abdul Qudoos is responsible for:
 
 ### 3.1 Task Overview
 - **Identifier:** `J1`
-- **Owner:** Abdul Qudoos (Lead) & Sadia Fatima
+- **Owner:** Abdul Qudoos & Sadia Fatima
 - **Target Timeline:** Week 1
 - **Estimated Effort:** 6 hours (Abdul)
 - **Goal:** Establish the standardized code, data, and environment infrastructure, configure Git collaboration standards, and freeze the 25–40 PPC legal label taxonomy in `src/labels.json`.

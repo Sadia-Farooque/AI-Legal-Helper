@@ -1,7 +1,7 @@
 # Team Sync & Meeting Notes
 
 **Team Members:**
-- Abdul Qudoos (Team Lead)
+- Abdul Qudoos
 - Sadia Fatima
 
 ---
