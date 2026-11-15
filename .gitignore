@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Model weights and artifacts (keep tracking out of git)
+models/*.pkl
+models/*.joblib
+models/*.pt
+models/*.bin
+models/checkpoints/
+
+# Data files (raw datasets, bulky scrapings)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.parquet
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
