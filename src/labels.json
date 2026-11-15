@@ -1,0 +1,242 @@
+{
+  "302": {
+    "section": "302",
+    "title": "Punishment of qatl-i-amd (Premeditated murder)",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Murder / Intentional killing",
+    "confusable_with": ["307", "319", "337-A"],
+    "in_ilsi": true
+  },
+  "307": {
+    "section": "307",
+    "title": "Attempt to commit qatl-i-amd",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Attempted murder / Firing with intent to kill",
+    "confusable_with": ["302", "324", "337-A"],
+    "in_ilsi": true
+  },
+  "319": {
+    "section": "319",
+    "title": "Hurt (Causing bodily pain, harm, disease, infirmity)",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Physical assault / Causing physical hurt",
+    "confusable_with": ["337-A", "337-F", "352"],
+    "in_ilsi": false
+  },
+  "324": {
+    "section": "324",
+    "title": "Attempt to commit qatl",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Attempted killing / Deadly weapon attack",
+    "confusable_with": ["307", "337-A"],
+    "in_ilsi": true
+  },
+  "337-A": {
+    "section": "337-A",
+    "title": "Shajjah (Hurt to head or face)",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Head or facial injury from fight/beating",
+    "confusable_with": ["337-F", "319"],
+    "in_ilsi": false
+  },
+  "337-F": {
+    "section": "337-F",
+    "title": "Jurh (Hurt to body other than head or face)",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Body injury / Wound / Bone fracture from assault",
+    "confusable_with": ["337-A", "319"],
+    "in_ilsi": false
+  },
+  "339": {
+    "section": "339",
+    "title": "Wrongful restraint",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Blocking someone's way / Restricting movement",
+    "confusable_with": ["340"],
+    "in_ilsi": true
+  },
+  "340": {
+    "section": "340",
+    "title": "Wrongful confinement",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Illegal detention / Locking someone inside a room",
+    "confusable_with": ["339", "365"],
+    "in_ilsi": true
+  },
+  "354": {
+    "section": "354",
+    "title": "Assault or criminal force to woman with intent to outrage her modesty",
+    "category": "Offences Against Women & Modesty",
+    "citizen_term": "Molestation / Physical harassment of a woman",
+    "confusable_with": ["354A", "509"],
+    "in_ilsi": true
+  },
+  "354A": {
+    "section": "354A",
+    "title": "Assault or use of criminal force to woman and stripping her of clothes",
+    "category": "Offences Against Women & Modesty",
+    "citizen_term": "Stripping a woman / Extreme public humiliation of a woman",
+    "confusable_with": ["354", "509"],
+    "in_ilsi": false
+  },
+  "363": {
+    "section": "363",
+    "title": "Punishment for kidnapping",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Kidnapping a minor or child",
+    "confusable_with": ["365", "365-A"],
+    "in_ilsi": true
+  },
+  "365": {
+    "section": "365",
+    "title": "Kidnapping or abducting with intent secretly and wrongfully to confine person",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Abduction / Forceful disappearance",
+    "confusable_with": ["363", "365-A", "340"],
+    "in_ilsi": true
+  },
+  "365-A": {
+    "section": "365-A",
+    "title": "Kidnapping for ransom",
+    "category": "Offences Affecting the Human Body",
+    "citizen_term": "Kidnapping for ransom / Money demand after abduction",
+    "confusable_with": ["363", "365", "384"],
+    "in_ilsi": false
+  },
+  "379": {
+    "section": "379",
+    "title": "Punishment for theft",
+    "category": "Offences Against Property",
+    "citizen_term": "Simple theft / Pickpocketing / Stolen bicycle",
+    "confusable_with": ["380", "382", "392"],
+    "in_ilsi": true
+  },
+  "380": {
+    "section": "380",
+    "title": "Theft in dwelling house, etc.",
+    "category": "Offences Against Property",
+    "citizen_term": "Theft inside house / shop / building",
+    "confusable_with": ["379", "382", "448"],
+    "in_ilsi": true
+  },
+  "382": {
+    "section": "382",
+    "title": "Theft after preparation made for causing death, hurt or restraint",
+    "category": "Offences Against Property",
+    "citizen_term": "Theft by armed thieves / Prepared with weapons",
+    "confusable_with": ["379", "392"],
+    "in_ilsi": true
+  },
+  "384": {
+    "section": "384",
+    "title": "Punishment for extortion",
+    "category": "Offences Against Property",
+    "citizen_term": "Extortion / Bhatta / Demanding money through threats",
+    "confusable_with": ["382", "392", "506"],
+    "in_ilsi": true
+  },
+  "392": {
+    "section": "392",
+    "title": "Punishment for robbery",
+    "category": "Offences Against Property",
+    "citizen_term": "Armed snatching / Mugging / Gunpoint mobile snatching",
+    "confusable_with": ["379", "382", "395"],
+    "in_ilsi": true
+  },
+  "395": {
+    "section": "395",
+    "title": "Punishment for dacoity",
+    "category": "Offences Against Property",
+    "citizen_term": "Dacoity (Gang robbery by 5 or more persons)",
+    "confusable_with": ["392", "382"],
+    "in_ilsi": true
+  },
+  "403": {
+    "section": "403",
+    "title": "Dishonest misappropriation of property",
+    "category": "Offences Against Property",
+    "citizen_term": "Keeping lost/found property dishonestly",
+    "confusable_with": ["379", "406"],
+    "in_ilsi": true
+  },
+  "406": {
+    "section": "406",
+    "title": "Punishment for criminal breach of trust",
+    "category": "Offences Against Property",
+    "citizen_term": "Amanat me khayanat / Embezzling entrusted money or goods",
+    "confusable_with": ["403", "420"],
+    "in_ilsi": true
+  },
+  "411": {
+    "section": "411",
+    "title": "Dishonestly receiving stolen property",
+    "category": "Offences Against Property",
+    "citizen_term": "Buying or keeping stolen goods",
+    "confusable_with": ["379", "392"],
+    "in_ilsi": true
+  },
+  "420": {
+    "section": "420",
+    "title": "Cheating and dishonestly inducing delivery of property",
+    "category": "Offences Against Property",
+    "citizen_term": "Fraud / Scam / Financial deceit",
+    "confusable_with": ["406", "489-F"],
+    "in_ilsi": true
+  },
+  "441": {
+    "section": "441",
+    "title": "Criminal trespass",
+    "category": "Offences Against Property",
+    "citizen_term": "Illegal entry into property / Encroachment",
+    "confusable_with": ["447", "448"],
+    "in_ilsi": true
+  },
+  "447": {
+    "section": "447",
+    "title": "Punishment for criminal trespass",
+    "category": "Offences Against Property",
+    "citizen_term": "Trespassing on land or property with intent to intimidate",
+    "confusable_with": ["441", "448"],
+    "in_ilsi": true
+  },
+  "448": {
+    "section": "448",
+    "title": "Punishment for house-trespass",
+    "category": "Offences Against Property",
+    "citizen_term": "Illegal entry into house or residential property",
+    "confusable_with": ["380", "447"],
+    "in_ilsi": true
+  },
+  "489-F": {
+    "section": "489-F",
+    "title": "Dishonestly issuing a cheque",
+    "category": "Offences Against Property",
+    "citizen_term": "Bounced cheque / Bad cheque issued with dishonest intention",
+    "confusable_with": ["420", "406"],
+    "in_ilsi": false
+  },
+  "500": {
+    "section": "500",
+    "title": "Punishment for defamation",
+    "category": "Defamation & Intimidation",
+    "citizen_term": "Defamation / Damaging reputation publicly",
+    "confusable_with": ["506", "509"],
+    "in_ilsi": true
+  },
+  "506": {
+    "section": "506",
+    "title": "Punishment for criminal intimidation",
+    "category": "Defamation & Intimidation",
+    "citizen_term": "Death threats / Life threats / Coercion",
+    "confusable_with": ["384", "500"],
+    "in_ilsi": true
+  },
+  "509": {
+    "section": "509",
+    "title": "Word, gesture or act intended to insult the modesty of a woman",
+    "category": "Offences Against Women & Modesty",
+    "citizen_term": "Verbal harassment / Catcalling / Cyber harassment of woman",
+    "confusable_with": ["354", "354A", "500"],
+    "in_ilsi": true
+  }
+}
