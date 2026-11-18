@@ -1,0 +1,6 @@
+section,short_name,meaning,cognizable,bailable,compoundable,punishment,court,source,date_checked
+302,Premeditated Murder,Intentionally causing death of a human being,Cognizable,Non-bailable,Compoundable,Death or imprisonment for life and fine,Court of Session,PPC 1860 & CrPC Sched II,2026-11-18
+379,Theft,Taking movable property out of possession without consent,Cognizable,Non-bailable,Non-compoundable,Imprisonment up to 3 years or fine or both,Magistrate 1st or 2nd Class,PPC 1860 & CrPC Sched II,2026-11-18
+392,Robbery,Theft or extortion accomplished with force or fear of hurt,Cognizable,Non-bailable,Non-compoundable,Rigorous imprisonment 3 to 10 years and fine; up to 14 years on highway,Court of Session or Magistrate Section 30,PPC 1860 & CrPC Sched II,2026-11-18
+420,Cheating / Fraud,Deceiving someone dishonestly to deliver property or make valuable security,Cognizable,Bailable,Compoundable with court permission,Imprisonment up to 7 years and fine,Magistrate 1st Class,PPC 1860 & CrPC Sched II,2026-11-18
+489-F,Dishonoured Cheque,Issuing a cheque with dishonest intention that bounces due to insufficient funds,Cognizable,Bailable,Compoundable with court permission,Imprisonment up to 3 years or fine or both,Magistrate 1st Class,PPC 1860 & CrPC Sched II,2026-11-18

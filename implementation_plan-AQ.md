@@ -3,162 +3,167 @@
 **Author:** Abdul Qudoos  
 **Collaborator:** Sadia Fatima  
 **Course:** Machine Learning (5th Semester BS Computer Science)  
-**Document Purpose:** Master execution roadmap for Abdul Qudoos's responsibilities, with detailed, step-by-step implementation instructions starting with **Task 1 (J1: Project Setup and Label Space)**.
+**Document Purpose:** Master execution roadmap for Abdul Qudoos's responsibilities under the **Two Independent Tracks** task division, including kickoff status, track roadmap, and the concrete implementation plan for the next task (**Task B1: Legal Lookup Table**).
 
 ---
 
-## 1. Executive Summary & Team Responsibilities
+## 1. Track Architecture & Core Responsibilities
 
-### 1.1 Abdul Qudoos's Role Profile
-Abdul Qudoos is responsible for:
-1. **Core Data Engineering:** Parsing Indian LeSICiN/ILSI datasets (A1), validating legal parity via IPC-to-PPC cross-mapping (A2), and co-curating synthetic & real test datasets (J1, J2, J4).
-2. **Model Training & Classical Baselines:** Preprocessing pipeline with Roman Urdu normalisation, TF-IDF n-grams, class-balanced Logistic Regression, Linear SVM, and Naive Bayes baselines, including ablation studies (A3).
-3. **Deep Learning:** Multi-label transformer fine-tuning (DistilBERT / Legal-BERT) with sigmoid heads on Google Colab (A4).
-4. **Trust & Safety Engineering:** Confidence calibration (temperature/Platt scaling), coverage vs. accuracy curves, and "abstain/not sure" thresholding (A5).
-5. **Citizen-Facing Legal Assistance & Product Delivery:** Plain-English Next Steps & FIR filing procedures with verified helplines (A6), and Streamlit Incident Analyzer page with inference backend (A7).
-6. **Project Management:** Repository governance, pull request reviews, weekly check-in documentation (`docs/meetings.md`), and demo coordination (J1, J5).
+Under the updated task division, the project is structured into two completely independent, parallel tracks designed to eliminate cross-dependencies:
+
+```mermaid
+flowchart LR
+    subgraph Kickoff["Week 1: Shared Kickoff (K1-K9)"]
+        K["Contracts, Stubs, Labels, Repo & Eval"]
+    end
+
+    subgraph TrackA["Track A: Sadia (Citizen + Supervised ML)"]
+        A1["A1: IPC-to-PPC Map"] --> A2["A2: ILSI Parsing"]
+        A2 --> A3["A3: Synthetic Stories"]
+        A3 --> A4["A4: Classical Baselines"]
+        A4 --> A5["A5: DistilBERT"]
+        A5 --> A6["A6-A7: Calibration & LIME"]
+        A6 --> A8["A8: Analyzer Page"]
+    end
+
+    subgraph TrackB["Track B: Abdul (Student + Retrieval ML + Legal Knowledge)"]
+        B1["B1: Legal Lookup Table"] --> B2["B2: Section Summaries"]
+        B2 --> B3["B3: SC Judgment Extraction"]
+        B3 --> B4["B4: Retrieval Classifier"]
+        B4 --> B5["B5: Case Finder"]
+        B5 --> B6["B6: Quiz Bank"]
+        B6 --> B7["B7: Explorer/Finder/Quiz Pages"]
+        B7 --> B8["B8: Evaluation Page & Tooling"]
+    end
+
+    subgraph Integration["Weeks 11-12: Integration (J2)"]
+        J2["Hybrid Model, Final Evaluation & Report"]
+    end
+
+    Kickoff --> TrackA
+    Kickoff --> TrackB
+    TrackA --> Integration
+    TrackB --> Integration
+```
+
+### Abdul Qudoos's Scope (Track B):
+1. **Legal Knowledge Foundation:** Authoring the authoritative CrPC Schedule II lookup table (B1), plain-English section summaries, elements of offence, and confusable pair taxonomies (B2).
+2. **Supreme Court Judgment Mining:** Exploration and regex-based section citation extraction on Pakistan SC judgments (B3).
+3. **Retrieval-Based ML & Case Search:** Building zero-shot sentence-embedding retrieval classifier for section recommendation (B4) and FAISS-based Similar Case Finder (B5).
+4. **Student Educational Suite:** Authoring a 60–100 scenario quiz bank (B6) and developing the Streamlit Section Explorer, Case Finder, and Quiz pages (B7).
+5. **Evaluation Suite & Error Analysis:** Developing the model evaluation dashboard and comparative error analysis tooling (B8).
+6. **Shared Deliverables:** Co-collecting and labelling the real-person test set (J1), and co-building the hybrid model and final defense materials (J2).
 
 ---
 
-## 2. High-Level Master Task Matrix (Abdul Qudoos)
+## 2. Master Task Matrix for Abdul Qudoos
 
-| Task ID | Phase / Week | Task Name | Type | Est. Hours | Primary Deliverables | Dependencies |
+| Task ID | Phase / Weeks | Task Name | Type | Hours | Deliverables | Dependencies / Hand-offs |
 | :--- | :---: | :--- | :--- | :---: | :--- | :--- |
-| **J1** | **Week 1** | **Project Setup, Git Governance & Label Space** | **Setup + Legal** | **6h** | Repo skeleton, `requirements.txt`, `src/labels.json`, data standard doc | None |
-| **A1** | Week 2 | LeSICiN (ILSI) Parsing & Filtering | ML (Data) | 12h | `data/processed/ilsi_clean.csv`, summary statistics | J1, A2 |
-| **A2** | Week 3 | IPC-to-PPC Mapping Table | Manual / Legal | 8h | `data/mapping/ipc_ppc_map.csv` | J1 |
-| **J2** | Week 4 | Synthetic Incident Stories & Verification (50% share) | Manual + ML | 10h | Half of `data/processed/synthetic.csv` | J1 |
-| **J3** | Week 4 | Shared Evaluation Framework (`evaluate.py`) | ML | 4h | `src/evaluate.py`, unit test | J1 |
-| **A3** | Week 5 | Preprocessing & Classical Baselines (LR, SVM, NB) | ML | 14h | `src/preprocess.py`, baseline models, ablation tables | A1, B1, J2, J3 |
-| **A4** | Weeks 6–7 | Transformer Fine-Tuning (DistilBERT / Legal-BERT) | ML | 16h | Colab training scripts, saved checkpoints, multi-label metrics | A3, J3 |
-| **A5** | Week 8 | Confidence Calibration & Abstain Logic | ML | 6h | Calibration plots, reliability diagrams, threshold module | A4, B4 |
-| **J4** | Weeks 8–10 | Real-Person Test Set Collection & Annotation | Manual | 6h | `data/test/real_test.csv` (co-annotated & frozen) | J1, B2 |
-| **A6** | Week 9 | Next Steps Guides & Verified Helplines | Manual / Content | 6h | `docs/next_steps.md`, `data/lookup/helplines.csv` | J1 |
-| **A7** | Weeks 9–10 | Streamlit Incident Analyzer & Inference Engine | App Dev | 10h | `src/predict.py`, `app/pages/1_Incident_Analyzer.py`, test suite | A5, B2, A6 |
-| **J5** | Weeks 11–12 | Integration, System Testing, Slides & Viva Prep | All | 14h | Working end-to-end app, slide deck, demo script | All |
+| **K1–K9** | **Week 1** | **Shared Kickoff, Contracts & Stubs** | **Setup + ML** | **8h** | Repo, `labels.json`, stubs, `evaluate.py`, app skeleton | Shared with Sadia |
+| **B1** | **Weeks 2–3** | **Legal Lookup Table (CrPC Schedule II)** | **Manual / Legal** | **12h** | `data/lookup/ppc_lookup.csv` (all 30 sections) | None (Sadia consumes in Wk 9) |
+| **B2** | Weeks 3–4 | Section Summaries, Elements & Confusable Groups | Manual / Legal | 10h | `data/content/sections.json`, `confusable_groups.json` | B1 |
+| **B3** | Weeks 4–5 | Supreme Court Judgments Exploration & Regex Extraction | ML (Data) | 10h | `data/processed/sc_clean.csv`, regex precision report | K2 |
+| **B4** | Weeks 5–6 | Retrieval Classifier (Sentence Embeddings) | ML | 12h | `src/retrieval.py`, zero-shot results CSV | B2, K7 |
+| **J1** | Weeks 6–9 | Real-Person Test Set (Abdul's Half: 100 En + 30 Roman) | Manual | 6h | Part of `data/test/real_test.csv` (frozen) | K2 |
+| **B5** | Week 7 | Similar Case Finder (FAISS / Vector Index) | ML | 8h | `src/case_finder.py`, semantic case search API | B3 |
+| **B6** | Week 8 | Quiz Bank (60 to 100 Scenarios) | Manual | 10h | `data/content/quiz_bank.json` | B2 |
+| **B7** | Weeks 9–10 | Student App Pages (Explorer, Case Finder, Quiz) | App Dev | 14h | `app/pages/2_Section_Explorer.py`, `3_Case_Finder.py`, `4_Quiz.py` | B1, B2, B5, B6 |
+| **B8** | Week 10 | Evaluation Page & Error Analysis Tooling | ML + App | 8h | `app/pages/5_Evaluation.py`, `src/error_analysis.py` | K6, K7 |
+| **J2** | Weeks 11–12 | Hybrid Model, System Integration, Report & Slides | All | 14h | Hybrid predictor, final report, presentation deck | A6, B4, J1 |
 
-*Total Core Commitment:* **112 Hours** across 12 weeks.
-
----
-
-## 3. Deep Dive: Implementation Plan for Task 1 (J1: Project Setup and Label Space)
-
-### 3.1 Task Overview
-- **Identifier:** `J1`
-- **Owner:** Abdul Qudoos & Sadia Fatima
-- **Target Timeline:** Week 1
-- **Estimated Effort:** 6 hours (Abdul)
-- **Goal:** Establish the standardized code, data, and environment infrastructure, configure Git collaboration standards, and freeze the 25–40 PPC legal label taxonomy in `src/labels.json`.
+*Total Track Commitment:* **112 Hours** (8h Kickoff + 84h Track B + 6h J1 + 14h J2).
 
 ---
 
-### 3.2 Step-by-Step Execution Plan
+## 3. Current Status: What is Done vs. What is Remaining
+
+### 3.1 Completed Items
+- [x] **K1 (Repo & Environment):** Standard directory tree initialized (`data/*`, `app/*`, `src/*`, `models/*`, `results/*`, `docs/*`, `tests/*`). [requirements.txt](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/requirements.txt) and [.gitignore](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/.gitignore) configured.
+- [x] **K2 (PPC Label Space):** [src/labels.json](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/src/labels.json) frozen with 30 target sections, citizen colloquial terms, legal categories, and confusable cross-references. Verified via unit test.
+- [x] **K3 (Data Format Standard):** [data/README.md](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/data/README.md) defines canonical CSV schema (`id`, `text`, `sections`, `language`, `source`, `split`).
+
+### 3.2 Kickoff Enablers & Stubs (Completed)
+- [x] **K4 & K8 (Model Contract & Predictor Stub):** [src/models/stub_model.py](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/src/models/stub_model.py) exposing `predict_scores(text) -> dict`.
+- [x] **K5 & K8 (Lookup Stub):** Initial 5-row placeholder [data/lookup/ppc_lookup.csv](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/data/lookup/ppc_lookup.csv) so Track A app code never blocks.
+- [x] **K7 (Evaluation Engine):** [src/evaluate.py](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/src/evaluate.py) implementing top-1 accuracy, top-3 recall, and multi-label micro/macro F1 metrics.
+- [x] **K8 (Evaluation Stub Sentences):** [data/test/stub_test.csv](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/data/test/stub_test.csv) (20 test cases).
+- [x] **K6 (Results Contract):** [results/stub_model.csv](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/results/stub_model.csv) generated and validated.
+- [x] **K9 (App Skeleton):** [app/Home.py](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/app/Home.py) and all 5 multi-page templates in [app/pages/](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/app/pages/).
+
+---
+
+## 4. Deep-Dive Implementation Plan: Next Task (Task B1: Legal Lookup Table)
+
+### 4.1 Task Summary
+- **Task ID:** `B1`
+- **Owner:** Abdul Qudoos
+- **Timeline:** Weeks 2 to 3
+- **Estimated Hours:** 12 Hours
+- **Goal:** Author the authoritative, verified legal facts table (`data/lookup/ppc_lookup.csv`) covering all 30 PPC sections in `labels.json` sourced directly from Schedule II of the Code of Criminal Procedure (CrPC).
+- **Handoff Importance:** Sadia's Incident Analyzer page (Task A8) displays FIR eligibility, bailability, and punishments from this exact file. Providing it early (Week 3) gives Sadia a 6-week buffer.
+
+---
+
+### 4.2 Data Contract Specification for `ppc_lookup.csv` (K5 Contract)
+
+Every row corresponds to one section in `src/labels.json` and must contain exactly these 10 columns:
+
+| Column Name | Type | Permitted Values / Description | Example |
+| :--- | :--- | :--- | :--- |
+| `section` | string | Exact PPC section number matching `labels.json` | `"392"` |
+| `short_name` | string | Brief title of the offence | `"Robbery"` |
+| `meaning` | string | Clear 1-line plain-English explanation for lay citizens | `"Taking property by force, fear of injury, or wrongful restraint"` |
+| `cognizable` | string | `"Cognizable"` (Police can arrest without warrant / FIR) or `"Non-cognizable"` | `"Cognizable"` |
+| `bailable` | string | `"Bailable"` or `"Non-bailable"` | `"Non-bailable"` |
+| `compoundable` | string | `"Compoundable"` (Victim can compromise under s.345 CrPC) or `"Non-compoundable"` | `"Non-compoundable"` |
+| `punishment` | string | Statutory penalty range under PPC | `"Rigorous imprisonment for 3 to 10 years, and fine; if on highway between sunset and sunrise, up to 14 years"` |
+| `court` | string | Competent trial court under Schedule II CrPC | `"Court of Session or Magistrate of the first class"` |
+| `source` | string | Official legal reference | `"PPC 1860 & CrPC Schedule II (amended 2023)"` |
+| `date_checked` | string | Verification date in ISO format | `"2026-11-18"` |
+
+---
+
+### 4.3 Step-by-Step Execution Plan for B1
 
 ```mermaid
 flowchart TD
-    Step1["Step 1: Directory Structure Creation"] --> Step2["Step 2: Environment & requirements.txt"]
-    Step2 --> Step3["Step 3: Define Canonical Data Format"]
-    Step3 --> Step4["Step 4: Design & Freeze PPC Label Space (src/labels.json)"]
-    Step4 --> Step5["Step 5: Git Governance & Collaboration Protocols"]
-    Step5 --> Step6["Step 6: Validation, Verification & Peer Handshake"]
+    S1["Step 1: Extract 30 Frozen Sections from src/labels.json"] --> S2["Step 2: Research Statutory Facts from CrPC Schedule II & s.345 CrPC"]
+    S2 --> S3["Step 3: Draft Plain-English Citizen Meanings for Lay Users"]
+    S3 --> S4["Step 4: Compile data/lookup/ppc_lookup.csv"]
+    S4 --> S5["Step 5: Automated Verification Test (tests/test_lookup.py)"]
+    S5 --> S6["Step 6: Push to Repo & Notify Sadia (Asynchronous Review)"]
 ```
 
-#### Step 1: Initialize Directory Tree
-Create the standard directory layout for the project to separate raw data, processed assets, training source code, models, documentation, and the Streamlit frontend.
+#### Step 1: Extract and Initialize Target Sections
+Read `src/labels.json` to ensure 100% section parity:
+- 30 target sections: `302`, `307`, `319`, `324`, `337-A`, `337-F`, `339`, `340`, `354`, `354A`, `363`, `365`, `365-A`, `379`, `380`, `382`, `384`, `392`, `395`, `403`, `406`, `411`, `420`, `441`, `447`, `448`, `489-F`, `500`, `506`, `509`.
 
-```text
-AI-Legal-Helper-for-Pakistan/
-├── app/                        # Streamlit web application
-│   ├── app.py                  # Home / entrypoint
-│   └── pages/                  # Multi-page views (Analyzer, Explorer, etc.)
-├── data/
-│   ├── raw/                    # Untouched external datasets (SC, LeSICiN)
-│   ├── processed/              # Cleaned, tokenized CSVs (ilsi_clean, sc_clean, synthetic)
-│   ├── mapping/                # IPC-to-PPC crosswalks
-│   ├── lookup/                 # CrPC Schedule II tables, verified helplines
-│   ├── content/                # Plain-English summaries & confusable pairs
-│   └── test/                   # Frozen real-person test evaluation set
-├── docs/                       # Project documentation, meeting notes, guides
-├── models/                     # Serialized artifacts (TF-IDF, pickle, checkpoints)
-├── notebooks/                  # Colab & local exploratory analysis
-├── results/                    # CSVs, confusion matrices, evaluation metrics
-├── src/                        # Core reusable Python package
-│   ├── __init__.py
-│   └── labels.json             # Canonical PPC section label dictionary
-├── .gitignore
-├── README.md
-├── requirements.txt
-└── implementation_plan-AQ.md
-```
+#### Step 2: Extract Procedural Facts from Schedule II of CrPC
+For each section, extract the statutory procedural categorisation:
+1. **Cognizability (Column 3 of Sched II):** Whether police may arrest without warrant. (Critical for citizen: can an FIR be filed directly at the thana?).
+2. **Bailability (Column 5 of Sched II):** Whether bail is a matter of statutory right or court discretion.
+3. **Compoundability (s. 345 CrPC):** Can the victim pardon or settle the offence with or without court permission?
+4. **Punishment (Column 7 of Sched II & PPC text):** Exact minimum/maximum imprisonment and fine provisions.
+5. **Trial Court (Column 8 of Sched II):** Magistrate of 1st class, Magistrate Section 30, Court of Session.
 
-#### Step 2: Configure Python Virtual Environment & `requirements.txt`
-Specify fixed or compatible versions of all dependencies to ensure seamless portability across local Windows environments and Google Colab GPUs.
+#### Step 3: Write Lay-Friendly Section Meanings
+Craft an accessible, jargon-free 1-line definition for ordinary citizens (e.g. for Section 489-F: *"Dishonestly issuing a cheque that bounces due to insufficient funds"*).
 
-**Key Packages to Include:**
-- **Machine Learning & Classical NLP:** `scikit-learn>=1.3.0`, `numpy>=1.24.0`, `pandas>=2.0.0`, `scipy>=1.11.0`, `joblib>=1.3.0`
-- **Deep Learning & Transformers:** `torch>=2.0.0`, `transformers>=4.35.0`, `sentence-transformers>=2.2.2`, `accelerate>=0.24.0`
-- **Vector Search & Similarity:** `faiss-cpu>=1.7.4`
-- **Explainability & Trust:** `lime>=0.2.0`, `matplotlib>=3.7.0`, `seaborn>=0.12.0`
-- **Web Interface:** `streamlit>=1.28.0`
-- **Testing & Quality:** `pytest>=7.4.0`, `python-dotenv>=1.0.0`, `tqdm>=4.66.0`
+#### Step 4: Author `data/lookup/ppc_lookup.csv`
+Compile all rows into the CSV format, ensuring UTF-8 encoding and clean comma separation with quoted strings where commas appear.
 
-#### Step 3: Establish Shared Dataset Format Standard (`data/README.md`)
-To ensure that all four data sources (`sc`, `ilsi`, `synthetic`, `real`) merge seamlessly into the ML pipelines, standardize the schema:
-
-| Column Name | Data Type | Permitted Values / Description | Example |
-| :--- | :--- | :--- | :--- |
-| `id` | string | Unique identifier (`syn_001`, `ilsi_104`, etc.) | `"syn_042"` |
-| `text` | string | The incident narrative (raw or lightly cleaned) | `"Two boys snatched my mobile phone on gunpoint."` |
-| `sections` | string (JSON array) | List of valid PPC sections as strings | `["392", "34"]` |
-| `primary_section` | string | Single most prominent section | `"392"` |
-| `language` | string | `"en"` (English) or `"roman_ur"` (Roman Urdu) | `"en"` |
-| `source` | string | `"sc"`, `"ilsi"`, `"synthetic"`, or `"real"` | `"synthetic"` |
-| `split` | string | `"train"`, `"val"`, or `"test"` | `"train"` |
-
-#### Step 4: Curate and Freeze PPC Label Space (`src/labels.json`)
-The legal scope will be frozen at **30 carefully selected PPC sections** that represent:
-1. **High-Frequency Citizen Incidents:** Street theft, robbery, cheque bounce, online fraud, assault, intimidation.
-2. **Critical Confusable Pairs for Law Students:**
-   - *Theft vs. Robbery vs. Dacoity:* 379 vs. 392 vs. 395
-   - *Breach of Trust vs. Cheating vs. Bad Cheque:* 406 vs. 420 vs. 489-F
-   - *Hurt & Bodily Harm Levels:* 319 vs. 324 vs. 337-A vs. 337-F
-   - *Modesty & Assault on Women:* 354 vs. 354A vs. 509
-   - *Trespass vs. House-breaking:* 441 vs. 447 vs. 448
-
-**Structure of `src/labels.json`:**
-Each entry contains:
-- `section`: PPC section number (e.g., `"392"`)
-- `title`: Formal legal title (e.g., `"Punishment for robbery"`)
-- `category`: Legal category (e.g., `"Property Offences"`)
-- `citizen_term`: Common colloquial term (e.g., `"Armed snatching / Robbery"`)
-- `confusable_with`: List of related section numbers (e.g., `["379", "395"]`)
-- `in_ilsi`: Boolean flag indicating if direct IPC counterpart exists for transfer learning
-
-#### Step 5: Git Governance & Collaboration Protocols
-1. **Branching Model:**
-   - `main`: Production-ready code; protected against direct commits.
-   - `aq/<task-name>`: Abdul's feature branches (e.g., `aq/j1-setup`, `aq/a1-ilsi-parser`).
-   - `sf/<task-name>`: Sadia's feature branches (e.g., `sf/b1-sc-extraction`).
-2. **Pull Request Protocol:**
-   - Every PR must have at least one approval from the other peer before merge.
-   - Legal tables (`ipc_ppc_map.csv`, `ppc_lookup.csv`) require 100% mutual review.
-3. **Weekly Sync Log:**
-   - Maintain `docs/meetings.md` logging: date, agenda, blockers, task status, next milestone.
+#### Step 5: Implement Automated Schema & Completeness Test (`tests/test_lookup.py`)
+Write an automated unit test verifying:
+- Exactly 30 rows matching `src/labels.json`.
+- No empty strings across any of the 10 required columns.
+- Valid enum values: `cognizable` in `{"Cognizable", "Non-cognizable"}`; `bailable` in `{"Bailable", "Non-bailable"}`; `compoundable` in `{"Compoundable", "Non-compoundable"}`.
 
 ---
 
-### 3.3 Deliverables & Definition of Done for Task J1
-- [x] Folder structure initialized and committed to the workspace.
-- [x] `requirements.txt` validated with standard dependencies.
-- [x] `data/README.md` created defining the dataset schema with concrete examples.
-- [x] `src/labels.json` authored with 30 target PPC sections, categories, and confusable references.
-- [x] `.gitignore` configured to ignore raw heavy files, python bytecode, virtual environments, and temporary logs.
-- [x] Initial smoke test (`tests/test_labels.py`) verifying that `src/labels.json` parses cleanly and contains no duplicate section IDs.
-- [x] Milestone review shared with Sadia for sign-off.
-
----
-
-## 4. Immediate Next Step
-Task J1 has been completed and verified. The next task on the schedule is:
-- **Task A1 (Week 2):** LeSICiN (ILSI) Parsing and Filtering.
-- **Task A2 (Week 3):** IPC-to-PPC Mapping Table (`data/mapping/ipc_ppc_map.csv`).
+### 4.4 Deliverables & Definition of Done for Task B1
+- [ ] `data/lookup/ppc_lookup.csv` authored with all 30 PPC sections populated across all 10 columns.
+- [ ] Every entry backed by an official statutory source citation and check date.
+- [ ] Unit test `tests/test_lookup.py` passing with 100% coverage of lookup rows.
+- [x] Initial kickoff stubs (K4, K5, K7, K8, K9) generated so the team repository is completely operational.
+- [ ] Committed and pushed to Git under branch `aq/b1-lookup-table`.

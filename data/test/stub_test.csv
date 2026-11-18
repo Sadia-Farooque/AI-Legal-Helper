@@ -1,0 +1,21 @@
+id,text,sections,primary_section,language,source,split
+stub_001,"Two armed men on a red motorcycle stopped me at gunpoint and took my mobile phone and wallet.",392,392,en,stub,test
+stub_002,"Someone picked my pocket on the crowded bus near Saddar and stole my cash.",379,379,en,stub,test
+stub_003,"My business partner took 15 lac rupees investment from me and issued a bank cheque that bounced due to insufficient balance.",489-F;420,489-F,en,stub,test
+stub_004,"A stranger sold me a fake iPhone after claiming it was original and blocked my number afterwards.",420,420,en,stub,test
+stub_005,"A group of five armed dacoits broke into our house at midnight, held the family hostage and looted jewellery.",395;380,395,en,stub,test
+stub_006,"The landlord sent armed goons who broke into my rented shop, damaged furniture and threatened to kill me if I did not vacate.",448;506,448,en,stub,test
+stub_007,"An unknown caller continuously calls my sister, using filthy language and threatening to defame her family.",509;506,509,en,stub,test
+stub_008,"A reckless driver shot at a security guard after an altercation at the parking lot with intent to kill.",307;324,307,en,stub,test
+stub_009,"A rival family attacked my brother with iron rods causing serious fractures on his arm and shoulder.",337-F;319,337-F,en,stub,test
+stub_010,"The corrupt accountant embezzled company funds that were entrusted to him for employee salaries.",406,406,en,stub,test
+stub_011,"Police caught a suspect selling stolen laptops and motorbikes in the illegal grey market.",411,411,en,stub,test
+stub_012,"A local criminal syndicate sent a threatening letter demanding 5 lakh rupees extortion bhatta from our shop.",384;506,384,en,stub,test
+stub_013,"My neighbour blocked the public passage with concrete bricks preventing our vehicles from passing through.",339,339,en,stub,test
+stub_014,"A former employee posted edited private photos and malicious lies on social media to destroy my reputation.",500;509,500,en,stub,test
+stub_015,"Armed kidnappers took a 10-year-old child outside his school into a black car.",363,363,en,stub,test
+stub_016,"Do larkon ne bike pe aakar pistol dikhai aur mera mobile aur wallet cheen kar bhaag gaye.",392,392,roman_ur,stub,test
+stub_017,"Mera dost mujhse udhaar paise le kar cheque de gaya jo bank me bounce ho gaya.",489-F,489-F,roman_ur,stub,test
+stub_018,"Bazaar me kisi ne meri pocket se 20 hazar rupaye nikal liye.",379,379,roman_ur,stub,test
+stub_019,"Ek shakhs ne mujhe qatal karne ki dhamki di phone par.",506,506,roman_ur,stub,test
+stub_020,"Ghar me chor ghus gaye aur almari se sona chura kar le gaye.",380;379,380,roman_ur,stub,test
