@@ -1,0 +1,121 @@
+[
+  {
+    "group_id": "grp_theft_robbery_dacoity",
+    "group_name": "Offences Against Property: Theft vs. Aggravated Theft vs. Robbery vs. Dacoity",
+    "sections": ["379", "380", "382", "392", "395"],
+    "distinction_summary": "The statutory boundary escalates based on three crucial factors: location of the theft, prior armed preparation or violence exerted during the act, and the number of conjoint participants.",
+    "key_differentiators": {
+      "379": "Simple theft: Dishonest taking of movable property out of possession without consent. Zero violence, threat, armed preparation, or residential trespass.",
+      "380": "Theft in dwelling: Aggravated solely by location (committed inside a human residence, tent, vessel, or property warehouse).",
+      "382": "Theft with preparation: The thief carries concealed weapons (knives, firearms) prepared to hurt or kill if resisted, even if the weapon is never actually used during the theft.",
+      "392": "Robbery: Violence, hurt, wrongful restraint, or instant fear of death/hurt is actively and voluntarily exerted during the theft or escape.",
+      "395": "Dacoity: Exactly the same as robbery in substance, but committed or attempted by five (5) or more persons acting conjointly."
+    },
+    "critical_student_pitfall": "Students frequently overlook the headcount: a violent armed bank robbery by 4 armed men is Section 392 PPC (Robbery); the exact same robbery committed by 5 men automatically becomes Section 395 PPC (Dacoity), triggering exclusive Sessions Court trial and higher punishment scales."
+  },
+  {
+    "group_id": "grp_extortion_intimidation",
+    "group_name": "Coercion & Threats: Extortion vs. Criminal Intimidation",
+    "sections": ["384", "506"],
+    "distinction_summary": "Both involve inducing fear of injury, but extortion requires that the victim actually delivers property or money under the influence of that fear, whereas criminal intimidation is complete upon delivering the threat alone.",
+    "key_differentiators": {
+      "384": "Extortion (s.383/384): Requires the intentional induction of fear of injury AND the actual dishonest delivery of property, money (Bhatta), or valuable security by the victim.",
+      "506": "Criminal Intimidation (s.503/506): Consists of the threat itself with intent to cause alarm or compel an act/omission. No property needs to be demanded or delivered."
+    },
+    "critical_student_pitfall": "If a gangster sends a letter threatening to kill a trader unless 5 lac rupees is paid, but the trader goes to the police and pays nothing, the offence is Section 506 Part II PPC (or an attempt to extort under s.385/511), NOT completed Extortion under Section 384 PPC."
+  },
+  {
+    "group_id": "grp_misappropriation_cbt_cheating",
+    "group_name": "White Collar & Property Deceit: Misappropriation vs. Criminal Breach of Trust vs. Cheating",
+    "sections": ["403", "406", "420"],
+    "distinction_summary": "The boundary hinges on how initial possession was acquired and the presence or timing of dishonest intention.",
+    "key_differentiators": {
+      "403": "Dishonest Misappropriation: Initial possession was acquired innocently or without trespass (e.g., finding lost goods on a road); dishonest intention was formed later when keeping or selling the item.",
+      "406": "Criminal Breach of Trust: Possession was lawfully entrusted under a fiduciary or contractual duty (e.g., trustee, agent, carrier); the accused subsequently misappropriates or misapplies the entrusted goods.",
+      "420": "Cheating / Fraud: Possession was obtained through deceit or false pretenses practiced from the very beginning. The dishonest intention existed prior to or at the exact time of delivery."
+    },
+    "critical_student_pitfall": "In Criminal Breach of Trust (406), the victim willingly and consciously gives property into lawful custody without being deceived at that moment. In Cheating (420), the victim is tricked by a fraudulent misrepresentation into handing over the property."
+  },
+  {
+    "group_id": "grp_cheating_dishonoured_cheque",
+    "group_name": "Commercial Fraud: Cheating vs. Dishonestly Issuing a Cheque",
+    "sections": ["420", "489-F"],
+    "distinction_summary": "Section 420 is a general fraud statute requiring proof of fraudulent inducement from inception, whereas Section 489-F is a specialized statutory offence specifically triggered by a bounced cheque issued towards an existing loan or obligation.",
+    "key_differentiators": {
+      "420": "General Cheating: Applies to any fraudulent scheme or misrepresentation that induces delivery of money/goods. Proving initial dishonest mindset is mandatory and often difficult.",
+      "489-F": "Dishonoured Cheque: Tailored specifically to banking transactions. Prima facie established when a cheque issued for loan repayment or obligation is dishonoured by the bank due to insufficient funds or stoppage."
+    },
+    "critical_student_pitfall": "Section 489-F does not apply to cheques issued as mere security or advance collateral without an existing debt or underlying obligation. However, police frequently register both 420 and 489-F together in business defaults."
+  },
+  {
+    "group_id": "grp_homicide_attempt",
+    "group_name": "Lethal Offences: Murder vs. Attempted Murder vs. Attempted Qatl",
+    "sections": ["302", "307", "324"],
+    "distinction_summary": "The dividing line between completed homicide and attempt is the fact of death. Between 307 and 324, Section 324 is the modern post-1997 provision under the Islamic Qisas and Diyat scheme governing attempted intentional homicide.",
+    "key_differentiators": {
+      "302": "Qatl-i-amd: The actus reus resulted in the actual death of the victim. Punishable with death, life imprisonment, or 25 years.",
+      "307": "Attempt to commit qatl-i-amd: Focuses on the execution of an overt act capable of causing death where death did not ensue (historic/general attempt provision).",
+      "324": "Attempt to commit qatl: The primary operative section in Pakistani FIRs for firearm attacks and lethal assaults where the victim sustains injuries but survives. Carries cumulative liability for injuries under Sections 337-A to 337-F."
+    },
+    "critical_student_pitfall": "If an attacker fires ten rounds with a Kalashnikov intending to kill his target, but all bullets miss or the victim survives after surgery, the offence is Section 324 PPC, not Section 302 PPC."
+  },
+  {
+    "group_id": "grp_bodily_harm_categories",
+    "group_name": "Bodily Hurt Classification: Head/Face Injuries vs. General Body Injuries vs. Accidental Death",
+    "sections": ["337-A", "337-F", "319"],
+    "distinction_summary": "Under Pakistan's Qisas and Diyat framework, bodily hurt is categorized strictly by anatomical location and medical depth, while accidental fatalities are separated under Qatl-i-Khata.",
+    "key_differentiators": {
+      "337-A": "Shajjah: Strictly confined to hurt or laceration inflicted upon the head or face of the victim. Six escalating degrees depending on bone exposure or skull fracture.",
+      "337-F": "Jurh: Encompasses all bodily cuts, muscle tears, or bone fractures on the torso, arms, legs, or back (excluding head and face).",
+      "319": "Qatl-i-Khata: Involves the actual death of a person resulting entirely from mistake of fact or act without any intent to hurt or kill."
+    },
+    "critical_student_pitfall": "A fractured jaw or broken nose falls under Section 337-A (Shajjah), whereas a fractured collarbone or broken leg falls under Section 337-F (Jurh Ghayr-Jaifah Hashimah)."
+  },
+  {
+    "group_id": "grp_restraint_confinement",
+    "group_name": "Deprivation of Liberty: Wrongful Restraint vs. Wrongful Confinement",
+    "sections": ["339", "340"],
+    "distinction_summary": "Wrongful restraint prevents linear motion in one specific direction, while wrongful confinement is total restraint within bounded borders.",
+    "key_differentiators": {
+      "339": "Wrongful Restraint: The victim is blocked from moving in one specific direction where they have a legal right to go, but remains free to turn back or move in other directions.",
+      "340": "Wrongful Confinement: The victim is enclosed or restrained in all directions within defined circumscribing boundaries (e.g., locked in a cell, handcuffed in a room)."
+    },
+    "critical_student_pitfall": "Parking a tractor across a street blocking someone from driving home is Wrongful Restraint (339). Forcing that driver into a farmhouse room and locking the door is Wrongful Confinement (340)."
+  },
+  {
+    "group_id": "grp_kidnapping_abduction_ransom",
+    "group_name": "Custody Violations: Kidnapping vs. Abduction vs. Kidnapping for Ransom",
+    "sections": ["363", "365", "365-A"],
+    "distinction_summary": "The distinction lies in the age of the victim, the presence of deceit/force versus lack of guardian consent, and the criminal purpose (confinement vs. ransom demand).",
+    "key_differentiators": {
+      "363": "Kidnapping from lawful guardianship: Specifically targets minors (males under 14, females under 16) or persons of unsound mind taken without the consent of their legal guardian.",
+      "365": "Abduction for secret confinement: Taking or enticing away any person (adult or minor) using force or deceit with intent to secretly and wrongfully confine them.",
+      "365-A": "Kidnapping for ransom: Aggravated capital offence where the abduction is accompanied by a demand for money, property, or concession as a condition for release."
+    },
+    "critical_student_pitfall": "An adult cannot be 'kidnapped' under Section 361/363; an adult is 'abducted' under Section 362/365. Furthermore, the moment a ransom demand is uttered, Section 365 becomes the capital offence of Section 365-A PPC."
+  },
+  {
+    "group_id": "grp_women_modesty_crimes",
+    "group_name": "Gender-Based Offences: Assault on Modesty vs. Stripping Clothes vs. Insulting Modesty",
+    "sections": ["354", "354A", "509"],
+    "distinction_summary": "Differentiated by the nature of force used, physical contact, and the degree of public humiliation or electronic harassment.",
+    "key_differentiators": {
+      "354": "Assault on Modesty: Physical assault or criminal force exerted directly against a woman with intent to outrage her modesty (e.g., groping, tearing a dupatta, grabbing).",
+      "354A": "Stripping Woman of Clothes: Extreme aggravated atrocity where the woman is stripped of her garments and exposed naked to public view. Punishable by Death or Life Imprisonment.",
+      "509": "Insulting Modesty / Sexual Harassment: Covers verbal remarks, gestures, stalking, lewd noises, or electronic messages without requiring physical assault or contact."
+    },
+    "critical_student_pitfall": "Catcalling or sending obscene WhatsApp messages to a female colleague is Section 509 PPC (Non-cognizable in base schedule, no physical force). Grabbing her arm or pulling her scarf is Section 354 PPC (Cognizable, physical force used)."
+  },
+  {
+    "group_id": "grp_trespass_categories",
+    "group_name": "Property Intrusion: Criminal Trespass vs. House-Trespass",
+    "sections": ["441", "447", "448"],
+    "distinction_summary": "The distinction lies between generic unauthorized entry on land/open property versus unauthorized intrusion into a human dwelling structure.",
+    "key_differentiators": {
+      "441": "Criminal Trespass (definition): Entering into or upon property in another's possession with intent to commit an offence or intimidate/annoy.",
+      "447": "Punishment for Criminal Trespass: Operative sentencing section for outdoor or open-land criminal trespass (punishable up to 3 months).",
+      "448": "Punishment for House-Trespass: Aggravated form where the trespass occurs inside a building, tent, or vessel used for living, worship, or property storage (punishable up to 1 year)."
+    },
+    "critical_student_pitfall": "Walking unlawfully onto an open agricultural field to intimidate a tenant is Section 447 PPC. Forcing entry through the doorway into the tenant's residential bedroom is Section 448 PPC."
+  }
+]

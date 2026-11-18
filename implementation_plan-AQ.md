@@ -167,3 +167,145 @@ Write an automated unit test verifying:
 - [x] Unit test `tests/test_lookup.py` passing with 100% coverage of lookup rows.
 - [x] Initial kickoff stubs (K4, K5, K7, K8, K9) generated so the team repository is completely operational.
 - [x] Ready to commit under feature branch `aq`.
+
+
+---
+
+## 5. Deep-Dive Implementation Plan: Task B2 (Section Summaries, Elements of Offence & Confusable Groups)
+
+### 5.1 Task Overview & Downstream Impact
+- **Task ID:** `B2`
+- **Owner:** Abdul Qudoos
+- **Timeline:** Weeks 3 to 4
+- **Estimated Effort:** 10 Hours
+- **Goal:** Author the comprehensive student-facing legal learning content and the semantic knowledge base for the retrieval model:
+  1. Plain-English conceptual summaries (3–5 lines each).
+  2. The statutory **"Elements of the Offence"** (essential legal ingredients prosecution must establish in court).
+  3. Realistic, contextual Pakistani scenario examples for each section.
+  4. Curate 8 to 12 **Confusable Groups** detailing specific distinctions between subtle statutory offences.
+- **Why Authentic Legal Data Matters (Anti-Slop Protocol):**
+  - **B4 Retrieval Classifier:** Sentence-transformer models (`all-MiniLM-L6-v2`) will embed this text to match user incident descriptions. If elements and summaries are vague generic text, cosine similarity will collapse across adjacent crimes (e.g. failing to distinguish theft from robbery).
+  - **B6 Quiz Bank & B7 Section Explorer:** Real students and evaluators will judge the system's depth based on whether the "ingredients of the crime" match the Pakistan Penal Code 1860 and established Supreme Court precedent (*SCMR* / *PLD* doctrine).
+
+---
+
+### 5.2 Schema Contracts & Standards
+
+#### A. Schema Contract for `data/content/sections.json`
+Dictionary keyed by section ID (`"302"`, `"379"`, `"489-F"`, etc.):
+```json
+{
+  "392": {
+    "section": "392",
+    "title": "Punishment for robbery",
+    "category": "Offences Against Property",
+    "summary": "Robbery is an aggravated form of either theft or extortion. It occurs when an offender voluntarily causes or attempts to cause death, hurt, or wrongful restraint (or the immediate fear thereof) in order to commit the theft, carry away stolen property, or commit extortion.",
+    "elements": [
+      "Commission of theft (s.378) or extortion (s.383)",
+      "Offender voluntarily caused or attempted to cause death, hurt, or wrongful restraint",
+      "The violence or threat was exerted during the transaction (in order to commit the offence or carry away property)",
+      "Causing an immediate apprehension of personal injury"
+    ],
+    "example_scenarios": [
+      "Two armed assailants intercepted a commuter's motorbike at a traffic signal in Saddar, held a loaded handgun to his chest, and forcibly took his mobile phone and cash.",
+      "A pedestrian walking through an alley was grabbed by the neck from behind by an offender wielding a knife, who threatened to slash him if he did not relinquish his watch."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 390 & 392"
+  }
+}
+```
+
+#### B. Schema Contract for `data/content/confusable_groups.json`
+Array of group objects targeting difficult distinction boundaries:
+```json
+[
+  {
+    "group_id": "grp_theft_robbery_dacoity",
+    "group_name": "Aggravated Property Offenses (Theft vs. Robbery vs. Dacoity)",
+    "sections": ["379", "380", "382", "392", "395"],
+    "distinction_summary": "The boundary hinges on location, force/threat exerted, preparation, and the number of offenders participating conjointly.",
+    "key_differentiators": {
+      "379": "Simple theft: taking movable property without consent, zero violence or threat exerted.",
+      "380": "Theft inside a residential dwelling, tent, or vessel used for living or storage.",
+      "382": "Theft where the thief makes overt preparations for causing death or hurt (e.g., carrying weapons under clothes).",
+      "392": "Robbery: violence, restraint, or immediate fear of hurt is actually exerted during the theft or escape.",
+      "395": "Dacoity: robbery committed by 5 or more persons acting conjointly."
+    },
+    "critical_student_pitfall": "Students frequently confuse 392 and 395. The moment a robbery involves five or more conjoint perpetrators, Section 392 transitions into Section 395 (Dacoity), which carries higher statutory penalties."
+  }
+]
+```
+
+---
+
+### 5.3 Target Confusable Groups (10 Core Boundaries)
+
+1. **Group 1: Theft vs. Dwelling Theft vs. Prepared Theft vs. Robbery vs. Dacoity** (`379`, `380`, `382`, `392`, `395`)
+2. **Group 2: Extortion vs. Criminal Intimidation** (`384`, `506`)
+3. **Group 3: Criminal Misappropriation vs. Criminal Breach of Trust vs. Cheating** (`403`, `406`, `420`)
+4. **Group 4: Cheating / Fraud vs. Dishonestly Issuing a Cheque** (`420`, `489-F`)
+5. **Group 5: Premeditated Murder vs. Attempted Murder vs. Attempted Qatl** (`302`, `307`, `324`)
+6. **Group 6: Bodily Harm Categories (Shajjah vs. Jurh vs. Hurt)** (`337-A`, `337-F`, `319`)
+7. **Group 7: Wrongful Restraint vs. Wrongful Confinement** (`339`, `340`)
+8. **Group 8: Kidnapping vs. Abduction vs. Ransom Kidnapping** (`363`, `365`, `365-A`)
+9. **Group 9: Offences against Women & Modesty** (`354`, `354A`, `509`)
+10. **Group 10: Criminal Trespass vs. House-Trespass** (`441`, `447`, `448`)
+
+---
+
+### 5.4 Step-by-Step Implementation Workflow
+
+```mermaid
+flowchart TD
+    Step1["Step 1: Statutory Ingredient Extraction (PPC Text & Supreme Court Precedents)"] --> Step2["Step 2: Realistic Scenario Drafting (Pakistani Fact Patterns)"]
+    Step2 --> Step3["Step 3: Compile data/content/sections.json"]
+    Step3 --> Step4["Step 4: Formulate Confusable Matrices (data/content/confusable_groups.json)"]
+    Step4 --> Step5["Step 5: Automated Integrity & Anti-Slop Test Suite (tests/test_content.py)"]
+    Step5 --> Step6["Step 6: Execute Validation Test & Git Commit"]
+```
+
+#### Step 1: Extract Genuine Legal Elements
+For each of the 30 sections in [src/labels.json](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/src/labels.json), extract the statutory ingredients required under Pakistani law:
+- Must cite exact mens rea (e.g. *dishonest intention*, *knowledge*, *voluntarily*).
+- Must cite exact actus reus (e.g. *moving property*, *causing bodily pain*, *restraining within limits*).
+- Must explicitly state statutory exceptions or aggravations where applicable.
+
+#### Step 2: Formulate Authentic Pakistani Incident Scenarios
+Draft 2 concrete scenarios per section based on realistic real-world cases:
+- *Robbery / 392:* Gunpoint motorbike snatching in an urban market.
+- *Dishonoured Cheque / 489-F:* Wholesale commercial vendor receiving a post-dated cheque that gets stamped "Account Insufficient Funds".
+- *Cyber / Modesty / 509:* Unsolicited obscene messaging, stalking, or workplace verbal harassment.
+- *Trespass / 447:* Forcible boundary intrusion or unlawful land encroachment.
+
+#### Step 3: Compile Confusable Matrices
+Detail the statutory dividing line for all 10 groups, clarifying the exact pivot point where an act crosses from one section to another.
+
+#### Step 4: Author the Content Files
+- Create [data/content/sections.json](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/data/content/sections.json).
+- Create [data/content/confusable_groups.json](file:///c:/Users/Microsoft/Desktop/AI-Legal-Helper-for-Pakistan/data/content/confusable_groups.json).
+
+#### Step 5: Implement Automated Anti-Slop Integrity Test (`tests/test_content.py`)
+To ensure high data quality and avoid incomplete entries:
+1. **Parity Check:** All 30 sections in `src/labels.json` must be present in `sections.json`.
+2. **Completeness Check:** Each section must have `summary` >= 80 characters, at least 2 distinct `elements`, at least 2 `example_scenarios`, and a valid `statutory_reference`.
+3. **Confusable Groups Check:** At least 8 to 10 confusable groups, each with at least 2 sections, a non-empty `distinction_summary`, and non-empty `key_differentiators` for each member section.
+4. **Referential Integrity Check:** Every section referenced inside `confusable_groups.json` must exist in `src/labels.json`.
+
+---
+
+### 5.5 Verification Command & Test Protocol
+
+Run the data integrity test suite via Python:
+```bash
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" tests/test_content.py
+```
+**Expected Outcome:** 100% assertions pass across all 30 section entries and 10 confusable groups.
+
+---
+
+### 5.6 Deliverables & Definition of Done for Task B2
+- [x] `data/content/sections.json` authored with all 30 PPC sections, summaries, statutory elements, and real scenarios.
+- [x] `data/content/confusable_groups.json` authored with 10 detailed comparison matrices and pitfall notes.
+- [x] Automated validation suite `tests/test_content.py` created and executing cleanly with 100% pass rate.
+- [x] Section Explorer app page (`app/pages/2_Section_Explorer.py`) verified to render the new content seamlessly.
+- [x] Staged and ready for commit under branch `aq`.

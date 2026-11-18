@@ -1,0 +1,512 @@
+{
+  "302": {
+    "section": "302",
+    "title": "Punishment of qatl-i-amd (Premeditated murder)",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Qatl-i-amd is the intentional or knowing causing of death of a human being without lawful justification. Under Pakistani criminal law, it is governed by the Islamic provisions of Qisas and Diyat, making the offence punishable by death as Qisas or Ta'zir, life imprisonment, or imprisonment up to 25 years where proof under Section 304 PPC is deficient.",
+    "elements": [
+      "Causing the death of a living human being (actus reus)",
+      "Intention of causing death, or intention of causing bodily injury known to be likely to cause death, or doing an act so imminently dangerous that it in all probability causes death (mens rea)",
+      "Absence of lawful excuse or general exception under Chapter IV PPC",
+      "Direct causal nexus between the deliberate act of the accused and the resultant mortality"
+    ],
+    "example_scenarios": [
+      "Due to an ongoing property feud in rural Multan, the accused lay in ambush behind trees with a Kalashnikov and fired multiple direct shots into the chest of the deceased as he returned from the fields on a tractor.",
+      "Following a heated altercation over money in Rawalpindi, the perpetrator fetched a butcher's cleaver from his shop, chased down the unarmed victim, and struck repeated lethal blows to his neck and torso."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 300, 302 & 304 (as substituted by Act II of 1997)"
+  },
+  "307": {
+    "section": "307",
+    "title": "Attempt to commit qatl-i-amd",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Section 307 penalizes any overt act committed toward intentional killing where the act is capable of causing death in ordinary circumstances, but death does not occur due to an extraneous intervention or prompt medical treatment.",
+    "elements": [
+      "Possession of the requisite intention or knowledge to commit qatl-i-amd (murder)",
+      "Execution of an overt act that goes beyond mere preparation and enters the operational stage of execution",
+      "The act executed was capable of causing death under the prevailing circumstances",
+      "Non-occurrence of death due to intervention of witnesses, defensive parry, weapon malfunction, or surgical rescue"
+    ],
+    "example_scenarios": [
+      "An assailant fired three point-blank rounds at a shopkeeper's chest in Lahore, but the bullets struck a heavy metal cashbox the shopkeeper was holding in front of him, resulting in only minor flesh grazes.",
+      "An estranged relative ambushed a young woman outside her college in Gujranwala with a bottle of concentrated industrial acid with intent to kill, splashing it across her upper body before being physically tackled by bystanders."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 307"
+  },
+  "319": {
+    "section": "319",
+    "title": "Qatl-i-Khata (Manslaughter by mistake of act or fact)",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Qatl-i-Khata represents homicide committed without any intention to cause death or cause hurt, occurring entirely by mistake of fact or mistake of act (such as accidental discharge or mistaken target during hunting).",
+    "elements": [
+      "Causing the death of a human being",
+      "Complete absence of intention to cause death or bodily harm to the deceased (lack of premeditation or malice)",
+      "The death resulted from a mistake of act (e.g., slipping while holding a firearm) or mistake of fact (e.g., firing at an animal in thick brush that turned out to be a person)",
+      "Liability to pay statutory Diyat to the legal heirs, with potential ta'zir imprisonment up to 5 years"
+    ],
+    "example_scenarios": [
+      "While participating in a seasonal boar hunt in the sugarcane fields of Bahawalpur, a licensed hunter fired his shotgun into rustling bushes believing a wild boar was hiding, inadvertently striking and killing a farm labourer resting inside.",
+      "A night watchman cleaning his service shotgun in a Karachi warehouse accidentally engaged the hair trigger without checking the chamber, discharging a shell through an interior plasterboard partition and fatally striking an adjacent worker."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 318 & 319"
+  },
+  "324": {
+    "section": "324",
+    "title": "Attempt to commit qatl",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Section 324 governs modern prosecutions for attempted intentional homicide under the Qisas and Diyat legal framework. It covers attacks using deadly weapons, firearms, or lethal force where the victim survives but often sustains serious bodily injury.",
+    "elements": [
+      "Commission of an overt act with intention or knowledge that if qatl had resulted, the accused would be guilty of qatl-i-amd",
+      "Use of lethal means or dangerous weapons (firearms, daggers, iron rods, vehicular ramming)",
+      "Survival of the victim despite the lethal nature of the assault",
+      "Cumulative liability for both the attempt (up to 10 years imprisonment) and the specific physical hurt inflicted under Sections 337-A to 337-F PPC"
+    ],
+    "example_scenarios": [
+      "During an electoral brawl outside a polling station in Faisalabad, the accused aimed a 9mm pistol at his political rival and fired, critically puncturing the victim's lung; emergency surgery at Allied Hospital saved the victim's life.",
+      "An aggrieved litigant accosted his opposing party on court premises in Peshawar, slitting the victim's throat with an open straight razor before police constables restrained him."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 324 (as substituted by Act II of 1997)"
+  },
+  "337-A": {
+    "section": "337-A",
+    "title": "Shajjah (Hurt to head or face)",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Shajjah refers specifically to physical hurt inflicted upon the head or face of any person, excluding wounds to other parts of the body. The PPC establishes six precise statutory sub-categories (Khafifah, Mudihah, Hashimah, Munaqqilah, Ammah, Damighah) based on the depth of the cut and whether bone is exposed, fractured, or the brain membrane is ruptured.",
+    "elements": [
+      "Causing physical hurt or wound specifically localized to the head or facial anatomy of the victim",
+      "Infliction by weapon, blunt force instrument, or direct blow without lawful justification",
+      "Medical classification into one of six degrees: skin exposure without bone exposure (i), bone exposure without fracture (ii), bone fracture without dislocation (iii), bone fracture with dislocation (iv), fracture touching brain membrane (v), or rupture of brain membrane (vi)",
+      "Statutory liability to pay compensatory Daman or Arsh to the victim, accompanied by imprisonment"
+    ],
+    "example_scenarios": [
+      "In a parking dispute in Islamabad, the offender struck the victim on the forehead with an iron steering lock, causing a severe laceration that exposed the frontal skull bone without fracturing it (Shajjah-i-Mudihah under s.337-A(ii)).",
+      "During a domestic altercation, the accused hit his relative across the nose with a cricket bat, shattering the nasal bone and displacing the fragments (Shajjah-i-Hashimah under s.337-A(iii))."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 337 & 337-A"
+  },
+  "337-F": {
+    "section": "337-F",
+    "title": "Jurh (Hurt to body other than head or face)",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Jurh encompasses all physical hurt, cuts, deep wounds, or bone fractures inflicted on any part of the human body other than the head or face. It is divided into Jaifah (penetrating trunk/body cavities) and Ghayr-Jaifah (non-penetrating wounds of 6 escalating degrees).",
+    "elements": [
+      "Inflicting a wound, laceration, bone fracture, or bodily harm on torso, limbs, or back (excluding head and face)",
+      "Classification by medico-legal officer into specific statutory degrees: Damiyah (bleeding skin graze), Badi'ah (cutting flesh), Mutalahimah (deep flesh tearing), Mudighah (near-bone wound), Hashimah (bone fracture), or Munaqqilah (bone fracture with dislocation)",
+      "Execution through direct kinetic force, bludgeon, bladed instrument, or projectile",
+      "Liability to compensatory Daman and ta'zir imprisonment corresponding to the injury degree"
+    ],
+    "example_scenarios": [
+      "A shop assistant in Hyderabad was attacked with an iron rod across the forearm during a robbery, resulting in a compound fracture of both the radius and ulna bones (Ghayr-Jaifah Hashimah under s.337-F(v)).",
+      "During a scuffle over agricultural water distribution in Sargodha, an attacker swung an axe against the victim's leg, deeply tearing through the calf muscle without contacting bone (Ghayr-Jaifah Mutalahimah under s.337-F(iii))."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 337-B, 337-E & 337-F"
+  },
+  "339": {
+    "section": "339",
+    "title": "Wrongful restraint",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Wrongful restraint is the voluntary obstruction of a person so as to prevent them from proceeding in any direction in which that person has a lawful right to move. It affects linear liberty of passage rather than total circumferential confinement.",
+    "elements": [
+      "Voluntary obstruction of a human being's physical movement",
+      "The victim possessed a legal right to proceed in the direction attempted",
+      "The obstruction effectively prevented the victim from moving along that specific vector",
+      "Absence of good-faith belief in a lawful private property right to block the path"
+    ],
+    "example_scenarios": [
+      "A landlord placed heavy concrete blocks across the private access road leading to a tenant's rented warehouse, parking armed security guards to physically prevent the tenant's delivery trucks from entering.",
+      "An aggressive motorist purposely stood in front of an elderly pedestrian on a public footpath in Karachi, stepping side-to-side to block his forward movement and prevent him from reaching a medical dispensary."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 339 & 341"
+  },
+  "340": {
+    "section": "340",
+    "title": "Wrongful confinement",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Wrongful confinement is an aggravated form of restraint where a person is prevented from proceeding beyond certain circumscribing, bounded limits. The victim is totally deprived of personal liberty in all directions (e.g. locked in a room or illegal lock-up).",
+    "elements": [
+      "Wrongful restraint of a person in all directions",
+      "Total prevention of movement beyond fixed, circumscribing territorial or spatial limits (e.g., walls, room, compound, vehicle)",
+      "Deprivation of the victim's physical freedom without lawful authorization or judicial warrant",
+      "Punishable under Section 342 PPC with imprisonment up to 1 year and fine"
+    ],
+    "example_scenarios": [
+      "A brick kiln owner in Kasur locked a bonded labourer and his wife inside a windowless brick storeroom from the outside with an iron chain padlock overnight to prevent them from fleeing to another district.",
+      "Police constables picked up a citizen without an FIR, kept him detained in an unrecorded private quarter behind the police station for two days, and refused to let his family meet him."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 340 & 342"
+  },
+  "354": {
+    "section": "354",
+    "title": "Assault or criminal force to woman with intent to outrage her modesty",
+    "category": "Offences Against Women & Modesty",
+    "summary": "Section 354 penalizes the physical assault or application of criminal force against a woman where the perpetrator possesses the deliberate intent to outrage her modesty, or knowledge that the act is likely to outrage her modesty.",
+    "elements": [
+      "Assault (threatening gesture) or application of criminal force against a female person",
+      "Absence of consent from the victim",
+      "Specific mens rea: deliberate intention to outrage the modesty of the woman, or knowledge that the act is likely to cause such outraging",
+      "Physical contact or aggressive physical encroachment upon the victim's bodily integrity"
+    ],
+    "example_scenarios": [
+      "While a female university student was boarding an overcrowded public bus in Lahore, the accused grabbed her by the arm and pulled her body forcefully toward himself while making lewd sexual gestures.",
+      "A supervisor in an industrial garment factory cornered a female stitcher in the inventory room, forcibly seizing her dupatta and pinning her against the shelving units despite her loud protests."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 354"
+  },
+  "354A": {
+    "section": "354A",
+    "title": "Assault or use of criminal force to woman and stripping her of clothes",
+    "category": "Offences Against Women & Modesty",
+    "summary": "Section 354A is an extreme aggravated offence introduced in 1984 dealing with heinous public humiliation. It applies when an offender assaults a woman and strips her of her clothes, exposing her naked to public view. It carries mandatory capital punishment or life imprisonment.",
+    "elements": [
+      "Assault or application of criminal force to a female human being",
+      "Stripping the victim of her clothing",
+      "Exposing the victim to public view or parading her in a state of nudity or partial denudation",
+      "Heinous statutory gravity: classified as cognizable, non-bailable, non-compoundable, carrying death or imprisonment for life"
+    ],
+    "example_scenarios": [
+      "During a rural panchayat-ordered retaliation over an elopement in South Punjab, influential landowners stormed a rival home, dragged a female relative into the village square, tore off her garments completely, and forced her to walk through the bazaar.",
+      "An aggressive mob involved in a land feud attacked a homestead in rural Sindh, forcibly tore off the clothes of female family members in front of assembled villagers, and prevented them from seeking cover."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 354A (inserted by Ordinance VI of 1984)"
+  },
+  "363": {
+    "section": "363",
+    "title": "Punishment for kidnapping",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Section 363 penalizes kidnapping either from Pakistan or from lawful guardianship. Kidnapping from lawful guardianship occurs when an offender takes or entices a minor (under 14 for boys, under 16 for girls) or a person of unsound mind out of the custody of their guardian without consent.",
+    "elements": [
+      "Taking or enticing away of a minor (male under 14 years, female under 16 years) or person of unsound mind",
+      "The victim was in the lawful custody and keeping of a parent, legal guardian, or authorized custodian",
+      "The removal was executed without the consent of the lawful guardian",
+      "Absence of valid bona fide belief of legal claim or entitlement to custody"
+    ],
+    "example_scenarios": [
+      "A former domestic employee lured a 9-year-old boy away from outside his primary school gate in Islamabad by offering him chocolate and an electronic game, driving him away to a remote village without the parents' knowledge.",
+      "An estranged uncle took his 12-year-old orphaned niece away from her maternal grandmother's home in Quetta in secret to force her into working as a domestic helper in another province."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 359, 361 & 363"
+  },
+  "365": {
+    "section": "365",
+    "title": "Kidnapping or abducting with intent secretly and wrongfully to confine person",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Section 365 deals with abduction or kidnapping executed with the specific criminal objective of causing the victim to be secretly and wrongfully confined, preventing discovery by law enforcement or family.",
+    "elements": [
+      "Kidnapping (of a minor) or abducting (of an adult by force or deceit)",
+      "Specific intent to cause the kidnapped or abducted person to be secretly and wrongfully confined",
+      "Concealment of the victim's whereabouts from relatives and state authorities",
+      "Cognizable and non-bailable offence carrying up to 7 years rigorous imprisonment and fine"
+    ],
+    "example_scenarios": [
+      "Four men in a tinted double-cabin vehicle intercepted an investigative journalist leaving his office in Peshawar, forced him into the back seat at gunpoint, and transported him blindfolded to an isolated farmhouse basement.",
+      "A disgruntled contractor lured an engineer to an out-of-town inspection site, had him overpowered by hired guards, and locked him in an abandoned warehouse compound to prevent him from filing an audit report."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 365"
+  },
+  "365-A": {
+    "section": "365-A",
+    "title": "Kidnapping for ransom",
+    "category": "Offences Affecting the Human Body",
+    "summary": "Section 365-A is a grave statutory felony punishing the kidnapping or abduction of any person with the objective of extorting money, property, or valuable security, or compelling concessions from family or government as ransom for their release.",
+    "elements": [
+      "Kidnapping or abducting any human being (minor or adult) through force, threat, or deceit",
+      "Detaining the victim in custody or unlawful confinement",
+      "Communication of a demand for property, money, concession, or fulfillment of illegal conditions as ransom for release",
+      "Threatening to kill, hurt, or continue detaining the victim if the extortionate ransom is not paid (carries death or imprisonment for life)"
+    ],
+    "example_scenarios": [
+      "A criminal gang in Karachi abducted a factory owner's teenage son while driving through Clifton, held him in an interior Sindh hideout, and made encrypted phone calls demanding 5 crore rupees in cash under threat of decapitation.",
+      "Armed bandits intercepted a doctor's car in Quetta, dragged the physician into the mountains, and sent video recordings of him tied with chains to his family demanding 10 million rupees for his safe return."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 365-A"
+  },
+  "379": {
+    "section": "379",
+    "title": "Punishment for theft",
+    "category": "Offences Against Property",
+    "summary": "Section 379 penalizes simple theft. Theft occurs when a person, intending to take dishonestly any movable property out of the possession of any person without that person's consent, moves that property in order to such taking. It involves no violence or immediate threat.",
+    "elements": [
+      "Movable property belonging to or in possession of another person",
+      "Dishonest intention to permanently or temporarily deprive the possessor (animus furandi)",
+      "Taking out of possession without express or implied consent",
+      "Actual moving or physical displacement of the property in order to effectuate the taking"
+    ],
+    "example_scenarios": [
+      "A thief spotted an unattended, unlocked Honda 70 motorcycle parked outside a bakery in Rawalpindi, quickly hot-wired the ignition, and drove away with the motorcycle while the owner was paying at the cash register.",
+      "A commuter riding a crowded Karachi circular bus had his leather wallet containing 15,000 rupees and CNIC deftly extracted from his back pocket by a pickpocket who slipped off at the next bus stop."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 378 & 379"
+  },
+  "380": {
+    "section": "380",
+    "title": "Theft in dwelling house, etc.",
+    "category": "Offences Against Property",
+    "summary": "Section 380 is an aggravated form of theft committed inside any building, tent, or vessel used as a human dwelling or used for the custody of property. The violation of spatial sanctuary makes it non-bailable and punishable up to 7 years imprisonment.",
+    "elements": [
+      "All essential elements of theft under Section 378 PPC (dishonest taking of movable property)",
+      "The theft is committed within a building, tent, vessel, or structure",
+      "The structure must be currently used as a human residence/dwelling, or specifically designated for the safe custody of property",
+      "Higher penalty scale due to breach of residential or storage security"
+    ],
+    "example_scenarios": [
+      "While a family was attending a wedding in Lahore, an intruder forced open a ground-floor kitchen window, entered the bedrooms, broke open an iron safe, and stole gold ornaments and prize bonds worth 12 lac rupees.",
+      "A rogue night security guard unlocked an electronic retail stockroom at an electronics plaza in Peshawar and removed twenty sealed laptops into his vehicle before morning staff arrived."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 380"
+  },
+  "382": {
+    "section": "382",
+    "title": "Theft after preparation made for causing death, hurt or restraint",
+    "category": "Offences Against Property",
+    "summary": "Section 382 penalizes theft committed by an offender who has made prior preparations for causing death, hurt, or restraint, or fear of hurt, in order to facilitate the theft, effectuate an escape, or retain the stolen goods.",
+    "elements": [
+      "Commission of theft",
+      "Prior preparation made by the thief for causing death, hurt, or restraint, or creating fear thereof",
+      "Arming with concealed weapons (knives, firearms, bludgeons) carried for the specific purpose of overcoming potential resistance",
+      "The offence is committed even if the concealed weapon is never drawn or discharged, provided the preparation is proven"
+    ],
+    "example_scenarios": [
+      "Two thieves broke into an electronics shop at night carrying concealed loaded pistols tucked into their waistbands and heavy iron crowbars, ready to shoot anyone who caught them; they were cornered while loading televisions into a rickshaw.",
+      "A thief entered a residential courtyard with a concealed dagger under his jacket specifically prepared to stab the homeowner if awakened, and was apprehended by neighbours while cutting the padlock of the garage."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 382"
+  },
+  "384": {
+    "section": "384",
+    "title": "Punishment for extortion",
+    "category": "Offences Against Property",
+    "summary": "Extortion occurs when an offender intentionally puts any person in fear of any injury to that person or to any other, and thereby dishonestly induces the person so put in fear to deliver any property, valuable security, or signed document (commonly known as Bhatta).",
+    "elements": [
+      "Intentionally putting a person in fear of injury (physical harm, reputational ruin, or property damage)",
+      "The fear must be induced dishonestly and deliberately",
+      "The induced fear operates directly on the victim's mind, compelling them to consent to part with property",
+      "Actual delivery of property, money, or valuable security by the victim to the extortionist"
+    ],
+    "example_scenarios": [
+      "A notorious neighborhood gang leader sent written receipts and video threats to a cloth merchant in Anarkali Bazaar, stating that his eldest son would be shot outside his school unless the merchant delivered 50,000 rupees monthly extortion cash.",
+      "An extortionist called a petrol pump owner in Gujranwala, threatening to bomb his fuel dispensers unless 5 lac rupees cash was dropped at a designated bridge by midnight; the terrified owner delivered the cash."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 383 & 384"
+  },
+  "392": {
+    "section": "392",
+    "title": "Punishment for robbery",
+    "category": "Offences Against Property",
+    "summary": "Robbery is an aggravated form of theft or extortion. Theft becomes robbery if, in order to commit the theft, or in carrying away stolen property, the offender voluntarily causes or attempts to cause death, hurt, or wrongful restraint, or fear of instant injury.",
+    "elements": [
+      "Commission of theft or extortion",
+      "Voluntary causing or attempting to cause death, hurt, or wrongful restraint, or instant fear of hurt",
+      "The violence or threat must be exerted during the criminal transaction (to commit the offence or facilitate escape)",
+      "Direct nexus between the threat/violence and the appropriation of property"
+    ],
+    "example_scenarios": [
+      "Two youths on a motorcycle pulled up beside a citizen at an ATM in Karachi, held a cocked pistol to his temple, and forcibly grabbed his cash withdrawal of 25,000 rupees and his smartphone before speeding off.",
+      "An offender brandishing an iron knuckle-duster punched a pedestrian in an underpass in Lahore, knocking him to the pavement, and wrenched his leather bag and mobile phone from his hands."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 390 & 392"
+  },
+  "395": {
+    "section": "395",
+    "title": "Punishment for dacoity",
+    "category": "Offences Against Property",
+    "summary": "Dacoity is robbery committed conjointly by five or more persons. When five or more persons commit or attempt to commit a robbery, every person so committing, attempting, or aiding is guilty of dacoity, punishable by life imprisonment or rigorous imprisonment up to 10 years.",
+    "elements": [
+      "Commission or attempt to commit robbery",
+      "The total number of persons acting conjointly must be five or more",
+      "All five or more participants must actively commit, attempt, or aid in the execution of the robbery",
+      "Shared common intention and concerted simultaneous action"
+    ],
+    "example_scenarios": [
+      "A gang of six masked armed men stormed a rural bank branch in Mianwali during banking hours, tied up the security guard, held the cashiers at gunpoint, and emptied the main safe of 4 million rupees into duffel bags.",
+      "Five armed highway bandits blocked a passenger bus on the National Highway near Rohri with spiked wooden logs, boarded the bus with automatic weapons, and systematically robbed all forty passengers of cash, jewelry, and luggage."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 391 & 395"
+  },
+  "403": {
+    "section": "403",
+    "title": "Dishonest misappropriation of property",
+    "category": "Offences Against Property",
+    "summary": "Section 403 penalizes dishonest misappropriation or conversion of movable property to one's own use. Unlike theft, the initial possession was acquired innocently or without trespass (e.g. finding lost property), but the retention or conversion subsequently becomes dishonest.",
+    "elements": [
+      "Movable property belonging to another person",
+      "Initial taking or possession occurred without trespass or violent dispossession (e.g., finding lost goods or receiving property by mistake)",
+      "Subsequent formation of a dishonest intention to misappropriate or convert the property to one's own use",
+      "Failure to make reasonable efforts to identify and restore the property to its true owner"
+    ],
+    "example_scenarios": [
+      "A passenger found a designer briefcase containing 200,000 rupees in cash and an identity card left behind on an airport taxi seat, but instead of handing it to airport security, took it home and spent the money on personal debts.",
+      "A tenant found a diamond ring beneath floor tiles during plumbing renovations, recognized it belonged to the landlord's deceased mother based on markings, but pawned the ring at a local jeweler without informing the landlord."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 403"
+  },
+  "406": {
+    "section": "406",
+    "title": "Punishment for criminal breach of trust",
+    "category": "Offences Against Property",
+    "summary": "Criminal breach of trust (Amanat me khayanat) occurs when a person who is entrusted with property, or with dominion over property, dishonestly misappropriates, converts, uses, or disposes of that property in violation of any legal direction or contractual trust.",
+    "elements": [
+      "Entrustment of movable or immovable property, or dominion over property, to the accused",
+      "Creation of a fiduciary or custodial relationship (contract, employment, guardianship, bailment)",
+      "Dishonest misappropriation, conversion, or unauthorized disposal of the entrusted property",
+      "Action in violation of the legal terms, statutory direction, or express/implied contractual mandate governing the trust"
+    ],
+    "example_scenarios": [
+      "An estate manager entrusted with collecting rent and paying municipal taxes on behalf of an overseas Pakistani property owner diverted 18 lac rupees of collected funds into his personal speculative stock trading account.",
+      "A jewelry workshop owner was given 10 tolas of pure gold bars by a bride's father to manufacture wedding sets within three months, but melted the gold down and sold it to pay off his own commercial bank loans."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 405 & 406"
+  },
+  "411": {
+    "section": "411",
+    "title": "Dishonestly receiving stolen property",
+    "category": "Offences Against Property",
+    "summary": "Section 411 penalizes receiving or retaining any stolen property (property whose possession was transferred by theft, extortion, robbery, or criminal breach of trust), knowing or having reasonable cause to believe that the property is stolen.",
+    "elements": [
+      "The property in question qualifies as 'stolen property' under Section 410 PPC",
+      "Receipt or retention of the stolen property by the accused",
+      "Mens rea: knowledge or having reasonable cause to believe that the property is stolen",
+      "Dishonest intention to assist in concealing, retaining, or benefiting from the illicit goods"
+    ],
+    "example_scenarios": [
+      "A used smartphone vendor in Bilal Market, Rawalpindi, purchased five brand-new iPhone 15 devices without boxes or receipts from known street snatchers at one-tenth of their retail price, with knowledge that they were snatched.",
+      "A scrap metal dealer bought an entire disassembled Toyota Hilux vehicle chassis and engine blocks with freshly ground-off vehicle identification numbers (VINs) from two unidentified men at 2 AM."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 410 & 411"
+  },
+  "420": {
+    "section": "420",
+    "title": "Cheating and dishonestly inducing delivery of property",
+    "category": "Offences Against Property",
+    "summary": "Section 420 is the premier anti-fraud provision of the PPC. It punishes cheating that dishonestly induces the deceived victim to deliver any property, make, alter, or destroy the whole or any part of a valuable security, or anything signed or sealed.",
+    "elements": [
+      "Deception practiced upon any person (fraudulent or dishonest misrepresentation)",
+      "Fraudulent or dishonest inducement of the person so deceived",
+      "Compelling the victim to deliver property or make/alter a valuable security",
+      "Existence of fraudulent or dishonest intention from the very inception of the transaction"
+    ],
+    "example_scenarios": [
+      "An overseas employment agent collected 8 lac rupees each from twenty aspiring workers in Gujranwala after promising them verified Canadian work permits, issuing bogus fake visa stickers and absconding with the cash.",
+      "A seller purported to sell a residential plot in a housing scheme using forged power-of-attorney documents, receiving 35 lac rupees cash token money from an unsuspecting purchaser for land the seller never owned."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 415 & 420"
+  },
+  "441": {
+    "section": "441",
+    "title": "Criminal trespass",
+    "category": "Offences Against Property",
+    "summary": "Criminal trespass occurs when an offender enters into or upon property in the possession of another with intent to commit an offence, or to intimidate, insult, or annoy any person in possession, or having lawfully entered, unlawfully remains with such criminal intent.",
+    "elements": [
+      "Entry into or upon property (land, building, enclosure) in the lawful possession of another",
+      "Absence of permission or legal license to enter",
+      "Specific criminal intent: to commit an offence, or to intimidate, insult, or annoy the person in possession",
+      "Punishable under Section 447 PPC with imprisonment up to 3 months or fine"
+    ],
+    "example_scenarios": [
+      "An aggressive group of armed villagers marched onto their neighbor's agricultural farmland in Sheikhupura, tearing down the boundary fence and brandishing axes to intimidate the farmhands into abandoning the harvest.",
+      "A disgruntled contractor forced his way past security into a private commercial corporate office after business hours, refusing to leave and shouting profanities to intimidate the accounts manager."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 441 & 447"
+  },
+  "447": {
+    "section": "447",
+    "title": "Punishment for criminal trespass",
+    "category": "Offences Against Property",
+    "summary": "Section 447 provides the direct statutory penalty for committing criminal trespass as defined in Section 441. It is a cognizable, bailable offence triable by any Judicial Magistrate, punishable with imprisonment up to 3 months or fine up to 500 rupees or both.",
+    "elements": [
+      "Proof of all constituent ingredients of criminal trespass under Section 441 PPC",
+      "Actual unauthorized entry or unlawful retention upon the property",
+      "Evidence of intent to intimidate, insult, annoy, or execute an unlawful act on the premises",
+      "Legal possession vesting in the complainant at the time of entry"
+    ],
+    "example_scenarios": [
+      "A defendant against whom a civil court issued an interim restraining order entered upon the disputed residential parcel with construction laborers to forcefully dump gravel and dig boundary trenches.",
+      "An estranged tenant whose lease expired three months prior broke the padlock of an outdoor agricultural godown and occupied it with livestock against the owner's explicit written prohibitions."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 447"
+  },
+  "448": {
+    "section": "448",
+    "title": "Punishment for house-trespass",
+    "category": "Offences Against Property",
+    "summary": "House-trespass is an aggravated form of criminal trespass where the unauthorized entry is committed within any building, tent, or vessel used as a human dwelling, place of worship, or place for the custody of property.",
+    "elements": [
+      "Commission of criminal trespass under Section 441 PPC",
+      "The trespass is committed into a human dwelling building, place of religious worship, or property storage facility",
+      "Breach of the interior privacy and residential security of the occupants",
+      "Punishable under Section 448 PPC with imprisonment up to 1 year, or fine up to 1000 rupees, or both"
+    ],
+    "example_scenarios": [
+      "A landlord engaged in an illegal eviction dispute broke down the main entrance door of a family's residential apartment in Karachi with a sledgehammer at 11 PM and entered the living room to forcefully remove their furniture.",
+      "An intruder climbed over the boundary wall of a residential home in Sialkot, broke open the courtyard door, and entered the family quarters to intimidate the female residents over an unpaid personal loan."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 442 & 448"
+  },
+  "489-F": {
+    "section": "489-F",
+    "title": "Dishonestly issuing a cheque",
+    "category": "Offences Against Property",
+    "summary": "Section 489-F penalizes the dishonest issuance of a bank cheque for the repayment of a loan or fulfillment of an obligation where the cheque is subsequently dishonoured by the bank upon presentation due to insufficient funds.",
+    "elements": [
+      "Issuance of a negotiable bank cheque by the drawer",
+      "The cheque was issued specifically towards the repayment of a loan or fulfillment of an existing legal obligation",
+      "The cheque is presented to the drawee bank within validity and is dishonoured (bounced) due to insufficient funds or closed account",
+      "Dishonest intention on the part of the drawer at the time of issuance (mens rea)"
+    ],
+    "example_scenarios": [
+      "A textile trader in Faisalabad purchased yarn worth 25 lac rupees on credit and issued a post-dated cheque for payment, but upon presentation at Allied Bank, the cheque was returned dishonoured with a memo stating 'Account Insufficient Funds'.",
+      "A borrower issued a signed cheque for 8 lac rupees to settle a verified personal loan, but simultaneously issued a stop-payment instruction to his bank to deceitfully evade legal recovery."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 489-F (inserted by Ordinance LXXXV of 2002)"
+  },
+  "500": {
+    "section": "500",
+    "title": "Punishment for defamation",
+    "category": "Defamation & Intimidation",
+    "summary": "Section 500 penalizes defamation. Defamation occurs when a person, by words spoken or intended to be read, or by signs or visible representations, makes or publishes any imputation concerning any person intending to harm, or knowing that such imputation will harm, the reputation of that person.",
+    "elements": [
+      "Making or publishing an imputation concerning another person (spoken, written, digital, or graphic)",
+      "Intention to harm, or knowing/having reason to believe that the imputation will harm, the reputation of the person",
+      "Publication to at least one third party",
+      "Absence of applicability of any of the ten statutory exceptions under Section 499 PPC (e.g., imputation of truth for public good, public conduct of public servants)"
+    ],
+    "example_scenarios": [
+      "A former business associate distributed printed flyers in a commercial market in Lahore falsely accusing an honest doctor of running an illegal organ trafficking ring and embezzling charity donations.",
+      "An aggrieved individual published fabricated, malicious allegations on a public community Facebook page claiming that a local school principal had been expelled from the civil service for corruption."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 499 & 500"
+  },
+  "506": {
+    "section": "506",
+    "title": "Punishment for criminal intimidation",
+    "category": "Defamation & Intimidation",
+    "summary": "Section 506 punishes criminal intimidation. It occurs when someone threatens another person with injury to their person, reputation, or property, or to the person or reputation of anyone in whom that person is interested, with intent to cause alarm or compel them to do an act they are not legally bound to do.",
+    "elements": [
+      "Threatening another person with injury to their physical person, reputation, or property",
+      "Intent to cause alarm to that person, or to compel that person to do any act which they are not legally bound to do, or omit to do an act they are legally entitled to do",
+      "Part I: General threats (bailable, up to 2 years imprisonment)",
+      "Part II: Aggravated threats to cause death, grievous hurt, or destruction of property by fire (non-bailable, up to 7 years imprisonment)"
+    ],
+    "example_scenarios": [
+      "A moneylender called a debtor and explicitly declared: 'If you do not pay me an extra 50,000 rupees interest by tomorrow, I will shoot you in the face and burn down your grocery store' (Part II threat to cause death).",
+      "A defendant in a pending civil property suit approached the plaintiff outside the district court complex, warning him that if he did not withdraw his court testimony, his shop windows would be smashed and his merchandise destroyed (Part I)."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Sections 503 & 506"
+  },
+  "509": {
+    "section": "509",
+    "title": "Word, gesture or act intended to insult the modesty of a woman",
+    "category": "Offences Against Women & Modesty",
+    "summary": "Section 509 comprehensively penalizes verbal, non-verbal, electronic, and sexual harassment of women. It punishes uttering words, making sounds or gestures, exhibiting objects, or intruding upon the privacy of a woman with intent to insult her modesty, whether in public, at work, or electronically.",
+    "elements": [
+      "Uttering words, making sounds or gestures, or exhibiting objects in the presence or hearing of a female person",
+      "Intrusion upon the privacy of a woman",
+      "Intent to insult the modesty of a woman or cause sexual harassment",
+      "Applies to street catcalling, workplace verbal harassment, stalking, or sending unsolicited vulgar messages electronically"
+    ],
+    "example_scenarios": [
+      "A male colleague at a private bank branch repeatedly followed a female cashier to the parking lot, making vulgar remarks about her physical appearance and texting unsolicited lewd audio clips to her personal WhatsApp.",
+      "Two young men on a motorbike persistently trailed a group of schoolteachers walking along a public road in Sahiwal, whistling loudly, shouting vulgar propositions, and making lewd physical gestures."
+    ],
+    "statutory_reference": "Pakistan Penal Code 1860, Section 509 (as substituted by Act I of 2010)"
+  }
+}
