@@ -162,8 +162,8 @@ Write an automated unit test verifying:
 ---
 
 ### 4.4 Deliverables & Definition of Done for Task B1
-- [ ] `data/lookup/ppc_lookup.csv` authored with all 30 PPC sections populated across all 10 columns.
-- [ ] Every entry backed by an official statutory source citation and check date.
-- [ ] Unit test `tests/test_lookup.py` passing with 100% coverage of lookup rows.
+- [x] `data/lookup/ppc_lookup.csv` authored with all 30 PPC sections populated across all 10 columns.
+- [x] Every entry backed by an official statutory source citation and check date.
+- [x] Unit test `tests/test_lookup.py` passing with 100% coverage of lookup rows.
 - [x] Initial kickoff stubs (K4, K5, K7, K8, K9) generated so the team repository is completely operational.
-- [ ] Committed and pushed to Git under branch `aq/b1-lookup-table`.
+- [x] Ready to commit under feature branch `aq`.
