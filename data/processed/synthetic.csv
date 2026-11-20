@@ -1,0 +1,561 @@
+id,text,sections,primary_section,language,source,split,group_id,generator
+syn_0001,"My elder brother was shot dead outside our house in Korangi last night. Our neighbour had a land dispute with him and came with a pistol, fired three times at his chest and ran away.","[""302""]",302,en,synthetic,train,syn_0001,claude-opus-5.5
+syn_0002,My uncle's son stabbed my father many times with a knife during an argument over the shop. My father died before we could reach Jinnah hospital.,"[""302""]",302,en,synthetic,train,syn_0002,claude-opus-5.5
+syn_0003,"My sister's husband strangled her at home in Gujranwala. The neighbours heard her screaming, and when we reached she was already dead. He had been threatening to kill her for months.","[""302""]",302,en,synthetic,train,syn_0003,claude-opus-5.5
+syn_0004,A man waited for my cousin near the mosque after Isha prayer and fired at him with a Kalashnikov. My cousin died on the spot. It was an old family enmity.,"[""302""]",302,en,synthetic,train,syn_0004,claude-opus-5.5
+syn_0005,Two men came on a bike and shot our village numberdar in the head while he was sitting at his dera. He died instantly.,"[""302""]",302,en,synthetic,train,syn_0005,claude-opus-5.5
+syn_0006,"my friend was beaten to death with iron rods by 3 boys from the next street, they kept hitting him on the head even after he fell down. he died in the hospital the same night","[""302""]",302,en,synthetic,train,syn_0006,claude-opus-5.5
+syn_0007,Our watchman was found dead in the factory with his throat cut. CCTV shows the supervisor he had fought with entering the room with a knife.,"[""302""]",302,en,synthetic,train,syn_0007,claude-opus-5.5
+syn_0008,My mother was poisoned by my step brother. He mixed something in her tea because he wanted the house. The post mortem report says poison.,"[""302""]",302,en,synthetic,train,syn_0008,claude-opus-5.5
+syn_0009,A rickshaw driver in Multan was killed by a passenger who shot him after refusing to pay the fare. Witnesses at the stop saw him fire deliberately.,"[""302""]",302,en,synthetic,train,syn_0009,claude-opus-5.5
+syn_0010,My nephew was pushed off the roof of a three-storey building by his business partner after a fight about money. He died from his injuries.,"[""302""]",302,en,synthetic,train,syn_0010,claude-opus-5.5
+syn_0011,Someone set my brother on fire after pouring petrol on him in his shop because he refused to sell it to them. He died two days later in the burns ward.,"[""302""]",302,en,synthetic,train,syn_0011,claude-opus-5.5
+syn_0012,"My husband was deliberately run over with a car by his cousin, who reversed and drove over him again. This was planned, they had a quarrel the day before.","[""302""]",302,en,synthetic,train,syn_0012,claude-opus-5.5
+syn_0013,"Kal raat hamare mohallay mein mere bhai ko goli maar kar qatal kar diya gaya. Wo larka pehle bhi dhamkiyan deta tha, aaj aakar seedha seene par fire kiya.","[""302""]",302,roman_ur,synthetic,train,syn_0013,claude-opus-5.5
+syn_0014,"mere chacha ko zameen ke jhagre mein unke apne rishtedaron ne kulhari se maar diya, hospital le jaate hue raste mein hi unki death ho gayi","[""302""]",302,roman_ur,synthetic,train,syn_0014,claude-opus-5.5
+syn_0015,"Meri behan ko uske shohar ne gala dabaa kar maar diya. Pados walon ne cheekhain suni thi, hum pohnche to wo mar chuki thi.","[""302""]",302,roman_ur,synthetic,train,syn_0015,claude-opus-5.5
+syn_0016,Do banday bike par aaye aur dukaan par baithe mere abbu par fire khol diya. Abbu mauqay par hi faut ho gaye.,"[""302""]",302,roman_ur,synthetic,train,syn_0016,claude-opus-5.5
+syn_0017,"hamare naukar ko kisi ne chhuri se gala kaat kar maar diya, CCTV mein manager andar jaata nazar aa raha hai","[""302""]",302,roman_ur,synthetic,train,syn_0017,claude-opus-5.5
+syn_0018,"My friend was cleaning his father's licensed rifle at home and didn't know it was loaded. It went off and the bullet hit his younger brother, who died.","[""319""]",319,en,synthetic,train,syn_0018,claude-opus-5.5
+syn_0019,"During a hunting trip near Jhelum my uncle fired at what he thought was a wild boar in the bushes. It was a shepherd boy, and he died.","[""319""]",319,en,synthetic,train,syn_0019,claude-opus-5.5
+syn_0020,A labourer on the roof threw a heavy iron rod down thinking nobody was below. It hit my father on the head and he passed away in hospital.,"[""319""]",319,en,synthetic,train,syn_0020,claude-opus-5.5
+syn_0021,My neighbour was showing his new pistol to friends and pulled the trigger thinking the safety was on. It killed his friend sitting in front of him.,"[""319""]",319,en,synthetic,train,syn_0021,claude-opus-5.5
+syn_0022,"At night the guard heard a noise and fired at a shadow thinking it was a thief. It was actually his own colleague coming back from the washroom, and he died.","[""319""]",319,en,synthetic,train,syn_0022,claude-opus-5.5
+syn_0023,A construction worker was operating a crane carelessly and dropped a load of bricks on the street. A man walking below was killed.,"[""319""]",319,en,synthetic,train,syn_0023,claude-opus-5.5
+syn_0024,"My brother was playing with an old gun he found in the store room. He thought it was empty, it fired and killed our cousin.","[""319""]",319,en,synthetic,train,syn_0024,claude-opus-5.5
+syn_0025,The electrician left a live wire hanging in the open plot after his work. A child touched it and died. He knew children play there.,"[""319""]",319,en,synthetic,train,syn_0025,claude-opus-5.5
+syn_0026,At the wedding my cousin's friend was handling a loaded gun carelessly and it went off by mistake. The bullet hit a guest and he died.,"[""319""]",319,en,synthetic,train,syn_0026,claude-opus-5.5
+syn_0027,A man was cutting a tree branch from his roof without checking and the branch fell on an old man passing by. He died of head injuries.,"[""319""]",319,en,synthetic,train,syn_0027,claude-opus-5.5
+syn_0028,"In the village, a man swung his axe at a log to split it and the axe head flew off and struck a child nearby, who did not survive.","[""319""]",319,en,synthetic,train,syn_0028,claude-opus-5.5
+syn_0029,"A shopkeeper kept a loaded shotgun under the counter. His helper picked it up carelessly to move it, it fired and killed a customer.","[""319""]",319,en,synthetic,train,syn_0029,claude-opus-5.5
+syn_0030,"My father went to the fields early in the morning and our neighbour, mistaking him for a jackal in the fog, fired and killed him.","[""319""]",319,en,synthetic,train,syn_0030,claude-opus-5.5
+syn_0031,A gas cylinder dealer was refilling cylinders in a crowded street without any safety. One exploded and killed a passer-by.,"[""319""]",319,en,synthetic,train,syn_0031,claude-opus-5.5
+syn_0032,"A security guard cleaning his gun outside the bank accidentally shot a young man waiting in the queue, and the man died.","[""319""]",319,en,synthetic,train,syn_0032,claude-opus-5.5
+syn_0033,"My cousin was testing his air gun by firing at a tin can, but he did not check behind it. The pellet hit a small girl in the eye, and she later died.","[""319""]",319,en,synthetic,train,syn_0033,claude-opus-5.5
+syn_0034,"mera dost apne abbu ki bandooq saaf kar raha tha, usay pata nahi tha ke loaded hai, goli chal gayi aur uske chhote bhai ko lag gayi, wo faut ho gaya","[""319""]",319,roman_ur,synthetic,train,syn_0034,claude-opus-5.5
+syn_0035,"Shikar par chacha ne jhaariyon mein suar samajh kar fire kiya, wahan ek charwaha larka tha jo mar gaya.","[""319""]",319,roman_ur,synthetic,train,syn_0035,claude-opus-5.5
+syn_0036,"Chowkidar ne raat ko awaaz sun kar chor samajh ke goli chala di, wo uska apna saathi tha jo maara gaya.","[""319""]",319,roman_ur,synthetic,train,syn_0036,claude-opus-5.5
+syn_0037,"Chhat se mazdoor ne bina dekhe loha neeche phenk diya, abbu ke sar par laga aur hospital mein unki wafaat ho gayi.","[""319""]",319,roman_ur,synthetic,train,syn_0037,claude-opus-5.5
+syn_0038,"shaadi par ek banda pistol se khel raha tha, galti se chal gaya aur ek mehman ki maut ho gayi","[""319""]",319,roman_ur,synthetic,train,syn_0038,claude-opus-5.5
+syn_0039,"Bijli wale ne khulay plot mein nangi taar chhor di thi, ek bacha usay haath laga baitha aur mar gaya.","[""319""]",319,roman_ur,synthetic,train,syn_0039,claude-opus-5.5
+syn_0040,"Dhund mein pados wale ne mere abbu ko geedar samajh kar fire kar diya, abbu mauqay par hi faut ho gaye.","[""319""]",319,roman_ur,synthetic,train,syn_0040,claude-opus-5.5
+syn_0041,Three men stopped my car near Sheikhupura and fired at me several times. One bullet hit my shoulder but I survived. They wanted to kill me over the old dispute.,"[""324""]",324,en,synthetic,train,syn_0041,claude-opus-5.5
+syn_0042,My cousin tried to strangle me with a rope while I was sleeping. My brother woke up and pulled him off. He was shouting that he would finish me.,"[""324""]",324,en,synthetic,train,syn_0042,claude-opus-5.5
+syn_0043,"A man stabbed my father in the stomach three times outside the mosque saying ""aaj tujhe zinda nahi chhorunga"". Doctors saved his life after surgery.","[""324""]",324,en,synthetic,train,syn_0043,claude-opus-5.5
+syn_0044,Someone fired at my husband's car on the motorway. The windscreen broke and he got a bullet in the arm. Police say it looks like a targeted attack.,"[""324""]",324,en,synthetic,train,syn_0044,claude-opus-5.5
+syn_0045,my brother in law poured petrol on my sister and tried to light the match but neighbours stopped him. she is safe but very scared,"[""324""]",324,en,synthetic,train,syn_0045,claude-opus-5.5
+syn_0046,"My business rival hired two men who shot at me outside my office in Faisalabad. I fell down and pretended to be dead, and they ran. I have a leg wound.","[""324""]",324,en,synthetic,train,syn_0046,claude-opus-5.5
+syn_0047,He pushed my mother into the canal intending to drown her because of the property. A rickshaw driver jumped in and saved her.,"[""324""]",324,en,synthetic,train,syn_0047,claude-opus-5.5
+syn_0048,They mixed rat poison in my food at my in-laws' house. I vomited and was taken to hospital and survived. They had said they would get rid of me.,"[""324""]",324,en,synthetic,train,syn_0048,claude-opus-5.5
+syn_0049,"The accused fired straight at my nephew's head from close range, but the bullet only grazed his ear. He is alive.","[""324""]",324,en,synthetic,train,syn_0049,claude-opus-5.5
+syn_0050,A group attacked my brother with axes on the neck and head saying they will kill him. He is in the ICU in critical condition but alive.,"[""324""]",324,en,synthetic,train,syn_0050,claude-opus-5.5
+syn_0051,My neighbour tried to run me over with his tractor on purpose. I jumped into the ditch and survived with minor injuries.,"[""324""]",324,en,synthetic,train,syn_0051,claude-opus-5.5
+syn_0052,A man tried to throw my son off the bridge into the river after a fight. People caught him and saved my son.,"[""324""]",324,en,synthetic,train,syn_0052,claude-opus-5.5
+syn_0053,"Teen bandon ne meri gaari rok kar mujh par kayi fire kiye, aik goli kandhay par lagi lekin main bach gaya. Wo mujhe maarna chahte thay.","[""324""]",324,roman_ur,synthetic,train,syn_0053,claude-opus-5.5
+syn_0054,"mere cousin ne raat ko sote hue rassi se mera gala ghontne ki koshish ki, bhai jaag gaya aur usne bachaya","[""324""]",324,roman_ur,synthetic,train,syn_0054,claude-opus-5.5
+syn_0055,"Masjid ke bahar ek aadmi ne abbu ke pait mein chaaku ke teen waar kiye aur kaha aaj tujhe nahi chhorunga, doctors ne jaan bacha li.","[""324""]",324,roman_ur,synthetic,train,syn_0055,claude-opus-5.5
+syn_0056,"Susraal walon ne khane mein zehar mila diya, mujhe ultiyan hui aur hospital mein bach gayi. Wo kehte thay is ko raste se hata denge.","[""324""]",324,roman_ur,synthetic,train,syn_0056,claude-opus-5.5
+syn_0057,"uss ne jaan boojh kar tractor mere upar charhane ki koshish ki, main naali mein kood gaya warna mar jaata","[""324""]",324,roman_ur,synthetic,train,syn_0057,claude-opus-5.5
+syn_0058,My neighbour hit me on the head with a brick during an argument about parking. I needed six stitches on my head.,"[""337-A""]",337-A,en,synthetic,train,syn_0058,claude-opus-5.5
+syn_0059,A man slapped and punched my brother in the face so hard that his nose broke. The medical report says fracture of the nasal bone.,"[""337-A""]",337-A,en,synthetic,train,syn_0059,claude-opus-5.5
+syn_0060,During a fight at the cricket ground a boy hit my son on the forehead with the bat. There is a deep cut and he had stitches.,"[""337-A""]",337-A,en,synthetic,train,syn_0060,claude-opus-5.5
+syn_0061,My husband's brother threw a glass at my face. It cut my cheek and the wound bled a lot. The doctor says it will leave a scar.,"[""337-A""]",337-A,en,synthetic,train,syn_0061,claude-opus-5.5
+syn_0062,The shopkeeper hit my father on the head with an iron rod when he asked for his change. My father's head was bleeding badly.,"[""337-A""]",337-A,en,synthetic,train,syn_0062,claude-opus-5.5
+syn_0063,Some boys threw stones at my van and one stone hit my head through the window. I got a cut above my eyebrow.,"[""337-A""]",337-A,en,synthetic,train,syn_0063,claude-opus-5.5
+syn_0064,In a family quarrel my cousin hit my uncle on the head with a stick. The X-ray shows a crack in his skull bone.,"[""337-A""]",337-A,en,synthetic,train,syn_0064,claude-opus-5.5
+syn_0065,A rickshaw driver hit me on the face with his fist and my eyebrow split open. I got four stitches above my eye.,"[""337-A""]",337-A,en,synthetic,train,syn_0065,claude-opus-5.5
+syn_0066,My landlord's son hit me on the face with a steel jug. My lip is torn and my jaw is swollen.,"[""337-A""]",337-A,en,synthetic,train,syn_0066,claude-opus-5.5
+syn_0067,"at the wedding hall someone smashed a plate on my brothers head, the skin opened and he was bleeding from the scalp","[""337-A""]",337-A,en,synthetic,train,syn_0067,claude-opus-5.5
+syn_0068,A man in the market hit my wife on the face with his elbow and her lip split and bled. He was shouting at her for blocking the way.,"[""337-A""]",337-A,en,synthetic,train,syn_0068,claude-opus-5.5
+syn_0069,The school guard hit my son on the head with his baton. The doctor found a swelling and a small cut on his scalp.,"[""337-A""]",337-A,en,synthetic,train,syn_0069,claude-opus-5.5
+syn_0070,"During a dispute over water turn, my neighbour struck my brother on the head with a spade. The wound went down to the bone.","[""337-A""]",337-A,en,synthetic,train,syn_0070,claude-opus-5.5
+syn_0071,My stepmother hit me on the forehead with a hot iron. I have a burn wound on my face.,"[""337-A""]",337-A,en,synthetic,train,syn_0071,claude-opus-5.5
+syn_0072,Two boys attacked my friend outside the college and cut his face with a blade. He has a long cut from his ear to his chin.,"[""337-A""]",337-A,en,synthetic,train,syn_0072,claude-opus-5.5
+syn_0073,After the match a player head-butted my son and broke his nose. There was a lot of blood and it is swollen.,"[""337-A""]",337-A,en,synthetic,train,syn_0073,claude-opus-5.5
+syn_0074,"Parking ke jhagre mein pados wale ne meray sar par eent maar di, chhe taankay lage hain.","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0074,claude-opus-5.5
+syn_0075,"Uss ne mere bhai ke munh par itna zor se mukka maara ke naak ki haddi toot gayi, medical report mein fracture likha hai.","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0075,claude-opus-5.5
+syn_0076,"cricket ground mein ek larke ne bat se mere bete ke maathay par maara, gehra zakham hai aur taankay lagay","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0076,claude-opus-5.5
+syn_0077,"Dukaandar ne abbu ke sar par lohe ki rod maari jab unhon ne baqi paise maange, sar se bohat khoon beh raha tha.","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0077,claude-opus-5.5
+syn_0078,"rickshaw wale ne mere munh par mukka maara aur aankh ke upar se khaal phat gayi, chaar taankay lagay","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0078,claude-opus-5.5
+syn_0079,"Paani ki baari ke jhagre mein pados wale ne bhai ke sar par belcha maara, zakham haddi tak hai.","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0079,claude-opus-5.5
+syn_0080,"meri sauteli maa ne garam istri mere maathay par laga di, chehre par jalne ka zakham hai","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0080,claude-opus-5.5
+syn_0081,A man attacked me with a knife in the street and cut my arm. I got eight stitches on my forearm.,"[""337-F""]",337-F,en,synthetic,train,syn_0081,claude-opus-5.5
+syn_0082,My neighbour beat my brother with a thick stick on his legs and his shin bone is fractured according to the X-ray.,"[""337-F""]",337-F,en,synthetic,train,syn_0082,claude-opus-5.5
+syn_0083,The factory supervisor hit me on my back with a belt many times. There are red marks and bruises all over my back.,"[""337-F""]",337-F,en,synthetic,train,syn_0083,claude-opus-5.5
+syn_0084,"During a quarrel over the plot, our cousin stabbed my father in the thigh. The wound is deep but did not touch the bone.","[""337-F""]",337-F,en,synthetic,train,syn_0084,claude-opus-5.5
+syn_0085,My husband beat me with a pipe on my arms and shoulders. My left arm is broken and I have bruises.,"[""337-F""]",337-F,en,synthetic,train,syn_0085,claude-opus-5.5
+syn_0086,A group of boys beat my son with sticks and his hand is fractured. He also has swelling on his back.,"[""337-F""]",337-F,en,synthetic,train,syn_0086,claude-opus-5.5
+syn_0087,The van conductor pushed me and then kicked me in the ribs. The doctor says there is a bruise but no internal damage.,"[""337-F""]",337-F,en,synthetic,train,syn_0087,claude-opus-5.5
+syn_0088,My landlord hit my hand with a hammer when I asked him to return my deposit. Two of my fingers are fractured.,"[""337-F""]",337-F,en,synthetic,train,syn_0088,claude-opus-5.5
+syn_0089,In the bazaar a man slashed my leg with a broken bottle. The cut is long and I needed stitches.,"[""337-F""]",337-F,en,synthetic,train,syn_0089,claude-opus-5.5
+syn_0090,"my brother was bitten and beaten by the neighbours with sticks on his back and arms, he has many bruises and his wrist bone cracked","[""337-F""]",337-F,en,synthetic,train,syn_0090,claude-opus-5.5
+syn_0091,The security guard hit me on the knee with his gun butt. My knee is swollen and the X-ray shows a small fracture.,"[""337-F""]",337-F,en,synthetic,train,syn_0091,claude-opus-5.5
+syn_0092,My employer burned my arm with a hot iron rod as punishment for breaking a dish.,"[""337-F""]",337-F,en,synthetic,train,syn_0092,claude-opus-5.5
+syn_0093,A drunk man in our street hit my uncle on his chest and arms with a cricket bat. He has many bruises but no fracture.,"[""337-F""]",337-F,en,synthetic,train,syn_0093,claude-opus-5.5
+syn_0094,My cousin bit my hand and then twisted my arm until my elbow dislocated during a fight over money.,"[""337-F""]",337-F,en,synthetic,train,syn_0094,claude-opus-5.5
+syn_0095,At the bus stop a man stabbed me in the arm with a screwdriver. The wound bled a lot but the doctor says it is not deep.,"[""337-F""]",337-F,en,synthetic,train,syn_0095,claude-opus-5.5
+syn_0096,The teacher beat my son on his palms and legs with a stick so badly that the skin broke and bled.,"[""337-F""]",337-F,en,synthetic,train,syn_0096,claude-opus-5.5
+syn_0097,"Gali mein ek aadmi ne chaaku se mere baazu par waar kiya, aath taankay lage hain.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0097,claude-opus-5.5
+syn_0098,"pados wale ne mote danday se bhai ki tangon par maara, X-ray mein pindli ki haddi tooti hui hai","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0098,claude-opus-5.5
+syn_0099,"Supervisor ne belt se meri kamar par kayi dafa maara, poori kamar par neel par gaye hain.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0099,claude-opus-5.5
+syn_0100,"Mere shohar ne pipe se mere baazuon par maara, baayan baazu toot gaya hai.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0100,claude-opus-5.5
+syn_0101,"Malik makaan ne hathoray se mere haath par maara jab main ne security wapas maangi, do ungliyan toot gayin.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0101,claude-opus-5.5
+syn_0102,"bus stop par ek banday ne screwdriver mere baazu mein maar diya, khoon bohat nikla","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0102,claude-opus-5.5
+syn_0103,Ustaad ne mere bete ki hatheliyon aur tangon par danday se itna maara ke jild phat gayi.,"[""337-F""]",337-F,roman_ur,synthetic,train,syn_0103,claude-opus-5.5
+syn_0104,Every morning my neighbour parks his truck across the only street to my house and refuses to move it. He says I am not allowed to pass from there.,"[""339""]",339,en,synthetic,train,syn_0104,claude-opus-5.5
+syn_0105,Some men from the next village stood in front of my tractor and did not let me go to my own field. They said the path belongs to them.,"[""339""]",339,en,synthetic,train,syn_0105,claude-opus-5.5
+syn_0106,"The traffic warden's friend stopped my car on the road and stood in front of it for half an hour, not letting me go anywhere.","[""339""]",339,en,synthetic,train,syn_0106,claude-opus-5.5
+syn_0107,My brothers blocked the gate of our ancestral house and stopped my mother from going in or out to the market.,"[""339""]",339,en,synthetic,train,syn_0107,claude-opus-5.5
+syn_0108,A group of boys blocked my way on the bridge and would not let me pass unless I paid them. I had to go back.,"[""339""]",339,en,synthetic,train,syn_0108,claude-opus-5.5
+syn_0109,my landlord put a chain across the stairs and won't let me go up to my own flat until I pay double rent,"[""339""]",339,en,synthetic,train,syn_0109,claude-opus-5.5
+syn_0110,"The shopkeeper and his son stood at the door and did not let my wife leave the shop, accusing her of not paying, though she had paid.","[""339""]",339,en,synthetic,train,syn_0110,claude-opus-5.5
+syn_0111,Our neighbours built a wall across the common path and now my children cannot go to school from that way.,"[""339""]",339,en,synthetic,train,syn_0111,claude-opus-5.5
+syn_0112,"At the petrol pump, the staff surrounded my motorcycle and did not let me leave for an hour over a dispute of 200 rupees.","[""339""]",339,en,synthetic,train,syn_0112,claude-opus-5.5
+syn_0113,My in-laws stand at the door and stop me from going to visit my parents. They physically block my way.,"[""339""]",339,en,synthetic,train,syn_0113,claude-opus-5.5
+syn_0114,The college guards stopped my brother at the gate and did not let him go home for two hours without any reason.,"[""339""]",339,en,synthetic,train,syn_0114,claude-opus-5.5
+syn_0115,A man held the handle of my rickshaw and would not let me drive away until I gave him a ride for free.,"[""339""]",339,en,synthetic,train,syn_0115,claude-opus-5.5
+syn_0116,Pados wala roz subah apna truck gali mein khara kar deta hai aur kehta hai tum yahan se nahi guzar sakte.,"[""339""]",339,roman_ur,synthetic,train,syn_0116,claude-opus-5.5
+syn_0117,Dusre gaon ke bandon ne mere tractor ke aagay khare ho kar mujhe apne khet jaane nahi diya.,"[""339""]",339,roman_ur,synthetic,train,syn_0117,claude-opus-5.5
+syn_0118,landlord ne seerhiyon par zanjeer laga di hai aur kehta hai double kiraya do warna upar nahi jaane dunga,"[""339""]",339,roman_ur,synthetic,train,syn_0118,claude-opus-5.5
+syn_0119,Susraal wale darwaze par khare ho jaate hain aur mujhe apne maa baap ke ghar jaane se rokte hain.,"[""339""]",339,roman_ur,synthetic,train,syn_0119,claude-opus-5.5
+syn_0120,Pul par larkon ne mera rasta rok liya aur kaha paise do warna aagay nahi jaane denge.,"[""339""]",339,roman_ur,synthetic,train,syn_0120,claude-opus-5.5
+syn_0121,My employer locked me inside the godown for two days because he suspected I took money. He gave me food from the window.,"[""340""]",340,en,synthetic,train,syn_0121,claude-opus-5.5
+syn_0122,My in-laws locked my sister in a room for a week and took her phone so she cannot contact us.,"[""340""]",340,en,synthetic,train,syn_0122,claude-opus-5.5
+syn_0123,The brick kiln owner keeps our family locked inside the kiln compound at night and does not let us leave because of an advance loan.,"[""340""]",340,en,synthetic,train,syn_0123,claude-opus-5.5
+syn_0124,My husband locked me in the house and took the key when he went to Dubai. The neighbours give me food.,"[""340""]",340,en,synthetic,train,syn_0124,claude-opus-5.5
+syn_0125,The shop owner locked the shutter with me inside the shop and said I can't come out until my father pays the debt.,"[""340""]",340,en,synthetic,train,syn_0125,claude-opus-5.5
+syn_0126,My uncle kept my cousin locked in the store room in the village because she wants to marry someone of her choice.,"[""340""]",340,en,synthetic,train,syn_0126,claude-opus-5.5
+syn_0127,The factory manager locked the workers inside the hall for the whole night because they demanded their salaries.,"[""340""]",340,en,synthetic,train,syn_0127,claude-opus-5.5
+syn_0128,A school van driver locked my son in the van for three hours after school as punishment.,"[""340""]",340,en,synthetic,train,syn_0128,claude-opus-5.5
+syn_0129,"my father in law locked me in the bathroom for hours after a fight, i was screaming but no one opened the door","[""340""]",340,en,synthetic,train,syn_0129,claude-opus-5.5
+syn_0130,The owner of the house where my daughter works as a maid has locked her inside and won't let her come home.,"[""340""]",340,en,synthetic,train,syn_0130,claude-opus-5.5
+syn_0131,The private hostel warden locked my brother in a room for two days and did not let him go to his exams.,"[""340""]",340,en,synthetic,train,syn_0131,claude-opus-5.5
+syn_0132,"My ex-business partner trapped me in his office, locked the door and kept me there till late night to make me sign papers.","[""340""]",340,en,synthetic,train,syn_0132,claude-opus-5.5
+syn_0133,"Malik ne mujhe do din godown mein band rakha, kehta tha tum ne paise churaye hain.","[""340""]",340,roman_ur,synthetic,train,syn_0133,claude-opus-5.5
+syn_0134,Susraal walon ne meri behan ko ek hafte se kamray mein band kar rakha hai aur phone bhi chheen liya.,"[""340""]",340,roman_ur,synthetic,train,syn_0134,claude-opus-5.5
+syn_0135,"bhatta malik raat ko humain ahatay mein taala laga kar band kar deta hai, kehta hai qarza utaro phir jao","[""340""]",340,roman_ur,synthetic,train,syn_0135,claude-opus-5.5
+syn_0136,"shohar dubai jaate waqt mujhe ghar mein band kar ke chaabi le gaya, pados wale khana dete hain","[""340""]",340,roman_ur,synthetic,train,syn_0136,claude-opus-5.5
+syn_0137,Factory manager ne mazdooron ko poori raat hall mein band rakha kyun ke wo tankhwah maang rahe thay.,"[""340""]",340,roman_ur,synthetic,train,syn_0137,claude-opus-5.5
+syn_0138,A man in the crowded Metro bus kept touching my body on purpose. When I moved away he followed and did it again.,"[""354""]",354,en,synthetic,train,syn_0138,claude-opus-5.5
+syn_0139,My daughter was coming back from tuition when a boy on a bike grabbed her arm and pulled her dupatta off in the street.,"[""354""]",354,en,synthetic,train,syn_0139,claude-opus-5.5
+syn_0140,At the shopping mall a man deliberately pressed himself against my sister in the escalator line and touched her inappropriately.,"[""354""]",354,en,synthetic,train,syn_0140,claude-opus-5.5
+syn_0141,My neighbour's son entered our courtyard and caught hold of my wife's hand and tried to hug her when she was alone.,"[""354""]",354,en,synthetic,train,syn_0141,claude-opus-5.5
+syn_0142,"A shopkeeper grabbed my hand and pulled me towards him when I went to buy groceries, and tried to touch me.","[""354""]",354,en,synthetic,train,syn_0142,claude-opus-5.5
+syn_0143,In the hospital corridor a ward boy touched a female patient's chest pretending to help her get up.,"[""354""]",354,en,synthetic,train,syn_0143,claude-opus-5.5
+syn_0144,My cousin pushed me against the wall at a family wedding and touched my body forcefully. I screamed and he ran away.,"[""354""]",354,en,synthetic,train,syn_0144,claude-opus-5.5
+syn_0145,a man in the rickshaw sitting next to me kept putting his hand on my thigh even after i told him to stop,"[""354""]",354,en,synthetic,train,syn_0145,claude-opus-5.5
+syn_0146,The van driver who drops my daughter to school touched her inappropriately when the other children got down.,"[""354""]",354,en,synthetic,train,syn_0146,claude-opus-5.5
+syn_0147,"While I was waiting at the bus stop in Saddar, a man came behind me and grabbed me from my waist.","[""354""]",354,en,synthetic,train,syn_0147,claude-opus-5.5
+syn_0148,At the college gate a group of boys surrounded my friend and one of them pulled her chador and touched her.,"[""354""]",354,en,synthetic,train,syn_0148,claude-opus-5.5
+syn_0149,My landlord's brother came into my room and held me by the shoulders and tried to kiss me. I pushed him away.,"[""354""]",354,en,synthetic,train,syn_0149,claude-opus-5.5
+syn_0150,"Metro bus mein ek aadmi jaan boojh kar mere jism ko chhoo raha tha, main door hui to phir peeche aa gaya.","[""354""]",354,roman_ur,synthetic,train,syn_0150,claude-opus-5.5
+syn_0151,tuition se wapas aate hue ek larke ne bike se meri beti ka baazu pakra aur dupatta kheench liya,"[""354""]",354,roman_ur,synthetic,train,syn_0151,claude-opus-5.5
+syn_0152,Dukaandar ne mera haath pakar ke apni taraf kheencha aur chhoone ki koshish ki.,"[""354""]",354,roman_ur,synthetic,train,syn_0152,claude-opus-5.5
+syn_0153,"Rickshaw mein saath baitha aadmi baar baar meri taang par haath rakh raha tha, mana karne par bhi nahi ruka.","[""354""]",354,roman_ur,synthetic,train,syn_0153,claude-opus-5.5
+syn_0154,School van ke driver ne meri beti ko ghalat tareeqay se chhua jab baaqi bachay utar gaye.,"[""354""]",354,roman_ur,synthetic,train,syn_0154,claude-opus-5.5
+syn_0155,"A group of men from the other family dragged my sister out of the house, tore her clothes off and made her walk naked through the village as revenge for my brother's marriage.","[""354A""]",354A,en,synthetic,train,syn_0155,claude-opus-5.5
+syn_0156,In our village the panchayat ordered that a woman be stripped and paraded in the street. Several men tore her clothes and people made videos.,"[""354A""]",354A,en,synthetic,train,syn_0156,claude-opus-5.5
+syn_0157,"My aunt was accused of stealing in the market. The shopkeepers caught her, ripped off her clothes in front of the crowd and kept her there.","[""354A""]",354A,en,synthetic,train,syn_0157,claude-opus-5.5
+syn_0158,"Some men attacked my mother during a land dispute, pulled off her shalwar kameez in front of everyone in the street and beat her.","[""354A""]",354A,en,synthetic,train,syn_0158,claude-opus-5.5
+syn_0159,My wife's ex-husband and his brothers caught her at the bus stand and tore her clothes in public to humiliate her.,"[""354A""]",354A,en,synthetic,train,syn_0159,claude-opus-5.5
+syn_0160,The landlord's men stripped a poor labourer's wife in front of the whole basti because her husband could not pay the loan.,"[""354A""]",354A,en,synthetic,train,syn_0160,claude-opus-5.5
+syn_0161,"a mob tore off the clothes of a girl near the canal and exposed her in front of everyone, someone posted the video too","[""354A""]",354A,en,synthetic,train,syn_0161,claude-opus-5.5
+syn_0162,"My neighbour's sons dragged my daughter into the street, removed her dupatta and kameez and left her uncovered in front of people.","[""354A""]",354A,en,synthetic,train,syn_0162,claude-opus-5.5
+syn_0163,"At the factory the supervisor and two guards stripped a female worker in the courtyard accusing her of theft, while others watched.","[""354A""]",354A,en,synthetic,train,syn_0163,claude-opus-5.5
+syn_0164,"A group of women and men in the mohalla caught my sister-in-law, tore her clothes and paraded her for everyone to see.","[""354A""]",354A,en,synthetic,train,syn_0164,claude-opus-5.5
+syn_0165,"They grabbed my cousin outside the shrine, ripped her clothes off and made her stand in public as punishment for running away from home.","[""354A""]",354A,en,synthetic,train,syn_0165,claude-opus-5.5
+syn_0166,"After an argument over the water pipe, my neighbour and his relatives tore my wife's clothes in the street and exposed her to the passers-by.","[""354A""]",354A,en,synthetic,train,syn_0166,claude-opus-5.5
+syn_0167,The jirga members ordered men to strip a widow in the village square and she was exposed in front of the crowd.,"[""354A""]",354A,en,synthetic,train,syn_0167,claude-opus-5.5
+syn_0168,"At the wedding, the groom's relatives caught a girl from our family, tore her clothes and made her stand outside in front of the guests.","[""354A""]",354A,en,synthetic,train,syn_0168,claude-opus-5.5
+syn_0169,"Some boys caught my sister in the fields, ripped her clothes and made her walk back to the village without them.","[""354A""]",354A,en,synthetic,train,syn_0169,claude-opus-5.5
+syn_0170,"In the bazaar a mob accused a woman of kidnapping a child, then stripped her and kept her exposed until police came.","[""354A""]",354A,en,synthetic,train,syn_0170,claude-opus-5.5
+syn_0171,"Dusray khandaan ke bandon ne meri behan ko ghar se ghaseet kar nikala, uske kapray phaar diye aur gaon mein nanga ghumaya.","[""354A""]",354A,roman_ur,synthetic,train,syn_0171,claude-opus-5.5
+syn_0172,"Panchayat ne faisla kiya ke aurat ko gali mein be-libaas kar ke ghumaya jaye, bandon ne uske kapray phaar diye.","[""354A""]",354A,roman_ur,synthetic,train,syn_0172,claude-opus-5.5
+syn_0173,bazaar mein dukaandaron ne chori ka ilzaam laga kar meri khala ke kapray utaar diye aur logon ke saamne khara rakha,"[""354A""]",354A,roman_ur,synthetic,train,syn_0173,claude-opus-5.5
+syn_0174,Zameen ke jhagre mein unhon ne ammi ke kapray sab ke saamne gali mein utaar diye aur maara.,"[""354A""]",354A,roman_ur,synthetic,train,syn_0174,claude-opus-5.5
+syn_0175,Factory mein supervisor ne guards ke saath mil kar ek mazdoor aurat ke kapray sehan mein utaar diye.,"[""354A""]",354A,roman_ur,synthetic,train,syn_0175,claude-opus-5.5
+syn_0176,mohalle walon ne meri bhabhi ko pakar ke uske kapray phaar diye aur sab ke saamne ghumaya,"[""354A""]",354A,roman_ur,synthetic,train,syn_0176,claude-opus-5.5
+syn_0177,Jirga ke kehne par bandon ne bewa aurat ke kapray chowk mein utaar diye aur logon ke saamne khara kiya.,"[""354A""]",354A,roman_ur,synthetic,train,syn_0177,claude-opus-5.5
+syn_0178,My 10 year old son was taken from outside his school by a man who told the guard he was his uncle. We don't know where he is.,"[""363""]",363,en,synthetic,train,syn_0178,claude-opus-5.5
+syn_0179,A woman lured my 6 year old daughter from the park with sweets and took her away in a rickshaw. CCTV shows it.,"[""363""]",363,en,synthetic,train,syn_0179,claude-opus-5.5
+syn_0180,My 13 year old brother was taken by a man from the madrassa without our permission. The teacher says he said he was a relative.,"[""363""]",363,en,synthetic,train,syn_0180,claude-opus-5.5
+syn_0181,Our neighbour took my 12 year old niece away from her home while her parents were at work and didn't bring her back.,"[""363""]",363,en,synthetic,train,syn_0181,claude-opus-5.5
+syn_0182,My ex-husband's brother picked up my 8 year old son from the tuition centre without my consent and took him to another city.,"[""363""]",363,en,synthetic,train,syn_0182,claude-opus-5.5
+syn_0183,"a man took my 5 year old from the street in front of our house on his motorbike, the children playing there saw it","[""363""]",363,en,synthetic,train,syn_0183,claude-opus-5.5
+syn_0184,"My 15 year old daughter was enticed by a man she met online, and he took her away from our home in Lahore at night.","[""363""]",363,en,synthetic,train,syn_0184,claude-opus-5.5
+syn_0185,A beggar woman took a small baby from the hospital ward when the mother was sleeping.,"[""363""]",363,en,synthetic,train,syn_0185,claude-opus-5.5
+syn_0186,My 11 year old servant boy was taken away by a man who promised him a job in Karachi without asking us.,"[""363""]",363,en,synthetic,train,syn_0186,claude-opus-5.5
+syn_0187,A man picked up my 9 year old nephew from the bus stop and drove away. The boy's school bag was found on the road.,"[""363""]",363,en,synthetic,train,syn_0187,claude-opus-5.5
+syn_0188,Someone took my 3 year old grandson from the courtyard while we were inside. The gate was open.,"[""363""]",363,en,synthetic,train,syn_0188,claude-opus-5.5
+syn_0189,My 14 year old cousin girl was taken from her house by a man from the next village without the family's knowledge.,"[""363""]",363,en,synthetic,train,syn_0189,claude-opus-5.5
+syn_0190,"Mera 10 saal ka beta school ke bahar se ek aadmi le gaya, guard ko kaha main iska chacha hun.","[""363""]",363,roman_ur,synthetic,train,syn_0190,claude-opus-5.5
+syn_0191,park mein ek aurat ne meri 6 saal ki beti ko mithai de kar bula liya aur rickshaw mein le gayi,"[""363""]",363,roman_ur,synthetic,train,syn_0191,claude-opus-5.5
+syn_0192,Hamaray ghar ke saamne se koi motorcycle par mera 5 saal ka bacha utha kar le gaya.,"[""363""]",363,roman_ur,synthetic,train,syn_0192,claude-opus-5.5
+syn_0193,Hospital ward se ek aurat chhota bacha utha kar le gayi jab maa so rahi thi.,"[""363""]",363,roman_ur,synthetic,train,syn_0193,claude-opus-5.5
+syn_0194,Meri 15 saal ki beti ko online mila ek aadmi behla phusla kar raat ko ghar se le gaya.,"[""363""]",363,roman_ur,synthetic,train,syn_0194,claude-opus-5.5
+syn_0195,My brother was picked up by unknown men in a white car from outside his office and they have kept him somewhere secretly. Nobody tells us where he is.,"[""365""]",365,en,synthetic,train,syn_0195,claude-opus-5.5
+syn_0196,Four men forced my husband into a vehicle at gunpoint near Peshawar and have been hiding him for three days. They haven't asked for money.,"[""365""]",365,en,synthetic,train,syn_0196,claude-opus-5.5
+syn_0197,My cousin was abducted by her relatives from the hostel and they are keeping her hidden in some house so she cannot marry the man she wants.,"[""365""]",365,en,synthetic,train,syn_0197,claude-opus-5.5
+syn_0198,"Some people took my father from his shop by force, and later we found out they were holding him in a farmhouse without telling anyone.","[""365""]",365,en,synthetic,train,syn_0198,claude-opus-5.5
+syn_0199,"my friend was taken by his business partner's men and locked in a secret place, they want him to sign over the shop","[""365""]",365,en,synthetic,train,syn_0199,claude-opus-5.5
+syn_0200,My employee was abducted from the bus stop by people of a rival party and kept in an unknown place. We have no contact with him.,"[""365""]",365,en,synthetic,train,syn_0200,claude-opus-5.5
+syn_0201,My sister was forcibly taken by her ex-fiance's family and they are keeping her in their village secretly.,"[""365""]",365,en,synthetic,train,syn_0201,claude-opus-5.5
+syn_0202,A man and his friends abducted my neighbour's son and kept him in an empty house for a week to settle a dispute.,"[""365""]",365,en,synthetic,train,syn_0202,claude-opus-5.5
+syn_0203,My uncle was taken away from the fields by armed men and they are confining him in a hidden place in the hills.,"[""365""]",365,en,synthetic,train,syn_0203,claude-opus-5.5
+syn_0204,Two men pushed my brother into a car outside the university and his phone has been off since then. They are hiding him somewhere.,"[""365""]",365,en,synthetic,train,syn_0204,claude-opus-5.5
+syn_0205,Unknown persons took my husband from our house at night and are keeping him secretly. They told us not to tell anyone.,"[""365""]",365,en,synthetic,train,syn_0205,claude-opus-5.5
+syn_0206,My niece was abducted by a man and his friends from the market and kept in a rented room in another city.,"[""365""]",365,en,synthetic,train,syn_0206,claude-opus-5.5
+syn_0207,Mere bhai ko office ke bahar se safaid gaari mein kuch log utha kar le gaye aur kahin chhupa kar rakha hai.,"[""365""]",365,roman_ur,synthetic,train,syn_0207,claude-opus-5.5
+syn_0208,"Chaar bandon ne pistol dikha kar mere shohar ko gaari mein daala aur teen din se chhupa rakha hai, paise nahi maange.","[""365""]",365,roman_ur,synthetic,train,syn_0208,claude-opus-5.5
+syn_0209,rishtedaar meri cousin ko hostel se utha kar le gaye aur kisi ghar mein chhupa rakha hai taake wo apni marzi se shaadi na kare,"[""365""]",365,roman_ur,synthetic,train,syn_0209,claude-opus-5.5
+syn_0210,Raat ko kuch log mere shohar ko ghar se le gaye aur kehte hain kisi ko batana nahi.,"[""365""]",365,roman_ur,synthetic,train,syn_0210,claude-opus-5.5
+syn_0211,"Do bandon ne bhai ko university ke bahar gaari mein dhakela, tab se uska phone band hai.","[""365""]",365,roman_ur,synthetic,train,syn_0211,claude-opus-5.5
+syn_0212,My son was kidnapped on his way to school and now the kidnappers are calling and demanding 50 lakh rupees for his release.,"[""365-A""]",365-A,en,synthetic,train,syn_0212,claude-opus-5.5
+syn_0213,"Armed men abducted my father from our farm in Kashmore and they are asking for 2 crore ransom, otherwise they will kill him.","[""365-A""]",365-A,en,synthetic,train,syn_0213,claude-opus-5.5
+syn_0214,"My brother was taken from Karachi's Gulshan area and the kidnappers sent a video of him tied up, demanding 20 lakh.","[""365-A""]",365-A,en,synthetic,train,syn_0214,claude-opus-5.5
+syn_0215,My nephew was picked up outside the mosque. The caller says pay 10 lakh in two days or we will not see him again.,"[""365-A""]",365-A,en,synthetic,train,syn_0215,claude-opus-5.5
+syn_0216,A businessman friend of mine was kidnapped from the motorway and his family received a call for 1 crore ransom.,"[""365-A""]",365-A,en,synthetic,train,syn_0216,claude-opus-5.5
+syn_0217,My daughter was abducted from college and the abductors are demanding money through WhatsApp voice notes.,"[""365-A""]",365-A,en,synthetic,train,syn_0217,claude-opus-5.5
+syn_0218,My husband went to meet a buyer for our car and those people kidnapped him. Now they are demanding 30 lakh to let him go.,"[""365-A""]",365-A,en,synthetic,train,syn_0218,claude-opus-5.5
+syn_0219,My little brother was taken from the street and they called my father asking for 5 lakh and said not to go to police.,"[""365-A""]",365-A,en,synthetic,train,syn_0219,claude-opus-5.5
+syn_0220,A doctor in our town was kidnapped from his clinic and the gang is demanding a big ransom from his family.,"[""365-A""]",365-A,en,synthetic,train,syn_0220,claude-opus-5.5
+syn_0221,My uncle was kidnapped in the katcha area and the dacoits sent a message demanding money for his release.,"[""365-A""]",365-A,en,synthetic,train,syn_0221,claude-opus-5.5
+syn_0222,"someone kidnapped my cousin and now they are calling from a private number, asking 15 lakh or they will cut his fingers","[""365-A""]",365-A,en,synthetic,train,syn_0222,claude-opus-5.5
+syn_0223,"My son was lured by a fake job interview, then locked up, and the men called us asking for money to release him.","[""365-A""]",365-A,en,synthetic,train,syn_0223,claude-opus-5.5
+syn_0224,My wife's brother was taken from his shop by 3 men and today we got a call that he will be freed only if we pay 25 lakh.,"[""365-A""]",365-A,en,synthetic,train,syn_0224,claude-opus-5.5
+syn_0225,Our driver was kidnapped with the car and the kidnappers are demanding money to return him.,"[""365-A""]",365-A,en,synthetic,train,syn_0225,claude-opus-5.5
+syn_0226,My 7 year old son was taken from our street and we got a letter asking for 8 lakh rupees for his return.,"[""365-A""]",365-A,en,synthetic,train,syn_0226,claude-opus-5.5
+syn_0227,"My friend was kidnapped after he posted his new car online, the kidnappers asked his family for ransom in dollars.","[""365-A""]",365-A,en,synthetic,train,syn_0227,claude-opus-5.5
+syn_0228,"Mera beta school jaate hue agwa ho gaya, ab agwa kaar phone kar ke 50 lakh maang rahe hain.","[""365-A""]",365-A,roman_ur,synthetic,train,syn_0228,claude-opus-5.5
+syn_0229,"Hathiyar band log abbu ko khet se utha kar le gaye, kehte hain 2 crore do warna maar denge.","[""365-A""]",365-A,roman_ur,synthetic,train,syn_0229,claude-opus-5.5
+syn_0230,"bhai ko gulshan se utha liya aur uski bandhi hui video bheji hai, 20 lakh maang rahe hain","[""365-A""]",365-A,roman_ur,synthetic,train,syn_0230,claude-opus-5.5
+syn_0231,"Mere shohar gaari bechne gaye thay, un logon ne unhein agwa kar liya aur 30 lakh maang rahe hain.","[""365-A""]",365-A,roman_ur,synthetic,train,syn_0231,claude-opus-5.5
+syn_0232,"chhote bhai ko gali se utha liya, abbu ko phone kar ke 5 lakh maange aur kaha police ke paas mat jana","[""365-A""]",365-A,roman_ur,synthetic,train,syn_0232,claude-opus-5.5
+syn_0233,"Driver ko gaari samait agwa kar liya, ab usay chhorne ke paise maang rahe hain.","[""365-A""]",365-A,roman_ur,synthetic,train,syn_0233,claude-opus-5.5
+syn_0234,"Cousin ko kisi ne utha liya hai, private number se call aati hai 15 lakh do warna ungliyan kaat denge.","[""365-A""]",365-A,roman_ur,synthetic,train,syn_0234,claude-opus-5.5
+syn_0235,My motorcycle was stolen from outside the mosque during Jummah prayer. I had locked it but it was gone when I came out.,"[""379""]",379,en,synthetic,train,syn_0235,claude-opus-5.5
+syn_0236,Someone took my mobile phone from the table at the restaurant while I went to wash my hands.,"[""379""]",379,en,synthetic,train,syn_0236,claude-opus-5.5
+syn_0237,"My purse was taken from my bag in the crowded bazaar, I didn't notice until I reached home.","[""379""]",379,en,synthetic,train,syn_0237,claude-opus-5.5
+syn_0238,Our water motor was stolen from the street outside the house at night.,"[""379""]",379,en,synthetic,train,syn_0238,claude-opus-5.5
+syn_0239,My car's side mirrors and battery were stolen while it was parked in the market.,"[""379""]",379,en,synthetic,train,syn_0239,claude-opus-5.5
+syn_0240,Someone took my laptop bag from the university library when I left it on the chair for five minutes.,"[""379""]",379,en,synthetic,train,syn_0240,claude-opus-5.5
+syn_0241,My goats were taken from our animal pen in the village at night. The footprints lead to the road.,"[""379""]",379,en,synthetic,train,syn_0241,claude-opus-5.5
+syn_0242,The electricity cables of our shop were cut and taken away during the night.,"[""379""]",379,en,synthetic,train,syn_0242,claude-opus-5.5
+syn_0243,"my cycle was stolen from the school parking, the lock was cut","[""379""]",379,en,synthetic,train,syn_0243,claude-opus-5.5
+syn_0244,"A pickpocket took my wallet in the Metro bus, I felt someone push me and later my wallet was missing.","[""379""]",379,en,synthetic,train,syn_0244,claude-opus-5.5
+syn_0245,Someone stole the solar panel from the roof of our dera in the fields.,"[""379""]",379,en,synthetic,train,syn_0245,claude-opus-5.5
+syn_0246,"My rickshaw was taken from outside my house at night, I had left the key in it by mistake.","[""379""]",379,en,synthetic,train,syn_0246,claude-opus-5.5
+syn_0247,Jumme ki namaz ke dauran masjid ke bahar se meri motorcycle chori ho gayi.,"[""379""]",379,roman_ur,synthetic,train,syn_0247,claude-opus-5.5
+syn_0248,Restaurant mein haath dhone gaya to kisi ne table se mera mobile utha liya.,"[""379""]",379,roman_ur,synthetic,train,syn_0248,claude-opus-5.5
+syn_0249,"bazaar ki bheer mein kisi ne mere bag se purse nikal liya, ghar ja kar pata chala","[""379""]",379,roman_ur,synthetic,train,syn_0249,claude-opus-5.5
+syn_0250,raat ko ghar ke bahar se paani wali motor chori ho gayi,"[""379""]",379,roman_ur,synthetic,train,syn_0250,claude-opus-5.5
+syn_0251,Gaon mein raat ko hamare baarray se bakriyan chori ho gayin.,"[""379""]",379,roman_ur,synthetic,train,syn_0251,claude-opus-5.5
+syn_0252,Thieves broke into our house in DHA when we were at a wedding and stole gold jewellery and cash from the cupboard.,"[""380""]",380,en,synthetic,train,syn_0252,claude-opus-5.5
+syn_0253,Our maid stole my wife's gold bangles from the bedroom drawer and left the job the next day.,"[""380""]",380,en,synthetic,train,syn_0253,claude-opus-5.5
+syn_0254,Someone entered our flat through the balcony at night and took two mobile phones and a laptop from the lounge.,"[""380""]",380,en,synthetic,train,syn_0254,claude-opus-5.5
+syn_0255,"While we were sleeping, someone came into the house and took my handbag with money from the kitchen.","[""380""]",380,en,synthetic,train,syn_0255,claude-opus-5.5
+syn_0256,My tenant's son entered my portion of the house and stole the prize bonds from my almirah.,"[""380""]",380,en,synthetic,train,syn_0256,claude-opus-5.5
+syn_0257,my cousin who was staying with us took 2 lakh rupees from my father's cupboard and left,"[""380""]",380,en,synthetic,train,syn_0257,claude-opus-5.5
+syn_0258,The plumber who came to fix the pipes stole my watch from the bedroom table.,"[""380""]",380,en,synthetic,train,syn_0258,claude-opus-5.5
+syn_0259,"When we went to the village, thieves broke the lock of our house and took the LCD, UPS and jewellery.","[""380""]",380,en,synthetic,train,syn_0259,claude-opus-5.5
+syn_0260,Someone stole the money from the cash box inside our home office while the family was asleep.,"[""380""]",380,en,synthetic,train,syn_0260,claude-opus-5.5
+syn_0261,My driver went into the house when nobody was there and took my wife's jewellery box.,"[""380""]",380,en,synthetic,train,syn_0261,claude-opus-5.5
+syn_0262,"Our house was burgled in Satellite Town, they took everything from the steel almirah.","[""380""]",380,en,synthetic,train,syn_0262,claude-opus-5.5
+syn_0263,Someone took cash and my passport from my room in the hostel while I was in class.,"[""380""]",380,en,synthetic,train,syn_0263,claude-opus-5.5
+syn_0264,"Hum shaadi par gaye thay, choron ne ghar mein ghus kar almari se zevar aur cash chura liya.","[""380""]",380,roman_ur,synthetic,train,syn_0264,claude-opus-5.5
+syn_0265,Naukrani ne bedroom ki daraaz se biwi ki sone ki choorian chura li aur agle din kaam chhor diya.,"[""380""]",380,roman_ur,synthetic,train,syn_0265,claude-opus-5.5
+syn_0266,raat ko koi balcony se flat mein aaya aur lounge se do mobile aur laptop le gaya,"[""380""]",380,roman_ur,synthetic,train,syn_0266,claude-opus-5.5
+syn_0267,Plumber ghar mein pipe theek karne aaya tha aur bedroom se meri ghari le gaya.,"[""380""]",380,roman_ur,synthetic,train,syn_0267,claude-opus-5.5
+syn_0268,"Gaon gaye hue thay, peeche se choron ne taala tor kar LCD, UPS aur zevar chura liye.","[""380""]",380,roman_ur,synthetic,train,syn_0268,claude-opus-5.5
+syn_0269,A thief came into our shop with a pistol tucked in his shalwar and quietly took cash from the drawer while I was busy at the back. He was caught later with the pistol.,"[""382""]",382,en,synthetic,train,syn_0269,claude-opus-5.5
+syn_0270,"Two men entered the warehouse carrying ropes and knives to tie up the guard, but he was asleep, so they just took the goods and left.","[""382""]",382,en,synthetic,train,syn_0270,claude-opus-5.5
+syn_0271,"The man who stole my phone at the shop had a knife in his hand ready, in case anyone stopped him. He ran away before anyone noticed.","[""382""]",382,en,synthetic,train,syn_0271,claude-opus-5.5
+syn_0272,Thieves came to our house with iron rods and a pistol to deal with anyone who woke up. They stole the jewellery while we were asleep.,"[""382""]",382,en,synthetic,train,syn_0272,claude-opus-5.5
+syn_0273,"A person stole motorcycles from the parking lot. When police caught him he had a loaded pistol, he said it was to shoot if the guard tried to stop him.","[""382""]",382,en,synthetic,train,syn_0273,claude-opus-5.5
+syn_0274,"Some men climbed into our factory at night carrying axes in case the chowkidar resisted, and stole copper wire.","[""382""]",382,en,synthetic,train,syn_0274,claude-opus-5.5
+syn_0275,"The thief who took my car battery was carrying a dagger to stab anyone who tried to catch him, CCTV shows him holding it while working.","[""382""]",382,en,synthetic,train,syn_0275,claude-opus-5.5
+syn_0276,"A boy quietly stole my wallet from the counter. When the guard caught him outside, a loaded pistol was found in his pocket which he had brought in case anyone stopped him.","[""382""]",382,en,synthetic,train,syn_0276,claude-opus-5.5
+syn_0277,My employee told me the men who stole the ATM cash box came with ropes and tape to tie up staff if needed.,"[""382""]",382,en,synthetic,train,syn_0277,claude-opus-5.5
+syn_0278,Thieves came prepared with chloroform and knives to make the family unconscious and stole the safe from the house.,"[""382""]",382,en,synthetic,train,syn_0278,claude-opus-5.5
+syn_0279,At the petrol pump a man filled his bike and took money from the cash table while holding a pistol under his shirt in case the attendant tried to stop him.,"[""382""]",382,en,synthetic,train,syn_0279,claude-opus-5.5
+syn_0280,"In the village someone stole our buffalo at night. When they were caught they had a rifle, saying they kept it to fire if anyone followed.","[""382""]",382,en,synthetic,train,syn_0280,claude-opus-5.5
+syn_0281,"Two thieves entered my shop with pepper spray and a knife ready to use if I resisted, and took mobile phones from the display.","[""382""]",382,en,synthetic,train,syn_0281,claude-opus-5.5
+syn_0282,"The man who took my bag from the bus stand bench had a knife hidden in his jacket, he told police he kept it ready in case someone caught him.","[""382""]",382,en,synthetic,train,syn_0282,claude-opus-5.5
+syn_0283,"A gang stole cattle from our farm carrying guns ready to shoot anyone who tried to stop them, but no one woke up.","[""382""]",382,en,synthetic,train,syn_0283,claude-opus-5.5
+syn_0284,"Thieves stole the tubewell motor, and the police found they had brought rods and ropes to overpower our watchman.","[""382""]",382,en,synthetic,train,syn_0284,claude-opus-5.5
+syn_0285,Chor shalwar mein pistol chhupa kar dukaan mein aaya aur chupke se daraaz se paise le gaya.,"[""382""]",382,roman_ur,synthetic,train,syn_0285,claude-opus-5.5
+syn_0286,"do banday rassi aur chaaku le kar godown mein ghusay ke guard ko baandh denge, guard so raha tha to maal utha kar le gaye","[""382""]",382,roman_ur,synthetic,train,syn_0286,claude-opus-5.5
+syn_0287,"Chor zevar le gaye, unke paas lohay ki rod aur pistol tha agar koi jaag jata to.","[""382""]",382,roman_ur,synthetic,train,syn_0287,claude-opus-5.5
+syn_0288,"Raat ko factory mein kulhariyan le kar ghusay ke chowkidar roke to maarenge, aur taanbe ki taar chura le gaye.","[""382""]",382,roman_ur,synthetic,train,syn_0288,claude-opus-5.5
+syn_0289,"Gaon mein bhains chori karne aaye thay, pakray gaye to unke paas rifle thi ke koi peecha kare to fire karein.","[""382""]",382,roman_ur,synthetic,train,syn_0289,claude-opus-5.5
+syn_0290,"Dukaan mein do chor pepper spray aur chaaku le kar aaye thay agar main rokta to, aur display se mobile le gaye.","[""382""]",382,roman_ur,synthetic,train,syn_0290,claude-opus-5.5
+syn_0291,Pump par banday ne pistol qameez ke neeche rakha hua tha aur cash table se paise utha liye.,"[""382""]",382,roman_ur,synthetic,train,syn_0291,claude-opus-5.5
+syn_0292,A group calling itself a gang sent me a letter to pay 5 lakh bhatta or they would burn my shop. I was scared and paid them 2 lakh.,"[""384""]",384,en,synthetic,train,syn_0292,claude-opus-5.5
+syn_0293,"Someone got my private photos and said he would send them to my family unless I paid him. I sent him 50,000 through JazzCash.","[""384""]",384,en,synthetic,train,syn_0293,claude-opus-5.5
+syn_0294,"The local goons come every month and take 10,000 from every shopkeeper in our market, saying otherwise they will break our shops. We all pay.","[""384""]",384,en,synthetic,train,syn_0294,claude-opus-5.5
+syn_0295,My ex-employee threatened to falsely accuse me in a case unless I gave him money. Out of fear I transferred 1 lakh to his account.,"[""384""]",384,en,synthetic,train,syn_0295,claude-opus-5.5
+syn_0296,A man said he would harm my children if I didn't hand over my car documents. I gave him the file and the keys.,"[""384""]",384,en,synthetic,train,syn_0296,claude-opus-5.5
+syn_0297,"The transporter mafia forced me to pay 20,000 per truck by threatening to set the trucks on fire. I paid twice.","[""384""]",384,en,synthetic,train,syn_0297,claude-opus-5.5
+syn_0298,"a man called and said he knows where my daughter goes to school and if i dont pay 3 lakh he will throw acid, i paid half","[""384""]",384,en,synthetic,train,syn_0298,claude-opus-5.5
+syn_0299,"My landlord's son threatened to break my legs unless I handed over the money from my committee, so I gave it to him.","[""384""]",384,en,synthetic,train,syn_0299,claude-opus-5.5
+syn_0300,Some people told my brother that if he didn't sign the plot transfer papers they would kidnap his son. He signed out of fear.,"[""384""]",384,en,synthetic,train,syn_0300,claude-opus-5.5
+syn_0301,"The builder's men threatened to demolish my house unless I paid them 'protection money', and I paid 30,000.","[""384""]",384,en,synthetic,train,syn_0301,claude-opus-5.5
+syn_0302,"A caller pretending to be from a terrorist group demanded money from my father, saying they'd bomb his factory. He paid 5 lakh.","[""384""]",384,en,synthetic,train,syn_0302,claude-opus-5.5
+syn_0303,"A boy I met online threatened to post our edited video unless I sent money. I sent him 20,000 rupees.","[""384""]",384,en,synthetic,train,syn_0303,claude-opus-5.5
+syn_0304,"Ek gang ne khat bheja ke 5 lakh bhatta do warna dukaan jala denge, main ne dar ke maare 2 lakh de diye.","[""384""]",384,roman_ur,synthetic,train,syn_0304,claude-opus-5.5
+syn_0305,"Kisi ke paas meri private tasveerein hain, keh raha tha ghar walon ko bhej dunga, main ne usay 50 hazaar jazzcash kar diye.","[""384""]",384,roman_ur,synthetic,train,syn_0305,claude-opus-5.5
+syn_0306,"Bazaar mein badmash har mahine har dukaandar se 10 hazaar lete hain, kehte hain warna dukaan tor denge.","[""384""]",384,roman_ur,synthetic,train,syn_0306,claude-opus-5.5
+syn_0307,"uss ne kaha tumhari beti ke school ka pata hai, 3 lakh do warna tezaab phenk dunga, main ne aadhay de diye","[""384""]",384,roman_ur,synthetic,train,syn_0307,claude-opus-5.5
+syn_0308,"Builder ke bandon ne dhamki di ke ghar gira denge, protection money ke 30 hazaar de diye.","[""384""]",384,roman_ur,synthetic,train,syn_0308,claude-opus-5.5
+syn_0309,Two men on a motorcycle snatched my mobile phone at gunpoint near Saddar and ran away.,"[""392""]",392,en,synthetic,train,syn_0309,claude-opus-5.5
+syn_0310,"While I was walking from the ATM, a man put a knife on my neck and took my cash and wallet.","[""392""]",392,en,synthetic,train,syn_0310,claude-opus-5.5
+syn_0311,"Three boys stopped my car at a signal, showed pistols and took my phone, watch and money.","[""392""]",392,en,synthetic,train,syn_0311,claude-opus-5.5
+syn_0312,"A man on a bike pulled my bag from my shoulder so hard that I fell on the road, and he rode away with it.","[""392""]",392,en,synthetic,train,syn_0312,claude-opus-5.5
+syn_0313,"Robbers entered my shop, pointed a gun at me and took the cash from the counter.","[""392""]",392,en,synthetic,train,syn_0313,claude-opus-5.5
+syn_0314,"my phone was snatched by 2 boys on a bike in gulshan, one of them slapped me when i resisted","[""392""]",392,en,synthetic,train,syn_0314,claude-opus-5.5
+syn_0315,"A man threatened to stab me in the street if I didn't give my gold chain, then pulled it from my neck.","[""392""]",392,en,synthetic,train,syn_0315,claude-opus-5.5
+syn_0316,"At night, two men stopped my rickshaw, beat me and took all the money I earned that day.","[""392""]",392,en,synthetic,train,syn_0316,claude-opus-5.5
+syn_0317,"While I was in traffic, a man knocked on my window with a pistol and took my laptop bag from the seat.","[""392""]",392,en,synthetic,train,syn_0317,claude-opus-5.5
+syn_0318,"A person snatched my earrings from my ears in the bazaar, my ear bled and he ran into the crowd.","[""392""]",392,en,synthetic,train,syn_0318,claude-opus-5.5
+syn_0319,Two men held my brother down outside the mosque and took his motorcycle keys and bike by force.,"[""392""]",392,en,synthetic,train,syn_0319,claude-opus-5.5
+syn_0320,A delivery rider was stopped at gunpoint in Johar Town and his bike and phone were taken.,"[""392""]",392,en,synthetic,train,syn_0320,claude-opus-5.5
+syn_0321,Do banday motorcycle par aaye aur pistol dikha kar mera mobile cheen ke bhaag gaye.,"[""392""]",392,roman_ur,synthetic,train,syn_0321,claude-opus-5.5
+syn_0322,ATM se nikal raha tha ke aik aadmi ne gardan par chaaku rakh kar paise aur wallet chheen liya.,"[""392""]",392,roman_ur,synthetic,train,syn_0322,claude-opus-5.5
+syn_0323,"signal par teen larkon ne gaari rok kar pistol dikhaye aur phone, ghari aur paise le gaye","[""392""]",392,roman_ur,synthetic,train,syn_0323,claude-opus-5.5
+syn_0324,Bike wale ne kandhay se itni zor se bag kheencha ke main sarak par gir gayi aur wo bag le gaya.,"[""392""]",392,roman_ur,synthetic,train,syn_0324,claude-opus-5.5
+syn_0325,"Dukaan mein daaku aaye, mujh par gun taan kar counter se saara cash le gaye.","[""392""]",392,roman_ur,synthetic,train,syn_0325,claude-opus-5.5
+syn_0326,"Six armed men entered our house at midnight, tied up my family and took all the gold, cash and phones.","[""395""]",395,en,synthetic,train,syn_0326,claude-opus-5.5
+syn_0327,A gang of seven people stopped the passenger bus on the highway near Sukkur and robbed all the passengers at gunpoint.,"[""395""]",395,en,synthetic,train,syn_0327,claude-opus-5.5
+syn_0328,"Five men with Kalashnikovs entered our village shop, beat my brother and looted the whole cash and goods.","[""395""]",395,en,synthetic,train,syn_0328,claude-opus-5.5
+syn_0329,"About 8 masked men attacked our farmhouse, locked the workers in a room and took cattle and money.","[""395""]",395,en,synthetic,train,syn_0329,claude-opus-5.5
+syn_0330,A group of six robbers broke into the jewellery shop in the market and took gold worth crores while holding the staff at gunpoint.,"[""395""]",395,en,synthetic,train,syn_0330,claude-opus-5.5
+syn_0331,"At the wedding, five men with pistols came in and took the jewellery from the women guests.","[""395""]",395,en,synthetic,train,syn_0331,claude-opus-5.5
+syn_0332,"my uncle's truck was stopped by 6 or 7 armed men in the katcha area, they took the goods and his money","[""395""]",395,en,synthetic,train,syn_0332,claude-opus-5.5
+syn_0333,"Five or more men entered the petrol pump at night, beat the attendants and looted the cash.","[""395""]",395,en,synthetic,train,syn_0333,claude-opus-5.5
+syn_0334,"A large group of armed men attacked our dera, fired in the air and took away our tractor and buffaloes.","[""395""]",395,en,synthetic,train,syn_0334,claude-opus-5.5
+syn_0335,Seven men came in two cars to our factory and robbed the salaries cash after tying up the guards.,"[""395""]",395,en,synthetic,train,syn_0335,claude-opus-5.5
+syn_0336,A gang of 5 robbers looted a whole street of shops in our town in one night at gunpoint.,"[""395""]",395,en,synthetic,train,syn_0336,claude-opus-5.5
+syn_0337,"Six men in police uniforms entered my house, held us at gunpoint and took jewellery and cash.","[""395""]",395,en,synthetic,train,syn_0337,claude-opus-5.5
+syn_0338,"Aadhi raat ko chhe hathiyar band banday ghar mein ghusay, sab ko baandh diya aur zevar, cash, phone le gaye.","[""395""]",395,roman_ur,synthetic,train,syn_0338,claude-opus-5.5
+syn_0339,Highway par saat bandon ke gang ne bus rok kar sab musafiron ko gun point par loot liya.,"[""395""]",395,roman_ur,synthetic,train,syn_0339,claude-opus-5.5
+syn_0340,"paanch banday kalashnikov le kar gaon ki dukaan mein aaye, bhai ko maara aur saara maal loot liya","[""395""]",395,roman_ur,synthetic,train,syn_0340,claude-opus-5.5
+syn_0341,Shaadi mein paanch log pistol le kar aaye aur auraton ke zevar utarwa liye.,"[""395""]",395,roman_ur,synthetic,train,syn_0341,claude-opus-5.5
+syn_0342,Chhe banday police ki wardi mein ghar mein ghusay aur gun point par zevar aur paise le gaye.,"[""395""]",395,roman_ur,synthetic,train,syn_0342,claude-opus-5.5
+syn_0343,"I sent 50,000 rupees by mistake to a wrong JazzCash number. The person received it but refuses to return it and blocked me.","[""403""]",403,en,synthetic,train,syn_0343,claude-opus-5.5
+syn_0344,"I lost my wallet in the rickshaw. The driver found it with my ID card and kept the cash, he is now saying he never saw it.","[""403""]",403,en,synthetic,train,syn_0344,claude-opus-5.5
+syn_0345,My bank wrongly transferred my salary to another person's account. That person withdrew the money and refuses to give it back.,"[""403""]",403,en,synthetic,train,syn_0345,claude-opus-5.5
+syn_0346,My phone fell in the shop and the shopkeeper picked it up. He is using it now and says it's his.,"[""403""]",403,en,synthetic,train,syn_0346,claude-opus-5.5
+syn_0347,"I left my bag with gold in the taxi. The driver knew it was mine because my address was inside, but he kept the gold.","[""403""]",403,en,synthetic,train,syn_0347,claude-opus-5.5
+syn_0348,A man found my cow wandering near his fields and instead of returning it he kept it and sold it.,"[""403""]",403,en,synthetic,train,syn_0348,claude-opus-5.5
+syn_0349,"my brother dropped his gold ring in the street and a neighbour found it, he knows its my brothers but kept it and is wearing it","[""403""]",403,en,synthetic,train,syn_0349,claude-opus-5.5
+syn_0350,"The courier delivered my parcel to the wrong house. The neighbour opened it, kept the new phone and denies receiving it.","[""403""]",403,en,synthetic,train,syn_0350,claude-opus-5.5
+syn_0351,"I dropped 20,000 rupees at the petrol pump. The attendant picked it up and kept it even though I asked everyone there.","[""403""]",403,en,synthetic,train,syn_0351,claude-opus-5.5
+syn_0352,My mother forgot her purse at the clinic. The receptionist kept it and spent the money.,"[""403""]",403,en,synthetic,train,syn_0352,claude-opus-5.5
+syn_0353,My accountant paid our supplier twice by mistake. The supplier knows he got double payment but is keeping the extra amount.,"[""403""]",403,en,synthetic,train,syn_0353,claude-opus-5.5
+syn_0354,Someone found my lost laptop in the university and is using it. He knows it's mine because my name is on it.,"[""403""]",403,en,synthetic,train,syn_0354,claude-opus-5.5
+syn_0355,"I forgot my new phone on a bench in the park. A man found it, saw my family's photos on it but kept it and changed the SIM.","[""403""]",403,en,synthetic,train,syn_0355,claude-opus-5.5
+syn_0356,My goats wandered into my neighbour's house. He kept them and now says they are his.,"[""403""]",403,en,synthetic,train,syn_0356,claude-opus-5.5
+syn_0357,"I paid my electricity bill to a shopkeeper but by mistake gave him 10,000 extra. He knows but refuses to return it.","[""403""]",403,en,synthetic,train,syn_0357,claude-opus-5.5
+syn_0358,My cousin found my prize bond that I had dropped and claimed the prize money for himself.,"[""403""]",403,en,synthetic,train,syn_0358,claude-opus-5.5
+syn_0359,"Ghalti se 50 hazaar ghalat jazzcash number par chale gaye, banda paise wapas nahi kar raha aur block kar diya.","[""403""]",403,roman_ur,synthetic,train,syn_0359,claude-opus-5.5
+syn_0360,"Rickshaw mein mera wallet gir gaya, driver ko mila, ID card bhi tha, lekin paise rakh liye aur kehta hai dekha hi nahi.","[""403""]",403,roman_ur,synthetic,train,syn_0360,claude-opus-5.5
+syn_0361,"bank ne ghalti se tankhwah kisi aur ke account mein daal di, usne nikal li aur wapas nahi deta","[""403""]",403,roman_ur,synthetic,train,syn_0361,claude-opus-5.5
+syn_0362,"Dukaan mein mera phone gir gaya, dukaandar ne utha liya aur ab kehta hai ye mera hai.","[""403""]",403,roman_ur,synthetic,train,syn_0362,claude-opus-5.5
+syn_0363,"Courier ne parcel ghalat ghar de diya, padosi ne kholkar naya phone rakh liya aur mukar gaya.","[""403""]",403,roman_ur,synthetic,train,syn_0363,claude-opus-5.5
+syn_0364,"Petrol pump par mere 20 hazaar gir gaye, attendant ne utha kar rakh liye.","[""403""]",403,roman_ur,synthetic,train,syn_0364,claude-opus-5.5
+syn_0365,"meri gum shuda bakriyan pados wale ke ghar chali gayin, ab wo kehta hai ye meri hain","[""403""]",403,roman_ur,synthetic,train,syn_0365,claude-opus-5.5
+syn_0366,I gave my car to my friend for a week to go to his village. He sold it and now says it was stolen.,"[""406""]",406,en,synthetic,train,syn_0366,claude-opus-5.5
+syn_0367,I gave gold to a jeweller to make new bangles. It has been six months and he is not returning the gold or the bangles.,"[""406""]",406,en,synthetic,train,syn_0367,claude-opus-5.5
+syn_0368,Our accountant collected payments from customers but kept the money for himself instead of depositing it in the company account.,"[""406""]",406,en,synthetic,train,syn_0368,claude-opus-5.5
+syn_0369,"I trusted my brother with my share of the rent from our shop while I was abroad, he spent all of it on himself.","[""406""]",406,en,synthetic,train,syn_0369,claude-opus-5.5
+syn_0370,I gave 3 lakh to my neighbour to keep safe while I was travelling. Now he says he used it for his business and won't return it.,"[""406""]",406,en,synthetic,train,syn_0370,claude-opus-5.5
+syn_0371,The committee organiser in our mohalla collected money from 20 women and ran away with it.,"[""406""]",406,en,synthetic,train,syn_0371,claude-opus-5.5
+syn_0372,My employee was given the company laptop and phone. He left the job and kept both.,"[""406""]",406,en,synthetic,train,syn_0372,claude-opus-5.5
+syn_0373,"i gave my tractor on rent to a man, he sold its parts and returned it broken","[""406""]",406,en,synthetic,train,syn_0373,claude-opus-5.5
+syn_0374,"I gave my land documents to a property agent to show buyers, and he has kept them and is refusing to return.","[""406""]",406,en,synthetic,train,syn_0374,claude-opus-5.5
+syn_0375,The godown manager sold our stored wheat bags in the market and kept the money.,"[""406""]",406,en,synthetic,train,syn_0375,claude-opus-5.5
+syn_0376,I gave my bike to the mechanic for repair. He has been using it for a month and refuses to give it back.,"[""406""]",406,en,synthetic,train,syn_0376,claude-opus-5.5
+syn_0377,My tenant was given our furniture with the house. When he left he took the furniture with him.,"[""406""]",406,en,synthetic,train,syn_0377,claude-opus-5.5
+syn_0378,"Dost ko hafte ke liye gaari di thi, usne bech di aur ab kehta hai chori ho gayi.","[""406""]",406,roman_ur,synthetic,train,syn_0378,claude-opus-5.5
+syn_0379,"Sunar ko sona diya tha choorian banane ke liye, chhe mahine ho gaye na sona deta hai na choorian.","[""406""]",406,roman_ur,synthetic,train,syn_0379,claude-opus-5.5
+syn_0380,mohalle ki committee wali 20 auraton ke paise le kar bhaag gayi,"[""406""]",406,roman_ur,synthetic,train,syn_0380,claude-opus-5.5
+syn_0381,Accountant customers se paisay le kar company ke account mein jama karne ki bajaye khud rakh leta tha.,"[""406""]",406,roman_ur,synthetic,train,syn_0381,claude-opus-5.5
+syn_0382,"Mechanic ko bike repair ke liye di thi, mahine se khud chala raha hai aur wapas nahi deta.","[""406""]",406,roman_ur,synthetic,train,syn_0382,claude-opus-5.5
+syn_0383,My stolen phone was found at a mobile shop in Hall Road. The shopkeeper had bought it from a boy for very cheap knowing it was stolen.,"[""411""]",411,en,synthetic,train,syn_0383,claude-opus-5.5
+syn_0384,The scrap dealer in our area buys stolen motorcycle parts from thieves. I found my bike's engine at his shop.,"[""411""]",411,en,synthetic,train,syn_0384,claude-opus-5.5
+syn_0385,My neighbour bought my stolen goats from the thieves at half price and is keeping them in his house.,"[""411""]",411,en,synthetic,train,syn_0385,claude-opus-5.5
+syn_0386,Police caught a man with three stolen cars that he had bought knowing they were snatched.,"[""411""]",411,en,synthetic,train,syn_0386,claude-opus-5.5
+syn_0387,My stolen laptop was being sold on OLX by a man who admitted he bought it from a thief.,"[""411""]",411,en,synthetic,train,syn_0387,claude-opus-5.5
+syn_0388,"the jeweller bought my stolen gold from the thief and melted it, he knew it was chori ka maal","[""411""]",411,en,synthetic,train,syn_0388,claude-opus-5.5
+syn_0389,A shopkeeper in the market is selling the copper wires that were stolen from our factory. He bought them from thieves.,"[""411""]",411,en,synthetic,train,syn_0389,claude-opus-5.5
+syn_0390,"My cousin is keeping my stolen tractor in his barn. He paid the thieves and says he didn't know, but he knew.","[""411""]",411,en,synthetic,train,syn_0390,claude-opus-5.5
+syn_0391,"The second-hand mobile dealer has my snatched phone. The IMEI matches, and he was told by the seller it was snatched.","[""411""]",411,en,synthetic,train,syn_0391,claude-opus-5.5
+syn_0392,"My stolen bicycle was found with a man who bought it for 500 rupees from a boy, knowing it was stolen.","[""411""]",411,en,synthetic,train,syn_0392,claude-opus-5.5
+syn_0393,"A rickshaw workshop owner was found with our stolen rickshaw, he had changed its number plate.","[""411""]",411,en,synthetic,train,syn_0393,claude-opus-5.5
+syn_0394,My nephew bought a stolen motorcycle very cheap and the original owner has now found it with him.,"[""411""]",411,en,synthetic,train,syn_0394,claude-opus-5.5
+syn_0395,"Meri chori shuda mobile Hall Road ki dukaan se mili, dukaandar ne larke se bohat sasti khareedi thi aur jaanta tha chori ka hai.","[""411""]",411,roman_ur,synthetic,train,syn_0395,claude-opus-5.5
+syn_0396,"Kabaari chori ki motorcycle ke parts khareedta hai, mera engine uski dukaan par mila.","[""411""]",411,roman_ur,synthetic,train,syn_0396,claude-opus-5.5
+syn_0397,padosi ne choron se meri bakriyan aadhi qeemat par khareed li aur ghar mein rakhi hui hain,"[""411""]",411,roman_ur,synthetic,train,syn_0397,claude-opus-5.5
+syn_0398,Sunar ne chor se mera chori ka sona khareed kar pighla diya.,"[""411""]",411,roman_ur,synthetic,train,syn_0398,claude-opus-5.5
+syn_0399,"Workshop wale ke paas hamara chori ka rickshaw mila, usne number plate badal di thi.","[""411""]",411,roman_ur,synthetic,train,syn_0399,claude-opus-5.5
+syn_0400,"A man on Facebook sold me an iPhone, I paid 1.5 lakh through bank transfer, and he sent a box with a soap bar inside.","[""420""]",420,en,synthetic,train,syn_0400,claude-opus-5.5
+syn_0401,An agent took 6 lakh from my brother promising a job in Saudi Arabia with a visa. The visa was fake and the agent disappeared.,"[""420""]",420,en,synthetic,train,syn_0401,claude-opus-5.5
+syn_0402,A property dealer sold me a plot with fake documents. The plot actually belongs to someone else.,"[""420""]",420,en,synthetic,train,syn_0402,claude-opus-5.5
+syn_0403,"I got a call saying I won a prize from Benazir Income Support and had to pay a fee first. I paid 15,000 and never got anything.","[""420""]",420,en,synthetic,train,syn_0403,claude-opus-5.5
+syn_0404,A person posing as a bank officer got my OTP and took 2 lakh from my account.,"[""420""]",420,en,synthetic,train,syn_0404,claude-opus-5.5
+syn_0405,A man sold me a car by showing fake registration papers. Later the excise office said the car was stolen.,"[""420""]",420,en,synthetic,train,syn_0405,claude-opus-5.5
+syn_0406,"my cousin took 3 lakh from me saying he will invest in his business and give profit every month, but there is no business at all","[""420""]",420,en,synthetic,train,syn_0406,claude-opus-5.5
+syn_0407,"A company promised to double our money in 6 months, took deposits from 200 people and closed its office.","[""420""]",420,en,synthetic,train,syn_0407,claude-opus-5.5
+syn_0408,"The shopkeeper sold me a fake branded watch claiming it was original and charged me 80,000.","[""420""]",420,en,synthetic,train,syn_0408,claude-opus-5.5
+syn_0409,Someone rented my car through a fake ID card and never returned it.,"[""420""]",420,en,synthetic,train,syn_0409,claude-opus-5.5
+syn_0410,A man promised to get my son admission in medical college and took 10 lakh. There was no admission.,"[""420""]",420,en,synthetic,train,syn_0410,claude-opus-5.5
+syn_0411,A seller on OLX took advance for a motorcycle and then switched off his phone.,"[""420""]",420,en,synthetic,train,syn_0411,claude-opus-5.5
+syn_0412,"Facebook par ek banday se iPhone khareeda, 1.5 lakh transfer kiye aur dabbay mein sabun ki tikki aayi.","[""420""]",420,roman_ur,synthetic,train,syn_0412,claude-opus-5.5
+syn_0413,"Agent ne Saudi Arabia mein naukri ka keh kar bhai se 6 lakh liye, visa jaali nikla aur agent ghaib ho gaya.","[""420""]",420,roman_ur,synthetic,train,syn_0413,claude-opus-5.5
+syn_0414,"Property dealer ne jaali kaghzaat par plot bech diya, plot kisi aur ka nikla.","[""420""]",420,roman_ur,synthetic,train,syn_0414,claude-opus-5.5
+syn_0415,"call aayi ke aap ka inaam nikla hai, pehle fee do, main ne 15 hazaar bhej diye kuch nahi mila","[""420""]",420,roman_ur,synthetic,train,syn_0415,claude-opus-5.5
+syn_0416,Ek banda bank officer ban kar OTP le gaya aur account se 2 lakh nikal gaye.,"[""420""]",420,roman_ur,synthetic,train,syn_0416,claude-opus-5.5
+syn_0417,Our neighbour broke the boundary wall and entered our plot with his workers to build a room on it. He says the land is his now.,"[""447"", ""441""]",447,en,synthetic,train,syn_0417,claude-opus-5.5
+syn_0418,Some men from the next village keep entering our fields at night and grazing their cattle on our crop just to annoy us.,"[""447"", ""441""]",447,en,synthetic,train,syn_0418,claude-opus-5.5
+syn_0419,"My cousin entered our agricultural land with a tractor and started ploughing it to take possession, although the court decided it is ours.","[""447"", ""441""]",447,en,synthetic,train,syn_0419,claude-opus-5.5
+syn_0420,"A group of people entered my empty plot in Bahria Town, put up a tent and refuse to leave.","[""447"", ""441""]",447,en,synthetic,train,syn_0420,claude-opus-5.5
+syn_0421,"My former tenant comes into my shop's compound again and again even after I told him not to, and he insults my customers.","[""447"", ""441""]",447,en,synthetic,train,syn_0421,claude-opus-5.5
+syn_0422,The neighbour's boys climb into our school ground at night and drink and break things there to bother the management.,"[""447"", ""441""]",447,en,synthetic,train,syn_0422,claude-opus-5.5
+syn_0423,"The land mafia sent men who entered our farm, cut the trees and put their own fence on our land.","[""447"", ""441""]",447,en,synthetic,train,syn_0423,claude-opus-5.5
+syn_0424,"my uncle's sons jump into our orchard and pluck the fruit and abuse our workers, we told them many times not to come","[""447"", ""441""]",447,en,synthetic,train,syn_0424,claude-opus-5.5
+syn_0425,My business rival's men entered our factory yard without permission to threaten the staff and stop the work.,"[""447"", ""441""]",447,en,synthetic,train,syn_0425,claude-opus-5.5
+syn_0426,Some people entered the graveyard land we own and started building shops on it.,"[""447"", ""441""]",447,en,synthetic,train,syn_0426,claude-opus-5.5
+syn_0427,A man entered my fish farm area at night and released the water from the pond to cause me loss.,"[""447"", ""441""]",447,en,synthetic,train,syn_0427,claude-opus-5.5
+syn_0428,"The neighbour keeps entering my courtyard garage area and parks his car there, even after I locked the gate he broke it.","[""447"", ""441""]",447,en,synthetic,train,syn_0428,claude-opus-5.5
+syn_0429,"People of the other party entered our dera and sat there for hours refusing to leave, to pressure us in a dispute.","[""447"", ""441""]",447,en,synthetic,train,syn_0429,claude-opus-5.5
+syn_0430,My stepbrother entered our shared agricultural land and planted his crop on my share to grab it.,"[""447"", ""441""]",447,en,synthetic,train,syn_0430,claude-opus-5.5
+syn_0431,A group of men entered the mosque's land and started constructing a wall to occupy it.,"[""447"", ""441""]",447,en,synthetic,train,syn_0431,claude-opus-5.5
+syn_0432,The contractor I fired keeps coming onto my construction site with his men to stop the new workers.,"[""447"", ""441""]",447,en,synthetic,train,syn_0432,claude-opus-5.5
+syn_0433,Pados wale ne boundary wall tor kar hamare plot mein mazdoor la kar kamra banana shuru kar diya.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0433,claude-opus-5.5
+syn_0434,Dusre gaon ke log raat ko hamaray khet mein ghus kar apne maweshi hamari fasal par charatay hain.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0434,claude-opus-5.5
+syn_0435,"cousin tractor le kar hamari zameen mein ghus aaya aur hal chalana shuru kar diya, court ne faisla hamare haq mein diya hai","[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0435,claude-opus-5.5
+syn_0436,Land mafia ke bandon ne farm mein ghus kar darakht kaat diye aur apni baarh laga di.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0436,claude-opus-5.5
+syn_0437,Chacha ke betay hamaray baagh mein ghus kar phal torte hain aur mazdooron ko gaaliyan dete hain.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0437,claude-opus-5.5
+syn_0438,Contractor ko nikala to wo apne bandon ke saath site par aa kar naye mazdooron ka kaam rokta hai.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0438,claude-opus-5.5
+syn_0439,Dusri party ke log hamare dere par aa kar ghanton baithay rehte hain aur jaate nahi.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0439,claude-opus-5.5
+syn_0440,My ex-husband came into my house at night without permission and started shouting and threatening my family.,"[""448""]",448,en,synthetic,train,syn_0440,claude-opus-5.5
+syn_0441,"Our neighbour entered our house when my wife was alone, came into the lounge and refused to leave.","[""448""]",448,en,synthetic,train,syn_0441,claude-opus-5.5
+syn_0442,The landlord opened the lock and entered my rented flat while I was at work and went through my things.,"[""448""]",448,en,synthetic,train,syn_0442,claude-opus-5.5
+syn_0443,My brother-in-law broke the door and came into our home to beat my brother.,"[""448""]",448,en,synthetic,train,syn_0443,claude-opus-5.5
+syn_0444,Some boys jumped over the wall into our house and into the courtyard to harass my sisters.,"[""448""]",448,en,synthetic,train,syn_0444,claude-opus-5.5
+syn_0445,my relatives forcefully entered our home and sat in the drawing room saying they will not leave until we give my sister's hand,"[""448""]",448,en,synthetic,train,syn_0445,claude-opus-5.5
+syn_0446,A man entered my house pretending to be a gas meter reader and went into the bedrooms. When I asked he ran away.,"[""448""]",448,en,synthetic,train,syn_0446,claude-opus-5.5
+syn_0447,The creditor came into our house without asking and started picking up our things saying we owe him money.,"[""448""]",448,en,synthetic,train,syn_0447,claude-opus-5.5
+syn_0448,Our neighbour's son climbed onto our roof and came down into the house at night. My father caught him in the corridor.,"[""448""]",448,en,synthetic,train,syn_0448,claude-opus-5.5
+syn_0449,My ex-fiance entered our home through the back door and came to my room. Family members threw him out.,"[""448""]",448,en,synthetic,train,syn_0449,claude-opus-5.5
+syn_0450,My husband's friend came into our house without asking while my husband was away and refused to leave the lounge.,"[""448""]",448,en,synthetic,train,syn_0450,claude-opus-5.5
+syn_0451,My uncle entered the portion of the house I live in and took over my room when I was out.,"[""448""]",448,en,synthetic,train,syn_0451,claude-opus-5.5
+syn_0452,Mera saabiq shohar raat ko bina ijazat ghar mein ghus aaya aur chilla kar dhamkiyan dene laga.,"[""448""]",448,roman_ur,synthetic,train,syn_0452,claude-opus-5.5
+syn_0453,Malik makaan ne taala khol kar mere flat mein ghus kar meri cheezein check ki.,"[""448""]",448,roman_ur,synthetic,train,syn_0453,claude-opus-5.5
+syn_0454,kuch larke deewar phaand kar hamare ghar ke sehan mein aa gaye meri behnon ko tang karne,"[""448""]",448,roman_ur,synthetic,train,syn_0454,claude-opus-5.5
+syn_0455,Rishtedaar zabardasti ghar mein ghus kar drawing room mein baith gaye aur kehte hain rishta do warna nahi jayenge.,"[""448""]",448,roman_ur,synthetic,train,syn_0455,claude-opus-5.5
+syn_0456,"Pados ka larka raat ko chhat se utar kar ghar mein aa gaya, abbu ne usay rahdari mein pakra.","[""448""]",448,roman_ur,synthetic,train,syn_0456,claude-opus-5.5
+syn_0457,"My customer gave me a cheque of 5 lakh for the goods. When I deposited it, the bank returned it saying insufficient funds.","[""489-F""]",489-F,en,synthetic,train,syn_0457,claude-opus-5.5
+syn_0458,"I lent 2 lakh to my friend. He gave me a cheque to repay, and it bounced. He is not picking up my calls.","[""489-F""]",489-F,en,synthetic,train,syn_0458,claude-opus-5.5
+syn_0459,"The buyer of my plot gave a cheque for the last instalment, but the bank dishonoured it as the account was closed.","[""489-F""]",489-F,en,synthetic,train,syn_0459,claude-opus-5.5
+syn_0460,My tenant gave me post-dated cheques for rent. Three of them bounced.,"[""489-F""]",489-F,en,synthetic,train,syn_0460,claude-opus-5.5
+syn_0461,A shopkeeper gave a cheque for the wholesale order and then stopped payment on it so the bank refused to pay.,"[""489-F""]",489-F,en,synthetic,train,syn_0461,claude-opus-5.5
+syn_0462,My brother-in-law took a loan from my father and gave a cheque as repayment. The cheque came back unpaid.,"[""489-F""]",489-F,en,synthetic,train,syn_0462,claude-opus-5.5
+syn_0463,The company gave me a cheque for my final salary and dues. The bank said the signature doesn't match and refused it.,"[""489-F""]",489-F,en,synthetic,train,syn_0463,claude-opus-5.5
+syn_0464,"my client gave me a cheque for my car he bought, it bounced and he says wait, its been 3 months","[""489-F""]",489-F,en,synthetic,train,syn_0464,claude-opus-5.5
+syn_0465,"A contractor issued me a cheque for the construction material. When presented, it was dishonoured for insufficient balance.","[""489-F""]",489-F,en,synthetic,train,syn_0465,claude-opus-5.5
+syn_0466,"I sold my motorcycle and the buyer gave a cheque. The bank returned it, the account had no money.","[""489-F""]",489-F,en,synthetic,train,syn_0466,claude-opus-5.5
+syn_0467,The person who borrowed money for his daughter's wedding gave me a cheque that bounced twice.,"[""489-F""]",489-F,en,synthetic,train,syn_0467,claude-opus-5.5
+syn_0468,My business partner gave me a cheque for my share of profit and it bounced. He knew there was no money in the account.,"[""489-F""]",489-F,en,synthetic,train,syn_0468,claude-opus-5.5
+syn_0469,A dealer gave me three cheques for the rice I supplied and all were dishonoured.,"[""489-F""]",489-F,en,synthetic,train,syn_0469,claude-opus-5.5
+syn_0470,"The car showroom owner gave me a cheque when I sold my car to him, and it bounced.","[""489-F""]",489-F,en,synthetic,train,syn_0470,claude-opus-5.5
+syn_0471,My student's father gave a cheque for six months' fees which was returned by the bank unpaid.,"[""489-F""]",489-F,en,synthetic,train,syn_0471,claude-opus-5.5
+syn_0472,The supplier gave back my advance payment through a cheque but it bounced because of a closed account.,"[""489-F""]",489-F,en,synthetic,train,syn_0472,claude-opus-5.5
+syn_0473,"Customer ne maal ke liye 5 lakh ka cheque diya, bank mein lagaya to insufficient funds keh kar wapas aa gaya.","[""489-F""]",489-F,roman_ur,synthetic,train,syn_0473,claude-opus-5.5
+syn_0474,"Dost ko 2 lakh udhaar diye thay, usne wapsi ke liye cheque diya jo bounce ho gaya, ab phone nahi uthata.","[""489-F""]",489-F,roman_ur,synthetic,train,syn_0474,claude-opus-5.5
+syn_0475,"plot ke khareedar ne aakhri qist ka cheque diya, bank ne kaha account band hai","[""489-F""]",489-F,roman_ur,synthetic,train,syn_0475,claude-opus-5.5
+syn_0476,"Kirayedaar ne kiraye ke post-dated cheque diye thay, teen bounce ho gaye.","[""489-F""]",489-F,roman_ur,synthetic,train,syn_0476,claude-opus-5.5
+syn_0477,"Bike bechi thi, khareedar ne cheque diya jo bank ne wapas kar diya, account mein paise nahi thay.","[""489-F""]",489-F,roman_ur,synthetic,train,syn_0477,claude-opus-5.5
+syn_0478,"Business partner ne munafay ka cheque diya, bounce ho gaya, usay pata tha account khali hai.","[""489-F""]",489-F,roman_ur,synthetic,train,syn_0478,claude-opus-5.5
+syn_0479,Dealer ne chawal ke teen cheque diye aur teeno bounce ho gaye.,"[""489-F""]",489-F,roman_ur,synthetic,train,syn_0479,claude-opus-5.5
+syn_0480,My neighbour is telling everyone in the mohalla that I am a thief and that I stole from the mosque. It's completely false and people now avoid me.,"[""500""]",500,en,synthetic,train,syn_0480,claude-opus-5.5
+syn_0481,My ex-business partner printed pamphlets saying I am a fraud and distributed them in the market. My customers stopped coming.,"[""500""]",500,en,synthetic,train,syn_0481,claude-opus-5.5
+syn_0482,"A relative is spreading lies that my daughter has a bad character, and now her engagement has been broken.","[""500""]",500,en,synthetic,train,syn_0482,claude-opus-5.5
+syn_0483,Someone wrote on a wall near my shop that I sell fake medicines. It's false and has hurt my business.,"[""500""]",500,en,synthetic,train,syn_0483,claude-opus-5.5
+syn_0484,"My colleague told the whole office that I take bribes, which is not true. My boss now doubts me.","[""500""]",500,en,synthetic,train,syn_0484,claude-opus-5.5
+syn_0485,"the imam of our area announced in front of people that my father is a liar and cheats people, its not true and our family is humiliated","[""500""]",500,en,synthetic,train,syn_0485,claude-opus-5.5
+syn_0486,A man went to my in-laws and told them false stories that I am a drug addict. My wife's family is now against me.,"[""500""]",500,en,synthetic,train,syn_0486,claude-opus-5.5
+syn_0487,"The rival candidate in the union council elections is saying in public gatherings that I killed someone, which is a complete lie.","[""500""]",500,en,synthetic,train,syn_0487,claude-opus-5.5
+syn_0488,"My former landlord tells everyone I didn't pay rent and ran away, which is false. I have receipts.","[""500""]",500,en,synthetic,train,syn_0488,claude-opus-5.5
+syn_0489,A teacher announced in class that my son steals from other children. It's false and now other kids tease him.,"[""500""]",500,en,synthetic,train,syn_0489,claude-opus-5.5
+syn_0490,A shopkeeper told all the customers that my bakery uses rotten eggs. It is not true and my sales dropped.,"[""500""]",500,en,synthetic,train,syn_0490,claude-opus-5.5
+syn_0491,"My cousin told the elders of the family that I have a secret second marriage, which is a lie meant to damage my name.","[""500""]",500,en,synthetic,train,syn_0491,claude-opus-5.5
+syn_0492,"Pados wala sab mohalle walon ko keh raha hai ke main chor hun aur masjid se chori ki, ye bilkul jhoot hai.","[""500""]",500,roman_ur,synthetic,train,syn_0492,claude-opus-5.5
+syn_0493,"Purane partner ne pamphlet chhapwa kar bazaar mein baante ke main fraud hun, customer aana band ho gaye.","[""500""]",500,roman_ur,synthetic,train,syn_0493,claude-opus-5.5
+syn_0494,"ek rishtedaar jhoot phaila raha hai ke meri beti ka kirdaar theek nahi, ab uski mangni toot gayi","[""500""]",500,roman_ur,synthetic,train,syn_0494,claude-opus-5.5
+syn_0495,"Office mein colleague ne sab ko bataya ke main rishwat leta hun, jo sach nahi.","[""500""]",500,roman_ur,synthetic,train,syn_0495,claude-opus-5.5
+syn_0496,"Dukaandar sab customers ko keh raha hai ke meri bakery mein sare hue ande lagte hain, ye jhoot hai.","[""500""]",500,roman_ur,synthetic,train,syn_0496,claude-opus-5.5
+syn_0497,My neighbour told me he will kill me and my children if I don't withdraw my complaint. He said it in front of other people.,"[""506""]",506,en,synthetic,train,syn_0497,claude-opus-5.5
+syn_0498,I keep receiving calls from an unknown number saying they will shoot me if I go to my shop again.,"[""506""]",506,en,synthetic,train,syn_0498,claude-opus-5.5
+syn_0499,My brother-in-law threatened to throw acid on my sister's face if she doesn't come back to his house.,"[""506""]",506,en,synthetic,train,syn_0499,claude-opus-5.5
+syn_0500,The man I owe money to said he will burn my house with my family inside if I don't pay by Friday.,"[""506""]",506,en,synthetic,train,syn_0500,claude-opus-5.5
+syn_0501,My landlord threatened to beat me and break my legs if I don't vacate the house this week.,"[""506""]",506,en,synthetic,train,syn_0501,claude-opus-5.5
+syn_0502,my ex keeps sending me messages that he will kill me if i marry someone else,"[""506""]",506,en,synthetic,train,syn_0502,claude-opus-5.5
+syn_0503,My cousin waved a pistol at me during the argument and said next time he will empty it in my chest.,"[""506""]",506,en,synthetic,train,syn_0503,claude-opus-5.5
+syn_0504,A group of men came to my office and said if I testify in court they will kidnap my son.,"[""506""]",506,en,synthetic,train,syn_0504,claude-opus-5.5
+syn_0505,The other party in the land dispute told my father that they will finish our whole family.,"[""506""]",506,en,synthetic,train,syn_0505,claude-opus-5.5
+syn_0506,My employer threatened to have me falsely arrested and harmed if I ask for my pending salary.,"[""506""]",506,en,synthetic,train,syn_0506,claude-opus-5.5
+syn_0507,A man stopped me in the street and told me that he will kill my brother because of the old quarrel.,"[""506""]",506,en,synthetic,train,syn_0507,claude-opus-5.5
+syn_0508,The boy who was harassing my sister threatened that he will throw her photos online and harm her if we complain.,"[""506""]",506,en,synthetic,train,syn_0508,claude-opus-5.5
+syn_0509,Pados wale ne kaha agar complaint wapas na li to tumhein aur tumhare bachon ko maar dunga.,"[""506""]",506,roman_ur,synthetic,train,syn_0509,claude-opus-5.5
+syn_0510,Anjaan number se call aati hai ke dobara dukaan par aaye to goli maar denge.,"[""506""]",506,roman_ur,synthetic,train,syn_0510,claude-opus-5.5
+syn_0511,behnoi ne dhamki di hai ke behan wapas na aayi to uske munh par tezaab phenk dunga,"[""506""]",506,roman_ur,synthetic,train,syn_0511,claude-opus-5.5
+syn_0512,Qarz wale ne kaha jumme tak paise na diye to ghar ko tumhare khandaan samait aag laga dunga.,"[""506""]",506,roman_ur,synthetic,train,syn_0512,claude-opus-5.5
+syn_0513,Zameen ke jhagre mein dusri party ne abbu ko kaha tumhara poora khandaan khatam kar denge.,"[""506""]",506,roman_ur,synthetic,train,syn_0513,claude-opus-5.5
+syn_0514,A man in my office keeps making dirty comments about my body and sends me vulgar messages even after I told him to stop.,"[""509""]",509,en,synthetic,train,syn_0514,claude-opus-5.5
+syn_0515,Boys on the street whistle and pass vulgar remarks at my daughter every day when she goes to college.,"[""509""]",509,en,synthetic,train,syn_0515,claude-opus-5.5
+syn_0516,My boss is pressuring me to meet him alone after office and says my promotion depends on it.,"[""509""]",509,en,synthetic,train,syn_0516,claude-opus-5.5
+syn_0517,A shopkeeper made a vulgar gesture at my wife and said obscene words when she went to buy something.,"[""509""]",509,en,synthetic,train,syn_0517,claude-opus-5.5
+syn_0518,A man follows my sister from the bus stop to our house every day and makes sexual comments.,"[""509""]",509,en,synthetic,train,syn_0518,claude-opus-5.5
+syn_0519,my teacher at the academy keeps sending me inappropriate messages at night and says he will fail me if i dont reply,"[""509""]",509,en,synthetic,train,syn_0519,claude-opus-5.5
+syn_0520,A neighbour stands on his roof and makes obscene gestures towards our house when the women are in the courtyard.,"[""509""]",509,en,synthetic,train,syn_0520,claude-opus-5.5
+syn_0521,The supervisor at the factory asks female workers for sexual favours in return for overtime.,"[""509""]",509,en,synthetic,train,syn_0521,claude-opus-5.5
+syn_0522,A customer at the bank kept making vulgar comments to the female cashier and showing her obscene pictures on his phone.,"[""509""]",509,en,synthetic,train,syn_0522,claude-opus-5.5
+syn_0523,A man on the bus kept staring at me and saying dirty jokes loudly so that I would hear.,"[""509""]",509,en,synthetic,train,syn_0523,claude-opus-5.5
+syn_0524,My university classmate keeps asking me to send pictures and makes sexual remarks in the group chat.,"[""509""]",509,en,synthetic,train,syn_0524,claude-opus-5.5
+syn_0525,The landlord's son makes cheap comments whenever my daughter goes up the stairs.,"[""509""]",509,en,synthetic,train,syn_0525,claude-opus-5.5
+syn_0526,Office mein ek banda mere jism ke baaray mein gande comments karta hai aur mana karne par bhi gandi messages bhejta hai.,"[""509""]",509,roman_ur,synthetic,train,syn_0526,claude-opus-5.5
+syn_0527,gali ke larke roz meri beti ko college jaate hue seetiyan maar kar gandi baatein karte hain,"[""509""]",509,roman_ur,synthetic,train,syn_0527,claude-opus-5.5
+syn_0528,"Boss keh raha hai office ke baad akele milo, promotion isi par depend karti hai.","[""509""]",509,roman_ur,synthetic,train,syn_0528,claude-opus-5.5
+syn_0529,Bus stop se ghar tak ek aadmi roz meri behan ka peecha karta hai aur gandi baatein karta hai.,"[""509""]",509,roman_ur,synthetic,train,syn_0529,claude-opus-5.5
+syn_0530,Factory supervisor auraton se kehta hai overtime chahiye to meri baat maano.,"[""509""]",509,roman_ur,synthetic,train,syn_0530,claude-opus-5.5
+syn_0531,"Two robbers stopped my car, took my phone and wallet, and when I tried to stop them one of them fired at my chest. I survived after surgery.","[""392"", ""324""]",392,en,synthetic,train,syn_0531,claude-opus-5.5
+syn_0532,"Snatchers grabbed my bag in Gulberg and when I held on, one of them cut my arm with a knife and ran with the bag.","[""392"", ""337-F""]",392,en,synthetic,train,syn_0532,claude-opus-5.5
+syn_0533,A man snatched my mobile and hit me on the head with the pistol butt. I got stitches on my head.,"[""392"", ""337-A""]",392,en,synthetic,train,syn_0533,claude-opus-5.5
+syn_0534,My ex-husband broke into our house at night and threatened to kill me and my mother if I don't come back to him.,"[""448"", ""506""]",448,en,synthetic,train,syn_0534,claude-opus-5.5
+syn_0535,My neighbour's son entered our house when I was alone and grabbed me and tried to touch me. I screamed and he ran.,"[""448"", ""354""]",448,en,synthetic,train,syn_0535,claude-opus-5.5
+syn_0536,Our maid stole my gold set from the house and sold it to a jeweller who knew it was stolen. Police found it at his shop.,"[""380"", ""411""]",380,en,synthetic,train,syn_0536,claude-opus-5.5
+syn_0537,My cousin hit my father on the head with a stick and said next time he will kill him. My father has a head wound.,"[""337-A"", ""506""]",337-A,en,synthetic,train,syn_0537,claude-opus-5.5
+syn_0538,My landlord beat me with a pipe on my back and said he will kill me if I don't leave the house.,"[""337-F"", ""506""]",337-F,en,synthetic,train,syn_0538,claude-opus-5.5
+syn_0539,"My son was kidnapped and the kidnappers are demanding 40 lakh, saying they will kill him if we tell the police.","[""365-A"", ""506""]",365-A,en,synthetic,train,syn_0539,claude-opus-5.5
+syn_0540,"I gave my car to a man who said he will sell it for a good price, he sold it and kept all the money, and his ID card was fake.","[""406"", ""420""]",406,en,synthetic,train,syn_0540,claude-opus-5.5
+syn_0541,A boy keeps sending vulgar messages to my sister and now he threatens to harm her if she blocks him.,"[""509"", ""506""]",509,en,synthetic,train,syn_0541,claude-opus-5.5
+syn_0542,A man in the bus touched my daughter on purpose and kept passing dirty comments at her.,"[""354"", ""509""]",354,en,synthetic,train,syn_0542,claude-opus-5.5
+syn_0543,My employer locked me in the storeroom and beat me with a belt on my back for two days.,"[""340"", ""337-F""]",340,en,synthetic,train,syn_0543,claude-opus-5.5
+syn_0544,"My neighbour threatened many times that he would kill my brother, and last night he came to our street and shot him dead.","[""302"", ""506""]",302,en,synthetic,train,syn_0544,claude-opus-5.5
+syn_0545,"Six armed robbers entered our house, beat my brother with rifle butts on his back and arms, and looted the jewellery.","[""395"", ""337-F""]",395,en,synthetic,train,syn_0545,claude-opus-5.5
+syn_0546,Someone took my 9 year old son from outside the school and now they are calling and asking 10 lakh for his return.,"[""363"", ""365-A""]",363,en,synthetic,train,syn_0546,claude-opus-5.5
+syn_0547,My cousin and his men entered our field and threatened to kill us if we come to our land again.,"[""447"", ""441"", ""506""]",447,en,synthetic,train,syn_0547,claude-opus-5.5
+syn_0548,My motorcycle was stolen from outside my office and I found it at a scrap dealer who bought it knowing it was stolen.,"[""379"", ""411""]",379,en,synthetic,train,syn_0548,claude-opus-5.5
+syn_0549,"Some men threatened to kill my son unless I paid them monthly money. I was scared and paid them 50,000.","[""384"", ""506""]",384,en,synthetic,train,syn_0549,claude-opus-5.5
+syn_0550,"A man had been threatening my brother for weeks, and yesterday he fired at him from close range to kill him. My brother survived with a bullet in his leg.","[""324"", ""506""]",324,en,synthetic,train,syn_0550,claude-opus-5.5
+syn_0551,"Daakuon ne gaari rok kar phone aur wallet chheena, roka to aik ne seene par fire kar diya, operation ke baad bach gaya.","[""392"", ""324""]",392,roman_ur,synthetic,train,syn_0551,claude-opus-5.5
+syn_0552,"Banday ne mobile chheena aur pistol ka butt mere sar par maara, sar par taankay lagay.","[""392"", ""337-A""]",392,roman_ur,synthetic,train,syn_0552,claude-opus-5.5
+syn_0553,Saabiq shohar raat ko ghar mein ghus aaya aur kaha wapas na aayi to tujhe aur teri maa ko maar dunga.,"[""448"", ""506""]",448,roman_ur,synthetic,train,syn_0553,claude-opus-5.5
+syn_0554,Cousin ne abbu ke sar par danda maara aur kaha agli baar jaan se maar dunga.,"[""337-A"", ""506""]",337-A,roman_ur,synthetic,train,syn_0554,claude-opus-5.5
+syn_0555,"Bete ko agwa kar liya, 40 lakh maang rahe hain aur kehte hain police ko bataya to maar denge.","[""365-A"", ""506""]",365-A,roman_ur,synthetic,train,syn_0555,claude-opus-5.5
+syn_0556,Ek larka behan ko gandi messages bhejta hai aur ab kehta hai block kiya to nuqsaan pohnchaunga.,"[""509"", ""506""]",509,roman_ur,synthetic,train,syn_0556,claude-opus-5.5
+syn_0557,Naukrani ne ghar se sone ka set churaya aur sunar ko becha jo jaanta tha chori ka hai.,"[""380"", ""411""]",380,roman_ur,synthetic,train,syn_0557,claude-opus-5.5
+syn_0558,Cousin apne bandon ke saath hamaray khet mein ghus aaya aur kaha dobara zameen par aaye to maar denge.,"[""447"", ""441"", ""506""]",447,roman_ur,synthetic,train,syn_0558,claude-opus-5.5
+syn_0559,"Bandon ne kaha mahana paise do warna tumhare bete ko maar denge, main ne dar ke 50 hazaar de diye.","[""384"", ""506""]",384,roman_ur,synthetic,train,syn_0559,claude-opus-5.5
+syn_0560,Office ke bahar se motorcycle chori hui aur ek kabaari ke paas mili jisne jaan boojh kar chori ki khareedi thi.,"[""379"", ""411""]",379,roman_ur,synthetic,train,syn_0560,claude-opus-5.5
