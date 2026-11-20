@@ -827,3 +827,266 @@ Consider the citizen input: **"My shopkeeper gave me a cheque but it bounced. He
 - [x] `results/retrieval_zeroshot.csv` generated — **top-3 recall: 80% overall, 93.3% English** (target ≥ 60% ✅)
 - [x] `tests/test_retrieval.py` — **all 12 assertions PASS** ✅
 - [x] Changes committed on branch `aq`.
+
+
+---
+
+## 8. Task B5 — Similar Case Finder (FAISS Vector Index)
+
+**Weeks:** 7 | **Effort:** ~8 hours | **Dependencies:** B3 (`data/processed/sc_clean.csv`), B4 (Shared Sentence Transformer)
+
+---
+
+### 8.1 Problem Statement & AI Engineering Objectives
+
+When a law student or legal practitioner analyzes an incident — for example, *"The accused fired at the deceased with a rifle following an altercation over water distribution, claiming private defence"* — identifying the applicable statute (e.g., Section 302 / 100 PPC) is only the first step. In the common-law Pakistani judicial system, statutes derive their operational meaning from **binding apex court precedents** (*stare decisis*).
+
+The objective of Task B5 is to build a **high-precision semantic precedent retrieval engine** over the **301 verified Supreme Court criminal judgments** mined in Task B3:
+
+```
+[User Factual Incident Query]
+             │
+             ▼
+[Dense Embedding Inference (all-MiniLM-L6-v2)]
+             │
+             ▼
+[FAISS Inner Product (Cosine) Search over 301 Case Embeddings]
+             │
+      ┌──────┴──────┐
+      ▼             ▼
+[Raw Top-K]   [Optional Section Filter (e.g., Section 302 only)]
+      │             │
+      └──────┬──────┘
+             ▼
+[Hydrated Case Precedents: Title, Citation, Similarity %, Facts, Full Text Modal]
+```
+
+---
+
+### 8.2 Architecture & Engineering Decision Matrix
+
+As an AI engineer designing this system for production and academic evaluation, several vector retrieval and indexing strategies were evaluated:
+
+| Dimension | Option A: Scikit-Learn Cosine (Brute-Force) | Option B: Cloud Vector DB (Pinecone / Milvus / Qdrant) | Option C: FAISS `IndexFlatIP` (Chosen ✅) |
+|---|---|---|---|
+| **Retrieval Speed** | ~10–20 ms (linear $O(N \cdot d)$) | 150–350 ms (network roundtrip) | **< 1.0 ms** (C++ optimized BLAS dot product) |
+| **Offline Independence** | ✅ Fully local | ❌ Requires internet, billing, and API tokens | ✅ **100% offline, self-contained** |
+| **Footprint on Disk** | Large (raw `.npy` floats + metadata) | Zero local storage | **450 KB** (`case_index.faiss` + metadata) |
+| **Scalability Horizon** | Degrades linearly at $N > 10,000$ | Scales to billions | Scales seamlessly to $N = 100,000+$ on single CPU |
+| **Memory Overhead** | High (full python float64/float32 arrays) | Low | Low (memory-mapped C++ vector cache) |
+| **Dependency Complexity** | Low (`scikit-learn`) | High (Docker, daemon, networking) | Moderate (`faiss-cpu`) with pure NumPy fallback |
+
+#### Why FAISS `IndexFlatIP` Over Approximate Nearest Neighbors (ANN)?
+FAISS provides several index families:
+1. **`IndexIVFFlat` (Inverted File Index):** Partitions vector space into Voronoi cells.
+   * *Why rejected:* Requires a training phase (`kmeans` clustering). For $N = 301$, clustering into e.g. 32 centroids degrades recall because small clusters become sparse, creating false negatives.
+2. **`IndexHNSWFlat` (Hierarchical Navigable Small World):** Graph-based approximate search.
+   * *Why rejected:* Extra memory overhead for multi-layer graph edges without any observable speedup at $N = 301$.
+3. **`IndexFlatIP` (Inner Product on Normalized Vectors) ✅ (Chosen):**
+   * Computes exact dot products across all 301 vectors using multi-threaded OpenMP / BLAS primitives.
+   * Because all embeddings are $L_2$-normalized ($||\mathbf{u}||_2 = 1$), the inner product is mathematically identical to cosine similarity:
+     $$\text{sim}(\mathbf{q}, \mathbf{d}_i) = \mathbf{q} \cdot \mathbf{d}_i = \cos(\theta)$$
+   * **Exact Recall:** $100\%$ precision with **zero quantization distortion**.
+   * **Inference Latency:** Sub-millisecond execution (< 0.5 ms) on any standard quad-core CPU.
+
+---
+
+### 8.3 Case Document Representation Strategy (What to Embed?)
+
+A Supreme Court judgment ranges from 1,500 to 20,000 words. Passing the raw judgment directly into a transformer encoder is fundamentally flawed:
+1. `all-MiniLM-L6-v2` has an input context window limit of **256 tokens** (up to 512 with positional interpolation). Feeding a 10,000-word text causes aggressive truncation, discarding 95% of the judgment.
+2. The legal reasoning and procedural sections (counsel arguments, case citations, statutory quotes) dilute the specific **factual occurrence narrative**.
+
+#### Passage Formulation (Domain-Specific Context Packaging)
+We pack each of the 301 cases into a compact, semantically dense **search document** using the high-quality fields mined in Task B3:
+
+```python
+search_passage = (
+    f"Supreme Court Case: {case_title}. "
+    f"Cited Sections: {', '.join(sections)}. "
+    f"Facts of Occurrence: {text}"
+)
+```
+
+**Why this packaging wins:**
+* **`text` (Factual Occurrence):** Is the 150–1,000 character narrative specifically extracted in Task B3 (e.g., weapons, injury locations, motive, vehicle descriptions).
+* **`sections`:** Adds explicit statutory conditioning into the vector space so that cases involving robbery (`392`) naturally cluster near robbery queries, even when colloquial language is used.
+* **Token Budget:** The resulting search passage averages 180–300 tokens, perfectly fitting the transformer's optimal receptive field without truncation.
+
+---
+
+### 8.4 Hybrid Metadata Filtering (Two-Stage Query Pipeline)
+
+Law students frequently need to find precedents restricted to a specific offence (e.g., *"Show me all Supreme Court cases under Section 365-A involving ransom calls from mobile phones"*).
+
+We implement a **Two-Stage Hybrid Search Pipeline**:
+
+```mermaid
+flowchart TD
+    Q["User Query: 'armed robbery at night'"] --> E["Sentence Transformer (all-MiniLM-L6-v2)"]
+    E --> QV["Unit Query Vector (384-dim)"]
+    QV --> F["FAISS IndexFlatIP (Top-M Nearest Neighbors)"]
+    F --> R["M Raw Candidates (Scores in [-1.0, 1.0])"]
+    R --> FILTER{"Section Filter Provided?"}
+    FILTER -- Yes (e.g. '392') --> SEC["Filter: '392' in case['sections']"]
+    FILTER -- No --> ALL["Retain All"]
+    SEC --> MIN["Filter: similarity >= min_similarity"]
+    ALL --> MIN
+    MIN --> TOPK["Slice Top-K Results"]
+    TOPK --> HYD["Hydrate from models/case_metadata.json"]
+    HYD --> OUT["Output JSON / UI Cards"]
+```
+
+1. **Stage 1 (Vector Retrieval):** Query FAISS for a wide candidate pool ($M = \min(50, N)$).
+2. **Stage 2 (Relational Filtering):**
+   * Filter candidates where `section_filter in case["sections"]`.
+   * Enforce `similarity >= min_similarity`.
+3. **Stage 3 (Hydration):** Map vector IDs to `models/case_metadata.json` to attach `citation_number`, `case_title`, `sections`, and `full_text` excerpt for modal inspection.
+
+---
+
+### 8.5 Shared Resource Optimization (Zero-Redundancy Principle)
+
+A major AI engineering consideration is application footprint. Rather than loading a second embedding model for B5, `src/case_finder.py` **reuses the exact same model instance** from `src/retrieval.py` (`all-MiniLM-L6-v2`):
+* **Memory Footprint:** Saves ~120 MB RAM by sharing the PyTorch model weights across both Section Classification (B4) and Case Search (B5).
+* **Cross-Module Vector Alignment:** Because queries in B4 and B5 are mapped to the same 384-dimensional latent space, a user scenario analyzed in `1_Incident_Analyzer.py` can pass its pre-computed embedding vector directly to `3_Case_Finder.py` without re-encoding!
+
+---
+
+### 8.6 Output Artifacts Specification
+
+| File Path | Format | Size | Description |
+|---|---|---|---|
+| `models/case_index.faiss` | FAISS Binary (`IndexFlatIP`) | ~465 KB | C++ vector index containing 301 vectors of dimension 384 |
+| `models/case_metadata.json` | JSON Object Array | ~1.2 MB | 301 hydrated case dictionaries aligned 1:1 with FAISS vector IDs |
+| `src/case_finder.py` | Python Module | ~8 KB | Public API (`search_cases`, `build_case_index`) adhering to contract |
+| `tests/test_case_finder.py` | Automated Test Suite | ~7 KB | 10 comprehensive unit and semantic validation assertions |
+| `app/pages/3_Case_Finder.py` | Streamlit Page | ~6 KB | Interactive search interface with section filters & judgment modal |
+
+---
+
+### 8.7 API Contract (`src/case_finder.py`)
+
+```python
+def search_cases(
+    query: str,
+    top_k: int = 5,
+    section_filter: Optional[str] = None,
+    min_similarity: float = 0.0
+) -> List[Dict[str, Any]]:
+    """
+    Semantically searches 301 Supreme Court of Pakistan judgments.
+
+    Args:
+        query: Factual scenario or legal proposition in plain language.
+        top_k: Maximum number of precedents to return (default: 5).
+        section_filter: Optional PPC section ID (e.g., '302', '365-A') to restrict results.
+        min_similarity: Minimum cosine similarity threshold in [0.0, 1.0].
+
+    Returns:
+        List of dictionaries sorted by similarity descending:
+        [
+            {
+                "id": "sc_0042",
+                "similarity": 0.8245,
+                "case_title": "Muhammad Akram vs. The State",
+                "citation_number": "Criminal Appeal No. 10 of 2021",
+                "primary_section": "392",
+                "sections": ["392", "34"],
+                "text": "The prosecution story in brief is that...",
+                "full_text": "IN THE SUPREME COURT OF PAKISTAN..."
+            },
+            ...
+        ]
+    """
+```
+
+---
+
+### 8.8 Step-by-Step Implementation Workflow
+
+```mermaid
+flowchart TD
+    W1["Step 1: Install faiss-cpu\n(verify PyPI wheels for Python 3.14)"] --> W2
+    W2["Step 2: Develop src/case_finder.py\n(Index builder & Search API)"] --> W3
+    W3["Step 3: Build & Export Vector Artifacts\n(models/case_index.faiss & case_metadata.json)"] --> W4
+    W4["Step 4: Implement Automated Integrity Tests\n(tests/test_case_finder.py)"] --> W5
+    W5["Step 5: Upgrade Streamlit Case Finder UI\n(app/pages/3_Case_Finder.py)"] --> W6
+    W6["Step 6: Headless AppTest & End-to-End Validation"]
+```
+
+#### Step 1: Package Management
+Install `faiss-cpu` outside the sandbox:
+```bash
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -m pip install faiss-cpu
+```
+
+#### Step 2: Implement `src/case_finder.py`
+* Implement `build_case_index()`:
+  * Read `data/processed/sc_clean.csv`.
+  * Format search passages.
+  * Encode with `all-MiniLM-L6-v2` with `normalize_embeddings=True`.
+  * Initialize `faiss.IndexFlatIP(384)`, add embeddings, write to `models/case_index.faiss`.
+  * Export metadata list to `models/case_metadata.json`.
+* Implement `search_cases()`:
+  * Lazy-load model and FAISS index with `HF_HUB_OFFLINE=1`.
+  * Execute `index.search(query_vec, top_k * 4)`.
+  * Apply section and threshold filters.
+  * Return hydrated metadata dictionaries.
+
+#### Step 3: Implement Automated Test Suite (`tests/test_case_finder.py`)
+Assertions enforced:
+1. `models/case_index.faiss` exists and `index.ntotal == 301`.
+2. `models/case_metadata.json` exists with exactly 301 records.
+3. Query *"victim killed by firearm firing ambush"* returns Section 302 cases in top-3.
+4. Query *"cheque dishonoured upon presentation at bank"* returns Section 489-F in top-3.
+5. Query *"abducted child demanded ransom money"* returns Section 365-A in top-3.
+6. Section filter `section_filter="365-A"` returns exclusively cases citing Section 365-A.
+7. Similarity scores strictly bounded in `[0.0, 1.0]` and sorted in descending order.
+8. Latency constraint: `search_cases()` completes in under 50 ms.
+9. Empty string query gracefully returns `[]` without exceptions.
+10. Fallback resilience: If `faiss` C++ runtime fails, gracefully fallback to NumPy dot product.
+
+#### Step 4: Streamlit UI Upgrade (`app/pages/3_Case_Finder.py`)
+Replace preview stub with live search:
+* Scenario search text area with example prompt buttons.
+* Dynamic Section Filter dropdown (all 30 PPC sections + "All Sections").
+* Precedent Result Cards featuring:
+  * Match relevance score indicator (e.g. `92.4% Similarity`).
+  * Case registry caption & cited PPC sections in tags.
+  * Factual summary excerpt.
+  * Expandable modal to inspect the opening judicial record (`full_text`).
+
+---
+
+### 8.9 Verification Commands
+
+```bash
+# 1. Install faiss-cpu (requires network, executed once)
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -m pip install faiss-cpu
+
+# 2. Build FAISS index and case metadata
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/case_finder.py --build-index
+
+# 3. CLI Smoke Test for specific scenario
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/case_finder.py --query "gunshot firing during property dispute" --top-k 3
+
+# 4. CLI Smoke Test with Section Filter
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/case_finder.py --query "ransom demand" --section 365-A --top-k 3
+
+# 5. Run Automated Integrity Test Suite
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" tests/test_case_finder.py
+```
+
+---
+
+### 8.10 Deliverables & Definition of Done for Task B5
+
+- [ ] `faiss-cpu` installed and verified in Python 3.14 environment.
+- [ ] `src/case_finder.py` implemented with `build_case_index()` and `search_cases()`.
+- [ ] `models/case_index.faiss` generated containing 301 vectors of dimension 384.
+- [ ] `models/case_metadata.json` generated containing 301 complete legal records.
+- [ ] Hybrid filtering tested: Section filter strictly restricts returned candidates.
+- [ ] Automated test suite `tests/test_case_finder.py` — all 10 assertions PASS.
+- [ ] Streamlit page `app/pages/3_Case_Finder.py` connected to live FAISS search engine.
+- [ ] All code and artifacts staged and committed locally on branch `aq` (without pushing to remote).
