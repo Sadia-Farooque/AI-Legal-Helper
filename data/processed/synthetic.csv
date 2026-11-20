@@ -69,7 +69,6 @@ syn_0067,"at the wedding hall someone smashed a plate on my brothers head, the s
 syn_0068,A man in the market hit my wife on the face with his elbow and her lip split and bled. He was shouting at her for blocking the way.,"[""337-A""]",337-A,en,synthetic,train,syn_0068,claude-opus-5.5
 syn_0069,The school guard hit my son on the head with his baton. The doctor found a swelling and a small cut on his scalp.,"[""337-A""]",337-A,en,synthetic,train,syn_0069,claude-opus-5.5
 syn_0070,"During a dispute over water turn, my neighbour struck my brother on the head with a spade. The wound went down to the bone.","[""337-A""]",337-A,en,synthetic,train,syn_0070,claude-opus-5.5
-syn_0071,My stepmother hit me on the forehead with a hot iron. I have a burn wound on my face.,"[""337-A""]",337-A,en,synthetic,train,syn_0071,claude-opus-5.5
 syn_0072,Two boys attacked my friend outside the college and cut his face with a blade. He has a long cut from his ear to his chin.,"[""337-A""]",337-A,en,synthetic,train,syn_0072,claude-opus-5.5
 syn_0073,After the match a player head-butted my son and broke his nose. There was a lot of blood and it is swollen.,"[""337-A""]",337-A,en,synthetic,train,syn_0073,claude-opus-5.5
 syn_0074,"Parking ke jhagre mein pados wale ne meray sar par eent maar di, chhe taankay lage hain.","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0074,claude-opus-5.5
@@ -78,26 +77,24 @@ syn_0076,"cricket ground mein ek larke ne bat se mere bete ke maathay par maara,
 syn_0077,"Dukaandar ne abbu ke sar par lohe ki rod maari jab unhon ne baqi paise maange, sar se bohat khoon beh raha tha.","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0077,claude-opus-5.5
 syn_0078,"rickshaw wale ne mere munh par mukka maara aur aankh ke upar se khaal phat gayi, chaar taankay lagay","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0078,claude-opus-5.5
 syn_0079,"Paani ki baari ke jhagre mein pados wale ne bhai ke sar par belcha maara, zakham haddi tak hai.","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0079,claude-opus-5.5
-syn_0080,"meri sauteli maa ne garam istri mere maathay par laga di, chehre par jalne ka zakham hai","[""337-A""]",337-A,roman_ur,synthetic,train,syn_0080,claude-opus-5.5
 syn_0081,A man attacked me with a knife in the street and cut my arm. I got eight stitches on my forearm.,"[""337-F""]",337-F,en,synthetic,train,syn_0081,claude-opus-5.5
 syn_0082,My neighbour beat my brother with a thick stick on his legs and his shin bone is fractured according to the X-ray.,"[""337-F""]",337-F,en,synthetic,train,syn_0082,claude-opus-5.5
-syn_0083,The factory supervisor hit me on my back with a belt many times. There are red marks and bruises all over my back.,"[""337-F""]",337-F,en,synthetic,train,syn_0083,claude-opus-5.5
+syn_0083,The factory supervisor hit me on my back with a belt many times. The skin on my back broke and was bleeding.,"[""337-F""]",337-F,en,synthetic,train,syn_0083,claude-opus-5.5
 syn_0084,"During a quarrel over the plot, our cousin stabbed my father in the thigh. The wound is deep but did not touch the bone.","[""337-F""]",337-F,en,synthetic,train,syn_0084,claude-opus-5.5
 syn_0085,My husband beat me with a pipe on my arms and shoulders. My left arm is broken and I have bruises.,"[""337-F""]",337-F,en,synthetic,train,syn_0085,claude-opus-5.5
 syn_0086,A group of boys beat my son with sticks and his hand is fractured. He also has swelling on his back.,"[""337-F""]",337-F,en,synthetic,train,syn_0086,claude-opus-5.5
-syn_0087,The van conductor pushed me and then kicked me in the ribs. The doctor says there is a bruise but no internal damage.,"[""337-F""]",337-F,en,synthetic,train,syn_0087,claude-opus-5.5
+syn_0087,The van conductor pushed me and kicked me in the ribs. His shoe cut my skin and it was bleeding.,"[""337-F""]",337-F,en,synthetic,train,syn_0087,claude-opus-5.5
 syn_0088,My landlord hit my hand with a hammer when I asked him to return my deposit. Two of my fingers are fractured.,"[""337-F""]",337-F,en,synthetic,train,syn_0088,claude-opus-5.5
 syn_0089,In the bazaar a man slashed my leg with a broken bottle. The cut is long and I needed stitches.,"[""337-F""]",337-F,en,synthetic,train,syn_0089,claude-opus-5.5
 syn_0090,"my brother was bitten and beaten by the neighbours with sticks on his back and arms, he has many bruises and his wrist bone cracked","[""337-F""]",337-F,en,synthetic,train,syn_0090,claude-opus-5.5
 syn_0091,The security guard hit me on the knee with his gun butt. My knee is swollen and the X-ray shows a small fracture.,"[""337-F""]",337-F,en,synthetic,train,syn_0091,claude-opus-5.5
-syn_0092,My employer burned my arm with a hot iron rod as punishment for breaking a dish.,"[""337-F""]",337-F,en,synthetic,train,syn_0092,claude-opus-5.5
-syn_0093,A drunk man in our street hit my uncle on his chest and arms with a cricket bat. He has many bruises but no fracture.,"[""337-F""]",337-F,en,synthetic,train,syn_0093,claude-opus-5.5
+syn_0093,A drunk man in our street hit my uncle on his chest and arms with a cricket bat. The skin on his arm tore open and bled.,"[""337-F""]",337-F,en,synthetic,train,syn_0093,claude-opus-5.5
 syn_0094,My cousin bit my hand and then twisted my arm until my elbow dislocated during a fight over money.,"[""337-F""]",337-F,en,synthetic,train,syn_0094,claude-opus-5.5
 syn_0095,At the bus stop a man stabbed me in the arm with a screwdriver. The wound bled a lot but the doctor says it is not deep.,"[""337-F""]",337-F,en,synthetic,train,syn_0095,claude-opus-5.5
 syn_0096,The teacher beat my son on his palms and legs with a stick so badly that the skin broke and bled.,"[""337-F""]",337-F,en,synthetic,train,syn_0096,claude-opus-5.5
 syn_0097,"Gali mein ek aadmi ne chaaku se mere baazu par waar kiya, aath taankay lage hain.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0097,claude-opus-5.5
 syn_0098,"pados wale ne mote danday se bhai ki tangon par maara, X-ray mein pindli ki haddi tooti hui hai","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0098,claude-opus-5.5
-syn_0099,"Supervisor ne belt se meri kamar par kayi dafa maara, poori kamar par neel par gaye hain.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0099,claude-opus-5.5
+syn_0099,"Supervisor ne belt se meri kamar par kayi dafa maara, kamar ki jild phat gayi aur khoon nikla.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0099,claude-opus-5.5
 syn_0100,"Mere shohar ne pipe se mere baazuon par maara, baayan baazu toot gaya hai.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0100,claude-opus-5.5
 syn_0101,"Malik makaan ne hathoray se mere haath par maara jab main ne security wapas maangi, do ungliyan toot gayin.","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0101,claude-opus-5.5
 syn_0102,"bus stop par ek banday ne screwdriver mere baazu mein maar diya, khoon bohat nikla","[""337-F""]",337-F,roman_ur,synthetic,train,syn_0102,claude-opus-5.5
@@ -105,19 +102,19 @@ syn_0103,Ustaad ne mere bete ki hatheliyon aur tangon par danday se itna maara k
 syn_0104,Every morning my neighbour parks his truck across the only street to my house and refuses to move it. He says I am not allowed to pass from there.,"[""339""]",339,en,synthetic,train,syn_0104,claude-opus-5.5
 syn_0105,Some men from the next village stood in front of my tractor and did not let me go to my own field. They said the path belongs to them.,"[""339""]",339,en,synthetic,train,syn_0105,claude-opus-5.5
 syn_0106,"The traffic warden's friend stopped my car on the road and stood in front of it for half an hour, not letting me go anywhere.","[""339""]",339,en,synthetic,train,syn_0106,claude-opus-5.5
-syn_0107,My brothers blocked the gate of our ancestral house and stopped my mother from going in or out to the market.,"[""339""]",339,en,synthetic,train,syn_0107,claude-opus-5.5
+syn_0107,My brothers stand in the street outside our ancestral house and stop my mother whenever she tries to walk to the market.,"[""339""]",339,en,synthetic,train,syn_0107,claude-opus-5.5
 syn_0108,A group of boys blocked my way on the bridge and would not let me pass unless I paid them. I had to go back.,"[""339""]",339,en,synthetic,train,syn_0108,claude-opus-5.5
 syn_0109,my landlord put a chain across the stairs and won't let me go up to my own flat until I pay double rent,"[""339""]",339,en,synthetic,train,syn_0109,claude-opus-5.5
-syn_0110,"The shopkeeper and his son stood at the door and did not let my wife leave the shop, accusing her of not paying, though she had paid.","[""339""]",339,en,synthetic,train,syn_0110,claude-opus-5.5
+syn_0110,"The shopkeeper and his son stood at the door and did not let my wife leave the shop, accusing her of not paying, though she had paid.","[""340""]",340,en,synthetic,train,syn_0110,claude-opus-5.5
 syn_0111,Our neighbours built a wall across the common path and now my children cannot go to school from that way.,"[""339""]",339,en,synthetic,train,syn_0111,claude-opus-5.5
-syn_0112,"At the petrol pump, the staff surrounded my motorcycle and did not let me leave for an hour over a dispute of 200 rupees.","[""339""]",339,en,synthetic,train,syn_0112,claude-opus-5.5
-syn_0113,My in-laws stand at the door and stop me from going to visit my parents. They physically block my way.,"[""339""]",339,en,synthetic,train,syn_0113,claude-opus-5.5
-syn_0114,The college guards stopped my brother at the gate and did not let him go home for two hours without any reason.,"[""339""]",339,en,synthetic,train,syn_0114,claude-opus-5.5
+syn_0112,At the petrol pump the staff parked a car across the exit road and did not let me ride out for an hour over a dispute of 200 rupees.,"[""339""]",339,en,synthetic,train,syn_0112,claude-opus-5.5
+syn_0113,My in-laws stop me on the street whenever I try to go to my parents' house. They physically block my way.,"[""339""]",339,en,synthetic,train,syn_0113,claude-opus-5.5
+syn_0114,The college guards stopped my brother at the gate and did not let him go home for two hours without any reason.,"[""340""]",340,en,synthetic,train,syn_0114,claude-opus-5.5
 syn_0115,A man held the handle of my rickshaw and would not let me drive away until I gave him a ride for free.,"[""339""]",339,en,synthetic,train,syn_0115,claude-opus-5.5
 syn_0116,Pados wala roz subah apna truck gali mein khara kar deta hai aur kehta hai tum yahan se nahi guzar sakte.,"[""339""]",339,roman_ur,synthetic,train,syn_0116,claude-opus-5.5
 syn_0117,Dusre gaon ke bandon ne mere tractor ke aagay khare ho kar mujhe apne khet jaane nahi diya.,"[""339""]",339,roman_ur,synthetic,train,syn_0117,claude-opus-5.5
 syn_0118,landlord ne seerhiyon par zanjeer laga di hai aur kehta hai double kiraya do warna upar nahi jaane dunga,"[""339""]",339,roman_ur,synthetic,train,syn_0118,claude-opus-5.5
-syn_0119,Susraal wale darwaze par khare ho jaate hain aur mujhe apne maa baap ke ghar jaane se rokte hain.,"[""339""]",339,roman_ur,synthetic,train,syn_0119,claude-opus-5.5
+syn_0119,Susraal wale gali mein mera rasta rok lete hain jab bhi main apne maa baap ke ghar jaane lagti hun.,"[""339""]",339,roman_ur,synthetic,train,syn_0119,claude-opus-5.5
 syn_0120,Pul par larkon ne mera rasta rok liya aur kaha paise do warna aagay nahi jaane denge.,"[""339""]",339,roman_ur,synthetic,train,syn_0120,claude-opus-5.5
 syn_0121,My employer locked me inside the godown for two days because he suspected I took money. He gave me food from the window.,"[""340""]",340,en,synthetic,train,syn_0121,claude-opus-5.5
 syn_0122,My in-laws locked my sister in a room for a week and took her phone so she cannot contact us.,"[""340""]",340,en,synthetic,train,syn_0122,claude-opus-5.5
@@ -199,7 +196,7 @@ syn_0197,My cousin was abducted by her relatives from the hostel and they are ke
 syn_0198,"Some people took my father from his shop by force, and later we found out they were holding him in a farmhouse without telling anyone.","[""365""]",365,en,synthetic,train,syn_0198,claude-opus-5.5
 syn_0199,"my friend was taken by his business partner's men and locked in a secret place, they want him to sign over the shop","[""365""]",365,en,synthetic,train,syn_0199,claude-opus-5.5
 syn_0200,My employee was abducted from the bus stop by people of a rival party and kept in an unknown place. We have no contact with him.,"[""365""]",365,en,synthetic,train,syn_0200,claude-opus-5.5
-syn_0201,My sister was forcibly taken by her ex-fiance's family and they are keeping her in their village secretly.,"[""365""]",365,en,synthetic,train,syn_0201,claude-opus-5.5
+syn_0201,My sister was forcibly taken by her husband's relatives after a family fight and they are keeping her hidden in their village. They won't tell us where she is.,"[""365""]",365,en,synthetic,train,syn_0201,claude-opus-5.5
 syn_0202,A man and his friends abducted my neighbour's son and kept him in an empty house for a week to settle a dispute.,"[""365""]",365,en,synthetic,train,syn_0202,claude-opus-5.5
 syn_0203,My uncle was taken away from the fields by armed men and they are confining him in a hidden place in the hills.,"[""365""]",365,en,synthetic,train,syn_0203,claude-opus-5.5
 syn_0204,Two men pushed my brother into a car outside the university and his phone has been off since then. They are hiding him somewhere.,"[""365""]",365,en,synthetic,train,syn_0204,claude-opus-5.5
@@ -422,7 +419,7 @@ syn_0420,"A group of people entered my empty plot in Bahria Town, put up a tent 
 syn_0421,"My former tenant comes into my shop's compound again and again even after I told him not to, and he insults my customers.","[""447"", ""441""]",447,en,synthetic,train,syn_0421,claude-opus-5.5
 syn_0422,The neighbour's boys climb into our school ground at night and drink and break things there to bother the management.,"[""447"", ""441""]",447,en,synthetic,train,syn_0422,claude-opus-5.5
 syn_0423,"The land mafia sent men who entered our farm, cut the trees and put their own fence on our land.","[""447"", ""441""]",447,en,synthetic,train,syn_0423,claude-opus-5.5
-syn_0424,"my uncle's sons jump into our orchard and pluck the fruit and abuse our workers, we told them many times not to come","[""447"", ""441""]",447,en,synthetic,train,syn_0424,claude-opus-5.5
+syn_0424,"my uncle's sons jump into our orchard and pluck the fruit and abuse our workers, we told them many times not to come","[""447"", ""441"", ""379""]",447,en,synthetic,train,syn_0424,claude-opus-5.5
 syn_0425,My business rival's men entered our factory yard without permission to threaten the staff and stop the work.,"[""447"", ""441""]",447,en,synthetic,train,syn_0425,claude-opus-5.5
 syn_0426,Some people entered the graveyard land we own and started building shops on it.,"[""447"", ""441""]",447,en,synthetic,train,syn_0426,claude-opus-5.5
 syn_0427,A man entered my fish farm area at night and released the water from the pond to cause me loss.,"[""447"", ""441""]",447,en,synthetic,train,syn_0427,claude-opus-5.5
@@ -435,7 +432,7 @@ syn_0433,Pados wale ne boundary wall tor kar hamare plot mein mazdoor la kar kam
 syn_0434,Dusre gaon ke log raat ko hamaray khet mein ghus kar apne maweshi hamari fasal par charatay hain.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0434,claude-opus-5.5
 syn_0435,"cousin tractor le kar hamari zameen mein ghus aaya aur hal chalana shuru kar diya, court ne faisla hamare haq mein diya hai","[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0435,claude-opus-5.5
 syn_0436,Land mafia ke bandon ne farm mein ghus kar darakht kaat diye aur apni baarh laga di.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0436,claude-opus-5.5
-syn_0437,Chacha ke betay hamaray baagh mein ghus kar phal torte hain aur mazdooron ko gaaliyan dete hain.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0437,claude-opus-5.5
+syn_0437,Chacha ke betay hamaray baagh mein ghus kar phal torte hain aur mazdooron ko gaaliyan dete hain.,"[""447"", ""441"", ""379""]",447,roman_ur,synthetic,train,syn_0437,claude-opus-5.5
 syn_0438,Contractor ko nikala to wo apne bandon ke saath site par aa kar naye mazdooron ka kaam rokta hai.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0438,claude-opus-5.5
 syn_0439,Dusri party ke log hamare dere par aa kar ghanton baithay rehte hain aur jaate nahi.,"[""447"", ""441""]",447,roman_ur,synthetic,train,syn_0439,claude-opus-5.5
 syn_0440,My ex-husband came into my house at night without permission and started shouting and threatening my family.,"[""448""]",448,en,synthetic,train,syn_0440,claude-opus-5.5
@@ -536,14 +533,14 @@ syn_0534,My ex-husband broke into our house at night and threatened to kill me a
 syn_0535,My neighbour's son entered our house when I was alone and grabbed me and tried to touch me. I screamed and he ran.,"[""448"", ""354""]",448,en,synthetic,train,syn_0535,claude-opus-5.5
 syn_0536,Our maid stole my gold set from the house and sold it to a jeweller who knew it was stolen. Police found it at his shop.,"[""380"", ""411""]",380,en,synthetic,train,syn_0536,claude-opus-5.5
 syn_0537,My cousin hit my father on the head with a stick and said next time he will kill him. My father has a head wound.,"[""337-A"", ""506""]",337-A,en,synthetic,train,syn_0537,claude-opus-5.5
-syn_0538,My landlord beat me with a pipe on my back and said he will kill me if I don't leave the house.,"[""337-F"", ""506""]",337-F,en,synthetic,train,syn_0538,claude-opus-5.5
+syn_0538,"My landlord beat me with a pipe on my back until the skin broke and bled, and said he will kill me if I don't leave the house.","[""337-F"", ""506""]",337-F,en,synthetic,train,syn_0538,claude-opus-5.5
 syn_0539,"My son was kidnapped and the kidnappers are demanding 40 lakh, saying they will kill him if we tell the police.","[""365-A"", ""506""]",365-A,en,synthetic,train,syn_0539,claude-opus-5.5
 syn_0540,"I gave my car to a man who said he will sell it for a good price, he sold it and kept all the money, and his ID card was fake.","[""406"", ""420""]",406,en,synthetic,train,syn_0540,claude-opus-5.5
 syn_0541,A boy keeps sending vulgar messages to my sister and now he threatens to harm her if she blocks him.,"[""509"", ""506""]",509,en,synthetic,train,syn_0541,claude-opus-5.5
 syn_0542,A man in the bus touched my daughter on purpose and kept passing dirty comments at her.,"[""354"", ""509""]",354,en,synthetic,train,syn_0542,claude-opus-5.5
-syn_0543,My employer locked me in the storeroom and beat me with a belt on my back for two days.,"[""340"", ""337-F""]",340,en,synthetic,train,syn_0543,claude-opus-5.5
+syn_0543,My employer locked me in the storeroom for two days and beat me with a belt; my back is cut and bleeding.,"[""340"", ""337-F""]",340,en,synthetic,train,syn_0543,claude-opus-5.5
 syn_0544,"My neighbour threatened many times that he would kill my brother, and last night he came to our street and shot him dead.","[""302"", ""506""]",302,en,synthetic,train,syn_0544,claude-opus-5.5
-syn_0545,"Six armed robbers entered our house, beat my brother with rifle butts on his back and arms, and looted the jewellery.","[""395"", ""337-F""]",395,en,synthetic,train,syn_0545,claude-opus-5.5
+syn_0545,"Six armed robbers entered our house, beat my brother with rifle butts and fractured his arm, and looted the jewellery.","[""395"", ""337-F""]",395,en,synthetic,train,syn_0545,claude-opus-5.5
 syn_0546,Someone took my 9 year old son from outside the school and now they are calling and asking 10 lakh for his return.,"[""363"", ""365-A""]",363,en,synthetic,train,syn_0546,claude-opus-5.5
 syn_0547,My cousin and his men entered our field and threatened to kill us if we come to our land again.,"[""447"", ""441"", ""506""]",447,en,synthetic,train,syn_0547,claude-opus-5.5
 syn_0548,My motorcycle was stolen from outside my office and I found it at a scrap dealer who bought it knowing it was stolen.,"[""379"", ""411""]",379,en,synthetic,train,syn_0548,claude-opus-5.5
@@ -552,7 +549,7 @@ syn_0550,"A man had been threatening my brother for weeks, and yesterday he fire
 syn_0551,"Daakuon ne gaari rok kar phone aur wallet chheena, roka to aik ne seene par fire kar diya, operation ke baad bach gaya.","[""392"", ""324""]",392,roman_ur,synthetic,train,syn_0551,claude-opus-5.5
 syn_0552,"Banday ne mobile chheena aur pistol ka butt mere sar par maara, sar par taankay lagay.","[""392"", ""337-A""]",392,roman_ur,synthetic,train,syn_0552,claude-opus-5.5
 syn_0553,Saabiq shohar raat ko ghar mein ghus aaya aur kaha wapas na aayi to tujhe aur teri maa ko maar dunga.,"[""448"", ""506""]",448,roman_ur,synthetic,train,syn_0553,claude-opus-5.5
-syn_0554,Cousin ne abbu ke sar par danda maara aur kaha agli baar jaan se maar dunga.,"[""337-A"", ""506""]",337-A,roman_ur,synthetic,train,syn_0554,claude-opus-5.5
+syn_0554,"Cousin ne abbu ke sar par danda maara, sar se khoon nikla, aur kaha agli baar jaan se maar dunga.","[""337-A"", ""506""]",337-A,roman_ur,synthetic,train,syn_0554,claude-opus-5.5
 syn_0555,"Bete ko agwa kar liya, 40 lakh maang rahe hain aur kehte hain police ko bataya to maar denge.","[""365-A"", ""506""]",365-A,roman_ur,synthetic,train,syn_0555,claude-opus-5.5
 syn_0556,Ek larka behan ko gandi messages bhejta hai aur ab kehta hai block kiya to nuqsaan pohnchaunga.,"[""509"", ""506""]",509,roman_ur,synthetic,train,syn_0556,claude-opus-5.5
 syn_0557,Naukrani ne ghar se sone ka set churaya aur sunar ko becha jo jaanta tha chori ka hai.,"[""380"", ""411""]",380,roman_ur,synthetic,train,syn_0557,claude-opus-5.5

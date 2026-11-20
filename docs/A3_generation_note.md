@@ -1,6 +1,6 @@
 # A3 Generation Note: synthetic citizen incident stories
 
-**File:** `data/processed/synthetic.csv` (560 stories: 392 English, 168 Roman Urdu; 53 multi-offence)
+**File:** `data/processed/synthetic.csv` (560 generated; **557 after review**: 3 removed and 17 corrected, see `docs/A3_review_fixes.md`)
 **Owner:** Sadia Fatima (Track A)
 **Date:** 20 Nov 2026
 **Generator:** an AI assistant (Claude, Anthropic), from the per-section legal guidelines below.
@@ -27,36 +27,36 @@ Every story was written to these rules:
 
 ## 3. Per-section scenario guidelines (legal accuracy)
 
-| Section   | What a story must contain                                                                                                       | What it must NOT be                                                      |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| 302       | Intentional killing (shot, stabbed, strangled, poisoned)                                                                        | Accident or negligence (→ 319)                                           |
-| 319       | Death by mistake or negligence: gun accident, mistaken identity while hunting or guarding, careless work                        | Road accident (that is s.320, not in the label set); intentional killing |
-| 324       | Clear intent to kill, victim survives                                                                                           | Ordinary injury without intent to kill (→ 337-A/F)                       |
-| 337-A     | Injury to the **head or face** (cuts, fractures of the nose or skull, face wounds)                                              | Body injuries (→ 337-F); broken teeth (a different PPC category)         |
-| 337-F     | Wounds, bruises or fractures on the **body** other than head or face, not reaching a body cavity                                | Head/face injuries                                                       |
-| 339       | Blocking someone's way                                                                                                          | Locking them in (→ 340)                                                  |
-| 340       | Confining someone within limits (locked room, godown, kiln)                                                                     | Only blocking a path                                                     |
-| 354       | Force or touch on a woman with intent to outrage modesty                                                                        | Words or gestures only (→ 509)                                           |
-| 354A      | Stripping a woman of her clothes **and exposing her to public view**                                                            | Touching only (→ 354)                                                    |
-| 363       | Taking a minor (boy under 14, girl under 16) from a guardian                                                                    | An adult (→ 365)                                                         |
-| 365       | Adult abducted and kept secretly, no ransom                                                                                     | A ransom demand (→ 365-A)                                                |
-| 365-A     | Kidnapping with a ransom demand                                                                                                 |                                                                          |
-| 379       | Taking property without force or entering a house                                                                               | Inside a dwelling (→ 380); force or threat (→ 392)                       |
-| 380       | Theft inside a house, flat, room or hostel                                                                                      |                                                                          |
-| 382       | Theft where the thief came **prepared** to cause hurt or restraint (hidden weapon, ropes) but did not use it on the victim      | Weapon shown to the victim (→ 392)                                       |
-| 384       | Property or a document delivered **because of** threats                                                                         | Threat only, nothing delivered (→ 506)                                   |
-| 392       | Snatching or taking with force or threat (gunpoint, knife, pulling a bag so the victim falls)                                   | 5 or more offenders (→ 395)                                              |
-| 395       | Robbery by **5 or more** people                                                                                                 | Fewer than 5                                                             |
-| 403       | Keeping found or mistakenly received property                                                                                   | Taking from someone's possession (→ 379); entrusted property (→ 406)     |
-| 406       | Property **entrusted** and then misused or kept                                                                                 | Deception at the start (→ 420)                                           |
-| 411       | Buying or keeping property **knowing** it was stolen                                                                            |                                                                          |
-| 420       | Deception that makes the victim hand over money or property                                                                     |                                                                          |
-| 441 + 447 | Entering someone's land or premises to occupy it or annoy them; both labels, because 441 defines and 447 punishes (decision D5) | Entering a house (→ 448)                                                 |
-| 448       | Entering a house or dwelling without permission                                                                                 |                                                                          |
-| 489-F     | A cheque given for a loan or obligation, dishonoured                                                                            |                                                                          |
-| 500       | False statements harming someone's reputation                                                                                   |                                                                          |
-| 506       | Threats of death, injury, acid or burning                                                                                       |                                                                          |
-| 509       | Remarks, gestures or messages of a sexual nature; demands for sexual favours                                                    | Physical touch (→ 354)                                                   |
+| Section   | What a story must contain                                                                                                          | What it must NOT be                                                           |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| 302       | Intentional killing (shot, stabbed, strangled, poisoned)                                                                           | Accident or negligence (→ 319)                                                |
+| 319       | Death by mistake or negligence: gun accident, mistaken identity while hunting or guarding, careless work                           | Road accident (that is s.320, not in the label set); intentional killing      |
+| 324       | Clear intent to kill, victim survives                                                                                              | Ordinary injury without intent to kill (→ 337-A/F)                            |
+| 337-A     | Injury to the **head or face** (cuts, fractures of the nose or skull, face wounds)                                                 | Body injuries (→ 337-F); broken teeth (a different PPC category)              |
+| 337-F     | Wounds (skin broken, cut, bleeding), fractures or dislocations on the **body** other than head or face, not reaching a body cavity | Head/face injuries; bruises or swelling alone (that is 'other hurt', s.337-L) |
+| 339       | Blocking someone's way in a direction they have a right to go                                                                      | Keeping them inside a place they cannot leave (→ 340)                         |
+| 340       | Confining someone within limits (locked room, godown, kiln)                                                                        | Only blocking a path                                                          |
+| 354       | Force or touch on a woman with intent to outrage modesty                                                                           | Words or gestures only (→ 509)                                                |
+| 354A      | Stripping a woman of her clothes **and exposing her to public view**                                                               | Touching only (→ 354)                                                         |
+| 363       | Taking a minor (boy under 14, girl under 16) from a guardian                                                                       | An adult (→ 365)                                                              |
+| 365       | Adult abducted and kept secretly, no ransom                                                                                        | A ransom demand (→ 365-A)                                                     |
+| 365-A     | Kidnapping with a ransom demand                                                                                                    |                                                                               |
+| 379       | Taking property without force or entering a house                                                                                  | Inside a dwelling (→ 380); force or threat (→ 392)                            |
+| 380       | Theft inside a house, flat, room or hostel                                                                                         |                                                                               |
+| 382       | Theft where the thief came **prepared** to cause hurt or restraint (hidden weapon, ropes) but did not use it on the victim         | Weapon shown to the victim (→ 392)                                            |
+| 384       | Property or a document delivered **because of** threats                                                                            | Threat only, nothing delivered (→ 506)                                        |
+| 392       | Snatching or taking with force or threat (gunpoint, knife, pulling a bag so the victim falls)                                      | 5 or more offenders (→ 395)                                                   |
+| 395       | Robbery by **5 or more** people                                                                                                    | Fewer than 5                                                                  |
+| 403       | Keeping found or mistakenly received property                                                                                      | Taking from someone's possession (→ 379); entrusted property (→ 406)          |
+| 406       | Property **entrusted** and then misused or kept                                                                                    | Deception at the start (→ 420)                                                |
+| 411       | Buying or keeping property **knowing** it was stolen                                                                               |                                                                               |
+| 420       | Deception that makes the victim hand over money or property                                                                        |                                                                               |
+| 441 + 447 | Entering someone's land or premises to occupy it or annoy them; both labels, because 441 defines and 447 punishes (decision D5)    | Entering a house (→ 448)                                                      |
+| 448       | Entering a house or dwelling without permission                                                                                    |                                                                               |
+| 489-F     | A cheque given for a loan or obligation, dishonoured                                                                               |                                                                               |
+| 500       | False statements harming someone's reputation                                                                                      |                                                                               |
+| 506       | Threats of death, injury, acid or burning                                                                                          |                                                                               |
+| 509       | Remarks, gestures or messages of a sexual nature; demands for sexual favours                                                       | Physical touch (→ 354)                                                        |
 
 ## 4. Known simplifications (stated for the report)
 

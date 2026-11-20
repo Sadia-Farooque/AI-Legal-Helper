@@ -1,0 +1,39 @@
+# A3 Review Fixes
+
+Changes made to `data/processed/synthetic.csv` after the legal review of the 84-story sample (20 Nov 2026).
+When a sample error pointed to a pattern, the rule was applied to all 560 stories (`sweep`), not only the sample.
+
+**Rules found in review:**
+
+1. **Jurh (337-F) needs a real wound.** Ghayr-jaifah means the skin is broken, a cut, a fracture or a dislocation. Bruises or swelling alone are 'other hurt' (s.337-L), which is not in the label set. The same applies to shajjah (337-A) on the head or face.
+2. **Restraint vs confinement.** Blocking someone's way is 339; keeping them inside a place they cannot leave (a shop, a college, the only door of a house) is 340.
+3. **Burn injuries** do not clearly fall under shajjah or jurh, so those stories were removed rather than risk a wrong label.
+4. **Abduction to compel marriage** is s.365-B (not in the label set), so a 365 story must not imply it.
+5. **Label every offence in the story:** taking fruit from an orchard is theft (379) as well as trespass.
+
+| Story    | Action  | Found in | Old sections       | New sections            | Reason                                                                                                                                                                                                      |
+| -------- | ------- | -------- | ------------------ | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| syn_0071 | delete  | sample   | `["337-A"]`        | `-`                     | Burn injury on the face: unclear whether it is shajjah (337-A) or another category, so removed rather than risk a wrong label.                                                                              |
+| syn_0080 | delete  | sweep    | `["337-A"]`        | `-`                     | Roman Urdu twin of syn_0071 (face burn), same reason.                                                                                                                                                       |
+| syn_0092 | delete  | sweep    | `["337-F"]`        | `-`                     | Burn injury on the arm: unclear whether it is jurh (337-F), same reason.                                                                                                                                    |
+| syn_0083 | rewrite | sample   | `["337-F"]`        | `["337-F"]`             | Bruises alone are not jurh: ghayr-jaifah (337-F) needs the skin broken, a cut, a fracture or a dislocation; a bruise is 'other hurt' (337-L, not in the label set). Rewritten so the injury really is jurh. |
+| syn_0087 | rewrite | sweep    | `["337-F"]`        | `["337-F"]`             | Bruise only: same rule as syn_0083.                                                                                                                                                                         |
+| syn_0093 | rewrite | sweep    | `["337-F"]`        | `["337-F"]`             | Bruises only: same rule as syn_0083.                                                                                                                                                                        |
+| syn_0099 | rewrite | sweep    | `["337-F"]`        | `["337-F"]`             | Bruises only ('neel'): same rule as syn_0083.                                                                                                                                                               |
+| syn_0538 | rewrite | sweep    | `["337-F", "506"]` | `["337-F", "506"]`      | Injury not described, so 337-F was not supported by the text.                                                                                                                                               |
+| syn_0543 | rewrite | sweep    | `["340", "337-F"]` | `["340", "337-F"]`      | Injury not described, so 337-F was not supported by the text.                                                                                                                                               |
+| syn_0545 | rewrite | sweep    | `["395", "337-F"]` | `["395", "337-F"]`      | Injury not described, so 337-F was not supported by the text.                                                                                                                                               |
+| syn_0554 | rewrite | sweep    | `["337-A", "506"]` | `["337-A", "506"]`      | Head injury not described, so 337-A was not supported by the text.                                                                                                                                          |
+| syn_0107 | rewrite | sample   | `["339"]`          | `["339"]`               | 'Blocked the gate ... going in or out' could mean she cannot leave the house, which is confinement (340), not restraint (339). Rewritten as clear restraint.                                                |
+| syn_0112 | rewrite | sample   | `["339"]`          | `["339"]`               | Surrounding a person can amount to confinement (340). Rewritten as clear restraint (blocking the way out of the pump on the road).                                                                          |
+| syn_0110 | relabel | sweep    | `["339"]`          | `["340"]`               | The wife cannot leave the shop because both men block its only door: that is confinement (340), not restraint (339).                                                                                        |
+| syn_0114 | relabel | sweep    | `["339"]`          | `["340"]`               | The brother is kept inside the college for two hours: confinement (340), not restraint (339).                                                                                                               |
+| syn_0113 | rewrite | sweep    | `["339"]`          | `["339"]`               | 'Stand at the door' could mean she cannot leave the house (340). Rewritten as clear restraint.                                                                                                              |
+| syn_0119 | rewrite | sweep    | `["339"]`          | `["339"]`               | Roman Urdu twin of syn_0113, same reason.                                                                                                                                                                   |
+| syn_0201 | rewrite | sample   | `["365"]`          | `["365"]`               | Abduction by an ex-fiance's family suggests compelling marriage, which is s.365-B (not in the label set), not s.365. Rewritten without a marriage motive.                                                   |
+| syn_0424 | relabel | sample   | `["447", "441"]`   | `["447", "441", "379"]` | Plucking and taking the fruit is theft (379) in addition to criminal trespass.                                                                                                                              |
+| syn_0437 | relabel | sweep    | `["447", "441"]`   | `["447", "441", "379"]` | Roman Urdu twin of syn_0424 ('phal torte hain'): theft added.                                                                                                                                               |
+
+Result: 20 stories changed (3 deleted, 13 rewritten, 4 relabelled). 557 stories remain.
+
+**Known limitations kept on purpose:** stories under 324 (attempted qatl-i-amd) where the victim was wounded are labelled 324 only; s.324 makes the offender also liable for the hurt caused, but the specific hurt sections are not added. A theft by a domestic servant (e.g. syn_0253) is labelled 380; s.381 (theft by servant) also applies but is not in the label set. Sexual touching of a child (syn_0154) is labelled 354; s.377-B (2016) may also apply but is not in the label set.
