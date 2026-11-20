@@ -2,8 +2,8 @@
 
 Expects the folder downloaded from notebooks/A5_distilbert.ipynb at models/distilbert/
 (config, weights, tokenizer, track_a_config.json). Not committed to git (too large).
-If A6 has written a temperature into track_a_config.json, scores are calibrated:
-score = sigmoid(logit / T).
+If A6 has written results/calibration_distilbert.json, scores are calibrated:
+score = sigmoid(a * logit + b).
 
 Usage: python src/evaluate.py --model distilbert_model --test-data <csv>
 """
@@ -48,7 +48,7 @@ def predict_scores(text):
     labels = s["cfg"]["labels"]
     if not (text or "").strip():
         return {l: 0.0 for l in labels}
-    import numpy as np
-    z = logits([text])[0] / float(s["cfg"].get("temperature", 1.0))
-    p = 1.0 / (1.0 + np.exp(-z))
+    from src.calibration import apply, load_calibration
+    a, b = load_calibration("distilbert")
+    p = apply(logits([text])[0], a, b)
     return {l: float(round(v, 6)) for l, v in zip(labels, p)}
