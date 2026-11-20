@@ -309,3 +309,143 @@ Run the data integrity test suite via Python:
 - [x] Automated validation suite `tests/test_content.py` created and executing cleanly with 100% pass rate.
 - [x] Section Explorer app page (`app/pages/2_Section_Explorer.py`) verified to render the new content seamlessly.
 - [x] Staged and ready for commit under branch `aq`.
+
+
+---
+
+## 6. Deep-Dive Implementation Plan: Task B3 (Supreme Court Judgments Exploration & Regex Section Extraction)
+
+### 6.1 Task Overview & Downstream Impact
+- **Task ID:** `B3`
+- **Owner:** Abdul Qudoos
+- **Timeline:** Weeks 4 to 5
+- **Estimated Effort:** 10 Hours
+- **Goal:** Process the raw Pakistan Supreme Court judgment repository (`data/raw/sc_judgments.parquet`, 1,414 judgments), document text distribution, develop high-precision regex extraction for PPC citations, extract factual background narratives, and construct `data/processed/sc_clean.csv`.
+- **Downstream Architecture Impact:**
+  - **Task B5 (Similar Case Finder):** The extracted facts and case metadata become the corpus indexed into FAISS for student semantic precedent discovery.
+  - **Task B4 (Retrieval Model):** Real judgment fact patterns serve as real-world zero-shot validation benchmarks.
+  - **Cross-Track Sharing:** Provides verified Pakistani court cases as supplemental training data for Sadia's supervised baseline models.
+
+---
+
+### 6.2 Data Specification & Contract for `sc_clean.csv`
+
+The deliverable `data/processed/sc_clean.csv` conforms to the canonical K3 schema:
+
+| Column Name | Type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| `id` | string | Unique case identifier | `"sc_0042"` |
+| `text` | string | Extracted factual background narrative (opening paragraphs / facts of occurrence) | `"According to the prosecution case, on 14.07.2018 at about 8:30 PM, the complainant was returning home when two armed appellants on a motorbike intercepted him..."` |
+| `full_text` | string | Complete original judgment text (for Case Finder reader modal) | `"SUPREME COURT OF PAKISTAN (Appellate Jurisdiction)..."` |
+| `sections` | string (JSON array) | List of verified PPC sections extracted via regex | `["302", "34"]` |
+| `primary_section` | string | Most prominent PPC section charged / adjudicated | `"302"` |
+| `language` | string | Always `"en"` (Supreme Court proceedings are in English) | `"en"` |
+| `source` | string | Always `"sc"` (Supreme Court of Pakistan) | `"sc"` |
+| `split` | string | Partition tag (`"train"` or `"val"`) | `"train"` |
+| `case_title` | string | Case caption / appeal title | `"Muhammad Akram vs. The State"` |
+| `citation_number` | string | Official court appeal registry number or law report citation | `"Criminal Appeal No. 10 of 2021"` |
+
+---
+
+### 6.3 Citation Regex Engineering & Disambiguation Rules
+
+Legal citations in Pakistani Supreme Court judgments follow distinct conventions that require robust pattern matching and negative disambiguation:
+
+#### A. Target Regex Patterns
+1. **Direct Statute Citations:**
+   - `(?:section|sec\.?|s\.)\s*(\d{3}(?:-[A-Z]+|[A-Z])?)\s*(?:of\s+the\s+)?(?:P\.?P\.?C\.?|Pakistan\s+Penal\s+Code)`
+   - Matches: `"Section 302 PPC"`, `"Sec. 392 P.P.C."`, `"s. 489-F of the Pakistan Penal Code"`
+2. **Procedural Charge Notation:**
+   - `(?:u/s|under\s+sections?)\s*(\d{3}(?:-[A-Z]+|[A-Z])?)(?:[/\s,]+(\d{3}(?:-[A-Z]+|[A-Z])?))*[\s,]*(?:P\.?P\.?C\.?|Pakistan\s+Penal\s+Code)?`
+   - Matches: `"u/s 302/34 PPC"`, `"under section 392, 395 P.P.C."`, `"u/s 489-F"`
+3. **Compound Hurt Sections:**
+   - `(?:section|s\.)\s*(337-[A-Z](?:\([a-zivx]+\))?)\s*(?:P\.?P\.?C\.?)?`
+   - Matches: `"Section 337-A(ii) PPC"`, `"s. 337-F(v)"`
+
+#### B. Statutory Disambiguation (False-Positive Elimination)
+- **CrPC Exclusion:** Exclude references to criminal procedure (e.g. *Section 154 CrPC* FIR, *Section 161 CrPC* statements, *Section 497 CrPC* bail, *Section 417 CrPC* acquittal appeal, *Section 345 CrPC* compounding).
+- **Constitutional Exclusion:** Exclude apex appellate jurisdiction articles (e.g. *Article 185(3)* of the Constitution).
+- **Special Acts Exclusion:** Filter out citations belonging to CNSA (Control of Narcotic Substances Act s.9-C) or ATA (Anti-Terrorism Act s.7) unless coupled with PPC offences.
+
+---
+
+### 6.4 Factual Narrative (Facts Part) Extraction Strategy
+
+Full judgments range from 1,500 to 15,000 words, containing dense legal arguments, procedural histories, and appellate findings. For semantic incident search and modeling, we must isolate the **factual background narrative**:
+1. **Locate Start Anchor:** Look for standard structural cues:
+   - `"Briefly stated, the facts of the case are..."`
+   - `"The prosecution case as disclosed in the FIR is that..."`
+   - `"The incident is alleged to have taken place on..."`
+   - `"According to the complainant..."`
+2. **Locate End Anchor:** Stop before appellate arguments or judicial reasoning:
+   - `"Learned counsel for the appellant argued that..."`
+   - `"We have heard the learned counsel..."`
+   - `"Having considered the submissions..."`
+3. **Fallback Truncation:** Where structured headings are absent, extract paragraphs 2 through 6 (approx. first 400–800 words), which almost universally recite the factual occurrence in Supreme Court criminal appeals.
+
+---
+
+### 6.5 Step-by-Step Implementation Workflow
+
+```mermaid
+flowchart TD
+    S1["Step 1: Dataset Exploration & Profiling (explore_sc.py)"] --> S2["Step 2: Regex Engine & Disambiguation (src/data/sc_extractor.py)"]
+    S2 --> S3["Step 3: Fact Narrative Extraction & Filtering"]
+    S3 --> S4["Step 4: Generate data/processed/sc_clean.csv"]
+    S4 --> S5["Step 5: 50-Case Precision & Accuracy Audit (docs/sc_regex_note.md)"]
+    S5 --> S6["Step 6: Automated Integrity Testing (tests/test_sc_clean.py)"]
+```
+
+#### Step 1: Profiling Raw Dataset
+Develop `src/data/explore_sc.py` to inspect `data/raw/sc_judgments.parquet`:
+- Total document count, token and word length distribution.
+- Identify criminal appeal proportion vs. civil/tax appeals.
+- Output documentation into `docs/sc_exploration_report.md`.
+
+#### Step 2: Build Extraction Pipeline (`src/data/sc_extractor.py`)
+- Parse case titles, registry numbers, and full text.
+- Execute multi-pattern regex matching against candidate text.
+- Normalize section strings (e.g. `"337-A(ii)"` -> `"337-A"`).
+- Filter matches strictly to the 30 supported sections in `src/labels.json`.
+- Extract factual narrative segment per case.
+
+#### Step 3: Compile `data/processed/sc_clean.csv`
+- Retain only cases citing at least one valid target PPC section.
+- Stratify into `train` (80%) and `val` (20%) splits.
+- Record class balance distribution across sections.
+
+#### Step 4: 50-Case Manual Precision Audit
+- Randomly sample 50 extracted judgments.
+- Audit predicted sections against human reading of the judgment text.
+- Measure and record Precision, Recall, and False Positive Error modes in `docs/sc_regex_note.md`.
+
+#### Step 5: Implement Automated Test Suite (`tests/test_sc_clean.py`)
+Enforce data quality:
+- Output file exists and parses cleanly.
+- Header contains all required canonical columns.
+- At least 100+ criminal Supreme Court cases successfully captured.
+- 100% of labels in the `sections` column belong to `src/labels.json`.
+- Text field length $\ge 150$ characters for meaningful factual narrative.
+
+---
+
+### 6.6 Verification Commands
+
+1. **Run Extraction Pipeline:**
+   ```bash
+   & "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/data/sc_extractor.py
+   ```
+2. **Run Automated Integrity Test:**
+   ```bash
+   & "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" tests/test_sc_clean.py
+   ```
+
+---
+
+### 6.7 Deliverables & Definition of Done for Task B3
+- [x] Raw dataset `data/raw/sc_judgments.parquet` documented in `docs/sc_exploration_report.md`.
+- [x] Extraction script `src/data/sc_extractor.py` implemented with disambiguation rules.
+- [x] Cleaned dataset `data/processed/sc_clean.csv` generated — **301 real SC criminal judgments, 26 distinct PPC sections**.
+- [x] 50-case precision audit documented in `docs/sc_regex_note.md` — **measured precision: 100%** (bare-number full-text verification, 69/69 citations confirmed).
+- [x] Automated validation test `tests/test_sc_clean.py` — **all 12 assertions PASS**.
+- [ ] Changes staged and committed under branch `aq`.
