@@ -47,13 +47,35 @@ query = st.text_area(
     height=110
 )
 
+# Check for incoming filter from Section Explorer
+preset_sec = st.session_state.get("case_section_filter")
+default_filter_idx = 0
+if preset_sec:
+    for idx_opt, opt in enumerate(section_options):
+        if opt.startswith(f"{preset_sec} — "):
+            default_filter_idx = idx_opt
+            break
+
 col_ctrl1, col_ctrl2 = st.columns([2, 1])
 with col_ctrl1:
-    selected_filter_str = st.selectbox("Filter by Cited PPC Section (Optional):", section_options, index=0)
+    selected_filter_str = st.selectbox(
+        "Filter by Cited PPC Section (Optional):",
+        section_options,
+        index=default_filter_idx
+    )
     selected_sec = None if selected_filter_str == "All Sections" else selected_filter_str.split(" — ")[0].strip()
+    if preset_sec and selected_sec != preset_sec:
+        st.session_state["case_section_filter"] = None
 
 with col_ctrl2:
     top_k = st.slider("Number of judgments to retrieve:", min_value=1, max_value=10, value=3)
+
+if preset_sec and selected_sec == preset_sec:
+    c_info1, c_info2 = st.columns([4, 1])
+    c_info1.info(f"🎯 Filter synchronized to **PPC Section {preset_sec}** from Section Explorer.")
+    if c_info2.button("✖️ Clear Section Filter"):
+        st.session_state["case_section_filter"] = None
+        st.rerun()
 
 find_btn = st.button("🔍 Find Precedents", type="primary", use_container_width=True)
 

@@ -36,6 +36,12 @@ selected_difficulty = st.sidebar.selectbox(
 
 # Apply filters
 filtered_questions = questions_bank
+
+# Section-specific drill-down filter (if set from Explorer)
+quiz_target_section = st.session_state.get("quiz_target_section")
+if quiz_target_section:
+    filtered_questions = [q for q in filtered_questions if q.get("target_section") == quiz_target_section]
+
 if selected_category != "All Categories":
     filtered_questions = [q for q in filtered_questions if q.get("category") == selected_category]
 
@@ -48,6 +54,10 @@ elif "Hard" in selected_difficulty:
 
 if not filtered_questions:
     st.warning("No questions match the selected filter criteria. Please broaden your selection in the sidebar.")
+    if quiz_target_section:
+        if st.button("✖️ Clear Section Filter"):
+            st.session_state["quiz_target_section"] = None
+            st.rerun()
     st.stop()
 
 # State initialization
@@ -95,6 +105,13 @@ if st.sidebar.button("🔄 Reset Quiz Session"):
     st.rerun()
 
 # Main Quiz Interface
+if quiz_target_section:
+    c_foc1, c_foc2 = st.columns([4, 1])
+    c_foc1.info(f"🎯 **Drill-down Mode:** Practicing scenarios targeting **PPC Section {quiz_target_section}** ({len(filtered_questions)} available).")
+    if c_foc2.button("✖️ Clear Section Drill-down"):
+        st.session_state["quiz_target_section"] = None
+        st.rerun()
+
 col_meta1, col_meta2, col_meta3 = st.columns([2, 1, 1])
 col_meta1.caption(f"📂 Category: **{q.get('category', 'Criminal Law')}**")
 diff_badge = {"easy": "🟢 Easy", "medium": "🟡 Medium", "hard": "🔴 Hard"}.get(q.get("difficulty", "medium"), "🟡")
@@ -162,6 +179,14 @@ if st.session_state.answered:
 
         if q.get("statutory_reference"):
             st.caption(f"Statutory Reference: `{q['statutory_reference']}`")
+
+        c_exp1, c_exp2 = st.columns([1.5, 2])
+        if c_exp1.button(f"📖 Study Section {q['target_section']} in Explorer", key=f"btn_study_{q['id']}"):
+            st.session_state["explorer_search"] = q["target_section"]
+            try:
+                st.switch_page("pages/2_Section_Explorer.py")
+            except Exception:
+                st.info("Navigate to `2_Section_Explorer.py` in the sidebar to review elements.")
 
 st.divider()
 st.caption("Track B Module (Owner: Abdul Qudoos) — 60-Scenario Educational Benchmark grounded in Pakistan Penal Code & CrPC jurisprudence.")

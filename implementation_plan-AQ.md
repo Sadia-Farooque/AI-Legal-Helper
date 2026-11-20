@@ -1287,3 +1287,128 @@ print('✅ app/pages/4_Quiz.py rendered cleanly without exceptions')
 - [x] `app/pages/4_Quiz.py` upgraded with dynamic filters, explanations, and performance tracking.
 - [x] Headless `AppTest` validation passing with 0 exceptions.
 - [x] All changes maintained locally on branch `aq` (without remote pushes).
+
+---
+
+## 10. Task B7 — Student App Pages (Section Explorer, Case Finder & Quiz Integration)
+
+**Weeks:** 9–10 | **Effort:** ~14 hours | **Dependencies:** B1 (lookup table), B2 (section content & confusable groups), B5 (case finder & index), B6 (quiz bank)
+
+---
+
+### 10.1 Problem Statement & Educational Objectives
+
+While Track A focuses on the citizen-facing incident classifier (`1_Incident_Analyzer.py`), Track B is responsible for delivering the **Student & Legal Practitioner Suite**. Law students and young advocates preparing for judicial examinations (e.g. Civil Judge / Judicial Magistrate or Bar exam) require more than flat text dumps:
+1. **Procedural Fast-Filtering:** Instant categorization by CrPC Schedule II procedural attributes (e.g. finding all non-bailable offences punishable by death or life, or identifying compoundable offences vs. non-compoundable ones).
+2. **Precedent Cross-Referencing:** A student studying Section 302, 382, or 489-F should immediately view real Supreme Court precedents interpreting those specific sections without leaving the page.
+3. **Statutory Element Dissection:** Clear distinction between what prosecution must prove, illustrated by real Pakistani occurrence scenarios.
+4. **Boundary Mastery:** Side-by-side interactive comparative analysis for the 10 confusable groups (e.g. Section 379 vs 384 vs 392 vs 395, or Section 337-A vs 337-F).
+5. **Seamless Cross-Page Synergy:** Students should seamlessly flow from exploring a section, to testing themselves on it in the Quiz, to searching precedent judgments in the Case Finder.
+
+---
+
+### 10.2 Architectural Blueprint & Multi-Page Synergy
+
+```mermaid
+flowchart TD
+    subgraph P2["app/pages/2_Section_Explorer.py"]
+        E1["Procedural Filters\n(Cognizability, Bailability, Compounding)"]
+        E2["Category Selectors\n(Homicide, Hurt, Property, Fraud, etc.)"]
+        E3["Statutory Elements &\nOccurrence Scenarios"]
+        E4["SC Precedents Panel\n(Citing this section)"]
+        E5["Confusable Groups\nComparison Matrix"]
+    end
+
+    subgraph P3["app/pages/3_Case_Finder.py"]
+        C1["Dense FAISS Search\n(IndexFlatIP over 301 judgments)"]
+        C2["Section Filter Auto-sync"]
+        C3["Full Judgment Inspector Modal"]
+    end
+
+    subgraph P4["app/pages/4_Quiz.py"]
+        Q1["60-Question Bank\n(30 PPC sections, 3 tiers)"]
+        Q2["Target Section Drilldown Mode"]
+        Q3["Immediate Statutory Feedback &\nPerformance Breakdown"]
+    end
+
+    E4 -->|"Deep Link: Search Section Precedents"| P3
+    E3 -->|"Deep Link: Practice Section Scenarios"| P4
+    Q3 -->|"Deep Link: Review Section in Explorer"| P2
+    P3 -->|"Deep Link: View Cited Section Elements"| P2
+```
+
+---
+
+### 10.3 Component Upgrades Specification
+
+#### 1. `app/pages/2_Section_Explorer.py` (Flagship Student Portal):
+- **Multi-Dimensional Filtering:**
+  - Free-text search matching section number, title, or Urdu citizen term.
+  - Legal category dropdown (All, Homicide, Bodily Hurt, Confinement & Sexual Offences, Property Offences, Fraud & Cheating, Criminal Trespass, Reputation & Intimidation).
+  - CrPC procedural filters: Cognizability (`All`, `Cognizable`, `Non-cognizable`), Bailability (`All`, `Bailable`, `Non-bailable`), Compounding (`All`, `Compoundable`, `Non-compoundable`).
+- **Statutory Detail Card:**
+  - Color-coded badges for procedural posture (e.g. Red for Non-bailable, Green for Bailable; Blue for Cognizable).
+  - Detailed prosecution elements list.
+  - Authentic Pakistani occurrence scenarios.
+  - Live Supreme Court precedents list citing that section with citations and excerpt cards.
+  - Quick action buttons: *"Find More Precedents in Case Finder"* and *"Test Yourself on this Section in Practice Quiz"*.
+- **Confusable Groups Tab:**
+  - Side-by-side comparative breakdowns for all 10 confusable groups with student pitfalls and key differentiators.
+
+#### 2. `app/pages/3_Case_Finder.py` Harmonization:
+- Reads pre-set session state (`case_section_filter`, `case_query`) passed from Section Explorer.
+- Retains top-k slider, similarity metrics, citation badges, and judgment excerpt inspector.
+
+#### 3. `app/pages/4_Quiz.py` Harmonization:
+- Reads pre-set session state (`quiz_target_section`) allowing single-section practice drilldown.
+- Shows dynamic "Study Section in Explorer" button alongside explanations.
+
+---
+
+### 10.4 Automated Headless Test Suite (`tests/test_student_pages.py`)
+
+An automated integration test using `streamlit.testing.v1.AppTest` validates:
+1. `2_Section_Explorer.py` renders cleanly without exceptions.
+2. `3_Case_Finder.py` renders cleanly without exceptions.
+3. `4_Quiz.py` renders cleanly without exceptions.
+4. Procedural filtering in `2_Section_Explorer.py` correctly filters the section catalog.
+5. Cross-page session state keys (`case_section_filter`, `quiz_target_section`) are respected.
+
+---
+
+### 10.5 Verification Commands
+
+```bash
+# 1. Run Student Pages Integration Test
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" tests/test_student_pages.py
+
+# 2. Run All 8 Project Test Suites
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -c "
+import subprocess, sys
+tests = [
+    'tests/test_labels.py',
+    'tests/test_lookup.py',
+    'tests/test_content.py',
+    'tests/test_sc_clean.py',
+    'tests/test_retrieval.py',
+    'tests/test_case_finder.py',
+    'tests/test_quiz_bank.py',
+    'tests/test_student_pages.py'
+]
+for t in tests:
+    res = subprocess.run([sys.executable, t], capture_output=True, text=True)
+    assert res.returncode == 0, f'Failed {t}:\n{res.stdout}\n{res.stderr}'
+    print(f'✅ {t} PASSED')
+"
+```
+
+---
+
+### 10.6 Deliverables & Definition of Done for Task B7
+
+- [ ] `app/pages/2_Section_Explorer.py` upgraded with multi-dimensional CrPC filters, SC precedent links, and cross-navigation.
+- [ ] `app/pages/3_Case_Finder.py` harmonized with pre-selected section filters from session state.
+- [ ] `app/pages/4_Quiz.py` harmonized with section drill-down mode and explorer review links.
+- [ ] Automated integration test `tests/test_student_pages.py` implemented.
+- [ ] All 8 test suites passing cleanly with zero regressions.
+- [ ] Changes maintained strictly locally on branch `aq` without remote pushes.
