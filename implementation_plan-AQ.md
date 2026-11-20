@@ -1406,9 +1406,179 @@ for t in tests:
 
 ### 10.6 Deliverables & Definition of Done for Task B7
 
-- [ ] `app/pages/2_Section_Explorer.py` upgraded with multi-dimensional CrPC filters, SC precedent links, and cross-navigation.
-- [ ] `app/pages/3_Case_Finder.py` harmonized with pre-selected section filters from session state.
-- [ ] `app/pages/4_Quiz.py` harmonized with section drill-down mode and explorer review links.
-- [ ] Automated integration test `tests/test_student_pages.py` implemented.
-- [ ] All 8 test suites passing cleanly with zero regressions.
-- [ ] Changes maintained strictly locally on branch `aq` without remote pushes.
+- [x] `app/pages/2_Section_Explorer.py` upgraded with multi-dimensional CrPC filters, SC precedent links, and cross-navigation.
+- [x] `app/pages/3_Case_Finder.py` harmonized with pre-selected section filters from session state.
+- [x] `app/pages/4_Quiz.py` harmonized with section drill-down mode and explorer review links.
+- [x] Automated integration test `tests/test_student_pages.py` implemented.
+- [x] All 8 test suites passing cleanly with zero regressions.
+- [x] Changes maintained strictly locally on branch `aq` without remote pushes.
+
+---
+
+## 11. Task B8 — Evaluation Page & Error Analysis Tooling
+
+**Week:** 10 | **Effort:** ~8 hours | **Dependencies:** K6 (results contract), K7 (evaluation framework), B4 (retrieval model), Track A baseline results
+
+---
+
+### 11.1 Problem Statement & AI Engineering Objectives
+
+A core requirement in any applied machine learning system is **rigorous, transparent model evaluation and error diagnosis**. Simply reporting aggregate accuracy is insufficient for legal AI systems where statutory boundaries have severe consequences (e.g. confusing a bailable cheque dishonour under Section 489-F with a non-bailable extortion under Section 384):
+1. **Multi-Model Benchmark Transparency:** Cross-compare all evaluated models (Track A supervised DistilBERT, TF-IDF + SVM/NB/LR baselines, and Track B zero-shot semantic retrieval) on standardized metrics adhering to the K6 schema (`metric, language, value`).
+2. **Fine-Grained Per-Class Diagnosis:** Break down precision, recall, and F1 at the individual section level, identifying which sections have strong discriminative representations and which suffer from high false-positive rates.
+3. **Confusion Pair Discovery:** Systematically surface the most frequent off-diagonal confusion pairs (e.g. Section 379 vs 392, Section 337-A vs 337-F) to validate whether errors align with human statutory ambiguities (the 10 confusable groups) or model representational defects.
+4. **Qualitative Failure Analysis:** Provide an interactive case-by-case inspector of misclassified scenarios, displaying the exact input text, ground truth, model predicted ranking, and confidence distribution.
+
+---
+
+### 11.2 Architecture & Tooling Workflow
+
+```mermaid
+flowchart TD
+    subgraph Data["Test Datasets"]
+        D1["data/test/stub_test.csv\n(20 benchmark cases)"]
+        D2["data/test/real_test.csv\n(Future frozen test set)"]
+    end
+
+    subgraph Engine["src/error_analysis.py (Analysis Engine)"]
+        E1["Predictor Invocations\n(predict_scores contract)"]
+        E2["Per-Class Metric Aggregator\n(TP, FP, FN, Prec, Rec, F1, Support)"]
+        E3["Confusion Pair Extractor\n(True vs Top-1 Pred Frequency)"]
+        E4["Failure Case Logger\n(Misclassifications & Margins)"]
+    end
+
+    subgraph Output["Diagnostic Artifacts"]
+        O1["results/error_analysis_<model>.json"]
+        O2["Per-Class Metrics Table"]
+        O3["Top Confusion Pairs Summary"]
+    end
+
+    subgraph UI["app/pages/5_Evaluation.py (Streamlit Dashboard)"]
+        U1["Tab 1: 🏆 Benchmark Leaderboard\n(Comparative bar charts & K6 summary)"]
+        U2["Tab 2: 🔍 Error Analysis & Confusions\n(Confusion pairs & per-section table)"]
+        U3["Tab 3: 🔬 Misclassification Inspector\n(Case-by-case query drill-down)"]
+        U4["Tab 4: 📁 Raw Grids & Ablations"]
+    end
+
+    Data --> Engine
+    Engine --> Output
+    Output --> UI
+```
+
+---
+
+### 11.3 Mathematical Formulation & Metrics Specification
+
+For each target section $c \in \mathcal{C}$ (where $|\mathcal{C}| = 30$):
+* **True Positives ($TP_c$):** Test examples where section $c \in \mathbf{y}$ and $c \in \hat{\mathbf{y}}_{\text{pred}}$.
+* **False Positives ($FP_c$):** Test examples where $c \notin \mathbf{y}$ but $c \in \hat{\mathbf{y}}_{\text{pred}}$.
+* **False Negatives ($FN_c$):** Test examples where $c \in \mathbf{y}$ but $c \notin \hat{\mathbf{y}}_{\text{pred}}$.
+* **Class Precision ($P_c$):** $\frac{TP_c}{TP_c + FP_c + \epsilon}$
+* **Class Recall ($R_c$):** $\frac{TP_c}{TP_c + FN_c + \epsilon}$
+* **Class F1-score ($F1_c$):** $2 \cdot \frac{P_c \cdot R_c}{P_c + R_c + \epsilon}$
+
+#### Confusion Pair Formulation:
+For every test sample $i$ with ground truth primary section $y_i$ and top-1 predicted section $\hat{y}_i^{(1)}$:
+$$\text{If } y_i \neq \hat{y}_i^{(1)} \implies \text{Count}(y_i, \hat{y}_i^{(1)}) \leftarrow \text{Count}(y_i, \hat{y}_i^{(1)}) + 1$$
+Confusion pairs are sorted descending by frequency to immediately spotlight the legal boundaries where the model struggles.
+
+---
+
+### 11.4 Analysis Engine API (`src/error_analysis.py`)
+
+The engine provides both a modular Python API and an automated CLI:
+
+```python
+def run_error_analysis(
+    predict_fn: Callable[[str], Dict[str, float]],
+    test_csv_path: str,
+    top_k: int = 3,
+    threshold: float = 0.5
+) -> Dict[str, Any]:
+    """Computes comprehensive error analytics:
+    Returns {
+        'summary': Dict[str, float],
+        'per_class': Dict[str, Dict[str, float]],
+        'confusion_pairs': List[Dict[str, Any]],
+        'failures': List[Dict[str, Any]]
+    }
+    """
+```
+
+CLI execution:
+```bash
+python src/error_analysis.py --model retrieval --test-data data/test/stub_test.csv --output-dir results
+```
+
+---
+
+### 11.5 Streamlit Evaluation Dashboard (`app/pages/5_Evaluation.py`)
+
+Upgraded to a comprehensive 4-tab evaluation suite:
+1. **Tab 1: 🏆 Model Comparison Leaderboard:**
+   - Multi-metric pivot table comparing DistilBERT, TF-IDF baselines, and Sentence Retrieval.
+   - Filter by language partition (`all`, `en`, `roman_ur`, `synthetic_all`, `synthetic_en`).
+   - Comparative bar chart metrics across top-1 accuracy, top-3 recall, and macro F1.
+2. **Tab 2: 🔍 Error Analysis & Confusion Pairs:**
+   - Model selector to analyze error patterns for specific models.
+   - Top Confused Section Pairs table with confusable group cross-references.
+   - Interactive Per-Section Performance table with support counts and F1 scores.
+3. **Tab 3: 🕵️ Qualitative Misclassification Inspector:**
+   - Case-by-case failure drill-down displaying user input text, true section(s), predicted top-k ranking, confidence scores, and legal explanation.
+4. **Tab 4: 🔬 Raw Grids & Ablations:**
+   - Inspection of hyperparameter grids (`distilbert_grid.csv`, `tfidf_grid.csv`) and calibration files.
+
+---
+
+### 11.6 Automated Test Suite Specification (`tests/test_error_analysis.py`)
+
+A dedicated automated test suite validates:
+1. `T1`: Function `run_error_analysis` executes cleanly and returns all 4 required schema keys.
+2. `T2`: Per-class metrics produce non-negative values bounded within $[0.0, 1.0]$.
+3. `T3`: Confusion pairs list is correctly sorted by frequency.
+4. `T4`: Failure records include required diagnostic attributes (`id`, `text`, `true_sections`, `predicted_top1`).
+5. `T5`: CLI execution runs and writes JSON output to disk.
+6. `T6`: Streamlit `5_Evaluation.py` renders cleanly headlessly via `AppTest`.
+
+---
+
+### 11.7 Verification Commands
+
+```bash
+# 1. Run Error Analysis CLI
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/error_analysis.py --model retrieval --test-data data/test/stub_test.csv
+
+# 2. Run Error Analysis Test Suite
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" tests/test_error_analysis.py
+
+# 3. Run All 9 Project Test Suites
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -c "
+import subprocess, sys
+tests = [
+    'tests/test_labels.py',
+    'tests/test_lookup.py',
+    'tests/test_content.py',
+    'tests/test_sc_clean.py',
+    'tests/test_retrieval.py',
+    'tests/test_case_finder.py',
+    'tests/test_quiz_bank.py',
+    'tests/test_student_pages.py',
+    'tests/test_error_analysis.py'
+]
+for t in tests:
+    res = subprocess.run([sys.executable, t], capture_output=True, text=True)
+    assert res.returncode == 0, f'Failed {t}:\n{res.stdout}\n{res.stderr}'
+    print(f'✅ {t} PASSED')
+"
+```
+
+---
+
+### 11.8 Deliverables & Definition of Done for Task B8
+
+- [x] `src/error_analysis.py` implemented with per-class metrics, confusion pair extraction, and qualitative failure logging.
+- [x] Diagnostic outputs generated and stored in `results/error_analysis_retrieval.json`.
+- [x] `app/pages/5_Evaluation.py` upgraded with 4-tab interactive evaluation and error diagnostics dashboard.
+- [x] Automated test suite `tests/test_error_analysis.py` implemented and passing (6/6 assertions).
+- [x] All 9 project test suites passing cleanly with zero regressions.
+- [x] Changes maintained strictly locally on branch `aq` without remote pushes.

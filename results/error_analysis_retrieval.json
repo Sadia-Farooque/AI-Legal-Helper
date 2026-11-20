@@ -1,0 +1,519 @@
+{
+  "summary": {
+    "total_samples": 20,
+    "top1_accuracy": 0.65,
+    "top3_recall": 0.8,
+    "macro_f1": 0.5091,
+    "total_failures": 7,
+    "unique_confusion_pairs": 7
+  },
+  "per_class": {
+    "302": {
+      "support": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "307": {
+      "support": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "319": {
+      "support": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "324": {
+      "support": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "337-A": {
+      "support": 0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "337-F": {
+      "support": 1,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "339": {
+      "support": 1,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "340": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "354": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "354A": {
+      "support": 0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "363": {
+      "support": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "365": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "365-A": {
+      "support": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "379": {
+      "support": 3,
+      "tp": 1,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.25,
+      "recall": 0.3333,
+      "f1": 0.2857
+    },
+    "380": {
+      "support": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "382": {
+      "support": 0,
+      "tp": 0,
+      "fp": 7,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "384": {
+      "support": 1,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "392": {
+      "support": 2,
+      "tp": 2,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "395": {
+      "support": 1,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "403": {
+      "support": 0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "406": {
+      "support": 1,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "411": {
+      "support": 1,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "420": {
+      "support": 2,
+      "tp": 2,
+      "fp": 3,
+      "fn": 0,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714
+    },
+    "441": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "447": {
+      "support": 0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "448": {
+      "support": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "489-F": {
+      "support": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "500": {
+      "support": 1,
+      "tp": 1,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "f1": 0.5
+    },
+    "506": {
+      "support": 4,
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "509": {
+      "support": 2,
+      "tp": 1,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1": 0.4
+    }
+  },
+  "confusion_pairs": [
+    {
+      "true_section": "420",
+      "predicted_section": "411",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "307",
+      "predicted_section": "339",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "406",
+      "predicted_section": "500",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "392",
+      "predicted_section": "379",
+      "count": 1,
+      "confusable_group": "Offences Against Property: Theft vs. Aggravated Theft vs. Robbery vs. Dacoity"
+    },
+    {
+      "true_section": "379",
+      "predicted_section": "420",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "506",
+      "predicted_section": "319",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "380",
+      "predicted_section": "337-F",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    }
+  ],
+  "failures": [
+    {
+      "id": "stub_004",
+      "text": "A stranger sold me a fake iPhone after claiming it was original and blocked my number afterwards.",
+      "language": "en",
+      "primary_section": "420",
+      "true_sections": [
+        "420"
+      ],
+      "predicted_top1": "411",
+      "predicted_top1_conf": 0.1005,
+      "topk_predictions": [
+        [
+          "411",
+          0.1005
+        ],
+        [
+          "403",
+          0.0713
+        ],
+        [
+          "420",
+          0.0535
+        ]
+      ],
+      "in_topk": true,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_008",
+      "text": "A reckless driver shot at a security guard after an altercation at the parking lot with intent to kill.",
+      "language": "en",
+      "primary_section": "307",
+      "true_sections": [
+        "307",
+        "324"
+      ],
+      "predicted_top1": "339",
+      "predicted_top1_conf": 0.0569,
+      "topk_predictions": [
+        [
+          "339",
+          0.0569
+        ],
+        [
+          "382",
+          0.0531
+        ],
+        [
+          "506",
+          0.051
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_010",
+      "text": "The corrupt accountant embezzled company funds that were entrusted to him for employee salaries.",
+      "language": "en",
+      "primary_section": "406",
+      "true_sections": [
+        "406"
+      ],
+      "predicted_top1": "500",
+      "predicted_top1_conf": 0.0648,
+      "topk_predictions": [
+        [
+          "500",
+          0.0648
+        ],
+        [
+          "406",
+          0.0643
+        ],
+        [
+          "420",
+          0.055
+        ]
+      ],
+      "in_topk": true,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_016",
+      "text": "Do larkon ne bike pe aakar pistol dikhai aur mera mobile aur wallet cheen kar bhaag gaye.",
+      "language": "roman_ur",
+      "primary_section": "392",
+      "true_sections": [
+        "392"
+      ],
+      "predicted_top1": "379",
+      "predicted_top1_conf": 0.0598,
+      "topk_predictions": [
+        [
+          "379",
+          0.0598
+        ],
+        [
+          "392",
+          0.0466
+        ],
+        [
+          "380",
+          0.0434
+        ]
+      ],
+      "in_topk": true,
+      "is_confusable_group": true
+    },
+    {
+      "id": "stub_018",
+      "text": "Bazaar me kisi ne meri pocket se 20 hazar rupaye nikal liye.",
+      "language": "roman_ur",
+      "primary_section": "379",
+      "true_sections": [
+        "379"
+      ],
+      "predicted_top1": "420",
+      "predicted_top1_conf": 0.0572,
+      "topk_predictions": [
+        [
+          "420",
+          0.0572
+        ],
+        [
+          "384",
+          0.0514
+        ],
+        [
+          "365-A",
+          0.0444
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_019",
+      "text": "Ek shakhs ne mujhe qatal karne ki dhamki di phone par.",
+      "language": "roman_ur",
+      "primary_section": "506",
+      "true_sections": [
+        "506"
+      ],
+      "predicted_top1": "319",
+      "predicted_top1_conf": 0.0564,
+      "topk_predictions": [
+        [
+          "319",
+          0.0564
+        ],
+        [
+          "302",
+          0.0531
+        ],
+        [
+          "337-A",
+          0.0466
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_020",
+      "text": "Ghar me chor ghus gaye aur almari se sona chura kar le gaye.",
+      "language": "roman_ur",
+      "primary_section": "380",
+      "true_sections": [
+        "379",
+        "380"
+      ],
+      "predicted_top1": "337-F",
+      "predicted_top1_conf": 0.0451,
+      "topk_predictions": [
+        [
+          "337-F",
+          0.0451
+        ],
+        [
+          "354A",
+          0.0419
+        ],
+        [
+          "509",
+          0.0414
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    }
+  ]
+}
