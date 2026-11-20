@@ -449,3 +449,371 @@ Enforce data quality:
 - [x] 50-case precision audit documented in `docs/sc_regex_note.md` — **measured precision: 100%** (bare-number full-text verification, 69/69 citations confirmed).
 - [x] Automated validation test `tests/test_sc_clean.py` — **all 12 assertions PASS**.
 - [x] Changes staged and committed under branch `aq`.
+
+
+---
+
+## 7. Task B4 — Retrieval Classifier (Sentence Embeddings)
+
+**Weeks:** 5–6 | **Effort:** ~12 hours | **Dependencies:** B2 (sections.json), K4 (model contract), K7 (evaluate.py)
+
+---
+
+### 7.1 Problem Statement & Why Retrieval?
+
+A citizen describes an incident in plain English or Roman Urdu — e.g. *"My neighbour hit me with a rod and broke my arm"*. We need to map that free-text description to the most relevant PPC sections from our 30-section taxonomy.
+
+**Two broad ML strategies exist for this:**
+
+| Approach | Description | Verdict for B4 |
+|---|---|---|
+| **Supervised Classification** (Track A) | Train a classifier (DistilBERT / TF-IDF + SVM) on labelled examples per section | ✅ Sadia's job in A4–A5. We must NOT duplicate it. |
+| **Zero-shot Retrieval** | Encode both the query and each section's reference text into a shared semantic space; rank by cosine similarity | ✅ **Our approach.** Requires zero labelled training data. |
+| **Keyword / TF-IDF Matching** | Bag-of-words overlap between query and section descriptions | ❌ Fails on paraphrases, Urdu terms, or synonym variation |
+| **LLM API Call (GPT / Gemini)** | Prompt an LLM to classify | ❌ Requires network, billing, and latency — unusable offline or in Streamlit demo |
+
+**Why zero-shot retrieval wins here:**
+
+> The retrieval approach is chosen because (a) we have **no labelled training pairs** for a supervised retrieval model — B3's SC data has sections but not Urdu citizen descriptions, (b) it delivers **semantic understanding** out of the box — the citizen can say "beating" or "assault" and retrieve section 337-A without any keyword match, and (c) it is **fully self-contained at inference** — no API, no fine-tuning server, just a precomputed `.npy` matrix and cosine math.
+
+---
+
+### 7.2 Architecture Decision: Why `all-MiniLM-L6-v2`?
+
+The model is a **sentence-transformer** (bi-encoder), not a cross-encoder. Here is the full decision tree:
+
+#### Option A: Cross-Encoder (e.g. `cross-encoder/ms-marco-MiniLM-L-6-v2`)
+- Takes `(query, candidate)` pair jointly through BERT → produces relevance score.
+- **Pro:** Highest accuracy on MSMARCO benchmarks.
+- **Con:** Must run a forward pass for each of the 30 sections **per query** at inference time — 30× slower. With 30 labels this is manageable, but it cannot scale to B5 Case Finder (301 cases) without FAISS.
+- **Con:** No ability to pre-encode section index.
+
+#### Option B: `all-MiniLM-L6-v2` (bi-encoder, chosen) ✅
+- Encodes query and each document **independently** → 384-dim unit-normalised vector.
+- Cosine similarity = dot product of normalised vectors (fast numpy matrix multiply).
+- **Pro:** Pre-encode all 30 section reference texts **once at startup** → cached in RAM as a `(30, 384)` matrix.
+- **Pro:** Inference = 1 encoder pass for query + 1 dot product against 30 vectors = **< 50 ms** on CPU.
+- **Pro:** Only 22 MB on disk — ships inside the Streamlit app without GPU.
+- **Pro:** Trained on 1B+ sentence pairs from web, news, NLI, and legal QA — very strong on paraphrase understanding.
+- **Con:** Slightly lower accuracy than cross-encoders, mitigated by our rich reference text construction (§7.3).
+
+#### Option C: `paraphrase-multilingual-MiniLM-L12-v2`
+- Multilingual (50 languages including Urdu).
+- **Why not chosen:** 50% more parameters (12 layers vs 6), no Shahmukhi Urdu script in training data, Roman Urdu is a Latin-script transliteration that English-only models handle fine since it uses English syntax patterns. We revisit this in B8 if Roman Urdu accuracy is poor.
+
+**Decision: `all-MiniLM-L6-v2` from HuggingFace / sentence-transformers.** Speed, size, and accuracy balance is optimal for a Streamlit demo that runs on a student laptop without a GPU.
+
+---
+
+### 7.3 Reference Text Construction — The Core Design Choice
+
+The retrieval quality depends entirely on **what text we embed for each section**. This is the most critical design decision in B4.
+
+Three options considered:
+
+#### Option 1: Embed only the section title (e.g. "Qatl-i-Amd")
+- Very short, loses all semantic context.
+- "Murder" might not cosine-match "Qatl-i-Amd" well despite identical meaning.
+- **Rejected.** Too lossy.
+
+#### Option 2: Embed only the statutory text (verbatim PPC wording)
+- Dense legal language, full of archaic terms ("diyat", "arsh", "fasad-fil-arz").
+- A citizen saying "my neighbour hit me" will not semantically match "whoever commits qatl-i-amd...".
+- **Rejected.** Legal jargon creates a semantic gap from plain-English queries.
+
+#### Option 3: Embed a composite "reference passage" from B2 data ✅ (chosen)
+- Concatenate for each section:
+  1. **Citizen-facing summary** (from `sections.json` → `summary`) — written in plain English, e.g. "Cheating someone by pretending to be a different person using fake documents..."
+  2. **Example scenarios** (from `sections.json` → `example_scenarios`) — real-world incident descriptions that look like what a citizen would type
+  3. **Citizen terms** (from `labels.json` → `citizen_terms`) — common vocabulary a lay person uses
+  4. **Short statutory name** (from `labels.json` → `title`) — anchors the embedding near legal vocabulary
+
+**Why this works:** The B2 data was deliberately written in citizen-accessible language that bridges the vocabulary gap. A citizen saying "someone pretended to be from NADRA and stole my money" should retrieve section 420 (Cheating), and that scenario was written into `sections.json` for exactly this purpose.
+
+> **Engineering insight:** Retrieval quality is dominated by the quality of the index content, not the model size. Using B2's plain-English scenarios as the index is equivalent to giving the retriever a "translation dictionary" from legal concepts to citizen language — a technique called **domain-specific passage expansion** in information retrieval literature.
+
+---
+
+### 7.4 Scoring Pipeline & K4 Contract
+
+The model **must** expose the K4 contract function:
+
+```python
+predict_scores(text: str) -> dict[str, float]
+# Returns {section_id: float} where 0.0 <= score <= 1.0, one entry per section
+```
+
+**Internal pipeline:**
+
+```
+Query text
+    │
+    ▼
+SentenceTransformer.encode(text)   →  query_vec: shape (384,)
+    │
+    ▼
+cosine_similarity(query_vec, section_matrix)  →  raw_sims: shape (30,)
+    │
+    ▼
+softmax(raw_sims / temperature)   →  probs: shape (30,), sums to 1.0
+    │
+    ▼
+{section_id: prob}  — the K4 output dict
+```
+
+#### Why softmax instead of raw cosine?
+
+Raw cosine scores are bounded [-1, 1] and don't form a probability distribution. `evaluate.py` computes top-k precision and F1 scores that interpret these as probabilities. Applying softmax:
+- Converts the 30 similarity scores into a valid probability distribution summing to 1.0 ✅
+- Preserves ranking order (monotone transformation) ✅
+- Allows calibration comparison with Track A's classifier outputs ✅
+
+#### Why temperature scaling?
+
+The raw embedding dot products for 30 sections will be **very clustered** (e.g. all between 0.3–0.5), making softmax nearly uniform. A temperature `T < 1.0` sharpens the distribution:
+- `T = 1.0` → nearly flat, all sections score ~0.033
+- `T = 0.3` → top section scores ~0.6, bottom sections score near 0.001
+
+We set `T = 0.25` as default and tune during evaluation against `data/test/stub_test.csv`. This is equivalent to the temperature parameter used in knowledge distillation and contrastive learning — well understood in the literature.
+
+---
+
+### 7.5 Output Artifacts
+
+| Artifact | Path | Description |
+|---|---|---|
+| Retrieval module | `src/retrieval.py` | Main K4-contract implementation |
+| Section embeddings | `models/section_embeddings.npy` | Pre-encoded (30, 384) float32 matrix — computed once |
+| Section ID map | `models/section_ids.json` | Ordered list of 30 section IDs matching matrix rows |
+| Zero-shot eval results | `results/retrieval_zeroshot.csv` | Per-example top-1, top-3 hits from evaluate.py |
+| Integrity test | `tests/test_retrieval.py` | Automated assertions |
+
+**Why cache embeddings to disk (`models/section_embeddings.npy`)?**
+
+Loading `sentence-transformers` and encoding 30 passages takes ~3–4 seconds. If we re-encode every time the Streamlit page loads, users experience a 4-second freeze on each page navigation. Pre-encoding and saving as a numpy array means the app does `np.load("models/section_embeddings.npy")` at startup — **< 10 ms**. This is the standard production pattern for semantic search (e.g. FAISS indexes, Pinecone snapshots).
+
+---
+
+### 7.6 Step-by-Step Implementation Workflow
+
+```mermaid
+flowchart TD
+    S1["Step 1: Build reference text corpus\n(one passage per section from B2 data)"]
+    S2["Step 2: Encode all 30 passages\nwith all-MiniLM-L6-v2\n→ section_embeddings.npy"]
+    S3["Step 3: Implement predict_scores()\nwith cosine sim + softmax + temperature"]
+    S4["Step 4: Implement lazy-load caching\n(encode once, cache in module-level dict)"]
+    S5["Step 5: Run evaluate.py on stub_test.csv\n→ results/retrieval_zeroshot.csv"]
+    S6["Step 6: Tune temperature T\nto maximise top-3 accuracy"]
+    S7["Step 7: Automated integrity tests\ntests/test_retrieval.py"]
+    S8["Step 8: Git commit on branch aq"]
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
+```
+
+#### Step 1 — Build Composite Reference Passages
+
+For each of the 30 sections, construct a single string:
+
+```python
+passage = f"{title}. {summary}. " + " ".join(example_scenarios) + " " + " ".join(citizen_terms)
+```
+
+Sources:
+- `title`, `citizen_terms` → `src/labels.json`
+- `summary`, `example_scenarios` → `data/content/sections.json`
+
+Store `{section_id: passage}` as an ordered dict (order must be stable — determines matrix row ↔ section_id mapping, saved in `models/section_ids.json`).
+
+#### Step 2 — Encode Section Index
+
+```python
+from sentence_transformers import SentenceTransformer
+import numpy as np, json, os
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+passages = [reference_texts[sid] for sid in section_ids]
+embeddings = model.encode(passages, normalize_embeddings=True, show_progress_bar=True)
+# shape: (30, 384), dtype float32, already L2-normalised
+
+np.save("models/section_embeddings.npy", embeddings)
+json.dump(section_ids, open("models/section_ids.json", "w"))
+```
+
+**`normalize_embeddings=True`** means cosine similarity reduces to a simple dot product:
+```
+cosine(a, b) = dot(a, b)  when ||a|| = ||b|| = 1
+```
+This avoids `sklearn.metrics.pairwise.cosine_similarity` overhead — a single `np.dot(query_vec, emb_matrix.T)` call is enough.
+
+#### Step 3 — `predict_scores()` Implementation
+
+```python
+TEMPERATURE = 0.25
+
+def predict_scores(text: str) -> dict[str, float]:
+    query_vec = _MODEL.encode([text], normalize_embeddings=True)[0]  # (384,)
+    raw_sims  = np.dot(_SECTION_MATRIX, query_vec)                   # (30,)
+    sharpened = raw_sims / TEMPERATURE
+    exp_sims  = np.exp(sharpened - sharpened.max())                  # numerically stable softmax
+    probs     = exp_sims / exp_sims.sum()
+    return {sid: float(probs[i]) for i, sid in enumerate(_SECTION_IDS)}
+```
+
+**Numerically stable softmax:** Subtracting `sharpened.max()` before `exp()` prevents overflow for large temperature-scaled values — standard numerical recipe.
+
+#### Step 4 — Lazy Load + Module-Level Caching
+
+```python
+_MODEL        = None
+_SECTION_MATRIX = None
+_SECTION_IDS  = None
+
+def _load():
+    global _MODEL, _SECTION_MATRIX, _SECTION_IDS
+    if _MODEL is None:
+        _MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+        _SECTION_MATRIX = np.load(EMBEDDINGS_PATH)   # (30, 384)
+        _SECTION_IDS = json.load(open(IDS_PATH))
+```
+
+**Why lazy loading?** `import src.retrieval` at the top of a Streamlit page should not trigger a 3-second model load. Only the first call to `predict_scores()` triggers `_load()`. Subsequent calls skip it entirely — `_MODEL is None` becomes False and the check costs nanoseconds. This pattern is identical to how production serving frameworks (TorchServe, BentoML) handle model warm-up.
+
+#### Step 5 — Evaluate Against Stub Test Set
+
+```bash
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/evaluate.py \
+    --model retrieval \
+    --test-data data/test/stub_test.csv
+```
+
+Expected output file: `results/retrieval_zeroshot.csv` with per-example top-1 hit, top-3 hit, and confidence scores. Baseline target from K7 contract: **top-3 accuracy ≥ 60%** on the 20-example stub test set.
+
+#### Step 6 — Temperature Tuning
+
+Run a grid search over `T ∈ {0.1, 0.15, 0.2, 0.25, 0.3, 0.5}` and pick the value maximising top-3 accuracy on `stub_test.csv`. Hardcode the winning T in `src/retrieval.py` as a named constant.
+
+**Why not cross-validate?** The stub test set has only 20 examples — using it for both tuning and evaluation is acceptable at this prototype stage. When J1 (real-person test set) is collected in Weeks 6–9, we will re-evaluate with that as the held-out set without touching T.
+
+#### Step 7 — Integrity Tests (`tests/test_retrieval.py`)
+
+The test suite must assert:
+
+| Test | Assertion |
+|---|---|
+| T1 | `predict_scores("someone hit me")` returns a dict with exactly 30 keys |
+| T2 | All scores are floats in `[0.0, 1.0]` |
+| T3 | Scores sum to 1.0 ± 0.001 (valid probability distribution) |
+| T4 | Murder scenario → `"302"` in top-3 |
+| T5 | Cheque fraud scenario → `"489-F"` in top-3 |
+| T6 | Kidnapping for ransom scenario → `"365-A"` in top-3 |
+| T7 | Empty string returns all-zero / valid dict (no crash) |
+| T8 | Roman Urdu input ("mujhe mara") does not raise exception |
+| T9 | `models/section_embeddings.npy` exists, shape (30, 384) |
+| T10 | `models/section_ids.json` has exactly 30 entries matching `labels.json` |
+
+Tests T4–T6 are **semantic sanity checks** — they confirm the retriever actually understands legal meaning, not just that it runs. If these fail, the reference passage construction (§7.3) needs richer scenario text.
+
+---
+
+### 7.7 Sentence Transformer Installation Note
+
+`sentence-transformers` is NOT in the current `requirements.txt`. It must be added:
+
+```text
+sentence-transformers>=2.6.0
+```
+
+**Installation command (must run outside sandbox due to network requirement):**
+```bash
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -m pip install sentence-transformers
+```
+
+The first call to `SentenceTransformer("all-MiniLM-L6-v2")` will auto-download the model (~22 MB) from HuggingFace Hub and cache it in `~/.cache/huggingface/hub/`. Subsequent loads are from local cache — no network needed.
+
+**Why not add to requirements.txt earlier?** It is a heavier dependency (pulls `torch`, `transformers`, `huggingface-hub`). Adding it only at B4's implementation phase keeps the environment lean for K1–B3 work where it was not needed.
+
+---
+
+### 7.8 Data Flow Diagram
+
+```mermaid
+flowchart LR
+    LJ["src/labels.json\n(title, citizen_terms)"]
+    SJ["data/content/sections.json\n(summary, scenarios)"]
+    REF["Reference Passage\nper section (30 texts)"]
+    ENC["SentenceTransformer\nall-MiniLM-L6-v2\n22 MB"]
+    MAT["models/section_embeddings.npy\n30 × 384 float32"]
+    IDS["models/section_ids.json\nordered list of 30 IDs"]
+    QT["Citizen Query Text"]
+    QV["Query Vector\n(384,)"]
+    SIM["Cosine Similarities\n(30,)"]
+    SF["Softmax + Temperature\n→ Probabilities (30,)"]
+    OUT["predict_scores()\nK4 output dict"]
+    EVAL["src/evaluate.py\n→ results/retrieval_zeroshot.csv"]
+
+    LJ --> REF
+    SJ --> REF
+    REF --> ENC --> MAT
+    ENC --> IDS
+    QT --> ENC --> QV
+    MAT --> SIM
+    QV --> SIM
+    SIM --> SF --> OUT
+    IDS --> OUT
+    OUT --> EVAL
+```
+
+---
+
+### 7.9 Why This Beats Keyword Matching (Detailed Comparison)
+
+Consider the citizen input: **"My shopkeeper gave me a cheque but it bounced. He tricked me."**
+
+| Method | What it matches | Correct section? |
+|---|---|---|
+| **TF-IDF / keyword** | Looks for "cheque", "bounced" in section text. PPC section text says "cheating by personation with forged documents". Zero keyword overlap. | ❌ Miss |
+| **Retrieval (ours)** | B2 scenario says "employer issued a cheque knowing the account was empty". Embedding of "cheque bounced, tricked" is semantically close to "cheque knowing account empty". | ✅ Hit `489-F` |
+| **DistilBERT (Track A)** | Trained on labelled citizen stories. If "cheque bounced" appears in training, classifies correctly. | ✅ (but requires labels) |
+
+> **This is the core value proposition of B4:** it delivers meaningful legal section retrieval **with zero labelled examples**, purely from the structured knowledge we already built in B2.
+
+---
+
+### 7.10 Integration with Streamlit (B7 Preview)
+
+`src/retrieval.py` will be imported by `app/pages/1_Incident_Analyzer.py`. The existing `predict_scores()` call site in the app requires **no code change** — only the import path changes from `stub_model` to `retrieval`. This is by design of the K4 contract established in Kickoff.
+
+---
+
+### 7.11 Verification Commands
+
+```bash
+# 1. Install sentence-transformers (requires network, run once)
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -m pip install sentence-transformers
+
+# 2. Build section index (encode passages, save .npy and .json)
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/retrieval.py --build-index
+
+# 3. Quick smoke test
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -c "from src.retrieval import predict_scores; r=predict_scores('someone was shot'); print(sorted(r.items(), key=lambda x:-x[1])[:5])"
+
+# 4. Full evaluation on stub test set
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" src/evaluate.py --model retrieval --test-data data/test/stub_test.csv
+
+# 5. Automated integrity tests
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" tests/test_retrieval.py
+```
+
+---
+
+### 7.12 Deliverables & Definition of Done for Task B4
+
+- [ ] `sentence-transformers` added to `requirements.txt`.
+- [ ] Reference passage corpus built for all 30 sections from B2 + labels data.
+- [ ] `models/section_embeddings.npy` generated — shape `(30, 384)`, verified.
+- [ ] `models/section_ids.json` generated — 30 entries, order-consistent with matrix.
+- [ ] `src/retrieval.py` implements K4 contract: `predict_scores(text) -> dict[str, float]`.
+- [ ] Softmax temperature tuned and hardcoded as named constant `TEMPERATURE`.
+- [ ] `results/retrieval_zeroshot.csv` generated — top-3 accuracy ≥ 60% on stub test set.
+- [ ] `tests/test_retrieval.py` — all 10 assertions PASS.
+- [ ] Changes committed on branch `aq`.
