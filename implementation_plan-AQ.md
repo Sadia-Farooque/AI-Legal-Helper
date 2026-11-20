@@ -1090,3 +1090,200 @@ Replace preview stub with live search:
 - [x] Automated test suite `tests/test_case_finder.py` — **all 10 assertions PASS** (search latency: 6.42 ms).
 - [x] Streamlit page `app/pages/3_Case_Finder.py` connected to live FAISS search engine with interactive UI & precedent cards.
 - [x] All code and artifacts staged and committed locally on branch `aq` (without pushing to remote).
+
+
+---
+
+## 9. Task B6 — Legal Quiz Bank (60–100 Scenario Benchmark)
+
+**Weeks:** 8 | **Effort:** ~10 hours | **Dependencies:** B2 (`data/content/sections.json`, `confusable_groups.json`), K1 (`src/labels.json`)
+
+---
+
+### 9.1 Problem Statement & Dual AI Engineering Purpose
+
+In legal AI projects, educational components are often treated as static UI afterthoughts. For the **AI Legal Helper for Pakistan**, Task B6 is engineered to serve a **vital dual function**:
+
+```
+                       ┌───────────────────────────────────────────────┐
+                       │          Task B6: Legal Quiz Bank             │
+                       │         data/content/quiz_bank.json           │
+                       └──────────────────────┬────────────────────────┘
+                                              │
+                     ┌────────────────────────┴────────────────────────┐
+                     ▼                                                 ▼
+      [Track B Pedagogical UI]                          [System-Wide ML Evaluation]
+      Interactive student quiz runner                   Adversarial OOD test harness
+      in app/pages/4_Quiz.py                            for B4 Retrieval & A5 DistilBERT
+      with feedback & scoring.                          measuring fine-grained discrimination.
+```
+
+1. **Pedagogical Suite for Pakistani Law Students:** An interactive practice suite targeting LL.B. students preparing for judicial examinations or criminal law finals, helping them master statutory prosecution elements and resolve confusing boundary cases.
+2. **Adversarial Hard-Negative ML Benchmark:** In multi-label NLP, models easily achieve high metrics on generic text ("someone was murdered" -> 302) but frequently collapse on fine-grained legal boundaries (e.g., distinguishing whether snatching a handbag while walking away is Theft 379, Extortion 384, or Robbery 392). By formatting the quiz scenarios with 1 ground-truth label and 3 curated hard-distractor labels, `quiz_bank.json` serves as an out-of-distribution (OOD) adversarial test suite to benchmark retrieval and supervised classifiers against human legal precision.
+
+---
+
+### 9.2 Engineering & Content Strategy: Eliminating "AI Slop"
+
+Generating legal quiz questions using naive prompts on generic LLMs produces severe legal inaccuracies ("AI slop") due to training bias on foreign jurisdictions:
+* **The Indian Penal Code (IPC) Contamination Hazard:** Generic LLMs routinely reference repealed IPC hurt sections (e.g. IPC 320 "grievous hurt"), unaware that Pakistan replaced IPC 319–338 hurt provisions with Islamic *Qisas and Diyat* legislation under the **Criminal Law (Amendment) Act II of 1997** (*Shajjah* 337-A, *Jurh* 337-F, *Itlaf-i-Udw* 334).
+* **Bail & Cognizability Misconceptions:** Generic models assume cheque dishonour is bailable civil litigation; under Section 489-F PPC (inserted via Act II of 2002), issuing a dishonoured cheque with dishonest intention is a **cognizable, non-bailable** criminal offence.
+* **Abstract / Hypothetical Generic Phrasing:** Unchecked AI generation produces sterile scenarios ("Person A took property of Person B") rather than realistic Pakistani socio-legal dynamics.
+
+#### Authoring & Verification Standard:
+To guarantee 100% legal veracity:
+1. **Statutory Alignment:** Every question strictly grounds its distinction in authoritative statutes: the Pakistan Penal Code 1860, the Code of Criminal Procedure 1898 (CrPC Schedule II), the Criminal Law (Amendment) Act II of 1997, and the Protection against Harassment of Women at the Workplace Act 2010 (Section 509 PPC).
+2. **Local Context Integration:** Scenarios incorporate authentic Pakistani socio-geographic settings, institutions, and vernacular terminology (e.g. NADRA identity theft, prize bond scams, agricultural tube-well disputes, Saddar mobile snatching, highway bus holdups).
+3. **Structured Statutory Distractors:** Distractors are not random sections; they are **systematically selected from the 10 confusable groups** established in Task B2 (`data/content/confusable_groups.json`).
+
+---
+
+### 9.3 Cognitive Difficulty Tiering & Taxonomical Distribution
+
+The quiz bank will contain **60 to 80 carefully crafted questions** distributed across three cognitive tiers based on Bloom's Revised Taxonomy:
+
+| Difficulty Tier | Target % | Question Count | Cognitive Focus | Example Scenario Archetype |
+|---|:---:|:---:|---|---|
+| **Easy (Knowledge & Recall)** | 30% | ~20 | Direct recognition of core statutory elements without confounding factors. | Five armed individuals enter a commercial bank at daytime, overpower guards, and take cash -> PPC 395 (Dacoity). |
+| **Medium (Application & Boundary Resolution)** | 45% | ~30 | Differentiating between two closely related sections within a confusable group. | Taking an unattended phone from a restaurant table (Theft 379) vs taking it after threatening the owner with a fist (Robbery 392). |
+| **Hard (Complex Analysis & Mens Rea)** | 25% | ~18 | Multi-party liability, incomplete attempts, subtle *mens rea*, or injury classification under Qisas & Diyat. | Accused strikes complainant on skull causing bone exposure without fracture -> *Shajjah-i-Mudiha* (PPC 337-A(ii)) vs *Ghayr-Jaifah* (337-F). |
+
+#### Statutory Coverage Matrix (All 30 Sections Covered):
+Every single section in `src/labels.json` must be the ground-truth target in **at least 2 questions**, ensuring comprehensive coverage:
+* **Homicide & Bodily Injury (7 sections):** 302, 307, 319, 324, 337-A, 337-F, 339
+* **Confinement & Sexual Offences (6 sections):** 340, 354, 354A, 363, 365, 365-A
+* **Theft, Extortion, Robbery & Dacoity (6 sections):** 379, 380, 382, 384, 392, 395
+* **Misappropriation, Fraud & Cheating (5 sections):** 403, 406, 411, 420, 489-F
+* **Criminal Trespass (3 sections):** 441, 447, 448
+* **Reputation & Intimidation (3 sections):** 500, 506, 509
+
+---
+
+### 9.4 Canonical JSON Schema (`data/content/quiz_bank.json`)
+
+To enable seamless programmatic parsing by both the Streamlit app and evaluation harnesses, each quiz record adheres to a strict schema:
+
+```json
+{
+  "id": "quiz_001",
+  "category": "Offences Against Property",
+  "difficulty": "medium",
+  "confusable_group_id": "group_01",
+  "target_section": "392",
+  "scenario": "A motorcyclist in Karachi corners a commuter at night, pulls out a pistol, threatens to shoot him on the spot, and forces him to hand over his motorcycle keys and wallet.",
+  "options": [
+    "Section 379 PPC (Theft)",
+    "Section 384 PPC (Extortion)",
+    "Section 392 PPC (Robbery)",
+    "Section 395 PPC (Dacoity)"
+  ],
+  "correct_index": 2,
+  "legal_elements_tested": [
+    "Presence of imminent fear of instant death or instant hurt",
+    "Conversion of theft or extortion into robbery under Section 390 PPC",
+    "Fewer than 5 persons (excluding dacoity under Section 391/395)"
+  ],
+  "explanation": "Section 392 applies because robbery is committed when theft or extortion is accompanied by causing or attempting to cause instant fear of death or hurt. Section 395 (Dacoity) is excluded because dacoity strictly requires five or more co-accused.",
+  "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Sections 390 & 392"
+}
+```
+
+#### Field Constraints:
+* `id`: Unique formatted identifier `quiz_001` through `quiz_NNN`.
+* `scenario`: Minimum 100 characters; contains no legal jargon or explicit mentions of section numbers.
+* `options`: Exactly 4 options; each option formatted as `Section <NUM> PPC (<Short Title>)`.
+* `correct_index`: Zero-based integer index into `options` (`0 <= correct_index <= 3`).
+* `target_section`: Valid section ID matching `src/labels.json`.
+* `legal_elements_tested`: Non-empty list of statutory requirements distinguishing the outcome.
+* `explanation`: Minimum 80 characters explaining why the target section applies and why the closest distractor is legally invalid.
+
+---
+
+### 9.5 Automated Test Suite Specification (`tests/test_quiz_bank.py`)
+
+A standalone automated test suite will enforce the data integrity of `data/content/quiz_bank.json` across 10 assertions:
+
+| Test ID | Test Name | Invariant Enforced |
+|---|---|---|
+| `T1` | File Existence & JSON Validation | File exists, parses as valid JSON list without syntax errors. |
+| `T2` | Minimum Question Count | Length of bank $\ge 60$ questions (target: 65–70). |
+| `T3` | Schema Conformance | Every question contains all 10 required schema fields. |
+| `T4` | Unique Question Identifiers | All `id` values are unique with zero collisions. |
+| `T5` | Complete Section Coverage | Every one of the 30 target sections in `src/labels.json` is represented as `target_section` in $\ge 2$ questions. |
+| `T6` | Option Cardinality & Uniqueness | Every question has exactly 4 options; all 4 options are distinct strings. |
+| `T7` | Correct Index Validity | `0 <= correct_index <= 3`; the option at `correct_index` explicitly references `target_section`. |
+| `T8` | Difficulty Distribution | All 3 difficulty tiers (`easy`, `medium`, `hard`) are present; `easy` $\ge 15$, `medium` $\ge 25$, `hard` $\ge 10$. |
+| `T9` | Content Substance & Realism | Every scenario text $\ge 100$ characters; explanation $\ge 80$ characters. |
+| `T10` | Confusable Group Referential Integrity | Any `confusable_group_id` referenced exists in `data/content/confusable_groups.json`. |
+
+---
+
+### 9.6 Interactive Streamlit UI Upgrade (`app/pages/4_Quiz.py`)
+
+The existing 2-question placeholder will be upgraded into a complete, gamified learning module:
+* **Interactive Filtering:**
+  * Filter questions by **Category** (All, Homicide, Bodily Hurt, Property Offences, White-Collar Fraud, Criminal Trespass, Reputation).
+  * Filter by **Difficulty Tier** (All, Easy, Medium, Hard).
+* **Stateful Quiz Session:**
+  * Persistent session state for `quiz_idx`, `score`, `answered`, `streak`, and `history`.
+  * Shuffled presentation mode (randomize question order per attempt).
+* **Immediate Feedback & Educational Deep Dive:**
+  * Displays instant green/red status with the authoritative statutory explanation upon answer submission.
+  * Shows key legal elements tested in clean pill badges.
+* **Scorecard & Performance Summary:**
+  * Real-time progress bar and percentage score.
+  * Performance breakdown by category (e.g. *Property: 90%, Hurt: 60%*), diagnosing specific student weak areas.
+
+---
+
+### 9.7 Step-by-Step Implementation Workflow
+
+```mermaid
+flowchart TD
+    S1["Step 1: Draft Canonical 60-70 Question Bank\n(Author scenarios, distractors, elements & explanations)"] --> S2
+    S2["Step 2: Validate Schema & Format JSON\n(data/content/quiz_bank.json)"] --> S3
+    S3["Step 3: Implement Automated Integrity Tests\n(tests/test_quiz_bank.py)"] --> S4
+    S4["Step 4: Execute Test Suite & Verify 100% Pass"] --> S5
+    S5["Step 5: Upgrade Streamlit Quiz UI\n(app/pages/4_Quiz.py with categories, filters & tracking)"] --> S6
+    S6["Step 6: Headless AppTest UI Validation"]
+```
+
+---
+
+### 9.8 Verification Commands
+
+```bash
+# 1. Run Automated Quiz Bank Integrity Test Suite
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" tests/test_quiz_bank.py
+
+# 2. Verify all 6 project test suites together (zero regressions)
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -c "
+import subprocess, sys
+tests = ['tests/test_labels.py', 'tests/test_lookup.py', 'tests/test_content.py', 'tests/test_sc_clean.py', 'tests/test_retrieval.py', 'tests/test_case_finder.py', 'tests/test_quiz_bank.py']
+for t in tests:
+    res = subprocess.run([sys.executable, t], capture_output=True, text=True)
+    assert res.returncode == 0, f'Failed {t}:\n{res.stdout}\n{res.stderr}'
+    print(f'✅ {t} PASSED')
+"
+
+# 3. Headless Streamlit AppTest Validation for Quiz Page
+& "C:\Users\Microsoft\AppData\Local\Python\bin\python.exe" -c "
+from streamlit.testing.v1 import AppTest
+at = AppTest.from_file('app/pages/4_Quiz.py').run()
+assert not at.exception, f'Quiz load error: {at.exception}'
+print('✅ app/pages/4_Quiz.py rendered cleanly without exceptions')
+"
+```
+
+---
+
+### 9.9 Deliverables & Definition of Done for Task B6
+
+- [x] `data/content/quiz_bank.json` authored with $\ge 60$ verified Pakistani penal scenarios (60 scenarios generated).
+- [x] 100% statutory coverage: all 30 PPC sections represented as target in $\ge 2$ questions (exactly 2 per section).
+- [x] Cognitive tiering implemented: Easy (19), Medium (25), Hard (16).
+- [x] Automated test suite `tests/test_quiz_bank.py` implemented with 10 assertions.
+- [x] All 10 assertions in `tests/test_quiz_bank.py` passing cleanly.
+- [x] `app/pages/4_Quiz.py` upgraded with dynamic filters, explanations, and performance tracking.
+- [x] Headless `AppTest` validation passing with 0 exceptions.
+- [x] All changes maintained locally on branch `aq` (without remote pushes).
