@@ -1082,11 +1082,11 @@ Replace preview stub with live search:
 
 ### 8.10 Deliverables & Definition of Done for Task B5
 
-- [ ] `faiss-cpu` installed and verified in Python 3.14 environment.
-- [ ] `src/case_finder.py` implemented with `build_case_index()` and `search_cases()`.
-- [ ] `models/case_index.faiss` generated containing 301 vectors of dimension 384.
-- [ ] `models/case_metadata.json` generated containing 301 complete legal records.
-- [ ] Hybrid filtering tested: Section filter strictly restricts returned candidates.
-- [ ] Automated test suite `tests/test_case_finder.py` — all 10 assertions PASS.
-- [ ] Streamlit page `app/pages/3_Case_Finder.py` connected to live FAISS search engine.
-- [ ] All code and artifacts staged and committed locally on branch `aq` (without pushing to remote).
+- [x] `faiss-cpu==1.16.0` installed and verified in Python 3.14 environment.
+- [x] `src/case_finder.py` implemented with `build_case_index()` and `search_cases()`.
+- [x] `models/case_index.faiss` generated containing 301 vectors of dimension 384.
+- [x] `models/case_metadata.json` generated containing 301 complete legal records.
+- [x] Hybrid filtering tested: Section filter strictly restricts returned candidates.
+- [x] Automated test suite `tests/test_case_finder.py` — **all 10 assertions PASS** (search latency: 6.42 ms).
+- [x] Streamlit page `app/pages/3_Case_Finder.py` connected to live FAISS search engine with interactive UI & precedent cards.
+- [x] All code and artifacts staged and committed locally on branch `aq` (without pushing to remote).
