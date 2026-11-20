@@ -38,8 +38,11 @@ def batch_fn(predict_scores, labels):
     return fn
 
 
-def explain(text, predict_scores, section=None, num_features=8, num_samples=300, seed=42):
-    """Return [(word, weight)] for `section` (default: the top-scoring section), strongest first."""
+def explain(text, predict_scores, section=None, num_features=8, num_samples=300, seed=42, batch_predict=None):
+    """Return [(word, weight)] for `section` (default: the top-scoring section), strongest first.
+
+    batch_predict(list[str]) -> array (n, n_labels), if given, scores all LIME samples in one call (much faster).
+    """
     from lime.lime_text import LimeTextExplainer
     labels = _labels()
     scores = predict_scores(text)
@@ -48,7 +51,8 @@ def explain(text, predict_scores, section=None, num_features=8, num_samples=300,
     idx = labels.index(section)
     explainer = LimeTextExplainer(class_names=labels, bow=True, random_state=seed,
                                   split_expression=r"\W+")
-    exp = explainer.explain_instance(text, batch_fn(predict_scores, labels), labels=[idx],
+    fn = batch_predict if batch_predict is not None else batch_fn(predict_scores, labels)
+    exp = explainer.explain_instance(text, fn, labels=[idx],
                                      num_features=num_features, num_samples=num_samples)
     return exp.as_list(label=idx)
 

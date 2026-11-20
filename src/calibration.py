@@ -28,6 +28,7 @@ import csv
 import json
 import os
 import sys
+from functools import lru_cache
 
 import numpy as np
 from scipy.optimize import minimize
@@ -48,6 +49,7 @@ def calibration_path(model_name):
     return os.path.join(RESULTS, f"calibration_{model_name}.json")
 
 
+@lru_cache(maxsize=None)
 def load_calibration(model_name):
     """(a, b) for score = sigmoid(a * logit + b); (1, 0) = uncalibrated."""
     p = calibration_path(model_name)
