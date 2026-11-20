@@ -8,18 +8,28 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-from src.models.stub_model import predict_scores
-
 st.set_page_config(page_title="Incident Analyzer", page_icon="🚨", layout="wide")
 
 st.title("🚨 Incident Analyzer")
 st.write("Describe an incident in plain English or Roman Urdu to identify applicable Pakistan Penal Code (PPC) sections.")
 
-# Load lookup table stub
+# Load lookup table
 LOOKUP_PATH = os.path.join(PROJECT_ROOT, "data", "lookup", "ppc_lookup.csv")
 lookup_df = None
 if os.path.exists(LOOKUP_PATH):
     lookup_df = pd.read_csv(LOOKUP_PATH).set_index("section")
+
+# Model selection in sidebar or header
+model_choice = st.sidebar.selectbox(
+    "Select Classification Model:",
+    ["Zero-Shot Retrieval (B4 - all-MiniLM-L6-v2)", "Stub Baseline (K4 Pseudo-Random)"],
+    index=0
+)
+
+if "Retrieval" in model_choice:
+    from src.retrieval import predict_scores
+else:
+    from src.models.stub_model import predict_scores
 
 user_input = st.text_area(
     "What happened?",
@@ -60,4 +70,4 @@ if analyze_btn and user_input.strip():
     3. **Legal Aid Contact:** In case of emergency or police refusal, contact the legal aid cell or dial **15**.
     """)
 
-st.caption("Track A Module (Owner: Sadia Fatima) — Currently running with shared model & lookup contracts.")
+st.caption(f"Running on model: **{model_choice}**")
