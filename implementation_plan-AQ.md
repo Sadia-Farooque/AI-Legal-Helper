@@ -779,9 +779,18 @@ Consider the citizen input: **"My shopkeeper gave me a cheque but it bounced. He
 
 ---
 
-### 7.10 Integration with Streamlit (B7 Preview)
+### 7.10 Integration with Streamlit (B7 Preview & UI Delivery)
 
-`src/retrieval.py` will be imported by `app/pages/1_Incident_Analyzer.py`. The existing `predict_scores()` call site in the app requires **no code change** — only the import path changes from `stub_model` to `retrieval`. This is by design of the K4 contract established in Kickoff.
+1. **Incident Analyzer Integration (`app/pages/1_Incident_Analyzer.py`):**
+   - Configured interactive model selector allowing the user to switch between **Zero-Shot Retrieval (B4 — `all-MiniLM-L6-v2`)** and **Stub Baseline (K4)**.
+   - When the user inputs an incident scenario, `src/retrieval.py` computes semantic similarities and populates the top-3 recommended PPC sections alongside statutory legal facts (FIR cognizability, bail, penalty, trial court) from `data/lookup/ppc_lookup.csv`.
+
+2. **Evaluation Dashboard (`app/pages/5_Evaluation.py`):**
+   - Enhanced to strictly separate K6 benchmark result tables (matching `['metric', 'language', 'value']`) from raw experiment grids/score logs, preventing table pollution and `NaN` columns.
+
+3. **Application Launcher (`run_app.py`):**
+   - Created root convenience launcher script (`python run_app.py`) to bypass Windows PATH limitations for `streamlit.exe`.
+   - Comprehensive app architecture, multi-page setup, and troubleshooting guide documented in [`docs/streamlit_app_guide.md`](docs/streamlit_app_guide.md).
 
 ---
 
