@@ -448,4 +448,4 @@ Enforce data quality:
 - [x] Cleaned dataset `data/processed/sc_clean.csv` generated — **301 real SC criminal judgments, 26 distinct PPC sections**.
 - [x] 50-case precision audit documented in `docs/sc_regex_note.md` — **measured precision: 100%** (bare-number full-text verification, 69/69 citations confirmed).
 - [x] Automated validation test `tests/test_sc_clean.py` — **all 12 assertions PASS**.
-- [ ] Changes staged and committed under branch `aq`.
+- [x] Changes staged and committed under branch `aq`.
