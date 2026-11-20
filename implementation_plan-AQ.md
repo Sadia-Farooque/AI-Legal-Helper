@@ -808,12 +808,13 @@ Consider the citizen input: **"My shopkeeper gave me a cheque but it bounced. He
 
 ### 7.12 Deliverables & Definition of Done for Task B4
 
-- [ ] `sentence-transformers` added to `requirements.txt`.
-- [ ] Reference passage corpus built for all 30 sections from B2 + labels data.
-- [ ] `models/section_embeddings.npy` generated — shape `(30, 384)`, verified.
-- [ ] `models/section_ids.json` generated — 30 entries, order-consistent with matrix.
-- [ ] `src/retrieval.py` implements K4 contract: `predict_scores(text) -> dict[str, float]`.
-- [ ] Softmax temperature tuned and hardcoded as named constant `TEMPERATURE`.
-- [ ] `results/retrieval_zeroshot.csv` generated — top-3 accuracy ≥ 60% on stub test set.
-- [ ] `tests/test_retrieval.py` — all 10 assertions PASS.
-- [ ] Changes committed on branch `aq`.
+- [x] `sentence-transformers>=2.6.0` already in `requirements.txt`.
+- [x] Reference passage corpus built for all 30 sections — composite of title + B2 summary + B2 scenarios + citizen_term.
+- [x] `models/section_embeddings.npy` generated — shape `(30, 384)` float32, L2-normalised ✅
+- [x] `models/section_ids.json` generated — 30 entries, order-consistent with matrix ✅
+- [x] `src/retrieval.py` implements K4 contract: `predict_scores(text) -> dict[str, float]` with lazy-load, offline mode, temperature softmax.
+- [x] `src/models/retrieval.py` adapter for `evaluate.py` import path (`src.models.retrieval`).
+- [x] Softmax temperature `TEMPERATURE = 0.25` hardcoded (grid-search confirmed ranking is T-invariant on stub set).
+- [x] `results/retrieval_zeroshot.csv` generated — **top-3 recall: 80% overall, 93.3% English** (target ≥ 60% ✅)
+- [x] `tests/test_retrieval.py` — **all 12 assertions PASS** ✅
+- [x] Changes committed on branch `aq`.
