@@ -1,0 +1,17 @@
+id,text,sections,primary_section,language,source,split,situation,generator
+llm_S29_1,My landlord has been promising to fix the leaking bathroom tap for three weeks but keeps delaying. Water is being wasted every day and I have to keep putting a bucket underneath it.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_2,I bought a new pair of shoes from a shop in Karachi but the size is wrong. The shopkeeper refuses to exchange them even though I have the receipt and they are completely unused.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_3,My neighbour plays his television extremely loudly every night. I have politely asked him several times to lower the volume because my children cannot sleep but he doesn't listen.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_4,"My friend borrowed 5,000 rupees from me last month and keeps saying he will return it tomorrow. I don't want to fight with him but I really need my money back.",[],none,en,llm_test,test,S29,chatgpt
+llm_S29_5,Our school has suddenly increased the monthly fee without informing parents beforehand. Many families are struggling to afford it and the administration is not explaining the reason.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_6,The electricity bill for our rented flat in Lahore seems much higher than usual. I contacted the electricity company but they keep telling me to visit another office. Nobody is giving a proper explanation.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_7,I ordered a birthday cake from a bakery in Multan and they delivered the wrong design. The birthday was already over by the time they offered to replace it.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_8,My mobile internet package keeps finishing much faster than advertised. The company helpline keeps repeating the same response and I am tired of calling them every day.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_9,The tailor in our area took my clothes three weeks ago and still hasn't completed them. Every time I visit his shop he gives me another date.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_10,My university has changed the examination timetable at the last minute. I have two papers scheduled on the same day and the administration is not responding to our emails.,[],none,en,llm_test,test,S29,chatgpt
+llm_S29_11,"mere landlord bathroom ka tap 3 weeks se repair nahi karwa rahe, roz pani leak hota hai aur main ne bohat dafa remind bhi karwaya hai. ab kya karun",[],none,roman_ur,llm_test,test,S29,chatgpt
+llm_S29_12,"main ne Karachi se shoes buy kiye thay lekin size wrong hai, shopkeeper exchange nahi kar raha jab ke receipt bhi mere paas hai. bas apni policy ka keh raha hai",[],none,roman_ur,llm_test,test,S29,chatgpt
+llm_S29_13,"mera dost 5000 rupay udhar le kar gaya tha, ek month ho gaya abhi tak wapas nahi kar raha. roz kal kal karta hai aur mujhe bhi paison ki zarurat hai",[],none,roman_ur,llm_test,test,S29,chatgpt
+llm_S29_14,"hamare neighbour roz raat ko loud music chalate hain, bachay so nahi pate. politely bhi bola hai lekin woh volume kam hi nahi karte",[],none,roman_ur,llm_test,test,S29,chatgpt
+llm_S29_15,university ne achanak semester fee increase kar di hai aur students ko pehle inform bhi nahi kiya. hum administration ko emails kar rahe hain lekin koi proper jawab nahi mil raha,[],none,roman_ur,llm_test,test,S29,chatgpt
+real_004,"politiians in my area arent working properly , we dont even have a street light",[],none,en,real,test,real,human
