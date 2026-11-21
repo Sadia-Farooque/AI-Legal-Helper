@@ -133,6 +133,13 @@ h1, h2, h3 { letter-spacing: .2px; }
 .hl b { min-width: 5.6rem; color: #C9A44C; font-size: 1.02rem; }
 .hl span { font-size: .85rem; opacity: .9; line-height: 1.25; }
 
+/* ---------- incident input (chat-style box: Enter sends) ---------- */
+.st-key-incident_box [data-testid="stChatInput"] { border: 1.5px solid rgba(201,164,76,.55); border-radius: .8rem; }
+.st-key-incident_box textarea { min-height: 3.2rem; font-size: 1.02rem; }
+.you-wrote { border-left: 4px solid #C9A44C; background: rgba(201,164,76,.07); border-radius: .4rem;
+             padding: .6rem .9rem; margin: .8rem 0 1rem; font-size: 1rem; }
+.you-wrote span { display: block; font-size: .78rem; opacity: .7; margin-bottom: .2rem; }
+
 /* ---------- loader ---------- */
 .loader { text-align: center; padding: 3rem 1rem; }
 .loader .beam { transform-origin: 60px 30px; animation: tilt 1.6s ease-in-out infinite; }

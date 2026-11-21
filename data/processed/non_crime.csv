@@ -1,0 +1,141 @@
+id,text,language,source,generator,split
+nc_0001,my landlord is not returning my security deposit after i moved out,en,non_crime,claude-opus-5.5,val
+nc_0002,landlord increased the rent by 30 percent without any notice,en,non_crime,claude-opus-5.5,val
+nc_0003,the owner wants us to vacate the flat before the agreement ends,en,non_crime,claude-opus-5.5,train
+nc_0004,our tenant is 2 months late on rent and keeps making excuses,en,non_crime,claude-opus-5.5,train
+nc_0005,my company has not paid my salary for two months,en,non_crime,claude-opus-5.5,train
+nc_0006,boss cut my salary because i took 3 sick leaves,en,non_crime,claude-opus-5.5,val
+nc_0007,i was fired without any notice period after 4 years of work,en,non_crime,claude-opus-5.5,train
+nc_0008,my employer is not giving me an experience letter,en,non_crime,claude-opus-5.5,train
+nc_0009,teacher gave me low marks in the assignment even though i worked hard,en,non_crime,claude-opus-5.5,val
+nc_0010,university is not accepting my admission form because one document is missing,en,non_crime,claude-opus-5.5,train
+nc_0011,my result is showing fail in one subject but i think the paper was checked wrongly,en,non_crime,claude-opus-5.5,val
+nc_0012,school increased the fees again this year and parents are upset,en,non_crime,claude-opus-5.5,train
+nc_0013,the electronics store refuses to replace my faulty headphones,en,non_crime,claude-opus-5.5,val
+nc_0014,"i bought a mobile and it stopped working in a week, shop says no warranty",en,non_crime,claude-opus-5.5,train
+nc_0015,online order came 10 days late and the colour is different,en,non_crime,claude-opus-5.5,train
+nc_0016,the restaurant delivered cold food and refused a refund,en,non_crime,claude-opus-5.5,train
+nc_0017,repair shop took my laptop 2 weeks ago and still not fixed,en,non_crime,claude-opus-5.5,val
+nc_0018,my classmate never gave back the notes and calculator i lent him,en,non_crime,claude-opus-5.5,train
+nc_0019,"cousin took a small loan from me and now avoids my calls, i just want my money back",en,non_crime,claude-opus-5.5,train
+nc_0020,"electricity bill came very high this month, i think the meter reading is wrong",en,non_crime,claude-opus-5.5,train
+nc_0021,gas has been off in our area for 3 days,en,non_crime,claude-opus-5.5,train
+nc_0022,bank charged me a fee that i never agreed to,en,non_crime,claude-opus-5.5,val
+nc_0023,my atm card got stuck in the machine,en,non_crime,claude-opus-5.5,train
+nc_0024,mobile network is very bad in my area and internet keeps disconnecting,en,non_crime,claude-opus-5.5,train
+nc_0025,my passport renewal is delayed for two months,en,non_crime,claude-opus-5.5,train
+nc_0026,nadra office keeps telling me to come back next week for my id card,en,non_crime,claude-opus-5.5,train
+nc_0027,neighbours play loud music late at night every weekend,en,non_crime,claude-opus-5.5,train
+nc_0028,"neighbour parks his car in front of our gate sometimes, we talked and he moves it",en,non_crime,claude-opus-5.5,train
+nc_0029,the garbage is not being collected in our street for a week,en,non_crime,claude-opus-5.5,train
+nc_0030,my brothers and i disagree about how to divide our father's house,en,non_crime,claude-opus-5.5,train
+nc_0031,my parents are not allowing me to marry the person i like,en,non_crime,claude-opus-5.5,train
+nc_0032,"my husband and i are thinking about divorce, what is the process",en,non_crime,claude-opus-5.5,train
+nc_0033,my girlfriend blocked me everywhere after a fight,en,non_crime,claude-opus-5.5,val
+nc_0034,my best friend stopped talking to me and i dont know why,en,non_crime,claude-opus-5.5,train
+nc_0035,a colleague was rude to me in the meeting in front of everyone,en,non_crime,claude-opus-5.5,train
+nc_0036,my flight got cancelled and the airline is not giving a refund,en,non_crime,claude-opus-5.5,train
+nc_0037,the bus left without me even though i had a ticket,en,non_crime,claude-opus-5.5,train
+nc_0038,hospital made us wait 6 hours in emergency,en,non_crime,claude-opus-5.5,train
+nc_0039,doctor did not explain the reports properly,en,non_crime,claude-opus-5.5,val
+nc_0040,insurance company is delaying my car claim,en,non_crime,claude-opus-5.5,train
+nc_0041,i got a traffic challan and i think it was unfair,en,non_crime,claude-opus-5.5,train
+nc_0042,how can i get a copy of my fir,en,non_crime,claude-opus-5.5,train
+nc_0043,what is the punishment for theft in pakistan,en,non_crime,claude-opus-5.5,train
+nc_0044,how does bail work,en,non_crime,claude-opus-5.5,train
+nc_0045,hi i want some legal information,en,non_crime,claude-opus-5.5,train
+nc_0046,thank you for the help,en,non_crime,claude-opus-5.5,train
+nc_0047,my phone screen broke when i dropped it,en,non_crime,claude-opus-5.5,val
+nc_0048,"i lost my wallet somewhere in the mall, i dont know where",en,non_crime,claude-opus-5.5,val
+nc_0049,my cat is missing since yesterday,en,non_crime,claude-opus-5.5,train
+nc_0050,my car broke down on the motorway,en,non_crime,claude-opus-5.5,train
+nc_0051,the builder is late in handing over our flat by one year,en,non_crime,claude-opus-5.5,train
+nc_0052,the gym took annual fees and then closed down for renovation,en,non_crime,claude-opus-5.5,val
+nc_0053,my internship stipend has not been paid,en,non_crime,claude-opus-5.5,val
+nc_0054,hostel food is very bad and the warden does not listen,en,non_crime,claude-opus-5.5,train
+nc_0055,my roommate is very messy and never cleans the room,en,non_crime,claude-opus-5.5,val
+nc_0056,my sister and i fight over using the laptop,en,non_crime,claude-opus-5.5,train
+nc_0057,my in laws keep taunting me about cooking,en,non_crime,claude-opus-5.5,train
+nc_0058,the society maintenance charges went up again,en,non_crime,claude-opus-5.5,val
+nc_0059,water is leaking from the upper flat into our bathroom,en,non_crime,claude-opus-5.5,train
+nc_0060,my visa application got rejected,en,non_crime,claude-opus-5.5,train
+nc_0061,the courier lost my parcel and offers only 500 rupees,en,non_crime,claude-opus-5.5,train
+nc_0062,"the online course i paid for is not what was advertised, i want a refund",en,non_crime,claude-opus-5.5,train
+nc_0063,my scholarship money is late this semester,en,non_crime,claude-opus-5.5,train
+nc_0064,the cricket academy coach does not select me for the team,en,non_crime,claude-opus-5.5,train
+nc_0065,my neighbour's tree branches are coming into our house,en,non_crime,claude-opus-5.5,val
+nc_0066,my father is angry because i failed my exam,en,non_crime,claude-opus-5.5,train
+nc_0067,my friend posted an ugly photo of me on instagram as a joke and deleted it when i asked,en,non_crime,claude-opus-5.5,train
+nc_0068,my manager gives me too much work and no overtime pay,en,non_crime,claude-opus-5.5,train
+nc_0069,the contractor did poor quality work on our roof,en,non_crime,claude-opus-5.5,train
+nc_0070,my mobile wallet transfer is pending since yesterday,en,non_crime,claude-opus-5.5,train
+nc_0071,landlord security deposit wapas nahi kar raha jab ke hum ne flat khali kar diya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0072,malik makan ne bina bataye kiraya barha diya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0073,"kiraydar 2 mahine se kiraya nahi de raha, bahane bana raha hai",roman_ur,non_crime,claude-opus-5.5,train
+nc_0074,company ne 2 mahine se tankhwah nahi di,roman_ur,non_crime,claude-opus-5.5,train
+nc_0075,boss ne chhuttiyan lene pe tankhwah kaat li,roman_ur,non_crime,claude-opus-5.5,train
+nc_0076,mujhe bina notice ke naukri se nikal diya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0077,teacher ne assignment mein kam marks diye hain,roman_ur,non_crime,claude-opus-5.5,train
+nc_0078,"mera result fail aya hai ek subject mein, lagta hai paper ghalat check hua",roman_ur,non_crime,claude-opus-5.5,train
+nc_0079,university admission form accept nahi kar rahi ek document ki wajah se,roman_ur,non_crime,claude-opus-5.5,train
+nc_0080,school walon ne phir se fees barha di,roman_ur,non_crime,claude-opus-5.5,train
+nc_0081,electronics wala kharab headphones replace nahi kar raha,roman_ur,non_crime,claude-opus-5.5,train
+nc_0082,"naya mobile ek hafte mein kharab ho gaya, dukan wala warranty nahi de raha",roman_ur,non_crime,claude-opus-5.5,train
+nc_0083,online order 10 din late aya aur rang bhi ghalat hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0084,laptop repair ko diya tha 2 hafte ho gaye abhi tak theek nahi hua,roman_ur,non_crime,claude-opus-5.5,train
+nc_0085,classmate ne notes aur calculator liye thay wapas hi nahi kiye,roman_ur,non_crime,claude-opus-5.5,train
+nc_0086,cousin ne thore pese udhaar liye thay ab phone nahi uthata,roman_ur,non_crime,claude-opus-5.5,train
+nc_0087,"is mahine bijli ka bill bohat zyada aya hai, meter reading ghalat hai",roman_ur,non_crime,claude-opus-5.5,val
+nc_0088,hamare ilaqe mein 3 din se gas nahi hai,roman_ur,non_crime,claude-opus-5.5,val
+nc_0089,bank ne bina bataye charges kaat liye,roman_ur,non_crime,claude-opus-5.5,train
+nc_0090,atm mein card phans gaya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0091,internet bohat slow hai aur baar baar disconnect hota hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0092,passport renew hone mein 2 mahine ki der ho gayi,roman_ur,non_crime,claude-opus-5.5,val
+nc_0093,nadra wale har dafa agle hafte aane ka kehte hain,roman_ur,non_crime,claude-opus-5.5,train
+nc_0094,pados wale raat ko der tak oonchi awaz mein gaane lagate hain,roman_ur,non_crime,claude-opus-5.5,val
+nc_0095,gali mein hafte se kachra nahi utha,roman_ur,non_crime,claude-opus-5.5,train
+nc_0096,bhaiyon ke sath abbu ke ghar ke batwaare pe ikhtilaf hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0097,ghar wale meri pasand ki shaadi nahi hone de rahe,roman_ur,non_crime,claude-opus-5.5,train
+nc_0098,"hum talaq ke baare mein soch rahe hain, iska tareeqa kya hai",roman_ur,non_crime,claude-opus-5.5,train
+nc_0099,meri girlfriend ne larai ke baad har jagah block kar diya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0100,best friend ne baat karna chhor diya pata nahi kyun,roman_ur,non_crime,claude-opus-5.5,train
+nc_0101,meeting mein colleague ne sab ke saamne badtameezi se baat ki,roman_ur,non_crime,claude-opus-5.5,val
+nc_0102,flight cancel ho gayi aur airline refund nahi de rahi,roman_ur,non_crime,claude-opus-5.5,train
+nc_0103,hospital emergency mein 6 ghante intezaar karwaya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0104,insurance wale gaari ka claim late kar rahe hain,roman_ur,non_crime,claude-opus-5.5,train
+nc_0105,traffic police ne challan kiya jo mujhe ghalat lagta hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0106,fir ki copy kaise milti hai,roman_ur,non_crime,claude-opus-5.5,val
+nc_0107,chori ki saza kya hai pakistan mein,roman_ur,non_crime,claude-opus-5.5,train
+nc_0108,zamanat kaise hoti hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0109,mujhe kuch qanooni maloomat chahiye,roman_ur,non_crime,claude-opus-5.5,train
+nc_0110,shukriya madad ke liye,roman_ur,non_crime,claude-opus-5.5,val
+nc_0111,mera phone gir ke screen toot gayi,roman_ur,non_crime,claude-opus-5.5,train
+nc_0112,mall mein mera wallet kahin gir gaya pata nahi kahan,roman_ur,non_crime,claude-opus-5.5,train
+nc_0113,meri billi kal se gum hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0114,motorway pe gaari kharab ho gayi,roman_ur,non_crime,claude-opus-5.5,train
+nc_0115,builder ne flat dene mein ek saal ki der kar di,roman_ur,non_crime,claude-opus-5.5,train
+nc_0116,gym ne saal ki fees le kar renovation ke liye band kar diya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0117,internship ka stipend nahi mila,roman_ur,non_crime,claude-opus-5.5,train
+nc_0118,hostel ka khana bohat kharab hai aur warden sunta nahi,roman_ur,non_crime,claude-opus-5.5,train
+nc_0119,roommate bohat ganda hai kabhi kamra saaf nahi karta,roman_ur,non_crime,claude-opus-5.5,train
+nc_0120,behen ke sath laptop pe larai hoti hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0121,sasural wale khane pe taane dete hain,roman_ur,non_crime,claude-opus-5.5,train
+nc_0122,society ke maintenance charges phir barh gaye,roman_ur,non_crime,claude-opus-5.5,train
+nc_0123,upar wale flat se bathroom mein paani tapak raha hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0124,visa reject ho gaya,roman_ur,non_crime,claude-opus-5.5,val
+nc_0125,courier walon ne parcel gum kar diya aur sirf 500 de rahe hain,roman_ur,non_crime,claude-opus-5.5,train
+nc_0126,"online course ke pese diye thay, waisa nahi jaisa bataya tha, refund chahiye",roman_ur,non_crime,claude-opus-5.5,train
+nc_0127,scholarship ke pese is semester late hain,roman_ur,non_crime,claude-opus-5.5,val
+nc_0128,pados ke darakht ki shaakhein hamare ghar mein aa rahi hain,roman_ur,non_crime,claude-opus-5.5,train
+nc_0129,abbu naraz hain kyun ke main exam mein fail ho gaya,roman_ur,non_crime,claude-opus-5.5,val
+nc_0130,"dost ne mazaq mein meri photo lagayi thi, kehne pe hata di",roman_ur,non_crime,claude-opus-5.5,train
+nc_0131,manager bohat kaam deta hai aur overtime nahi deta,roman_ur,non_crime,claude-opus-5.5,train
+nc_0132,thekedaar ne chhat ka kaam bohat ghatiya kiya,roman_ur,non_crime,claude-opus-5.5,train
+nc_0133,jazzcash transfer kal se pending hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0134,bus ticket ke bawajood bus mujhe chhor ke chali gayi,roman_ur,non_crime,claude-opus-5.5,train
+nc_0135,doctor ne reports theek se nahi samjhayi,roman_ur,non_crime,claude-opus-5.5,train
+nc_0136,cricket academy ka coach mujhe team mein select nahi karta,roman_ur,non_crime,claude-opus-5.5,train
+nc_0137,landlord keh raha agreement khatam hone se pehle flat khali karo,roman_ur,non_crime,claude-opus-5.5,train
+nc_0138,yaar meri salary late aa rahi hai har mahine,roman_ur,non_crime,claude-opus-5.5,train
+nc_0139,bijli roz 6 ghante jaati hai,roman_ur,non_crime,claude-opus-5.5,train
+nc_0140,mera admission merit list mein nahi aya,roman_ur,non_crime,claude-opus-5.5,val

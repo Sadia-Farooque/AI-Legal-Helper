@@ -51,3 +51,12 @@ def test_abstain_threshold_never_below_safety_floor():
     for m in ("tfidf_lr", "tfidf_svm", "tfidf_nb"):
         cal = json.load(open(P("results", f"calibration_{m}.json"), encoding="utf-8"))
         assert cal["abstain_threshold"] >= 0.70
+
+
+def test_non_crime_messages_do_not_copy_the_test_set():
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+    nc = [r["text"] for r in _rows(P("data", "processed", "non_crime.csv"))]
+    test = [r["text"] for f in ("test_sf.csv", "out_of_scope_sf.csv") for r in _rows(P("data", "test", f))]
+    v = TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5)).fit(nc + test)
+    assert cosine_similarity(v.transform(nc), v.transform(test)).max() < 0.5

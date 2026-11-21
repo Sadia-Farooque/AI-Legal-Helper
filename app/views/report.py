@@ -81,37 +81,47 @@ if warm.is_alive():
     warm.join()
     holder.empty()
 
-text = st.text_area("What happened?", key="incident", height=130,
-                    placeholder="e.g. Last night two men on a motorcycle snatched my phone at gunpoint near Saddar.")
-c_go, c_tips = st.columns([1, 4], vertical_alignment="center")
-go = c_go.button("Analyze", type="primary", width="stretch")
-with c_tips.popover("💡 What should I write?"):
+st.markdown("**What happened?** Type it below and press **Enter** (Shift+Enter for a new line).")
+with st.container(key="incident_box"):
+    submitted = st.chat_input("e.g. Last night two men on a motorcycle snatched my phone at gunpoint near Saddar.",
+                              key="incident", max_chars=2000)
+with st.popover("💡 What should I write?"):
     st.markdown("- **What** was done (snatched, hit, threatened, cheated...)\n- **Who** did it (stranger, "
                 "someone you know)\n- **Where** and **when**\n- Was anything **taken** or money **lost**?\n"
                 "- Was anyone **hurt** or **threatened**?")
 
-if go:
-    if text.strip():
+if submitted is not None:
+    text = submitted.strip()
+    if not text:
+        st.session_state.pop("last", None)
+        st.info("Please describe what happened first.")
+    else:
         import time
         from datetime import datetime
         t0 = time.time()
         holder = st.empty()       # shown immediately (st.spinner only appears after a delay)
         holder.markdown(ui.loader("Analysing your description..."), unsafe_allow_html=True)
-        result = _run(text)
+        try:
+            result = _run(text)
+        except Exception as err:  # noqa: BLE001 (never fail silently in front of a user)
+            holder.empty()
+            st.error("Sorry, something went wrong while analysing. Please try again in a moment. "
+                     "If it keeps happening, restart the app.")
+            with st.expander("Technical details"):
+                st.code(repr(err))
+            st.stop()
         time.sleep(max(0.0, 1.2 - (time.time() - t0)))       # long enough to see that something happened
         holder.empty()
         st.session_state["last"] = (text, result)
         st.session_state["analysed_at"] = datetime.now().strftime("%I:%M:%S %p")
-        st.toast("Analysis complete", icon="⚖️")
         st.session_state.pop("complaint", None)
-    else:
-        st.session_state.pop("last", None)
-        st.info("Please describe what happened first.")
+        st.toast("Analysis complete", icon="⚖️")
 
 if "last" in st.session_state:
     text, res = st.session_state["last"]
     status = res["status"]
-    st.caption(f"Result for the description analysed at {st.session_state.get('analysed_at', '')}.")
+    st.markdown(f'<div class="you-wrote"><span>Your description · {st.session_state.get("analysed_at", "")}</span>'
+                f'{html.escape(text)}</div>', unsafe_allow_html=True)
 
     if status == "urdu_script":
         st.info("Urdu script is not supported yet. Please type in **Roman Urdu** (e.g. *mera mobile cheen liya*) "

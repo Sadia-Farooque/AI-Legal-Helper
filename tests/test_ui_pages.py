@@ -51,9 +51,8 @@ def test_sidebar_helplines_change_with_province():
 
 def test_report_confident_case_shows_results_and_steps():
     at = _goto(_app().run(), "report.py")
-    at.text_area(key="incident").set_value(
-        "Kal raat do larkay bike par aaye aur pistol dikha kar mera mobile aur wallet cheen kar bhaag gaye")
-    at.button[0].click().run()
+    at.chat_input(key="incident").set_value(
+        "Kal raat do larkay bike par aaye aur pistol dikha kar mera mobile aur wallet cheen kar bhaag gaye").run()
     assert not at.exception
     t = _text(at)
     assert "Sections that may apply" in t and "What to do now" in t
@@ -62,8 +61,7 @@ def test_report_confident_case_shows_results_and_steps():
 
 def test_report_unsure_case_gives_no_legal_route():
     at = _goto(_app().run(), "report.py")
-    at.text_area(key="incident").set_value("teacher wont give me marks")
-    at.button[0].click().run()
+    at.chat_input(key="incident").set_value("teacher wont give me marks").run()
     assert not at.exception
     t = _text(at)
     assert "more detail" in t
