@@ -16,6 +16,7 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 from src.analyzer import analyze, compare_retrieval  # noqa: E402
+from src.fir_draft import FIRDetails, draft, valid_cnic  # noqa: E402
 from src.next_steps import helplines  # noqa: E402
 
 st.set_page_config(page_title="Incident Analyzer", page_icon="🚨", layout="wide")
@@ -148,6 +149,53 @@ if "last" in st.session_state:
                 st.markdown(f'<div style="line-height:2;font-size:1.05rem">{html}</div>', unsafe_allow_html=True)
                 st.caption("Green words pushed the model towards this section, red words away from it "
                            "(LIME explanation).")
+
+
+            with st.expander("📝 Written complaint for the police (darkhwast)"):
+                top = res["results"][0]
+                if str(top["cognizable"]).lower().startswith("non"):
+                    st.info(f"Section {top['section']} is non-cognizable: the police may record it and refer you to "
+                            "a Magistrate (s.155 CrPC). The application is still useful as your written statement.")
+                st.caption("The police write the FIR themselves (s.154 CrPC), usually based on what you tell them or "
+                           "a written application like this one. This fills a standard application with your own "
+                           "words, so nothing important is forgotten. Empty fields become blank lines to complete "
+                           "by hand. Nothing you enter is saved.")
+                with st.form("fir_form"):
+                    c1, c2 = st.columns(2)
+                    name = c1.text_input("Your name")
+                    relation = c2.text_input("Father's / husband's name")
+                    cnic = c1.text_input("CNIC (optional)", placeholder="35202-1234567-8")
+                    phone = c2.text_input("Mobile number")
+                    address = st.text_input("Your address")
+                    c3, c4, c5 = st.columns(3)
+                    ps = c3.text_input("Police station (thana)")
+                    when = c4.date_input("Date of incident", value=None, format="DD/MM/YYYY")
+                    at = c5.text_input("Approximate time", placeholder="9:30 pm")
+                    place = st.text_input("Place of incident")
+                    accused = st.text_input("Accused: names or descriptions (leave empty if unknown)")
+                    prop = st.text_input("Property taken / loss (optional)")
+                    wit = st.text_input("Witnesses (optional)")
+                    delay = st.text_input("If reporting late: reason for the delay (optional)")
+                    secs = st.multiselect("Sections to mention", [c["section"] for c in res["results"]],
+                                          default=[res["results"][0]["section"]])
+                    lang = st.radio("Language", ["English + Urdu", "English", "Urdu"], horizontal=True)
+                    make = st.form_submit_button("Generate complaint")
+                if make:
+                    if not valid_cnic(cnic):
+                        st.error("CNIC should look like 35202-1234567-8 (or leave it empty).")
+                    else:
+                        details = FIRDetails(name=name, relation=relation, cnic=cnic, address=address, phone=phone,
+                                             police_station=ps, incident_date=when.strftime("%d-%m-%Y") if when else "",
+                                             incident_time=at, place=place, accused=accused, property_lost=prop,
+                                             witnesses=wit, delay_reason=delay, description=text,
+                                             sections=secs)
+                        code = {"English + Urdu": "both", "English": "en", "Urdu": "ur"}[lang]
+                        doc = draft(details, code)
+                        st.text_area("Your complaint (you can edit it after downloading)", doc, height=360)
+                        st.download_button("⬇️ Download complaint (.txt)", doc.encode("utf-8"),
+                                           file_name="Police_complaint.txt", mime="text/plain")
+                        st.caption("Print it, sign it, and take it with a copy of your CNIC to the police station. "
+                                   "Keep a photo of the signed copy.")
 
         st.divider()
         st.subheader("What to do now")
