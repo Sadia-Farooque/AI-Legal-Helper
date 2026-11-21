@@ -16,6 +16,9 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 from src.analyzer import analyze, compare_retrieval  # noqa: E402
+import json  # noqa: E402
+
+from src import feedback  # noqa: E402
 from src.fir_draft import FIRDetails, draft, valid_cnic  # noqa: E402
 from src.next_steps import helplines  # noqa: E402
 
@@ -191,6 +194,8 @@ if "last" in st.session_state:
                                              sections=secs)
                         code = {"English + Urdu": "both", "English": "en", "Urdu": "ur"}[lang]
                         doc = draft(details, code)
+                        st.session_state["complaint"] = (draft(details, "en") if code in ("both", "en") else None,
+                                                         draft(details, "ur") if code in ("both", "ur") else None)
                         st.text_area("Your complaint (you can edit it after downloading)", doc, height=360)
                         st.download_button("⬇️ Download complaint (.txt)", doc.encode("utf-8"),
                                            file_name="Police_complaint.txt", mime="text/plain")
@@ -218,6 +223,40 @@ if "last" in st.session_state:
             for h in helplines().values():
                 st.markdown(f"**{h['number']}**: {h['name']} ({h['area']}). {h['use_for']}. "
                             f"[source]({h['source_url']}), checked {h['date_checked']}")
+
+        # ---- PDF export (Extra 2) -------------------------------------------------------------
+        st.divider()
+        try:
+            from src.pdf_export import build_pdf
+            comp_en, comp_ur = st.session_state.get("complaint", (None, None))
+            pdf = build_pdf(text, res, comp_en, comp_ur, list(helplines().values()))
+            st.download_button("⬇️ Download PDF report" + (" (with your complaint)" if comp_en or comp_ur else ""),
+                               pdf, file_name="incident_report.pdf", mime="application/pdf")
+        except ImportError:
+            st.caption("PDF export needs `pip install fpdf2 uharfbuzz`.")
+
+        # ---- Feedback (Extra 3) ----------------------------------------------------------------
+        with st.expander("💬 Was this correct? Lawyers and law students: please tell us if anything is wrong"):
+            with st.form("feedback_form", clear_on_submit=True):
+                verdict = st.radio("Was the result correct?", ["Yes", "Partly", "No"], horizontal=True)
+                all_secs = [s_ for s_ in json.load(open(os.path.join(PROJECT_ROOT, "src", "labels.json"),
+                                                        encoding="utf-8")) if s_ != "307"]
+                correct = st.multiselect("Which sections are actually correct? (optional)", all_secs)
+                role = st.selectbox("I am a", ["Citizen", "Law student", "Lawyer", "Other"])
+                comment = st.text_area("What is wrong or missing? Bugs, wrong legal facts, suggestions...", height=90)
+                consent = st.checkbox("I agree that my incident description may be stored anonymously to improve "
+                                      "the model")
+                sent = st.form_submit_button("Send feedback")
+            if sent:
+                rec = feedback.make_record(verdict.lower(), [c["section"] for c in res.get("results", [])], correct,
+                                           role.lower(), comment, text, consent, "tfidf_lr", status)
+                try:
+                    secrets = dict(st.secrets)
+                except Exception:  # noqa: BLE001 (no secrets file configured)
+                    secrets = {}
+                out = feedback.submit(rec, secrets)
+                st.success("Thank you! Your feedback was saved" +
+                           (f" and shared with the team ([issue]({out['issue_url']}))." if out["issue_url"] else "."))
 
 st.divider()
 st.caption("Model: TF-IDF + Logistic Regression trained on 1,335 court cases and 557 reviewed citizen-style "
