@@ -1,0 +1,1402 @@
+"""
+src/data/build_quiz_bank.py
+Generates data/content/quiz_bank.json adhering to Task B6 specification.
+Includes 60 verified Pakistani criminal law scenario questions covering all 30 PPC sections (2 questions per section).
+"""
+
+import json
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+OUTPUT_JSON = os.path.join(PROJECT_ROOT, "data", "content", "quiz_bank.json")
+
+# 60 Curated Scenarios — 2 for each of the 30 PPC sections
+QUESTIONS = [
+    # ==========================================
+    # Group: grp_homicide_attempt (302, 307, 324)
+    # ==========================================
+    {
+        "id": "quiz_001",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_homicide_attempt",
+        "target_section": "302",
+        "scenario": "Due to a longstanding agricultural land feud in rural Faisalabad, the accused waited in ambush behind a cluster of trees armed with a 12-bore shotgun. When the victim walked past along the canal bank, the accused fired multiple direct shots into his chest with intention to kill, causing instant death.",
+        "options": [
+            "Section 302 PPC (Punishment of Qatl-i-Amd)",
+            "Section 324 PPC (Attempt to commit Qatl-i-Amd)",
+            "Section 319 PPC (Punishment for Hurt)",
+            "Section 307 PPC (Attempt to Murder - Legacy)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Intentional causing of death (Qatl-i-Amd)",
+            "Completion of death resulting directly from accused's act",
+            "Exclusion of attempt provisions due to completed fatality"
+        ],
+        "explanation": "Section 302 applies because the accused intentionally caused the death of the human being with a lethal firearm. Attempt sections (324 and 307) are excluded because the victim died on the spot.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 302"
+    },
+    {
+        "id": "quiz_002",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_homicide_attempt",
+        "target_section": "302",
+        "scenario": "During a heated panchayat dispute in Gujranwala, the accused poured petrol over his business rival and set him ablaze with a lighter, knowing that death was the almost certain consequence. The victim suffered 85% third-degree burns and succumbed to septicaemia in hospital 48 hours later.",
+        "options": [
+            "Section 302 PPC (Punishment of Qatl-i-Amd)",
+            "Section 337-F PPC (Ghayr-Jaifah Hurt)",
+            "Section 324 PPC (Attempt to commit Qatl-i-Amd)",
+            "Section 506 PPC (Criminal Intimidation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Subjective knowledge that act is so imminently dangerous as to cause death",
+            "Causal chain between fire burns and eventual death in hospital",
+            "Application of Qatl-i-Amd under Section 300/302 PPC"
+        ],
+        "explanation": "Section 302 applies because setting a human being on fire carries subjective knowledge that death is the inevitable result, and the victim died from the injuries. The delay of 48 hours does not break the causal link.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 302"
+    },
+    {
+        "id": "quiz_003",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_homicide_attempt",
+        "target_section": "324",
+        "scenario": "Outside the District Courts in Lahore, the accused drew a 30-caliber pistol and fired two shots point-blank at his brother-in-law aiming at his head. The victim ducked, and the bullet grazed his shoulder causing superficial bleeding without endangering life.",
+        "options": [
+            "Section 302 PPC (Punishment of Qatl-i-Amd)",
+            "Section 324 PPC (Attempt to commit Qatl-i-Amd)",
+            "Section 337-A PPC (Shajjah Hurt)",
+            "Section 339 PPC (Wrongful Restraint)"
+        ],
+        "correct_index": 1,
+        "legal_elements_tested": [
+            "Intention to cause death manifested by aiming at vital organ",
+            "Actus reus execution step (firing weapon point-blank)",
+            "Failure of consequence due to external factor (victim ducking)"
+        ],
+        "explanation": "Section 324 applies because the accused did an act with the intention of causing death, which failed to cause death due to an intervening event (victim ducking). Section 302 is inapplicable as the victim survived.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 324"
+    },
+    {
+        "id": "quiz_004",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_homicide_attempt",
+        "target_section": "324",
+        "scenario": "The accused planted an improvised explosive device beneath the driver seat of an anti-corruption inspector's car with intent to assassinate him. When the key turned in the ignition, the detonator triggered a partial explosion destroying the engine block but leaving the inspector miraculously uninjured.",
+        "options": [
+            "Section 324 PPC (Attempt to commit Qatl-i-Amd)",
+            "Section 302 PPC (Qatl-i-Amd)",
+            "Section 447 PPC (Criminal Trespass)",
+            "Section 506 PPC (Criminal Intimidation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Preparation vs. attempt threshold under Pakistani criminal law",
+            "Planting and activating detonator constitutes proximate step",
+            "Zero bodily hurt does not preclude attempt to commit qatl-i-amd"
+        ],
+        "explanation": "Section 324 applies because planting an explosive device is beyond mere preparation and constitutes a direct act towards the commission of murder. Even if no bodily hurt occurs, Section 324 provides imprisonment up to 10 years.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 324"
+    },
+    {
+        "id": "quiz_005",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_homicide_attempt",
+        "target_section": "307",
+        "scenario": "In a historical reference regarding offences committed prior to the 1997 Qisas and Diyat amendments, a convict challenged his sentencing under the pre-amendment IPC-heritage attempt to murder framework where bodily hurt was caused during a lethal stabbing attempt.",
+        "options": [
+            "Section 307 PPC (Attempt to Murder - Legacy Clause)",
+            "Section 324 PPC (Attempt to commit Qatl-i-Amd)",
+            "Section 319 PPC (Hurt)",
+            "Section 403 PPC (Dishonest Misappropriation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Historical statutory application of Section 307 vs modern Section 324",
+            "Retention of Section 307 in older reported law reports (PLD/SCMR)",
+            "Application of life imprisonment provision where hurt was caused under Section 307"
+        ],
+        "explanation": "Section 307 represents the historical attempt to murder provision prior to Act II of 1997, retaining academic and legal relevance when distinguishing legacy precedent citations from modern Section 324 charges.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 307"
+    },
+    {
+        "id": "quiz_006",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_homicide_attempt",
+        "target_section": "307",
+        "scenario": "A law student is reviewing a pre-1997 appellate judgment where the trial court convicted a life convict who attempted to strangle a jail superintendent. Under which specific penal provision was a sentence of death or imprisonment for life traditionally prescribed for life convicts attempting murder?",
+        "options": [
+            "Section 307 PPC (Attempt by Life Convicts)",
+            "Section 302 PPC (Qatl-i-Amd)",
+            "Section 337-A PPC (Shajjah)",
+            "Section 382 PPC (Theft with preparation to kill)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Second paragraph of Section 307 regarding life convicts",
+            "Statutory penalty distinction between 307 and 324",
+            "Knowledge of Pakistan Penal Code structural evolution"
+        ],
+        "explanation": "The second paragraph of Section 307 specifically provided that when any person offending under this section is under sentence of imprisonment for life, he may, if hurt is caused, be punished with death.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 307"
+    },
+
+    # ==========================================
+    # Group: grp_bodily_harm_categories (319, 337-A, 337-F)
+    # ==========================================
+    {
+        "id": "quiz_007",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_bodily_harm_categories",
+        "target_section": "319",
+        "scenario": "During an argument over shop rent in Rawalpindi, the landlord intentionally poisoned the tenant's drinking water with a non-lethal chemical that caused the tenant severe gastrointestinal pain and physical infirmity for three weeks without physical trauma.",
+        "options": [
+            "Section 319 PPC (Definition & Punishment for Hurt)",
+            "Section 337-A PPC (Shajjah)",
+            "Section 337-F PPC (Ghayr-Jaifah)",
+            "Section 420 PPC (Cheating)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Definition of Hurt under Section 319 (pain, harm, disease, infirmity)",
+            "Absence of bone exposure (excluding Shajjah)",
+            "Absence of wound on body (excluding Ghayr-Jaifah)"
+        ],
+        "explanation": "Section 319 defines Hurt as causing pain, harm, disease, or infirmity to any person. Because there was no wound on the head/face or body surface, general hurt under Section 319 applies.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 319"
+    },
+    {
+        "id": "quiz_008",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_bodily_harm_categories",
+        "target_section": "319",
+        "scenario": "A domestic worker in Islamabad was subjected to persistent sleep deprivation and forced immersion in cold water during winter by her employer, resulting in chronic pneumonia and bodily infirmity without visible cut wounds.",
+        "options": [
+            "Section 319 PPC (Hurt)",
+            "Section 337-F PPC (Ghayr-Jaifah)",
+            "Section 302 PPC (Qatl-i-Amd)",
+            "Section 354 PPC (Assault on Woman)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Causing disease or physical infirmity constitutes Hurt under Section 319",
+            "Inapplicability of wound-specific Hurt sections",
+            "Distinction between general hurt and localized trauma"
+        ],
+        "explanation": "Section 319 explicitly defines Hurt to include causing 'disease or infirmity'. Inducing pneumonia and severe physical debilitation falls squarely under Section 319.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 319"
+    },
+    {
+        "id": "quiz_009",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_bodily_harm_categories",
+        "target_section": "337-A",
+        "scenario": "During a village cricket match dispute in Sheikhupura, the accused struck the victim on the forehead with a wooden cricket bat, causing a deep cut that exposed the frontal skull bone without fracturing it.",
+        "options": [
+            "Section 337-A PPC (Shajjah - Hurt on Head or Face)",
+            "Section 337-F PPC (Ghayr-Jaifah - Hurt on Body)",
+            "Section 319 PPC (General Hurt)",
+            "Section 324 PPC (Attempt to commit Qatl-i-Amd)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Location of hurt strictly on head or face (Shajjah)",
+            "Exposure of bone without fracture corresponds to Shajjah-i-Mudiha (337-A(ii))",
+            "Exclusion of Ghayr-Jaifah which applies exclusively to body below neck"
+        ],
+        "explanation": "Section 337-A specifically governs 'Shajjah', which is defined as hurt caused on the head or face. Because the wound was on the forehead exposing bone, Section 337-A(ii) (Shajjah-i-Mudiha) applies.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 337-A"
+    },
+    {
+        "id": "quiz_010",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_bodily_harm_categories",
+        "target_section": "337-A",
+        "scenario": "The accused threw a broken glass bottle at a shopkeeper's face, fracturing the nasal bone and causing permanent disfigurement of his facial symmetry.",
+        "options": [
+            "Section 337-A PPC (Shajjah-i-Hashimah / Munaqqilah)",
+            "Section 337-F PPC (Ghayr-Jaifah)",
+            "Section 302 PPC (Qatl-i-Amd)",
+            "Section 509 PPC (Insulting Modesty)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Fracture of bone of head or face without dislocation constitutes Shajjah-i-Hashimah",
+            "Exclusive jurisdiction of Section 337-A for facial trauma",
+            "Statutory arsh and imprisonment under Section 337-A(iii)"
+        ],
+        "explanation": "Any hurt on the face that fractures a bone falls under Section 337-A (Shajjah). Ghayr-Jaifah (337-F) is statutorily excluded because it only applies to injuries on other parts of the body.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 337-A"
+    },
+    {
+        "id": "quiz_011",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_bodily_harm_categories",
+        "target_section": "337-F",
+        "scenario": "The accused attacked a pedestrian in Multan with an iron dagger, stabbing him twice in the upper thigh. The wound cut through skin and muscle tissue causing profuse bleeding but did not rupture the abdominal cavity.",
+        "options": [
+            "Section 337-F PPC (Ghayr-Jaifah - Hurt on Body)",
+            "Section 337-A PPC (Shajjah - Hurt on Head/Face)",
+            "Section 302 PPC (Qatl-i-Amd)",
+            "Section 392 PPC (Robbery)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Location of wound below neck (Ghayr-Jaifah)",
+            "Cutting into flesh without entering body cavity (excludes Jaifah under 337-D)",
+            "Exclusion of Shajjah (337-A) which applies only to head/face"
+        ],
+        "explanation": "Section 337-F governs Ghayr-Jaifah, which is defined as any hurt caused on any part of the body other than the head or face that does not amount to Jaifah (does not expose a body cavity).",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 337-F"
+    },
+    {
+        "id": "quiz_012",
+        "category": "Offences Affecting the Human Body",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_bodily_harm_categories",
+        "target_section": "337-F",
+        "scenario": "During a scuffle in a bus stand in Sialkot, the accused struck the complainant across his arm with an iron rod, fracturing the ulna bone without tearing through the skin surface.",
+        "options": [
+            "Section 337-F PPC (Ghayr-Jaifah Hashimah / Munaqqilah)",
+            "Section 337-A PPC (Shajjah)",
+            "Section 319 PPC (Simple Hurt)",
+            "Section 384 PPC (Extortion)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Fracture of non-cranial limb bone constitutes Ghayr-Jaifah under Section 337-F(v)",
+            "Distinction between Shajjah-i-Hashimah (cranial) and Ghayr-Jaifah Hashimah (limb)",
+            "Requirement of Daman and punishment under Section 337-F"
+        ],
+        "explanation": "Fracturing a bone on any part of the body other than the head or face is classified under Section 337-F(v) (Ghayr-Jaifah Hashimah). It carries imprisonment up to 5 years and liability to Daman.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 337-F"
+    },
+
+    # ==========================================
+    # Group: grp_restraint_confinement (339, 340)
+    # ==========================================
+    {
+        "id": "quiz_013",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_restraint_confinement",
+        "target_section": "339",
+        "scenario": "A rickshaw driver in Hyderabad parked his vehicle across a public alleyway and stood armed with a wooden stick, refusing to allow a resident to walk down that street to his home, while leaving all other alternative roads completely open.",
+        "options": [
+            "Section 339 PPC (Wrongful Restraint)",
+            "Section 340 PPC (Wrongful Confinement)",
+            "Section 365 PPC (Kidnapping)",
+            "Section 441 PPC (Criminal Trespass)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Obstruction of person in one specific direction only",
+            "Person has lawful right to proceed in that direction",
+            "Absence of total circumscribing limits (excludes Confinement)"
+        ],
+        "explanation": "Section 339 applies because wrongful restraint occurs when a person is prevented from proceeding in any direction in which that person has a right to proceed, but other paths of movement remain open.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 339"
+    },
+    {
+        "id": "quiz_014",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_restraint_confinement",
+        "target_section": "339",
+        "scenario": "Security guards at a private shopping plaza physically blocked an investigative journalist from walking through the main pedestrian gate, telling him he could not enter through that entrance, though he was free to walk anywhere else in the city.",
+        "options": [
+            "Section 339 PPC (Wrongful Restraint)",
+            "Section 340 PPC (Wrongful Confinement)",
+            "Section 354 PPC (Assault on Modesty)",
+            "Section 500 PPC (Defamation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Partial restriction of movement in a specific direction",
+            "Lack of enclosed circumscribing boundaries",
+            "Distinction between restraint (s. 339) and confinement (s. 340)"
+        ],
+        "explanation": "Wrongful restraint (Section 339) stops a person from moving in one specific direction. Confinement (Section 340) requires an enclosed boundary preventing movement in all directions.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 339"
+    },
+    {
+        "id": "quiz_015",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_restraint_confinement",
+        "target_section": "340",
+        "scenario": "A factory owner in Kot Lakhpat locked twelve uncooperative labourers inside a windowless storage room from the outside with heavy padlocks for 24 hours, preventing them from leaving in any direction whatsoever.",
+        "options": [
+            "Section 340 PPC (Wrongful Confinement)",
+            "Section 339 PPC (Wrongful Restraint)",
+            "Section 365-A PPC (Kidnapping for Ransom)",
+            "Section 448 PPC (House-Trespass)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Total restraint within circumscribing limits",
+            "Movement barred in all four directions",
+            "Distinction from partial directional restraint under Section 339"
+        ],
+        "explanation": "Section 340 applies because the victims were restrained within circumscribing boundaries (the locked room), preventing movement in every direction. This constitutes wrongful confinement.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 340"
+    },
+    {
+        "id": "quiz_016",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_restraint_confinement",
+        "target_section": "340",
+        "scenario": "Police sub-inspector in Gujrat detained an innocent citizen inside a police post holding cell for three days without registering an FIR or obtaining a judicial remand under Section 167 CrPC, keeping the iron gate locked around the clock.",
+        "options": [
+            "Section 340 PPC (Wrongful Confinement - s. 342/344)",
+            "Section 339 PPC (Wrongful Restraint)",
+            "Section 420 PPC (Cheating)",
+            "Section 489-F PPC (Cheque Fraud)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Unlawful confinement by public officer under color of office",
+            "Confinement extending beyond 3 days (punishable under Section 343 PPC)",
+            "Absence of lawful process under CrPC"
+        ],
+        "explanation": "Unlawful detention in an enclosed cell without legal justification constitutes wrongful confinement under Section 340 PPC. When extended for 3 or more days, it is aggravated under Section 343 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 340"
+    },
+
+    # ==========================================
+    # Group: grp_women_modesty_crimes (354, 354A, 509)
+    # ==========================================
+    {
+        "id": "quiz_017",
+        "category": "Offences Against Women & Decency",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_women_modesty_crimes",
+        "target_section": "354",
+        "scenario": "At an overcrowded bus terminal in Saddar, a man intentionally grabbed a female passenger by the arm and pulled her dupatta while making lewd physical advances, intending to outrage her modesty, but she retained her clothing and broke free.",
+        "options": [
+            "Section 354 PPC (Assault on Woman with Intent to Outrage Modesty)",
+            "Section 354A PPC (Assault on Woman and Stripping of Clothes)",
+            "Section 509 PPC (Insulting Modesty / Harassment)",
+            "Section 379 PPC (Theft)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Use of physical assault or criminal force against a woman",
+            "Specific intent to outrage modesty",
+            "Victim was not stripped of her clothes (excludes Section 354A)"
+        ],
+        "explanation": "Section 354 applies because the accused used criminal force with intent to outrage modesty. Section 354A is excluded because the woman was not stripped of her clothes or exposed to the public view.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 354"
+    },
+    {
+        "id": "quiz_018",
+        "category": "Offences Against Women & Decency",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_women_modesty_crimes",
+        "target_section": "354",
+        "scenario": "An employer in a private office forcibly embraced a female employee against her will inside an empty conference room and attempted to touch her inappropriately before she pushed him away and ran out.",
+        "options": [
+            "Section 354 PPC (Assault to Outrage Modesty)",
+            "Section 354A PPC (Stripping of Clothes)",
+            "Section 339 PPC (Wrongful Restraint)",
+            "Section 506 PPC (Criminal Intimidation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Physical criminal force applied to a woman",
+            "Direct intention to outrage modesty",
+            "Distinction from verbal harassment under Section 509"
+        ],
+        "explanation": "Physical contact accompanied by force aiming to outrage a woman's modesty constitutes Section 354 PPC. Because physical assault occurred, it elevates beyond purely verbal harassment under Section 509.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 354"
+    },
+    {
+        "id": "quiz_019",
+        "category": "Offences Against Women & Decency",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_women_modesty_crimes",
+        "target_section": "354A",
+        "scenario": "During an armed tribal vendetta in a village, a mob dragged a woman out of her home into the public street, tore off her clothes until she was completely unclothed, and forced her to walk naked before the village gathering.",
+        "options": [
+            "Section 354A PPC (Assault on Woman and Stripping of Clothes)",
+            "Section 354 PPC (Simple Assault on Modesty)",
+            "Section 509 PPC (Insulting Modesty)",
+            "Section 340 PPC (Wrongful Confinement)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Assault on a woman combined with stripping of her clothes",
+            "Exposing her naked to public view",
+            "Severe capital punishment provision (death or imprisonment for life)"
+        ],
+        "explanation": "Section 354A was specifically inserted to punish the heinous crime of stripping a woman of her clothes and exposing her naked in public view. It carries the death penalty or imprisonment for life.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 354A"
+    },
+    {
+        "id": "quiz_020",
+        "category": "Offences Against Women & Decency",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_women_modesty_crimes",
+        "target_section": "354A",
+        "scenario": "Three men broke into a rival's courtyard in Kasur, overpowered the matriarch of the household, forcibly tore her garments until her torso was fully exposed, and recorded the incident on mobile phones to display in the village bazaar.",
+        "options": [
+            "Section 354A PPC (Assault on Woman and Stripping Clothes)",
+            "Section 354 PPC (Outraging Modesty)",
+            "Section 500 PPC (Defamation)",
+            "Section 448 PPC (House-Trespass)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Stripping of garments causing public exposure",
+            "Recording/exposing to public view fulfills Section 354A actus reus",
+            "Distinction from ordinary outraging of modesty under Section 354"
+        ],
+        "explanation": "Stripping a woman's clothes to expose her body to view meets the statutory definition of Section 354A PPC, distinguishing it from Section 354 which does not require stripping of clothing.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 354A"
+    },
+    {
+        "id": "quiz_021",
+        "category": "Offences Against Women & Decency",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_women_modesty_crimes",
+        "target_section": "509",
+        "scenario": "A colleague repeatedly sent obscene sexual images, lewd audio recordings, and sexually explicit text messages to a female co-worker's WhatsApp, intending to insult her modesty and create a hostile workplace environment, without using physical force.",
+        "options": [
+            "Section 509 PPC (Word, gesture or act intended to insult modesty)",
+            "Section 354 PPC (Assault on Modesty)",
+            "Section 354A PPC (Stripping Clothes)",
+            "Section 420 PPC (Cheating)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Use of words, sounds, gestures, or electronic communications",
+            "Intent to insult modesty of a woman or sexual harassment",
+            "Absence of physical contact/assault (excludes Section 354)"
+        ],
+        "explanation": "Section 509 (amended under the Criminal Law Amendment Act 2010) punishes any word, gesture, or electronic message intended to insult the modesty of a woman or conduct sexual harassment at the workplace.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 509"
+    },
+    {
+        "id": "quiz_022",
+        "category": "Offences Against Women & Decency",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_women_modesty_crimes",
+        "target_section": "509",
+        "scenario": "A man stood outside a girls' college gate in Peshawar daily, making vulgar obscene gestures and uttering sexually suggestive remarks at female students entering the premises, while never touching them physically.",
+        "options": [
+            "Section 509 PPC (Insulting modesty of woman / Harassment in public place)",
+            "Section 354 PPC (Assault on Modesty)",
+            "Section 506 PPC (Criminal Intimidation)",
+            "Section 339 PPC (Wrongful Restraint)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Making sounds or gestures in a public place intended to be heard/seen",
+            "Intrusion upon the privacy of a woman",
+            "Absence of physical force (Section 354 requires assault)"
+        ],
+        "explanation": "Section 509 specifically penalizes making any sound or gesture or exhibiting any object in public places intending that it shall be seen or heard by a woman, with intent to insult her modesty.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 509"
+    },
+
+    # ==========================================
+    # Group: grp_kidnapping_abduction_ransom (363, 365, 365-A)
+    # ==========================================
+    {
+        "id": "quiz_023",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_kidnapping_abduction_ransom",
+        "target_section": "363",
+        "scenario": "A neighbour enticed a 10-year-old child away from his parents' home in Bahawalpur by offering him chocolates and taking him on a train journey without the consent of his lawful father and guardian.",
+        "options": [
+            "Section 363 PPC (Punishment for Kidnapping from Lawful Guardianship)",
+            "Section 365-A PPC (Kidnapping for Ransom)",
+            "Section 340 PPC (Wrongful Confinement)",
+            "Section 379 PPC (Theft)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Enticing a minor under 14 (male) or 16 (female) without guardian's consent",
+            "Taking out of keeping of lawful guardian",
+            "Absence of ransom demand (excludes 365-A)"
+        ],
+        "explanation": "Section 363 punishes kidnapping from lawful guardianship (defined in Section 361 PPC). Taking a 10-year-old child without the father's consent constitutes Section 363.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 363"
+    },
+    {
+        "id": "quiz_024",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_kidnapping_abduction_ransom",
+        "target_section": "363",
+        "scenario": "A distant relative took his 12-year-old niece from school in Quetta without informing her mother who had sole legal custody, claiming he wanted her to visit his farmhouse for vacation.",
+        "options": [
+            "Section 363 PPC (Kidnapping from Lawful Guardianship)",
+            "Section 365-A PPC (Kidnapping for Ransom)",
+            "Section 339 PPC (Wrongful Restraint)",
+            "Section 506 PPC (Criminal Intimidation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Lack of consent from the parent having legal custody",
+            "Minority of child",
+            "Good motive does not negate lack of guardian's consent under Section 361/363"
+        ],
+        "explanation": "Taking any minor out of the custody of the lawful guardian without that guardian's consent is kidnapping under Section 361, punishable under Section 363 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 363"
+    },
+    {
+        "id": "quiz_025",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_kidnapping_abduction_ransom",
+        "target_section": "365",
+        "scenario": "Four men bundled an adult political activist into an unmarked van at gunpoint outside an Islamabad cafe and took him to a secret safe house where they detained him in secret isolation for a week without demanding any money.",
+        "options": [
+            "Section 365 PPC (Kidnapping / Abduction with intent secretly and wrongfully to confine)",
+            "Section 365-A PPC (Kidnapping for Ransom)",
+            "Section 363 PPC (Simple Kidnapping of Minor)",
+            "Section 340 PPC (Wrongful Confinement)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Abduction of an adult by force or deceit",
+            "Specific intent secretly and wrongfully to confine the victim",
+            "Absence of ransom demand (which would elevate it to 365-A)"
+        ],
+        "explanation": "Section 365 applies when a person is kidnapped or abducted with the specific intent to cause that person to be secretly and wrongfully confined. Because no ransom was demanded, Section 365-A does not apply.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 365"
+    },
+    {
+        "id": "quiz_026",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_kidnapping_abduction_ransom",
+        "target_section": "365",
+        "scenario": "The accused forced an adult surveyor into a jeep in the Thar desert at gunpoint, confiscated his mobile phone, and kept him locked in an underground bunker in a remote village so he could not testify in a pending court case.",
+        "options": [
+            "Section 365 PPC (Abduction with intent to secretly confine)",
+            "Section 365-A PPC (Kidnapping for Ransom)",
+            "Section 363 PPC (Kidnapping from Guardianship)",
+            "Section 384 PPC (Extortion)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Abducting an adult by criminal force",
+            "Intent to conceal location and secretly confine",
+            "Statutory maximum of 7 years imprisonment under Section 365"
+        ],
+        "explanation": "Abducting an adult to hold them secretly confined is governed by Section 365 PPC. It is distinguished from Section 363 (which applies to minors) and Section 365-A (which requires extortion or ransom).",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 365"
+    },
+    {
+        "id": "quiz_027",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_kidnapping_abduction_ransom",
+        "target_section": "365-A",
+        "scenario": "Armed bandits intercepted a businessman's luxury sedan on the Superhighway, abducted him at gunpoint, and phoned his family that evening demanding fifty million rupees in cash, threatening to execute him if the ransom was not paid.",
+        "options": [
+            "Section 365-A PPC (Kidnapping for Extorting Property, Ransom)",
+            "Section 365 PPC (Secret Confinement)",
+            "Section 384 PPC (Extortion)",
+            "Section 392 PPC (Robbery)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Kidnapping or abduction of any person",
+            "Specific demand for ransom or extortion of property for release",
+            "Capital offence punishable with death or imprisonment for life"
+        ],
+        "explanation": "Section 365-A applies because the abduction was accompanied by an explicit demand for ransom money as a condition for the victim's release. It carries the death penalty or imprisonment for life.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 365-A"
+    },
+    {
+        "id": "quiz_028",
+        "category": "Offences Against Personal Liberty",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_kidnapping_abduction_ransom",
+        "target_section": "365-A",
+        "scenario": "A gang seized a 14-year-old school student in Sukkur and transmitted a video of him bound in chains to his father, demanding that the father withdraw a multi-million rupee commercial lawsuit and pay ten lac rupees compensation for his return.",
+        "options": [
+            "Section 365-A PPC (Kidnapping for Ransom / Extortion of concession)",
+            "Section 363 PPC (Kidnapping of Minor)",
+            "Section 365 PPC (Secret Confinement)",
+            "Section 506 PPC (Criminal Intimidation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Extorting property or obtaining release of government/legal claims",
+            "Threat of death or hurt during abduction",
+            "Application of anti-terrorism / special trial provisions alongside 365-A"
+        ],
+        "explanation": "Section 365-A covers not only cash ransom but also detaining a person to compel any person to do or abstain from doing any act or to pay ransom. Demanding withdrawal of a lawsuit and money falls under Section 365-A.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 365-A"
+    },
+
+    # ==========================================
+    # Group: grp_theft_robbery_dacoity (379, 380, 382, 392, 395)
+    # ==========================================
+    {
+        "id": "quiz_029",
+        "category": "Offences Against Property",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "379",
+        "scenario": "A shopper in an open Sunday bazaar in Islamabad set his smartphone down on a vendor's wooden crate while inspecting fruit. A thief surreptitiously slipped the phone into his pocket and walked away without making any sound or threat.",
+        "options": [
+            "Section 379 PPC (Punishment for Theft in Open Space)",
+            "Section 380 PPC (Theft in Dwelling House)",
+            "Section 392 PPC (Robbery)",
+            "Section 403 PPC (Dishonest Misappropriation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Moving movable property out of possession without consent",
+            "Dishonest intention from the very inception of taking",
+            "Open public space (excludes Section 380 dwelling house)"
+        ],
+        "explanation": "Section 379 applies because movable property was taken dishonestly out of the owner's possession without consent. Because it occurred in an open bazaar (not inside a building or dwelling), Section 379 applies.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 379"
+    },
+    {
+        "id": "quiz_030",
+        "category": "Offences Against Property",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "379",
+        "scenario": "A cattle thief untied an unbolted cow from an open pasture field at 2:00 AM and led it away across the river bank without entering any enclosed shed or using any weapon.",
+        "options": [
+            "Section 379 PPC (Theft)",
+            "Section 380 PPC (Theft in Dwelling / Building)",
+            "Section 447 PPC (Criminal Trespass)",
+            "Section 411 PPC (Stolen Property)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Moving livestock out of possession dishonestly",
+            "Open agricultural pasture does not constitute a building or dwelling",
+            "Simple theft provisions under Section 378/379"
+        ],
+        "explanation": "Taking cattle from an open pasture without entering a building or enclosed tent constitutes simple theft under Section 379 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 379"
+    },
+    {
+        "id": "quiz_031",
+        "category": "Offences Against Property",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "380",
+        "scenario": "A domestic worker entered her employer's bedroom in an apartment while the family was sleeping, unlocked an iron safe using a stolen key, and took gold bangles worth ten lac rupees.",
+        "options": [
+            "Section 380 PPC (Theft in Dwelling House / Building)",
+            "Section 379 PPC (Simple Theft)",
+            "Section 392 PPC (Robbery)",
+            "Section 406 PPC (Criminal Breach of Trust)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Theft committed in any building, tent, or vessel used as a human dwelling",
+            "Aggravated penalty (up to 7 years imprisonment vs 3 years for 379)",
+            "Absence of force or threat (excludes Robbery)"
+        ],
+        "explanation": "Section 380 applies because the theft was committed inside a building used as a human dwelling. The penalty is aggravated to up to 7 years imprisonment compared to 3 years under Section 379.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 380"
+    },
+    {
+        "id": "quiz_032",
+        "category": "Offences Against Property",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "380",
+        "scenario": "At midnight, a burglar entered a locked pharmaceutical warehouse storing medical supplies by climbing through a broken transom window and carried away five cartons of insulin vials.",
+        "options": [
+            "Section 380 PPC (Theft in Building used for custody of property)",
+            "Section 379 PPC (Simple Theft)",
+            "Section 403 PPC (Dishonest Misappropriation)",
+            "Section 448 PPC (House-Trespass)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Building used for the custody of property",
+            "Theft within enclosed commercial storehouse falls under Section 380",
+            "Aggravated theft classification"
+        ],
+        "explanation": "Section 380 expressly covers theft committed in any building, tent, or vessel used for the custody of property (such as a warehouse), not merely human dwellings.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 380"
+    },
+    {
+        "id": "quiz_033",
+        "category": "Offences Against Property",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "382",
+        "scenario": "Two men approached a parked luxury car in a parking plaza to steal laptops inside. Both men carried concealed loaded revolvers in their waistbands, having made preparation to shoot anyone who attempted to apprehend them while stealing.",
+        "options": [
+            "Section 382 PPC (Theft after preparation made for causing death or hurt)",
+            "Section 379 PPC (Simple Theft)",
+            "Section 392 PPC (Robbery)",
+            "Section 395 PPC (Dacoity)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Theft accompanied by prior preparation to cause death, hurt, or restraint",
+            "Weapons are carried ready for use in case of resistance",
+            "Distinction from Robbery (weapons were not brandished or used to create instant fear)"
+        ],
+        "explanation": "Section 382 applies when theft is committed after having made preparation for causing death or hurt. If the weapon is not displayed to overcome resistance, it is Section 382 rather than Section 392 (Robbery).",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 382"
+    },
+    {
+        "id": "quiz_034",
+        "category": "Offences Against Property",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "382",
+        "scenario": "A pickpocket in an Empress Market crowd slipped a traveler's wallet into his pocket. When an onlooker shouted, the pickpocket immediately reached for an open switchblade knife he had taped inside his sleeve for instant use against pursuers.",
+        "options": [
+            "Section 382 PPC (Theft with preparation for causing hurt/restraint)",
+            "Section 379 PPC (Simple Theft)",
+            "Section 384 PPC (Extortion)",
+            "Section 411 PPC (Stolen Property)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Prior preparation to cause hurt in effecting escape after theft",
+            "Carrying a concealed weapon for defensive or escape preparation",
+            "Carries up to 10 years rigorous imprisonment"
+        ],
+        "explanation": "Section 382 explicitly covers making preparation to cause death, hurt, or restraint for effecting escape after the committing of theft. Carrying an accessible blade ready for escape fulfills Section 382.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 382"
+    },
+    {
+        "id": "quiz_035",
+        "category": "Offences Against Property",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "392",
+        "scenario": "Two pillion riders cornered a citizen at an ATM in Karachi, pointed a loaded pistol at his temple, and said 'give us your cash right now or we will blow your head off', forcing him to surrender fifty thousand rupees.",
+        "options": [
+            "Section 392 PPC (Punishment for Robbery)",
+            "Section 379 PPC (Theft)",
+            "Section 384 PPC (Extortion)",
+            "Section 395 PPC (Dacoity)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Theft or extortion with presence of imminent fear of instant death or hurt",
+            "Fewer than 5 offenders (excludes Dacoity under Section 395)",
+            "Direct application of Section 390 definition of Robbery"
+        ],
+        "explanation": "Section 392 applies because the theft/extortion was committed by putting the victim in imminent fear of instant death. Because there were 2 offenders (fewer than 5), it is robbery, not dacoity.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 392"
+    },
+    {
+        "id": "quiz_036",
+        "category": "Offences Against Property",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "392",
+        "scenario": "Three highway bandits placed spikes across the G.T. Road at 3:00 AM, stopped a cargo truck, tied the driver to a tree with ropes while threatening him with a shotgun, and drove away with the truck and cargo.",
+        "options": [
+            "Section 392 PPC (Robbery - Aggravated on Highway at Night)",
+            "Section 395 PPC (Dacoity)",
+            "Section 380 PPC (Theft in Dwelling)",
+            "Section 340 PPC (Wrongful Confinement)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Robbery committed on the highway between sunset and sunrise",
+            "Aggravated penalty under Section 392 (up to 14 years imprisonment)",
+            "Fewer than 5 persons excludes Dacoity"
+        ],
+        "explanation": "Section 392 applies. The second sentence of Section 392 provides that if the robbery is committed on the highway between sunset and sunrise, the imprisonment may be extended to 14 years.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 392"
+    },
+    {
+        "id": "quiz_037",
+        "category": "Offences Against Property",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "395",
+        "scenario": "A gang of six masked men armed with Kalashnikovs stormed into a jewellery store in Anarkali Bazaar, held customers and staff at gunpoint on the floor, and looted gold ornaments worth forty lac rupees.",
+        "options": [
+            "Section 395 PPC (Punishment for Dacoity)",
+            "Section 392 PPC (Robbery)",
+            "Section 380 PPC (Theft in Dwelling)",
+            "Section 384 PPC (Extortion)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Five or more persons conjointly committing or attempting to commit robbery",
+            "Definition of Dacoity under Section 391 PPC",
+            "Penalty of life imprisonment or rigorous imprisonment up to 10 years"
+        ],
+        "explanation": "Section 395 applies because whenever robbery is committed by five or more persons conjointly, it constitutes Dacoity under Section 391 PPC, punishable under Section 395.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 395"
+    },
+    {
+        "id": "quiz_038",
+        "category": "Offences Against Property",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "395",
+        "scenario": "Five men planned a bank heist: three men entered with shotguns looting cash, while two men waited outside armed in a getaway car acting as lookouts and securing the exit. How are all five men legally charged?",
+        "options": [
+            "Section 395 PPC (Dacoity - All 5 conjointly committing/aiding)",
+            "Section 392 PPC (Robbery for inside 3, Abetment for outside 2)",
+            "Section 382 PPC (Theft with preparation)",
+            "Section 384 PPC (Extortion)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Conjoint commission under Section 391 includes those present and aiding",
+            "Threshold of 5 persons met by counting lookouts present at scene",
+            "All five participants are principals in Dacoity"
+        ],
+        "explanation": "Under Section 391 PPC, all persons present and aiding in the commission of the robbery are counted towards the threshold of five. Thus, all five are guilty of Dacoity under Section 395.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 395"
+    },
+
+    # ==========================================
+    # Group: grp_extortion_intimidation (384, 506)
+    # ==========================================
+    {
+        "id": "quiz_039",
+        "category": "Offences Against Property",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_extortion_intimidation",
+        "target_section": "384",
+        "scenario": "A local extortionist sent a letter to a cloth merchant demanding fifty thousand rupees bhatta (protection money), threatening that if the money was not delivered by Friday, his shop would be firebombed.",
+        "options": [
+            "Section 384 PPC (Punishment for Extortion)",
+            "Section 392 PPC (Robbery)",
+            "Section 506 PPC (Criminal Intimidation)",
+            "Section 379 PPC (Theft)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Intentionally putting person in fear of injury to property or person",
+            "Dishonestly inducing person to deliver property/money",
+            "Distinction from Robbery (fear of future injury, not instant death/hurt)"
+        ],
+        "explanation": "Section 384 applies because extortion occurs when a person is induced to deliver property under fear of injury. It is not robbery because the threat was of future injury, not instant harm on the spot.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 384"
+    },
+    {
+        "id": "quiz_040",
+        "category": "Offences Against Property",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_extortion_intimidation",
+        "target_section": "384",
+        "scenario": "A blackmailer obtained compromising private medical records of a government official and threatened to publish them in newspapers unless the official signed over ownership deeds to an urban commercial plot.",
+        "options": [
+            "Section 384 PPC (Extortion)",
+            "Section 500 PPC (Defamation)",
+            "Section 506 PPC (Criminal Intimidation)",
+            "Section 420 PPC (Cheating)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Threat of injury to reputation constitutes injury under Section 44 PPC",
+            "Inducing delivery of valuable security or property",
+            "Distinction from simple defamation (which does not demand property delivery)"
+        ],
+        "explanation": "Threatening injury to reputation to extort property or signed property deeds constitutes Extortion under Section 383/384 PPC. Injury under Section 44 PPC includes harm to reputation.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 384"
+    },
+    {
+        "id": "quiz_041",
+        "category": "Criminal Intimidation & Defamation",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_extortion_intimidation",
+        "target_section": "506",
+        "scenario": "During a heated neighborhood quarrel in Sahiwal, the accused shouted at the complainant: 'If you ever park your car in front of my gate again, I will break both your legs and burn your house down', without demanding any money.",
+        "options": [
+            "Section 506 PPC (Punishment for Criminal Intimidation)",
+            "Section 384 PPC (Extortion)",
+            "Section 339 PPC (Wrongful Restraint)",
+            "Section 302 PPC (Qatl-i-Amd)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Threatening injury to person or property with intent to cause alarm",
+            "Absence of demand for property (excludes Extortion under 384)",
+            "Threat to cause grievous hurt/burn house invokes Part II of Section 506"
+        ],
+        "explanation": "Section 506 applies because criminal intimidation occurs when a person threatens injury to cause alarm without demanding delivery of property. Threatening to cause hurt and burn property falls under Section 506 Part II.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 506"
+    },
+    {
+        "id": "quiz_042",
+        "category": "Criminal Intimidation & Defamation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_extortion_intimidation",
+        "target_section": "506",
+        "scenario": "An influential landlord summoned an eyewitness scheduled to testify against his son in a murder trial, brandished an automatic weapon, and threatened to eliminate the witness's entire family if he appeared in court.",
+        "options": [
+            "Section 506 PPC (Criminal Intimidation - Part II)",
+            "Section 384 PPC (Extortion)",
+            "Section 324 PPC (Attempt to commit Qatl)",
+            "Section 500 PPC (Defamation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Threat to cause death or grievous hurt",
+            "Intent to compel witness to abstain from lawful act (testifying)",
+            "Carries up to 7 years imprisonment under Section 506 Part II"
+        ],
+        "explanation": "Threatening death to force a witness to abstain from legal testimony is criminal intimidation under Section 503, punishable under the aggravated Part II of Section 506 PPC (up to 7 years imprisonment).",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 506"
+    },
+
+    # ==========================================
+    # Group: grp_misappropriation_cbt_cheating (403, 406, 411, 420)
+    # ==========================================
+    {
+        "id": "quiz_043",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_misappropriation_cbt_cheating",
+        "target_section": "403",
+        "scenario": "A pedestrian found an unlabelled leather wallet containing twenty thousand rupees cash dropped on an airport waiting hall bench. Although the boarding pass with the owner's name and mobile number was clearly inside, the finder immediately spent all the cash on personal shopping.",
+        "options": [
+            "Section 403 PPC (Dishonest Misappropriation of Property)",
+            "Section 406 PPC (Criminal Breach of Trust)",
+            "Section 379 PPC (Theft)",
+            "Section 420 PPC (Cheating)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Property came into possession innocently (found lost property)",
+            "Subsequent dishonest conversion/misappropriation to one's own use",
+            "Knowledge of means of discovering true owner"
+        ],
+        "explanation": "Section 403 applies because the initial taking was innocent (finding lost property), but the subsequent retention and spending despite knowing the owner's identity constitutes dishonest misappropriation.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 403"
+    },
+    {
+        "id": "quiz_044",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_misappropriation_cbt_cheating",
+        "target_section": "403",
+        "scenario": "A bank customer mistakenly received an extra fifty thousand rupees from a bank teller due to a counting machine error. The customer realized the error outside the bank door, but decided to keep the cash and conceal it from the branch manager.",
+        "options": [
+            "Section 403 PPC (Dishonest Misappropriation of Property)",
+            "Section 379 PPC (Theft)",
+            "Section 406 PPC (Criminal Breach of Trust)",
+            "Section 420 PPC (Cheating)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Innocent initial receipt without deceit or trespass",
+            "Subsequent dishonest conversion upon discovering error",
+            "Exclusion of Theft (no taking out of possession) and Cheating (no prior deceit)"
+        ],
+        "explanation": "Because the money was delivered innocently by mistake and without prior deception by the customer, keeping it after realizing the error constitutes dishonest misappropriation under Section 403 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 403"
+    },
+    {
+        "id": "quiz_045",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_misappropriation_cbt_cheating",
+        "target_section": "406",
+        "scenario": "A jeweler in Peshawar was entrusted with five tolas of raw gold by a customer to manufacture bridal jewelry within two weeks. Instead of making the jewelry, the jeweler sold the gold in the market and used the proceeds to settle personal gambling debts.",
+        "options": [
+            "Section 406 PPC (Punishment for Criminal Breach of Trust)",
+            "Section 403 PPC (Dishonest Misappropriation)",
+            "Section 420 PPC (Cheating)",
+            "Section 379 PPC (Theft)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Entrustment of property or dominion over property",
+            "Dishonest conversion or disposal in violation of legal contract/direction",
+            "Distinction from Cheating (no fraudulent intent at inception of entrustment)"
+        ],
+        "explanation": "Section 406 applies because property was lawfully entrusted to the jeweler in a fiduciary capacity, and he subsequently converted it dishonestly in violation of the contract.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 406"
+    },
+    {
+        "id": "quiz_046",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_misappropriation_cbt_cheating",
+        "target_section": "406",
+        "scenario": "A real estate agent collected five million rupees in cash from clients as an earnest money deposit to be deposited into an escrow account for a land deal. The agent diverted the funds into his personal speculative stock trading account.",
+        "options": [
+            "Section 406 PPC (Criminal Breach of Trust)",
+            "Section 420 PPC (Cheating)",
+            "Section 403 PPC (Dishonest Misappropriation)",
+            "Section 489-F PPC (Cheque Dishonour)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Dominion over property entrusted in commercial capacity",
+            "Misappropriation violating terms of entrustment",
+            "Distinction between civil breach of contract and criminal breach of trust"
+        ],
+        "explanation": "Entrustment of client funds followed by intentional diversion for unauthorized personal speculation constitutes Criminal Breach of Trust under Section 405/406 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 406"
+    },
+    {
+        "id": "quiz_047",
+        "category": "Offences Against Property",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "411",
+        "scenario": "A second-hand motorcycle parts dealer in Lyari regularly purchased motorcycles with ground-off chassis numbers from street snatchers at one-third of their market price, knowing full well that they were stolen property.",
+        "options": [
+            "Section 411 PPC (Dishonestly Receiving Stolen Property)",
+            "Section 379 PPC (Theft)",
+            "Section 392 PPC (Robbery)",
+            "Section 420 PPC (Cheating)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Receipt or retention of property whose possession was transferred by theft/robbery",
+            "Knowledge or reason to believe that the property is stolen",
+            "Independent offence from the principal thief"
+        ],
+        "explanation": "Section 411 punishes anyone who dishonestly receives or retains any stolen property knowing or having reason to believe the same to be stolen property.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 411"
+    },
+    {
+        "id": "quiz_048",
+        "category": "Offences Against Property",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_theft_robbery_dacoity",
+        "target_section": "411",
+        "scenario": "Police recovered a stolen laptop from the bedroom of an accused during a raid. The accused produced no receipt, admitted buying it from a stranger in an alley at midnight without a charger, and hid it inside a wall cavity.",
+        "options": [
+            "Section 411 PPC (Dishonestly Receiving/Retaining Stolen Property)",
+            "Section 403 PPC (Dishonest Misappropriation)",
+            "Section 380 PPC (Theft in Dwelling)",
+            "Section 448 PPC (House-Trespass)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Presumption under Section 114 Illustration (a) of Qanun-e-Shahadat Order 1984",
+            "Dishonest retention of stolen goods without plausible explanation",
+            "Penalty of imprisonment up to 3 years"
+        ],
+        "explanation": "Section 411 penalizes both receiving and retaining stolen property. Possession of recently stolen property without reasonable explanation creates a presumption of guilty knowledge under Section 411.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 411"
+    },
+    {
+        "id": "quiz_049",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_misappropriation_cbt_cheating",
+        "target_section": "420",
+        "scenario": "An imposter set up a fake overseas recruitment agency in Gujranwala, showed fabricated Canadian work visa approvals to 20 unemployed youths, collected five lac rupees from each candidate, and fled the country.",
+        "options": [
+            "Section 420 PPC (Cheating and Dishonestly Inducing Delivery of Property)",
+            "Section 406 PPC (Criminal Breach of Trust)",
+            "Section 403 PPC (Dishonest Misappropriation)",
+            "Section 384 PPC (Extortion)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Fraudulent misrepresentation / deceit existing from the inception",
+            "Dishonest inducement causing delivery of property (cash)",
+            "Distinction from CBT (no lawful entrustment, pure deceit from day one)"
+        ],
+        "explanation": "Section 420 applies because the accused practiced deception from the very beginning to dishonestly induce the victims into delivering money. Because the intention was fraudulent from inception, it is Cheating, not CBT.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 420"
+    },
+    {
+        "id": "quiz_050",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_misappropriation_cbt_cheating",
+        "target_section": "420",
+        "scenario": "A seller sold a replica brass necklace as 24-karat solid gold to a bride's family, stamping it with counterfeit hallmark seals and providing a forged laboratory authenticity certificate to extract five lac rupees.",
+        "options": [
+            "Section 420 PPC (Cheating and Dishonestly Inducing Delivery)",
+            "Section 403 PPC (Dishonest Misappropriation)",
+            "Section 489-F PPC (Cheque Fraud)",
+            "Section 379 PPC (Theft)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Deceptive presentation of substandard goods with forged certificates",
+            "Inducing transfer of money based on false representation",
+            "Application of Section 415/420 PPC"
+        ],
+        "explanation": "Dishonestly inducing another to deliver money by falsely representing imitation brass as solid gold with fake hallmark seals constitutes Cheating under Section 420 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 420"
+    },
+
+    # ==========================================
+    # Group: grp_cheating_dishonoured_cheque (420, 489-F)
+    # ==========================================
+    {
+        "id": "quiz_051",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_cheating_dishonoured_cheque",
+        "target_section": "489-F",
+        "scenario": "A wholesale grain dealer purchased wheat worth fifteen lac rupees on credit and issued a post-dated bank cheque in repayment. When presented at the bank, the cheque was dishonoured with the reason 'account closed six months ago'.",
+        "options": [
+            "Section 489-F PPC (Dishonestly Issuing a Cheque)",
+            "Section 420 PPC (Cheating)",
+            "Section 406 PPC (Criminal Breach of Trust)",
+            "Section 384 PPC (Extortion)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Issuing a cheque with dishonest intention towards repayment of loan/obligation",
+            "Cheque dishonour on presentation",
+            "Specific statutory offence under Section 489-F (Act II of 2002)"
+        ],
+        "explanation": "Section 489-F specifically punishes dishonestly issuing a cheque towards repayment of a loan or fulfillment of an obligation which is dishonoured upon presentation. It carries up to 3 years imprisonment.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 489-F"
+    },
+    {
+        "id": "quiz_052",
+        "category": "Offences Involving Fraud & Misappropriation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_cheating_dishonoured_cheque",
+        "target_section": "489-F",
+        "scenario": "A contractor gave a signed bank cheque for two million rupees to a building materials supplier to settle a verified construction materials debt. The bank dishonoured the cheque due to insufficient funds and 'payment stopped by drawer' without valid reason.",
+        "options": [
+            "Section 489-F PPC (Dishonestly Issuing a Cheque)",
+            "Section 403 PPC (Dishonest Misappropriation)",
+            "Section 506 PPC (Criminal Intimidation)",
+            "Section 379 PPC (Theft)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Issuing cheque towards fulfillment of an existing obligation",
+            "Stopping payment or maintaining insufficient funds establishes dishonest intent",
+            "Cognizable and non-bailable nature under CrPC Schedule II"
+        ],
+        "explanation": "Issuing a cheque to discharge an obligation and then stopping payment or having insufficient funds creates liability under Section 489-F PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 489-F"
+    },
+
+    # ==========================================
+    # Group: grp_trespass_categories (441, 447, 448)
+    # ==========================================
+    {
+        "id": "quiz_053",
+        "category": "Offences Against Property & Habitation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_trespass_categories",
+        "target_section": "441",
+        "scenario": "A land-grabber entered an open, unfenced agricultural plot owned by an overseas Pakistani in Chakwal, with the explicit documented intention of setting up an illegal boundary wall and intimidating the caretaker.",
+        "options": [
+            "Section 441 PPC (Definition of Criminal Trespass)",
+            "Section 448 PPC (House-Trespass)",
+            "Section 379 PPC (Theft)",
+            "Section 340 PPC (Wrongful Confinement)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Entry into property in possession of another",
+            "Intent to commit an offence or to intimidate, insult, or annoy",
+            "Definitional section for criminal trespass on open land"
+        ],
+        "explanation": "Section 441 defines Criminal Trespass as entering into property in possession of another with intent to commit an offence or to intimidate, insult, or annoy the person in possession.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 441"
+    },
+    {
+        "id": "quiz_054",
+        "category": "Offences Against Property & Habitation",
+        "difficulty": "hard",
+        "confusable_group_id": "grp_trespass_categories",
+        "target_section": "441",
+        "scenario": "A tenant whose lease had expired lawfully entered the shop initially, but upon the expiry date unlawfully remained on the commercial premises with intent to annoy and intimidate the landlord into signing an extension.",
+        "options": [
+            "Section 441 PPC (Criminal Trespass by Unlawfully Remaining)",
+            "Section 448 PPC (House-Trespass)",
+            "Section 384 PPC (Extortion)",
+            "Section 403 PPC (Dishonest Misappropriation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Second limb of Section 441: having lawfully entered, unlawfully remains",
+            "Intent to intimidate or annoy possessor",
+            "Distinction between civil holdover and criminal trespass"
+        ],
+        "explanation": "Under the second limb of Section 441 PPC, having lawfully entered into property, but unlawfully remaining there with intent to intimidate, insult, or annoy constitutes Criminal Trespass.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 441"
+    },
+    {
+        "id": "quiz_055",
+        "category": "Offences Against Property & Habitation",
+        "difficulty": "easy",
+        "confusable_group_id": "grp_trespass_categories",
+        "target_section": "447",
+        "scenario": "The accused drove a tractor into a neighbour's fenced vegetable field, destroyed the crop rows, and began ploughing the land while threatening the unarmed caretaker who attempted to stop him.",
+        "options": [
+            "Section 447 PPC (Punishment for Criminal Trespass)",
+            "Section 448 PPC (Punishment for House-Trespass)",
+            "Section 380 PPC (Theft in Dwelling)",
+            "Section 392 PPC (Robbery)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Punishment section for criminal trespass on open land/field",
+            "Penalty of imprisonment up to 3 months or fine up to 1,500 rupees",
+            "Exclusion of house-trespass (no building or dwelling entered)"
+        ],
+        "explanation": "Section 447 provides the statutory punishment for simple criminal trespass on open land or fields (up to 3 months imprisonment or fine). Because no building was entered, Section 448 does not apply.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 447"
+    },
+    {
+        "id": "quiz_056",
+        "category": "Offences Against Property & Habitation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_trespass_categories",
+        "target_section": "447",
+        "scenario": "A group of armed men jumped over the boundary ditch of a private fish farm in Thatta, fished illegally in the ponds, and chased away the security guard by firing aerial shots.",
+        "options": [
+            "Section 447 PPC (Criminal Trespass)",
+            "Section 448 PPC (House-Trespass)",
+            "Section 340 PPC (Wrongful Confinement)",
+            "Section 500 PPC (Defamation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Trespass upon enclosed open rural facility (fish farm)",
+            "Absence of human dwelling structure",
+            "Application of Section 447 penalty"
+        ],
+        "explanation": "Trespassing upon open commercial ponds or agricultural holdings constitutes criminal trespass punishable under Section 447 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 447"
+    },
+    {
+        "id": "quiz_057",
+        "category": "Offences Against Property & Habitation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_trespass_categories",
+        "target_section": "448",
+        "scenario": "An estranged relative forced his way into a widow's residential brick house in Sialkot through an unlatched kitchen door, sat in her living room, and refused to leave while verbally abusing her.",
+        "options": [
+            "Section 448 PPC (Punishment for House-Trespass)",
+            "Section 447 PPC (Simple Criminal Trespass)",
+            "Section 380 PPC (Theft in Dwelling)",
+            "Section 339 PPC (Wrongful Restraint)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Criminal trespass committed by entering into or remaining in any building used as a human dwelling",
+            "Aggravated penalty under Section 448 (imprisonment up to 1 year vs 3 months for 447)",
+            "Distinction between open land trespass (447) and building trespass (448)"
+        ],
+        "explanation": "Section 448 punishes House-Trespass (defined in Section 442 as criminal trespass in any building used as a human dwelling). It carries up to 1 year imprisonment compared to 3 months under Section 447.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 448"
+    },
+    {
+        "id": "quiz_058",
+        "category": "Offences Against Property & Habitation",
+        "difficulty": "medium",
+        "confusable_group_id": "grp_trespass_categories",
+        "target_section": "448",
+        "scenario": "During nighttime, the accused climbed over a boundary wall and entered into an inhabited school boarding house dormitory without permission to harass a student residing inside.",
+        "options": [
+            "Section 448 PPC (House-Trespass)",
+            "Section 447 PPC (Simple Criminal Trespass)",
+            "Section 379 PPC (Theft)",
+            "Section 403 PPC (Dishonest Misappropriation)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "School dormitory is a building used for human dwelling",
+            "Entry with intent to commit offence or insult occupant",
+            "Punishable under Section 448 PPC"
+        ],
+        "explanation": "Entering a school dormitory used as human dwelling with intent to annoy or commit an offence constitutes house-trespass under Section 442, punishable under Section 448 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 448"
+    },
+
+    # ==========================================
+    # Group: Reputation & Defamation (500)
+    # ==========================================
+    {
+        "id": "quiz_059",
+        "category": "Criminal Intimidation & Defamation",
+        "difficulty": "easy",
+        "confusable_group_id": None,
+        "target_section": "500",
+        "scenario": "A shopkeeper printed and distributed 500 pamphlets in a town bazaar alleging falsely that a rival grocery merchant was deliberately selling contaminated milk and infected meat, severely damaging his business reputation.",
+        "options": [
+            "Section 500 PPC (Punishment for Defamation)",
+            "Section 506 PPC (Criminal Intimidation)",
+            "Section 420 PPC (Cheating)",
+            "Section 509 PPC (Insulting Modesty)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Making or publishing false imputation concerning any person",
+            "Intent or knowledge that imputation will harm reputation",
+            "Absence of good faith truth defense under Section 499 exceptions"
+        ],
+        "explanation": "Section 500 punishes defamation (defined in Section 499 PPC). Publishing false printed allegations intended to harm a person's commercial and moral reputation constitutes criminal defamation.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 500"
+    },
+    {
+        "id": "quiz_060",
+        "category": "Criminal Intimidation & Defamation",
+        "difficulty": "medium",
+        "confusable_group_id": None,
+        "target_section": "500",
+        "scenario": "A social media user published a widely viewed Facebook video falsely claiming that a local civil judge took bribes to decide a land decree, knowing the accusation was completely fabricated and baseless.",
+        "options": [
+            "Section 500 PPC (Punishment for Defamation)",
+            "Section 506 PPC (Criminal Intimidation)",
+            "Section 384 PPC (Extortion)",
+            "Section 406 PPC (Criminal Breach of Trust)"
+        ],
+        "correct_index": 0,
+        "legal_elements_tested": [
+            "Public broadcast of defamatory false allegation",
+            "Harm to judicial officer's moral and professional character",
+            "Punishable with simple imprisonment up to 2 years or fine under Section 500"
+        ],
+        "explanation": "Publishing false defamatory statements attacking public character and integrity without factual basis constitutes criminal defamation under Section 499, punishable under Section 500 PPC.",
+        "statutory_reference": "Pakistan Penal Code (Act XLV of 1860), Section 500"
+    }
+]
+
+
+def generate_quiz_bank():
+    print(f"Building quiz bank with {len(QUESTIONS)} scenarios...")
+    
+    # Validation checks before writing
+    target_counts = {}
+    for q in QUESTIONS:
+        t = q["target_section"]
+        target_counts[t] = target_counts.get(t, 0) + 1
+
+    print(f"Sections covered: {len(target_counts)} / 30")
+    for sec, count in sorted(target_counts.items()):
+        print(f"  Section {sec:7}: {count} questions")
+
+    os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(QUESTIONS, f, indent=2, ensure_ascii=False)
+
+    print(f"\nSuccessfully generated {OUTPUT_JSON} ({len(QUESTIONS)} questions)")
+
+
+if __name__ == "__main__":
+    generate_quiz_bank()

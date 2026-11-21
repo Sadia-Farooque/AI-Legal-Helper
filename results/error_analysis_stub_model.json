@@ -1,0 +1,888 @@
+{
+  "summary": {
+    "total_samples": 20,
+    "top1_accuracy": 0.1,
+    "top3_recall": 0.2,
+    "macro_f1": 0.0825,
+    "total_failures": 18,
+    "unique_confusion_pairs": 18
+  },
+  "per_class": {
+    "302": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "307": {
+      "support": 1,
+      "tp": 0,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "319": {
+      "support": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "324": {
+      "support": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "337-A": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "337-F": {
+      "support": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "339": {
+      "support": 1,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "340": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "354": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "354A": {
+      "support": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "363": {
+      "support": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "365": {
+      "support": 0,
+      "tp": 0,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "365-A": {
+      "support": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "379": {
+      "support": 3,
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "380": {
+      "support": 2,
+      "tp": 0,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "382": {
+      "support": 0,
+      "tp": 0,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "384": {
+      "support": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "392": {
+      "support": 2,
+      "tp": 0,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "395": {
+      "support": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "403": {
+      "support": 0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "406": {
+      "support": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "411": {
+      "support": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "420": {
+      "support": 2,
+      "tp": 0,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "441": {
+      "support": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "447": {
+      "support": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "448": {
+      "support": 1,
+      "tp": 1,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "f1": 0.5
+    },
+    "489-F": {
+      "support": 2,
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "500": {
+      "support": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "506": {
+      "support": 4,
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "509": {
+      "support": 2,
+      "tp": 1,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1": 0.4
+    }
+  },
+  "confusion_pairs": [
+    {
+      "true_section": "392",
+      "predicted_section": "307",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "379",
+      "predicted_section": "392",
+      "count": 1,
+      "confusable_group": "Offences Against Property: Theft vs. Aggravated Theft vs. Robbery vs. Dacoity"
+    },
+    {
+      "true_section": "489-F",
+      "predicted_section": "509",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "420",
+      "predicted_section": "307",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "395",
+      "predicted_section": "509",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "448",
+      "predicted_section": "420",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "307",
+      "predicted_section": "384",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "337-F",
+      "predicted_section": "363",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "406",
+      "predicted_section": "365",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "411",
+      "predicted_section": "339",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "384",
+      "predicted_section": "365",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "500",
+      "predicted_section": "382",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "363",
+      "predicted_section": "448",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "392",
+      "predicted_section": "337-F",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "489-F",
+      "predicted_section": "365",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "379",
+      "predicted_section": "380",
+      "count": 1,
+      "confusable_group": "Offences Against Property: Theft vs. Aggravated Theft vs. Robbery vs. Dacoity"
+    },
+    {
+      "true_section": "506",
+      "predicted_section": "365-A",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    },
+    {
+      "true_section": "380",
+      "predicted_section": "307",
+      "count": 1,
+      "confusable_group": "Other Boundary"
+    }
+  ],
+  "failures": [
+    {
+      "id": "stub_001",
+      "text": "Two armed men on a red motorcycle stopped me at gunpoint and took my mobile phone and wallet.",
+      "language": "en",
+      "primary_section": "392",
+      "true_sections": [
+        "392"
+      ],
+      "predicted_top1": "307",
+      "predicted_top1_conf": 0.7321,
+      "topk_predictions": [
+        [
+          "307",
+          0.7321
+        ],
+        [
+          "354A",
+          0.2457
+        ],
+        [
+          "509",
+          0.2379
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_002",
+      "text": "Someone picked my pocket on the crowded bus near Saddar and stole my cash.",
+      "language": "en",
+      "primary_section": "379",
+      "true_sections": [
+        "379"
+      ],
+      "predicted_top1": "392",
+      "predicted_top1_conf": 0.754,
+      "topk_predictions": [
+        [
+          "392",
+          0.754
+        ],
+        [
+          "339",
+          0.242
+        ],
+        [
+          "406",
+          0.2228
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": true
+    },
+    {
+      "id": "stub_003",
+      "text": "My business partner took 15 lac rupees investment from me and issued a bank cheque that bounced due to insufficient balance.",
+      "language": "en",
+      "primary_section": "489-F",
+      "true_sections": [
+        "420",
+        "489-F"
+      ],
+      "predicted_top1": "509",
+      "predicted_top1_conf": 0.863,
+      "topk_predictions": [
+        [
+          "509",
+          0.863
+        ],
+        [
+          "324",
+          0.2283
+        ],
+        [
+          "307",
+          0.2064
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_004",
+      "text": "A stranger sold me a fake iPhone after claiming it was original and blocked my number afterwards.",
+      "language": "en",
+      "primary_section": "420",
+      "true_sections": [
+        "420"
+      ],
+      "predicted_top1": "307",
+      "predicted_top1_conf": 0.8091,
+      "topk_predictions": [
+        [
+          "307",
+          0.8091
+        ],
+        [
+          "509",
+          0.2436
+        ],
+        [
+          "354A",
+          0.2429
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_005",
+      "text": "A group of five armed dacoits broke into our house at midnight, held the family hostage and looted jewellery.",
+      "language": "en",
+      "primary_section": "395",
+      "true_sections": [
+        "380",
+        "395"
+      ],
+      "predicted_top1": "509",
+      "predicted_top1_conf": 0.9426,
+      "topk_predictions": [
+        [
+          "509",
+          0.9426
+        ],
+        [
+          "337-A",
+          0.2471
+        ],
+        [
+          "340",
+          0.2454
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_006",
+      "text": "The landlord sent armed goons who broke into my rented shop, damaged furniture and threatened to kill me if I did not vacate.",
+      "language": "en",
+      "primary_section": "448",
+      "true_sections": [
+        "448",
+        "506"
+      ],
+      "predicted_top1": "420",
+      "predicted_top1_conf": 0.9428,
+      "topk_predictions": [
+        [
+          "420",
+          0.9428
+        ],
+        [
+          "382",
+          0.8732
+        ],
+        [
+          "448",
+          0.7882
+        ]
+      ],
+      "in_topk": true,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_008",
+      "text": "A reckless driver shot at a security guard after an altercation at the parking lot with intent to kill.",
+      "language": "en",
+      "primary_section": "307",
+      "true_sections": [
+        "307",
+        "324"
+      ],
+      "predicted_top1": "384",
+      "predicted_top1_conf": 0.6884,
+      "topk_predictions": [
+        [
+          "384",
+          0.6884
+        ],
+        [
+          "441",
+          0.6668
+        ],
+        [
+          "319",
+          0.2403
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_009",
+      "text": "A rival family attacked my brother with iron rods causing serious fractures on his arm and shoulder.",
+      "language": "en",
+      "primary_section": "337-F",
+      "true_sections": [
+        "319",
+        "337-F"
+      ],
+      "predicted_top1": "363",
+      "predicted_top1_conf": 0.8465,
+      "topk_predictions": [
+        [
+          "363",
+          0.8465
+        ],
+        [
+          "392",
+          0.735
+        ],
+        [
+          "382",
+          0.2446
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_010",
+      "text": "The corrupt accountant embezzled company funds that were entrusted to him for employee salaries.",
+      "language": "en",
+      "primary_section": "406",
+      "true_sections": [
+        "406"
+      ],
+      "predicted_top1": "365",
+      "predicted_top1_conf": 0.9055,
+      "topk_predictions": [
+        [
+          "365",
+          0.9055
+        ],
+        [
+          "403",
+          0.7179
+        ],
+        [
+          "489-F",
+          0.2273
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_011",
+      "text": "Police caught a suspect selling stolen laptops and motorbikes in the illegal grey market.",
+      "language": "en",
+      "primary_section": "411",
+      "true_sections": [
+        "411"
+      ],
+      "predicted_top1": "339",
+      "predicted_top1_conf": 0.8266,
+      "topk_predictions": [
+        [
+          "339",
+          0.8266
+        ],
+        [
+          "506",
+          0.7869
+        ],
+        [
+          "354",
+          0.2391
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_012",
+      "text": "A local criminal syndicate sent a threatening letter demanding 5 lakh rupees extortion bhatta from our shop.",
+      "language": "en",
+      "primary_section": "384",
+      "true_sections": [
+        "384",
+        "506"
+      ],
+      "predicted_top1": "365",
+      "predicted_top1_conf": 0.804,
+      "topk_predictions": [
+        [
+          "365",
+          0.804
+        ],
+        [
+          "319",
+          0.2494
+        ],
+        [
+          "384",
+          0.2375
+        ]
+      ],
+      "in_topk": true,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_014",
+      "text": "A former employee posted edited private photos and malicious lies on social media to destroy my reputation.",
+      "language": "en",
+      "primary_section": "500",
+      "true_sections": [
+        "500",
+        "509"
+      ],
+      "predicted_top1": "382",
+      "predicted_top1_conf": 0.9422,
+      "topk_predictions": [
+        [
+          "382",
+          0.9422
+        ],
+        [
+          "448",
+          0.8527
+        ],
+        [
+          "324",
+          0.238
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_015",
+      "text": "Armed kidnappers took a 10-year-old child outside his school into a black car.",
+      "language": "en",
+      "primary_section": "363",
+      "true_sections": [
+        "363"
+      ],
+      "predicted_top1": "448",
+      "predicted_top1_conf": 0.922,
+      "topk_predictions": [
+        [
+          "448",
+          0.922
+        ],
+        [
+          "382",
+          0.9024
+        ],
+        [
+          "506",
+          0.8747
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_016",
+      "text": "Do larkon ne bike pe aakar pistol dikhai aur mera mobile aur wallet cheen kar bhaag gaye.",
+      "language": "roman_ur",
+      "primary_section": "392",
+      "true_sections": [
+        "392"
+      ],
+      "predicted_top1": "337-F",
+      "predicted_top1_conf": 0.9103,
+      "topk_predictions": [
+        [
+          "337-F",
+          0.9103
+        ],
+        [
+          "403",
+          0.8823
+        ],
+        [
+          "365",
+          0.7687
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_017",
+      "text": "Mera dost mujhse udhaar paise le kar cheque de gaya jo bank me bounce ho gaya.",
+      "language": "roman_ur",
+      "primary_section": "489-F",
+      "true_sections": [
+        "489-F"
+      ],
+      "predicted_top1": "365",
+      "predicted_top1_conf": 0.6525,
+      "topk_predictions": [
+        [
+          "365",
+          0.6525
+        ],
+        [
+          "340",
+          0.2358
+        ],
+        [
+          "509",
+          0.2338
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_018",
+      "text": "Bazaar me kisi ne meri pocket se 20 hazar rupaye nikal liye.",
+      "language": "roman_ur",
+      "primary_section": "379",
+      "true_sections": [
+        "379"
+      ],
+      "predicted_top1": "380",
+      "predicted_top1_conf": 0.6552,
+      "topk_predictions": [
+        [
+          "380",
+          0.6552
+        ],
+        [
+          "406",
+          0.2478
+        ],
+        [
+          "340",
+          0.2404
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": true
+    },
+    {
+      "id": "stub_019",
+      "text": "Ek shakhs ne mujhe qatal karne ki dhamki di phone par.",
+      "language": "roman_ur",
+      "primary_section": "506",
+      "true_sections": [
+        "506"
+      ],
+      "predicted_top1": "365-A",
+      "predicted_top1_conf": 0.839,
+      "topk_predictions": [
+        [
+          "365-A",
+          0.839
+        ],
+        [
+          "420",
+          0.2397
+        ],
+        [
+          "319",
+          0.2392
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    },
+    {
+      "id": "stub_020",
+      "text": "Ghar me chor ghus gaye aur almari se sona chura kar le gaye.",
+      "language": "roman_ur",
+      "primary_section": "380",
+      "true_sections": [
+        "379",
+        "380"
+      ],
+      "predicted_top1": "307",
+      "predicted_top1_conf": 0.9432,
+      "topk_predictions": [
+        [
+          "307",
+          0.9432
+        ],
+        [
+          "447",
+          0.9236
+        ],
+        [
+          "382",
+          0.8737
+        ]
+      ],
+      "in_topk": false,
+      "is_confusable_group": false
+    }
+  ]
+}
