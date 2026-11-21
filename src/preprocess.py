@@ -34,6 +34,22 @@ ROMAN_URDU_MAP = {
     "larka": "larka", "ladka": "larka", "larkay": "larke", "ladke": "larke", "larkon": "larkon",
     "pistal": "pistol", "pistool": "pistol",
     "mobil": "mobile", "mobail": "mobile",
+    # chat / SMS spellings (A3b). Words that are also English (men, may, use, fir = FIR) are deliberately NOT mapped.
+    "kl": "kal", "mn": "mein", 
+    "tw": "to", "toh": "to", "pr": "par", "pe": "par", "py": "par",
+    "k": "ke", "ky": "ke", "kay": "ke",
+    "thy": "thay", "gyi": "gayi", "gai": "gayi", "gya": "gaya", "gye": "gaye",
+    "huwa": "hua", "hoa": "hua", "howa": "hua",
+    "mara": "maara", "mari": "maari", "mare": "maare", "marey": "maare", "maray": "maare",
+    "choot": "chot", "chott": "chot",
+    "bht": "bohat", "bohot": "bohat", "bahut": "bohat", "buhat": "bohat",
+    "phr": "phir", "sb": "sab", "sabh": "sab",
+    "eik": "ek", "aik": "ek", "yr": "yaar", "yar": "yaar",
+    "ghr": "ghar", "mujhy": "mujhe", "mjy": "mujhe", "usy": "usay", 
+    "krta": "karta", "krti": "karti", "krte": "karte", "kro": "karo", "krna": "karna",
+    "dhamkee": "dhamki", "dhamky": "dhamki",
+    "chheen": "cheen", "chheena": "cheena", "chhuri": "churi",
+    "hmari": "hamari", "hmara": "hamara", "hmare": "hamare", "hmen": "hamein", "hme": "hamein",
 }
 
 _URL = re.compile(r"https?://\S+|www\.\S+")
