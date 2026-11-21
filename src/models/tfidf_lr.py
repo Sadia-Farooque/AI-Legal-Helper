@@ -38,4 +38,3 @@ def predict_scores_batch(texts):
     m = _model()
     a, b = load_calibration("tfidf_lr")
     return apply(to_logits(m.scores(list(texts))), a, b)
-s
