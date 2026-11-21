@@ -22,6 +22,11 @@ from collections import defaultdict
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SOURCES = [os.path.join(PROJECT_ROOT, "data", "processed", "synthetic.csv"),
            os.path.join(PROJECT_ROOT, "data", "processed", "ilsi_clean.csv")]
+# Added later (A2b, A3b). They are split separately so the original train/val rows above stay exactly the same,
+# which keeps before/after comparisons fair: chat stories get their own grouped split (same rule and seed);
+# Supreme Court of Pakistan rows keep the split already assigned in sc_clean.csv.
+EXTRA_SPLIT = [os.path.join(PROJECT_ROOT, "data", "processed", "synthetic_chat.csv")]
+EXTRA_KEEP = [os.path.join(PROJECT_ROOT, "data", "processed", "sc_facts.csv")]
 OUT_CSV = os.path.join(PROJECT_ROOT, "data", "processed", "dataset.csv")
 COLUMNS = ["id", "text", "sections", "primary_section", "language", "source", "split", "group_id"]
 VAL_FRACTION = 0.2
@@ -62,6 +67,8 @@ def grouped_split(rows, val_fraction=VAL_FRACTION, seed=SEED):
 
 def main():
     rows = grouped_split(load())
+    rows += grouped_split(load(EXTRA_SPLIT))
+    rows += load(EXTRA_KEEP)
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()

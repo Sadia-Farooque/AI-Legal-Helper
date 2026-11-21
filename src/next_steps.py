@@ -36,12 +36,12 @@ CATEGORY_TIPS = {
         "Do not wash or throw away blood-stained clothes or the weapon/object used; hand them to the police.",
     ],
     "liberty": [
-        "Kidnapping or a missing child: call **15** immediately. For children also call **1121**.",
+        "Kidnapping or a missing child: call **15** immediately. For children in Punjab or Sindh also call **1121**.",
         "Write down vehicle numbers, phone numbers that called you, and the time of every call.",
         "If money is demanded, inform the police before paying; keep every message or recording.",
     ],
     "women": [
-        "Women's helpline (Punjab): **1043**; free legal advice anywhere in Pakistan: **1099**.",
+        "Women's helplines: Punjab **1043**, Sindh **1094**, Khyber Pakhtunkhwa **0800-22227** (Bolo), Balochistan **1089**, Islamabad women police station **1815**. Free legal advice anywhere in Pakistan: **1099**.",
         "Write down date, time, place and words/gestures used; names of witnesses.",
         "Harassment at the workplace can also go to the workplace inquiry committee or the Ombudsperson under the Protection against Harassment of Women at the Workplace Act 2010.",
         "Online messages or pictures: take screenshots with the account name and date, then report to **NCCIA 1799**.",
@@ -80,7 +80,7 @@ GENERAL_STEPS = [
      "(s.155 CrPC); they cannot investigate without the Magistrate's order. You can also file a complaint directly "
      "before a Magistrate (s.200 CrPC), usually through a lawyer."),
     ("If the police refuse to register your FIR",
-     "1) Approach senior police officers (SP / DPO); in Punjab call the IGP Complaint Centre **1787**. "
+     "1) Approach senior police officers (SP / DPO), or call your province's police complaint line (Punjab **1787**, Sindh and Islamabad **1715**; see Helplines). "
      "2) File an application under **s.22-A(6) CrPC** before the Sessions Judge / Additional Sessions Judge acting "
      "as ex-officio Justice of Peace, who can direct the police to act."),
     ("Keep evidence", "Photos, videos, screenshots, medical papers, receipts, names and numbers of witnesses. "
@@ -90,9 +90,31 @@ GENERAL_STEPS = [
 ]
 
 
+PROVINCES = ["All Pakistan", "Punjab", "Sindh", "Khyber Pakhtunkhwa", "Balochistan", "Islamabad"]
+_PROVINCE_CODE = {"Khyber Pakhtunkhwa": "KP"}
+
+
 def helplines():
     with open(HELPLINES_CSV, "r", encoding="utf-8") as f:
         return {r["key"]: r for r in csv.DictReader(f)}
+
+
+def helplines_for(province="All Pakistan"):
+    """National numbers first, then the numbers of the chosen province ("All Pakistan" = every number)."""
+    rows = list(helplines().values())
+    if province in (None, "", "All Pakistan"):
+        return rows
+    code = _PROVINCE_CODE.get(province, province)
+    return [r for r in rows if r["province"] == "All"] + [r for r in rows if r["province"] == code]
+
+
+def steps_for(cognizable):
+    """General steps, keeping only the FIR route that fits: cognizable (FIR) or non-cognizable (Magistrate)."""
+    if cognizable is True:
+        return [s for s in GENERAL_STEPS if not s[0].startswith("Non-cognizable")]
+    if cognizable is False:
+        return [s for s in GENERAL_STEPS if not s[0].startswith("Cognizable")]
+    return GENERAL_STEPS
 
 
 def guidance(sections, lookup=None):
@@ -126,9 +148,9 @@ def to_markdown():
         secs = ", ".join(s for s, cc in CATEGORY_OF.items() if cc == c)
         L += [f"### {title} ({secs})", ""] + [f"- {t}" for t in CATEGORY_TIPS[c]] + [""]
     L += ["## Helplines (each checked against its source)", "",
-          "| Number | Service | Area | Use for | Source | Checked |", "|---|---|---|---|---|---|"]
+          "| Number | Service | Province | Area | Use for | Source | Checked |", "|---|---|---|---|---|---|---|"]
     for r in hl.values():
-        L.append(f"| **{r['number']}** | {r['name']} | {r['area']} | {r['use_for']} | "
+        L.append(f"| **{r['number']}** | {r['name']} | {r['province']} | {r['area']} | {r['use_for']} | "
                  f"[{r['source']}]({r['source_url']}) | {r['date_checked']} |")
     L += ["", "Legal basis: Code of Criminal Procedure 1898, ss.154, 155, 200 and 22-A(6) "
           "(ex-officio Justice of Peace may direct the police on non-registration of an FIR). "

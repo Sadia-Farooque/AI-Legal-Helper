@@ -35,3 +35,4 @@ Thumbs.db
 ~$*.docx
 *.tmp
 models/distilbert/
+data/feedback/

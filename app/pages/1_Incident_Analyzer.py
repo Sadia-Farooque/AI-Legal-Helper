@@ -16,6 +16,10 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 from src.analyzer import analyze, compare_retrieval  # noqa: E402
+import json  # noqa: E402
+
+from src import feedback  # noqa: E402
+from src.fir_draft import FIRDetails, draft, valid_cnic  # noqa: E402
 from src.next_steps import helplines  # noqa: E402
 
 st.set_page_config(page_title="Incident Analyzer", page_icon="🚨", layout="wide")
@@ -29,7 +33,7 @@ EXAMPLES = {
 }
 
 
-@st.cache_resource(show_spinner=False)
+@st.cache_resource(show_spinner="Preparing the model (the very first start trains it, about a minute)...")
 def _warm_model():
     analyze("warm up the model")      # loads the trained model once per server
     return True
@@ -149,6 +153,55 @@ if "last" in st.session_state:
                 st.caption("Green words pushed the model towards this section, red words away from it "
                            "(LIME explanation).")
 
+
+            with st.expander("📝 Written complaint for the police (darkhwast)"):
+                top = res["results"][0]
+                if str(top["cognizable"]).lower().startswith("non"):
+                    st.info(f"Section {top['section']} is non-cognizable: the police may record it and refer you to "
+                            "a Magistrate (s.155 CrPC). The application is still useful as your written statement.")
+                st.caption("The police write the FIR themselves (s.154 CrPC), usually based on what you tell them or "
+                           "a written application like this one. This fills a standard application with your own "
+                           "words, so nothing important is forgotten. Empty fields become blank lines to complete "
+                           "by hand. Nothing you enter is saved.")
+                with st.form("fir_form"):
+                    c1, c2 = st.columns(2)
+                    name = c1.text_input("Your name")
+                    relation = c2.text_input("Father's / husband's name")
+                    cnic = c1.text_input("CNIC (optional)", placeholder="35202-1234567-8")
+                    phone = c2.text_input("Mobile number")
+                    address = st.text_input("Your address")
+                    c3, c4, c5 = st.columns(3)
+                    ps = c3.text_input("Police station (thana)")
+                    when = c4.date_input("Date of incident", value=None, format="DD/MM/YYYY")
+                    at = c5.text_input("Approximate time", placeholder="9:30 pm")
+                    place = st.text_input("Place of incident")
+                    accused = st.text_input("Accused: names or descriptions (leave empty if unknown)")
+                    prop = st.text_input("Property taken / loss (optional)")
+                    wit = st.text_input("Witnesses (optional)")
+                    delay = st.text_input("If reporting late: reason for the delay (optional)")
+                    secs = st.multiselect("Sections to mention", [c["section"] for c in res["results"]],
+                                          default=[res["results"][0]["section"]])
+                    lang = st.radio("Language", ["English + Urdu", "English", "Urdu"], horizontal=True)
+                    make = st.form_submit_button("Generate complaint")
+                if make:
+                    if not valid_cnic(cnic):
+                        st.error("CNIC should look like 35202-1234567-8 (or leave it empty).")
+                    else:
+                        details = FIRDetails(name=name, relation=relation, cnic=cnic, address=address, phone=phone,
+                                             police_station=ps, incident_date=when.strftime("%d-%m-%Y") if when else "",
+                                             incident_time=at, place=place, accused=accused, property_lost=prop,
+                                             witnesses=wit, delay_reason=delay, description=text,
+                                             sections=secs)
+                        code = {"English + Urdu": "both", "English": "en", "Urdu": "ur"}[lang]
+                        doc = draft(details, code)
+                        st.session_state["complaint"] = (draft(details, "en") if code in ("both", "en") else None,
+                                                         draft(details, "ur") if code in ("both", "ur") else None)
+                        st.text_area("Your complaint (you can edit it after downloading)", doc, height=360)
+                        st.download_button("⬇️ Download complaint (.txt)", doc.encode("utf-8"),
+                                           file_name="Police_complaint.txt", mime="text/plain")
+                        st.caption("Print it, sign it, and take it with a copy of your CNIC to the police station. "
+                                   "Keep a photo of the signed copy.")
+
         st.divider()
         st.subheader("What to do now")
         guide = res["guide"]
@@ -170,6 +223,40 @@ if "last" in st.session_state:
             for h in helplines().values():
                 st.markdown(f"**{h['number']}**: {h['name']} ({h['area']}). {h['use_for']}. "
                             f"[source]({h['source_url']}), checked {h['date_checked']}")
+
+        # ---- PDF export (Extra 2) -------------------------------------------------------------
+        st.divider()
+        try:
+            from src.pdf_export import build_pdf
+            comp_en, comp_ur = st.session_state.get("complaint", (None, None))
+            pdf = build_pdf(text, res, comp_en, comp_ur, list(helplines().values()))
+            st.download_button("⬇️ Download PDF report" + (" (with your complaint)" if comp_en or comp_ur else ""),
+                               pdf, file_name="incident_report.pdf", mime="application/pdf")
+        except ImportError:
+            st.caption("PDF export needs `pip install fpdf2 uharfbuzz`.")
+
+        # ---- Feedback (Extra 3) ----------------------------------------------------------------
+        with st.expander("💬 Was this correct? Lawyers and law students: please tell us if anything is wrong"):
+            with st.form("feedback_form", clear_on_submit=True):
+                verdict = st.radio("Was the result correct?", ["Yes", "Partly", "No"], horizontal=True)
+                all_secs = [s_ for s_ in json.load(open(os.path.join(PROJECT_ROOT, "src", "labels.json"),
+                                                        encoding="utf-8")) if s_ != "307"]
+                correct = st.multiselect("Which sections are actually correct? (optional)", all_secs)
+                role = st.selectbox("I am a", ["Citizen", "Law student", "Lawyer", "Other"])
+                comment = st.text_area("What is wrong or missing? Bugs, wrong legal facts, suggestions...", height=90)
+                consent = st.checkbox("I agree that my incident description may be stored anonymously to improve "
+                                      "the model")
+                sent = st.form_submit_button("Send feedback")
+            if sent:
+                rec = feedback.make_record(verdict.lower(), [c["section"] for c in res.get("results", [])], correct,
+                                           role.lower(), comment, text, consent, "tfidf_lr", status)
+                try:
+                    secrets = dict(st.secrets)
+                except Exception:  # noqa: BLE001 (no secrets file configured)
+                    secrets = {}
+                out = feedback.submit(rec, secrets)
+                st.success("Thank you! Your feedback was saved" +
+                           (f" and shared with the team ([issue]({out['issue_url']}))." if out["issue_url"] else "."))
 
 st.divider()
 st.caption("Model: TF-IDF + Logistic Regression trained on 1,335 court cases and 557 reviewed citizen-style "

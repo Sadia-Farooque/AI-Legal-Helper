@@ -1,0 +1,6 @@
+config,n_train,top1,top3,roman_ur_top1,en_top1
+A baseline (original data),1507,0.7654,0.8765,0.6897,0.8077
+B + chat-spelling normaliser,1507,0.7654,0.8827,0.6897,0.8077
+C + 224 Roman Urdu chat stories,1731,0.8457,0.9506,0.8793,0.8269
+D + 142 Supreme Court PK facts,1649,0.7654,0.8889,0.6897,0.8077
+E all (B+C+D),1873,0.8272,0.9506,0.8621,0.8077
