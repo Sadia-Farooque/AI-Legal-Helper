@@ -55,20 +55,3 @@ Validation = grouped 20% split (`src/data/make_splits.py`). Model selection uses
 | 509 | 0.75 | 4 |
 
 Full grid: `results/tfidf_grid.csv`. Saved models: `models/tfidf_{lr,svm,nb}.joblib` (not in git).
-
-## Ablation: which training data helps? (best LR setting)
-
-| Train data | n train | Eval subset | Top-1 | Top-3 recall | Micro-F1 | Macro-F1 |
-|---|---|---|---|---|---|---|
-| synthetic_only | 442 | synthetic_all | 0.7565 | 0.9217 | 0.7398 | 0.7307 |
-| synthetic_only | 442 | synthetic_en | 0.7386 | 0.9205 | 0.738 | 0.7234 |
-| synthetic_only | 442 | synthetic_roman_ur | 0.8148 | 0.9259 | 0.7458 | 0.7032 |
-| synthetic_only | 442 | ilsi | 0.1926 | 0.3889 | 0.1479 | 0.0441 |
-| ilsi_only | 1065 | synthetic_all | 0.1304 | 0.2174 | 0.1317 | 0.0598 |
-| ilsi_only | 1065 | synthetic_en | 0.1591 | 0.25 | 0.163 | 0.0707 |
-| ilsi_only | 1065 | synthetic_roman_ur | 0.037 | 0.1111 | 0.0339 | 0.0159 |
-| ilsi_only | 1065 | ilsi | 0.6333 | 0.837 | 0.5065 | 0.2389 |
-| synthetic_plus_ilsi | 1507 | synthetic_all | 0.7478 | 0.9043 | 0.7419 | 0.7195 |
-| synthetic_plus_ilsi | 1507 | synthetic_en | 0.7273 | 0.8977 | 0.7204 | 0.6893 |
-| synthetic_plus_ilsi | 1507 | synthetic_roman_ur | 0.8148 | 0.9259 | 0.8065 | 0.7508 |
-| synthetic_plus_ilsi | 1507 | ilsi | 0.6259 | 0.8407 | 0.5195 | 0.2421 |
