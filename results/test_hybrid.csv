@@ -1,0 +1,16 @@
+metric,language,value
+samples,all,162
+top1_accuracy,all,0.784
+top3_recall,all,0.9198
+micro_f1,all,0.756
+macro_f1,all,0.7517
+samples,en,104
+top1_accuracy,en,0.8173
+top3_recall,en,0.9519
+micro_f1,en,0.7944
+macro_f1,en,0.7866
+samples,roman_ur,58
+top1_accuracy,roman_ur,0.7241
+top3_recall,roman_ur,0.8621
+micro_f1,roman_ur,0.6885
+macro_f1,roman_ur,0.6762
