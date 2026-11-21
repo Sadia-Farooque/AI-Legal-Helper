@@ -33,7 +33,7 @@ EXAMPLES = {
 }
 
 
-@st.cache_resource(show_spinner=False)
+@st.cache_resource(show_spinner="Preparing the model (the very first start trains it, about a minute)...")
 def _warm_model():
     analyze("warm up the model")      # loads the trained model once per server
     return True

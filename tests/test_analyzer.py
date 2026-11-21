@@ -96,8 +96,6 @@ def test_roman_urdu_snatching():
 
 
 @needs_model
-@pytest.mark.xfail(reason="Known limitation (plan D13): training data has no non-crime examples yet, so everyday "
-                          "problems can still score above the abstain threshold. Fix: add out-of-scope negatives.",
-                   strict=False)
 def test_non_crime_abstains():
+    """Was an expected failure before calibration; now passes (D13: 16/16 non-crime test messages abstain)."""
     assert analyze("my landlord is not fixing the kitchen tap and the paint is old")["status"] == "abstain"
