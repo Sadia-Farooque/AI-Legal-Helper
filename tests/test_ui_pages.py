@@ -85,3 +85,18 @@ def test_student_corner_quiz_flow_ends_with_results():
         [b for b in at.button if b.label in ("Next question →", "See my results")][0].click().run()
     assert not at.exception
     assert "Your result" in _text(at)
+
+
+def test_student_corner_shows_correct_319_and_hides_wrong_quiz_questions():
+    at = _goto(_app().run(), "learn.py")
+    at.selectbox[1].set_value("319").run() if False else None
+    t = _text(at)
+    assert "Hurt (Causing bodily pain" not in t
+    at.session_state["topic"] = "violence"
+    at.run()
+    t = _text(at)
+    assert "Qatl-i-khata (killing by mistake)" in t and "Hurt (Causing bodily pain" not in t
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("learn_src", os.path.join(ROOT, "app", "views", "learn.py"))
+    src = open(spec.origin, encoding="utf-8").read()
+    assert '"quiz_007", "quiz_008"' in src

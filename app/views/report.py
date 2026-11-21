@@ -17,7 +17,7 @@ import streamlit as st  # noqa: E402
 
 import legal_ui as ui  # noqa: E402
 from src import feedback  # noqa: E402
-from src.analyzer import analyze, compare_retrieval, legal_condition  # noqa: E402
+from src.analyzer import analyze, compare_retrieval, legal_condition, section_card  # noqa: E402
 from src.fir_draft import FIRDetails, draft, valid_cnic  # noqa: E402
 from src.next_steps import helplines_for, steps_for  # noqa: E402
 
@@ -196,7 +196,6 @@ if "last" in st.session_state:
             if ranked is None:
                 st.caption("The second model is not installed on this server.")
             else:
-                from src.analyzer import section_card
                 names = [f"Section {s} ({section_card(s, v)['name']})" for s, v in ranked]
                 if ranked[0][0] == top["section"]:
                     st.success(f"Agrees: it also picks **Section {top['section']}** first.")
@@ -326,7 +325,7 @@ if "last" in st.session_state:
                     verdict = st.radio("The result was", ["Correct", "Partly correct", "Wrong"], horizontal=True)
                     correct = st.multiselect("Which section(s) are correct?",
                                              [s for s in labels if s != "307"],
-                                             format_func=lambda s: f"{s} · {labels[s]['title'][:45]}")
+                                             format_func=lambda s: f"{s} · {section_card(s, 0)['name'][:45]}")
                     reason = st.text_area("Legal reason (which element is missing or wrong?)", height=90)
                     consent = st.checkbox("The incident text may be stored anonymously with my correction")
                     send = st.form_submit_button("Send for review", type="primary")

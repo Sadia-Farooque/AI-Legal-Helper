@@ -7,6 +7,7 @@ import html
 import json
 import os
 import random
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -51,6 +52,22 @@ def load():
 
 
 labels, lookup, content, groups, quiz_bank, cases_by_sec = load()
+
+# Corrections to Track B content, applied on display only (source files belong to Track B; see docs/content_fixes.md).
+# PPC 319 is qatl-i-khata (killing by mistake), NOT hurt (hurt is defined in s.332 and punished under s.337).
+labels = {**labels, "319": {**labels.get("319", {}), "title": "Qatl-i-khata (killing by mistake)",
+                            "citizen_term": "Accidental killing / gun going off by mistake / hunting accident"}}
+# Two questions mark "319 (Hurt)" as the CORRECT answer; the right sections (337-J poison, 337 series) are not
+# among our 30, so these questions are hidden rather than taught wrongly.
+QUIZ_HIDDEN = {"quiz_007", "quiz_008"}
+_319_OPTION = re.compile(r"Section 319 PPC \([^)]*\)")
+
+
+def _fix_options(q):
+    return {**q, "options": [_319_OPTION.sub("Section 319 PPC (Qatl-i-Khata)", o) for o in q["options"]]}
+
+
+quiz_bank = [_fix_options(q) for q in quiz_bank if q["id"] not in QUIZ_HIDDEN]
 SECTIONS = [s for s in labels if s != "307"]   # 307 is not an offence a citizen can report in the PPC (D1)
 
 
