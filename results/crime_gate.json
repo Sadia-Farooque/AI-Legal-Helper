@@ -1,0 +1,23 @@
+{
+  "threshold": 0.5,
+  "val_crime": {
+    "n": 171,
+    "passed_as_crime": 0.9825
+  },
+  "val_non_crime": {
+    "n": 28,
+    "stopped_as_not_crime": 0.8214
+  },
+  "test_crime_J1": {
+    "n": 162,
+    "passed_as_crime": 0.9815
+  },
+  "test_non_crime_J1": {
+    "n": 16,
+    "stopped_as_not_crime": 0.4375
+  },
+  "test_real_messages": {
+    "n": 3,
+    "passed_as_crime": 1.0
+  }
+}
