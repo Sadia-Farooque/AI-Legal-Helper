@@ -1,38 +1,38 @@
-import streamlit as st
-import json
+"""Entry point of the AI Legal Helper for Pakistan (python run_app.py  ->  streamlit run app/Home.py).
+
+Sets the page style, starts loading the model in the background, builds the sidebar (navigation + helplines)
+and runs the selected page. Pages live in app/views/. The Evaluation dashboard is shown only to the team
+(see legal_ui.is_admin).
+"""
+
 import os
+import sys
 
-st.set_page_config(
-    page_title="AI Legal Helper for Pakistan",
-    page_icon="⚖️",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+for _p in (os.path.dirname(APP_DIR), APP_DIR):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
 
-st.title("⚖️ AI Legal Helper for Pakistan")
-st.caption("Machine Learning System for Pakistani Criminal Law (PPC & CrPC)")
+import streamlit as st  # noqa: E402
 
-st.markdown("""
-Welcome to the **AI Legal Helper for Pakistan**, an AI-powered legal intelligence system designed for ordinary citizens and law students.
+st.set_page_config(page_title="AI Legal Helper for Pakistan", page_icon=os.path.join(APP_DIR, "assets", "scales.svg"),
+                   layout="wide", initial_sidebar_state="expanded")
 
-### 👥 System Capabilities
+import legal_ui as ui  # noqa: E402
 
-1. **🚨 Incident Analyzer (For Citizens):**  
-   Describe an incident in plain English or Roman Urdu (e.g., *"two men on a bike snatched my phone"*). The system identifies the most relevant Pakistan Penal Code (PPC) sections, FIR eligibility (cognizability), bailability, and statutory punishments.
-   
-2. **📖 PPC Section Explorer (For Law Students):**  
-   Search and explore 30 core criminal sections with plain-English definitions, legal elements, and side-by-side comparisons of confusable sections.
+ui.inject_css()
+ui.start_warmup()
+st.logo(ui.LOGO_PATH, size="large", icon_image=ui.ICON_PATH)
 
-3. **🔍 Similar Case Finder (For Law Students):**  
-   Retrieve relevant Supreme Court of Pakistan judgments by semantic scenario search.
+pages = [
+    st.Page(os.path.join(APP_DIR, "views", "home.py"), title="Home", icon="🏠", default=True),
+    st.Page(os.path.join(APP_DIR, "views", "report.py"), title="Report an incident", icon="🚨", url_path="report"),
+    st.Page(os.path.join(APP_DIR, "views", "learn.py"), title="Student Corner", icon="🎓", url_path="learn"),
+]
+if ui.is_admin():
+    pages.append(st.Page(os.path.join(APP_DIR, "pages", "5_Evaluation.py"), title="Evaluation (team only)",
+                         icon="📊", url_path="evaluation"))
 
-4. **📝 Practice Quiz (For Law Students):**  
-   Test your ability to distinguish nuanced criminal offences through realistic scenario questions.
-
-5. **📊 Evaluation & Benchmark Dashboard (For Evaluators):**  
-   Review verifiable model benchmarks, top-3 recall, F1-scores, and Roman Urdu vs English accuracy curves.
-""")
-
-st.info("⚠️ **Legal Disclaimer:** This tool is an academic Machine Learning project developed for educational and informational purposes. It does not constitute formal legal counsel. For actionable legal representation, please consult a licensed advocate or legal aid authority.")
-
-st.sidebar.success("Select a page from above to get started.")
+nav = st.navigation(pages)
+ui.sidebar_helplines()
+nav.run()

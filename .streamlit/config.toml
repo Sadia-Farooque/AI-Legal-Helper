@@ -1,0 +1,48 @@
+# Streamlit settings for the AI Legal Helper (read from the folder you run the app from: the repo root).
+
+[client]
+# "minimal" hides Deploy, Rerun, Clear cache, Record screen etc. Because two themes are defined below,
+# the menu keeps only the Light / Dark theme switch.
+toolbarMode = "minimal"
+showErrorLinks = false
+
+[browser]
+gatherUsageStats = false
+
+[server]
+runOnSave = false
+
+# ---------------------------------------------------------------------------------------------------
+# Theme: calm and formal (court documents): ink navy, parchment, oxblood for actions, brass for accents.
+# ---------------------------------------------------------------------------------------------------
+[theme]
+font = "Source Sans 3:https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap, sans-serif"
+headingFont = "Libre Baskerville:https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap, serif"
+baseRadius = "0.6rem"
+showSidebarBorder = true
+
+[theme.light]
+base = "light"
+primaryColor = "#8E2431"
+backgroundColor = "#FAF7F0"
+secondaryBackgroundColor = "#EFE8D9"
+textColor = "#1C2430"
+linkColor = "#7A5A1E"
+borderColor = "#DDD3BF"
+
+[theme.light.sidebar]
+backgroundColor = "#F2ECDF"
+secondaryBackgroundColor = "#E7DFCD"
+
+[theme.dark]
+base = "dark"
+primaryColor = "#B23A48"
+backgroundColor = "#0F1720"
+secondaryBackgroundColor = "#18222E"
+textColor = "#ECE6D9"
+linkColor = "#D8B56A"
+borderColor = "#2B3747"
+
+[theme.dark.sidebar]
+backgroundColor = "#0B121A"
+secondaryBackgroundColor = "#141D28"
