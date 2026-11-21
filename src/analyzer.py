@@ -144,3 +144,26 @@ def compare_retrieval(text, k=3):
         return ranked[:k], None
     except Exception as e:  # noqa: BLE001  (any missing dependency or index)
         return None, f"{type(e).__name__}: {e}"
+
+
+# ---- Legal condition notes (display only: they never change the model's ranking or the test metrics) ----------
+# PPC 354 and 354-A protect a woman by their wording. PPC 509 has two parts: (i) insulting the modesty of a
+# woman, and (ii) sexual harassment of "the other person" (gender-neutral, Criminal Law (Amendment) Act 2010).
+WOMEN_ONLY = {"354", "354A"}
+_FEMALE_CUES = re.compile(
+    r"\b(she|her|hers|woman|women|girl|girls|lady|ladies|wife|sister|daughter|mother|mom|mum|aunt|niece|bride|"
+    r"female|widow|aurat|auraton|larki|larkee|larkiyon|behen|bahen|behan|beti|biwi|bivi|ammi|ami|maa|khala|"
+    r"phuppo|phuphi|bhabhi|begum|baji|apa|rahi|gayi|karti|jaati|sakti)\b", re.I)
+
+
+def legal_condition(section, text):
+    """Plain-language condition a citizen must check before relying on a section, or None."""
+    if section in WOMEN_ONLY:
+        if _FEMALE_CUES.search(text or ""):
+            return "Applies only when the victim is a woman."
+        return ("Applies only when the victim is a woman. Your description does not say the victim is a woman, "
+                "so check this before relying on it.")
+    if section == "509":
+        return ("Covers insulting a woman's modesty, and sexual harassment of anyone, including at work "
+                "(s.509(ii)).")
+    return None

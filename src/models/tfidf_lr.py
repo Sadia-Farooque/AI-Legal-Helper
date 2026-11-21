@@ -4,6 +4,7 @@ Usage: python src/evaluate.py --model tfidf_lr --test-data <csv>
 """
 
 import os
+import threading
 import sys
 
 import joblib
@@ -46,10 +47,16 @@ def _train_and_save():
     return model
 
 
+_LOCK = threading.Lock()
+
+
 def _model():
+    """Load the trained model once per process (thread-safe: the app warms it up in a background thread)."""
     global _MODEL
     if _MODEL is None:
-        _MODEL = joblib.load(_PATH) if os.path.exists(_PATH) else _train_and_save()
+        with _LOCK:
+            if _MODEL is None:
+                _MODEL = joblib.load(_PATH) if os.path.exists(_PATH) else _train_and_save()
     return _MODEL
 
 
