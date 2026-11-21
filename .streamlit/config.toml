@@ -22,7 +22,6 @@ baseRadius = "0.6rem"
 showSidebarBorder = true
 
 [theme.light]
-base = "light"
 primaryColor = "#8E2431"
 backgroundColor = "#FAF7F0"
 secondaryBackgroundColor = "#EFE8D9"
@@ -35,7 +34,6 @@ backgroundColor = "#F2ECDF"
 secondaryBackgroundColor = "#E7DFCD"
 
 [theme.dark]
-base = "dark"
 primaryColor = "#B23A48"
 backgroundColor = "#0F1720"
 secondaryBackgroundColor = "#18222E"
