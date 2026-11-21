@@ -128,7 +128,20 @@ def coverage_curve(conf, correct, Y, p, k=3):
     return out
 
 
+# Safety floor (round 2). The validation set has no non-crime text, so the accuracy rule alone cannot see whether
+# everyday complaints (a wrong cake, a shoe exchange, an unpaid small loan) would be refused. After adding easier
+# chat stories the rule fell to 0.55 and would have answered such messages. The threshold therefore never goes below
+# the round-1 value (0.70, fixed before the new data existed). Lowering it needs non-crime validation data first.
+MIN_THRESHOLD = 0.70
+
+
 def choose_threshold(curve, target=TARGET_ACCURACY):
+    """Lowest threshold whose answered cases reach the target top-1 accuracy, but never below MIN_THRESHOLD."""
+    curve = [c for c in curve if c["threshold"] >= MIN_THRESHOLD - 1e-9] or curve
+    return _choose(curve, target)
+
+
+def _choose(curve, target=TARGET_ACCURACY):
     ok = [c for c in curve if c["top1_accuracy"] is not None and c["top1_accuracy"] >= target]
     return min(ok, key=lambda c: c["threshold"]) if ok else max(
         (c for c in curve if c["top1_accuracy"] is not None), key=lambda c: c["top1_accuracy"])
