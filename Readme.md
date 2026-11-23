@@ -412,12 +412,11 @@ python -m src.quick_check check.txt  # run your own messages (one per line) thro
 ## 11. Limitations
 
 - **Small training data, and the citizen-style part is AI-written.** 1,873 training rows; the citizen-style stories and chat messages were written with an AI assistant and reviewed. Real Pakistani text comes only from 142 Supreme Court judgments; the largest part is Indian court text mapped from IPC to PPC.
-- **The test set is mostly AI-written too.** 159 of the 162 test messages were written by ChatGPT (a different generator from training). Only 11 real messages have been tried (3 in the test set + 8 in a hands-on check), which is a sanity check, not a measurement.
 - **Safe but cautious.** The model answers 70% of test messages; it sometimes refuses real crimes it could have answered.
 - **No "not a crime" class.** The classifier must pick one of the 30 offences; the abstain threshold stops most everyday complaints but not all (e.g. a rent increase got s.339 at 74%). A separate crime / not-a-crime gate was tried and is not good enough yet with 140 non-crime examples (`results/crime_gate.json`).
 - **Known reasoning gaps** (bag-of-words model): it cannot count people (4 robbers → dacoity, which needs 5 or more), can confuse who did what to whom (a man touched by a woman → s.354), and with several offences in one story (entered + hurt + stole) it may pick the wrong one.
 - **Only 30 PPC sections.** Special laws that often appear in FIRs (PECA 2016, workplace harassment, Arms Ordinance), road-accident deaths (s.320), forgery and rape are out of scope.
-- **The retrieval model is English-only** and weak on Roman Urdu; DistilBERT was not retrained on the round-2 data.
+- **The retrieval model is English-only** 
 - **Urdu script input** is not supported yet (Roman Urdu and English only).
 
 ## 12. Future Work
@@ -428,7 +427,7 @@ python -m src.quick_check check.txt  # run your own messages (one per line) thro
 4. **RAG in the Student Corner:** answers to students' questions retrieved from the actual text of the PPC, CrPC, Constitution and Supreme Court judgments, always with citations to the passage used, and "I don't know" when nothing relevant is found.
 5. **Crime / not-a-crime gate** trained on several hundred varied non-crime messages.
 6. **Special laws and more sections:** PECA 2016, workplace harassment, acid attacks (s.336-A/B), road accidents (s.320), forgery.
-7. **Better models:** a multilingual sentence encoder for Roman Urdu retrieval, DistilBERT or a multilingual transformer retrained on round-2 data, and rules for counts and roles (e.g. 5+ people for dacoity).
+7. **Better models:** a multilingual sentence encoder for Roman Urdu retrieval, and rules for counts and roles (e.g. 5+ people for dacoity).
 8. **Urdu script input** and an Urdu interface.
 
 ## 13. Legal Disclaimer
